@@ -16,7 +16,11 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 196ce7f8933b5444b9d2f0b279bf144e
   m_Entries:
   - m_Id: 38001823744
-    m_Key: hud.drop
+    m_Key: drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1799091983339520
+    m_Key: pickup
     m_Metadata:
       m_Items: []
   m_Metadata:

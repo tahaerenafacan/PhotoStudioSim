@@ -30,9 +30,14 @@ public class InputManager : MonoBehaviour
         //DEBUG
         if (Keyboard.current.tKey.wasPressedThisFrame)
         {
-            Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = !Cursor.visible;
+            ToggleCursorLock();
         }
+    }
+
+    public static void ToggleCursorLock()
+    {
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = !Cursor.visible;
     }
 
     private void SprintTimer()

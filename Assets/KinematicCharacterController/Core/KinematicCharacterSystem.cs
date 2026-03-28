@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace KinematicCharacterController
     /// The system that manages the simulation of KinematicCharacterMotor and PhysicsMover
     /// </summary>
     [DefaultExecutionOrder(-100)]
+    [SuppressMessage("Domain reload", "UDR0001:Domain Reload Analyzer")]
     public class KinematicCharacterSystem : MonoBehaviour
     {
         private static KinematicCharacterSystem _instance;

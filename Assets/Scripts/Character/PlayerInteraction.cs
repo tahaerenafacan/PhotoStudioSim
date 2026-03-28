@@ -1,3 +1,4 @@
+using MoreMountains.Tools;
 using UnityEngine;
 
 /// <summary>
@@ -103,17 +104,5 @@ public class PlayerInteraction : MonoBehaviour
         {
             DetectedInteractable.Interact();
         }
-    }
-
-    // ─────────────────────────────────────────────────────────────
-    // Debug
-    // ─────────────────────────────────────────────────────────────
-
-    private void OnDrawGizmosSelected()
-    {
-        if (!mainCam) return;
-        Ray ray = mainCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Gizmos.color = HasDetection ? Color.green : Color.red;
-        Gizmos.DrawRay(ray.origin, ray.direction * interactionRange);
     }
 }

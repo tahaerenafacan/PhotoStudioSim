@@ -18,8 +18,8 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 79047282688
-    m_Localized: Drop item
+  - m_Id: 1806084668248064
+    m_Localized: Settings
     m_Metadata:
       m_Items: []
   references:
