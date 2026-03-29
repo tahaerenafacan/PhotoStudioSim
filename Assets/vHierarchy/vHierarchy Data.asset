@@ -22,6 +22,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-669556591237398316-0
         - globalObjectIdString: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-4677498560624311139-0
         - globalObjectIdString: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-4438707827829793161-0
+        - globalObjectIdString: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-1997972104741552672-0
+        - globalObjectIdString: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-6836849213506464987-527400284
         values:
         - colorIndex: 2
           iconNameOrGuid: Canvas Icon
@@ -31,13 +33,21 @@ MonoBehaviour:
           iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 1
-        - colorIndex: 3
+        - colorIndex: 4
           iconNameOrGuid: 
           isIconRecursive: 0
-          isColorRecursive: 0
+          isColorRecursive: 1
         - colorIndex: 7
           iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 1
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
   bookmarks: []
   bookmarkedScenePaths: []

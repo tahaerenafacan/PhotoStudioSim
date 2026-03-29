@@ -29,6 +29,7 @@ public class ScreenConfinement : MonoBehaviour
         ComputerState.Instance.OnPlayerOut += OnSessionEnd;
         ComputerState.Instance.OnPowerOn += OnPowerOn;
         ComputerState.Instance.OnPowerOut += OnPowerOut;
+        monitorPanel.gameObject.SetActive(false);
     }
 
     private void OnDisable()
