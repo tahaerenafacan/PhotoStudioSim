@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Tools;
 using UnityEngine;
 
 /// <summary>
@@ -14,6 +15,9 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Raycast Ayarları")]
     [SerializeField] private float interactionRange = 4f;
     [SerializeField] private LayerMask interactableLayer;
+    
+    [Header("Debug")]
+    [SerializeField] private bool enableDebug = false;
 
     private bool shouldCheckInteraction = true;
     private Camera mainCam;
@@ -108,5 +112,53 @@ public class PlayerInteraction : MonoBehaviour
         {
             DetectedInteractable.Interact();
         }
+    }
+    
+    private void OnGUI()
+    {
+        if (!enableDebug) return;
+        
+        GUI.color = new Color(0f, 0f, 0f, 0.6f);
+        GUI.DrawTexture(new Rect(10, 10, 300, 120), Texture2D.whiteTexture);
+        GUI.color = Color.white;
+
+        GUIStyle style = new GUIStyle(GUI.skin.label)
+        {
+            fontSize = 13,
+            fontStyle = FontStyle.Bold
+        };
+
+        float x = 18, y = 14, lineH = 22;
+
+        style.normal.textColor = Color.cyan;
+        GUI.Label(new Rect(x, y, 280, lineH), "── PlayerInteraction Debug ──", style);
+        y += lineH;
+
+        // Raycast durumu
+        style.normal.textColor = HasDetection ? Color.green : Color.red;
+        GUI.Label(new Rect(x, y, 280, lineH),
+            $"Raycast: {(HasDetection ? "HIT" : "MISS")}", style);
+        y += lineH;
+
+        // IPickable
+        style.normal.textColor = DetectedPickable != null ? Color.yellow : Color.gray;
+        GUI.Label(new Rect(x, y, 280, lineH),
+            $"IPickable:     {(DetectedPickable != null ? DetectedPickable.GetType().Name : "—")}", style);
+        y += lineH;
+
+        // IInteractable
+        style.normal.textColor = DetectedInteractable != null ? Color.yellow : Color.gray;
+        GUI.Label(new Rect(x, y, 280, lineH),
+            $"IInteractable: {(DetectedInteractable != null ? DetectedInteractable.GetType().Name : "—")}", style);
+        y += lineH;
+
+        // Holding item
+        bool holding = PlayerItemHolder.Instance != null && PlayerItemHolder.Instance.IsHoldingItem;
+        style.normal.textColor = holding ? Color.magenta : Color.gray;
+        GUI.Label(new Rect(x, y, 280, lineH),
+            $"Holding Item:  {(holding ? "EVET" : "HAYIR")}", style);
+        if (holding)
+            GUI.Label(new Rect(x + 150, y, 280, lineH),
+                $"| {PlayerItemHolder.Instance.CurrentItem.ToString()}", style);
     }
 }

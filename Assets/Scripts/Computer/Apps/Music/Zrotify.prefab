@@ -2731,15 +2731,12 @@ MonoBehaviour:
   trackVolumeSlider: {fileID: 8467159749438418774}
   prevButton: {fileID: 8543502837389882028}
   playButton: {fileID: 8854590884417015121}
+  playButtonImage: {fileID: 5854768168130742879}
   playingSprite: {fileID: 21300000, guid: 7596bef2f1ea0d3489c4149299b7bd2a, type: 3}
   pausedSprite: {fileID: 21300000, guid: 76e2fc66a5269a445bc6ca25d2fe897a, type: 3}
   nextButton: {fileID: 1945813413390996515}
   progressBar: {fileID: 150709343701332038}
   timestampText: {fileID: 4879693761891032568}
-  tracks:
-  - {fileID: 8300000, guid: 209cd715f3feecf44be0a17ae7b7f5c5, type: 3}
-  - {fileID: 8300000, guid: 952a1cec0853caa4abf61e2781f60110, type: 3}
-  - {fileID: 8300000, guid: 454bd539e4baf244daf1b34616aa4b1c, type: 3}
 --- !u!224 &7418467739101951750 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2874940470713604972, guid: 4bb8449b4e7c99c4fb0670f5e6f00e81, type: 3}

@@ -43,16 +43,6 @@ public class MusicService : MonoBehaviour
             ComputerState.Instance.OnPowerOut -= OnPowerOut;
     }
 
-    private void Update()
-    {
-        // Şarkı bitti mi? → sonrakine geç
-        if (!audioSource.isPlaying || audioSource.clip == null) return;
-
-        // isPlaying zaten true iken clip süresi dolduğunda
-        // bir sonraki frame'de isPlaying false olur
-        // bu yüzden Update'de değil, aşağıdaki LateUpdate'de kontrol ediyoruz
-    }
-
     private void LateUpdate()
     {
         CheckTrackEnd();
@@ -63,6 +53,7 @@ public class MusicService : MonoBehaviour
     private void OnPowerOut()
     {
         audioSource.Stop();
+        CurrentIndex = -1;
         OnPlayStateChanged?.Invoke(false);
     }
 
@@ -85,7 +76,11 @@ public class MusicService : MonoBehaviour
     {
         if (tracks.Length == 0) return;
 
-        if (CurrentIndex < 0) { PlayTrack(0); return; }
+        if (CurrentIndex < 0)
+        {
+            PlayTrack(0); 
+            return;
+        }
 
         if (audioSource.isPlaying)
         {

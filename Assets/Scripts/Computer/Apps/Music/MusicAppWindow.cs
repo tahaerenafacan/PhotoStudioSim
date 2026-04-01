@@ -22,6 +22,7 @@ public class MusicAppWindow : AppWindow
     [Header("Playbar")]
     [SerializeField] private Button prevButton;  
     [SerializeField] private Button playButton;
+    [SerializeField] private Image playButtonImage;
     [SerializeField] private Sprite playingSprite;
     [SerializeField] private Sprite pausedSprite;
     [SerializeField] private Button nextButton;
@@ -48,8 +49,20 @@ public class MusicAppWindow : AppWindow
  
     protected override void OnClosed()
     {
+        Unsubscribe();
+    }
+
+    private void OnDestroy()
+    {
+        Unsubscribe();
+    }
+ 
+    private void Unsubscribe()
+    {
+        if (service == null) return;
         service.OnTrackChanged     -= OnTrackChanged;
         service.OnPlayStateChanged -= OnPlayStateChanged;
+        service = null;
     }
  
     private void Update()
@@ -164,8 +177,7 @@ public class MusicAppWindow : AppWindow
  
     private void RefreshPlayButton(bool playing)
     {
-        var img = playButton.GetComponent<Image>();
-        if (img) img.sprite = playing ? playingSprite : pausedSprite;
+        if (playButtonImage) playButtonImage.sprite = playing ? playingSprite : pausedSprite;
     }
  
     private void RefreshNavButtons()
@@ -181,7 +193,7 @@ public class MusicAppWindow : AppWindow
             playlistItems[i].SetTrackActive(i == activeIndex);
     }
  
-    private static string FormatTime(float totalSeconds)
+    private string FormatTime(float totalSeconds)
     {
         int m = Mathf.FloorToInt(totalSeconds / 60f);
         int s = Mathf.FloorToInt(totalSeconds % 60f);

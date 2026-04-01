@@ -3,51 +3,106 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
 
+[RequireComponent(typeof(ScreenConfinement))]
 public class ScreenConfinement : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private RectTransform monitorPanel;
     [SerializeField] private Camera renderCamera;
     [SerializeField] private RectTransform virtualCursor;
     [SerializeField] private InputSystemUIInputModule inputModule;
+
+    [Header("Settings")]
     [SerializeField] private float sensitivity = 0.5f;
     [SerializeField] private float blendDuration = 0.5f;
 
+    // State Variables
     private Mouse virtualMouse;
     private Mouse physicalMouse;
     private bool isActive;
-    private float sessionStartTime;
     private bool hasSessionHistory;
-
+    private float sessionStartTime;
+    
     private Vector2 localPos;
     private Rect panelRect;
-
     private Plane monitorPlane;
+
+    #region Unity Lifecycle
+    
+    private void Awake()
+    {
+        if (inputModule == null)
+        {
+            inputModule = FindAnyObjectByType<InputSystemUIInputModule>();
+        }
+        if (inputModule == null) Debug.LogError($"{nameof(ScreenConfinement)}: No InputSystemUIInputModule found!");
+    }
 
     private void Start()
     {
-        ComputerState.Instance.OnPlayerSit += OnSessionStart;
-        ComputerState.Instance.OnPlayerOut += OnSessionEnd;
-        ComputerState.Instance.OnPowerOn += OnPowerOn;
-        ComputerState.Instance.OnPowerOut += OnPowerOut;
-        monitorPanel.gameObject.SetActive(false);
+        SubscribeToComputerEvents();
+        SetMonitorState(false);
+    }
+
+    private void Update()
+    {
+        if (!ComputerState.Instance.IsPlayerSit) return;
+
+        HandleSessionActivation();
+
+        if (isActive)
+        {
+            ProcessVirtualMouseInput();
+        }
     }
 
     private void OnDisable()
     {
+        UnsubscribeFromComputerEvents();
+    }
+
+    private void OnDestroy()
+    {
+        RemoveVirtualMouse();
+    }
+
+    #endregion
+
+    #region Event Subscriptions
+
+    private void SubscribeToComputerEvents()
+    {
+        if (ComputerState.Instance == null) return;
+
+        ComputerState.Instance.OnPlayerSit += OnSessionStart;
+        ComputerState.Instance.OnPlayerOut += OnSessionEnd;
+        ComputerState.Instance.OnPowerOn += OnPowerOn;
+        ComputerState.Instance.OnPowerOut += OnPowerOut;
+    }
+
+    private void UnsubscribeFromComputerEvents()
+    {
+        if (ComputerState.Instance == null) return;
+
         ComputerState.Instance.OnPlayerSit -= OnSessionStart;
         ComputerState.Instance.OnPlayerOut -= OnSessionEnd;
         ComputerState.Instance.OnPowerOn -= OnPowerOn;
         ComputerState.Instance.OnPowerOut -= OnPowerOut;
     }
 
-    private void OnPowerOn()
-    {
-        monitorPanel.gameObject.SetActive(true);
-    }
+    #endregion
 
-    private void OnPowerOut()
+    #region Computer State Handlers
+
+    private void OnPowerOn() => SetMonitorState(true);
+    private void OnPowerOut() => SetMonitorState(false);
+
+    private void SetMonitorState(bool state)
     {
-        monitorPanel.gameObject.SetActive(false);
+        if (monitorPanel != null)
+        {
+            monitorPanel.gameObject.SetActive(state);
+        }
     }
 
     private void OnSessionStart()
@@ -64,78 +119,83 @@ public class ScreenConfinement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    #endregion
 
-    private void Update()
+    #region Core Logic
+
+    private void HandleSessionActivation()
     {
-        if (!ComputerState.Instance.IsPlayerSit) return;
-
-        if (!isActive)
-        {
-            if (Time.unscaledTime - sessionStartTime < blendDuration) return;
-            Activate();
-            if (!isActive) return;
-        }
-
-        UpdateVirtualMouse();
+        if (isActive || Time.unscaledTime - sessionStartTime < blendDuration) return;
+        
+        ActivateDevice();
     }
-    private void Activate()
+
+    private void ActivateDevice()
     {
         if (!monitorPanel || !renderCamera) return;
 
-        // Sınırlar: panelin kendi Rect'i — projeksiyon hatası yok
+        InitializeMonitorBounds();
+        InitializeVirtualMouse();
+        
+        isActive = true;
+    }
+
+    private void InitializeMonitorBounds()
+    {
         panelRect = monitorPanel.rect;
         monitorPlane = new Plane(monitorPanel.forward, monitorPanel.position);
 
-        // localPos önceki oturumdan korunur — ilk açılışta merkeze al
         if (!hasSessionHistory)
         {
             localPos = Vector2.zero;
             hasSessionHistory = true;
         }
+    }
 
-        physicalMouse = Mouse.current;  // virtual device kurulmadan önce fiziksel mouse
+    private void InitializeVirtualMouse()
+    {
+        physicalMouse = Mouse.current;
+        if (physicalMouse == null) return;
+
         virtualMouse = InputSystem.AddDevice<Mouse>("VirtualMouse");
 
-        if (inputModule == null)
-            inputModule = FindAnyObjectByType<InputSystemUIInputModule>();
+        inputModule.pointerBehavior = UIPointerBehavior.AllPointersAsIs;
 
-        if (inputModule != null)
-        {
-            //inputModule.cursor = virtualCursor;
-            inputModule.pointerBehavior = UIPointerBehavior.SingleUnifiedPointer;
-        }
-
-        PushPositionToDevice();
+        UpdateDeviceState();
 
         if (virtualCursor)
         {
             virtualCursor.gameObject.SetActive(true);
             SyncCursorGraphic();
         }
-
-        isActive = true;
     }
-    private void UpdateVirtualMouse()
+
+    private void ProcessVirtualMouseInput()
     {
-        // Delta'yı panel local space'e çevir:
-        // ekrandaki piksel hareketi → dünya → panel local
+        if (physicalMouse == null || virtualMouse == null) return;
+
+        // 1. Pozisyonu Hesapla
+        CalculateNewLocalPosition();
+
+        // 2. Cihazın tüm durumunu (Pozisyon + Basılı Tutulan Butonlar) Güncelle
+        UpdateDeviceState();
+        
+        // 3. Grafiksel imleci senkronize et
+        SyncCursorGraphic();
+    }
+
+    private void CalculateNewLocalPosition()
+    {
         Vector2 rawDelta = physicalMouse.delta.ReadValue() * sensitivity;
         Vector2 localDelta = ScreenDeltaToLocalDelta(rawDelta);
 
         localPos.x = Mathf.Clamp(localPos.x + localDelta.x, panelRect.xMin, panelRect.xMax);
         localPos.y = Mathf.Clamp(localPos.y + localDelta.y, panelRect.yMin, panelRect.yMax);
-
-        PushPositionToDevice();
-        ForwardButtonEvents();
-        SyncCursorGraphic();
-
-        if (physicalMouse.leftButton.wasPressedThisFrame)
-        {
-            Vector3 worldPos = monitorPanel.TransformPoint(new Vector3(localPos.x, localPos.y, 0f));
-            Vector2 screenPos = renderCamera.WorldToScreenPoint(worldPos);
-        }
     }
 
+    #endregion
+
+    #region Input Mapping & Mathematics
 
     private Vector2 ScreenDeltaToLocalDelta(Vector2 screenDelta)
     {
@@ -157,6 +217,7 @@ public class ScreenConfinement : MonoBehaviour
             localResult = monitorPanel.InverseTransformPoint(worldHit);
             return true;
         }
+        
         localResult = Vector2.zero;
         return false;
     }
@@ -164,55 +225,38 @@ public class ScreenConfinement : MonoBehaviour
     private void SyncCursorGraphic()
     {
         if (!virtualCursor) return;
-        Vector3 worldPos = monitorPanel.TransformPoint(new Vector3(localPos.x, localPos.y, 0f));
-        virtualCursor.position = worldPos;
+        virtualCursor.position = GetWorldPosition();
     }
 
-    private void PushToDevice()
+    private void UpdateDeviceState()
     {
         if (virtualMouse == null) return;
 
-        Vector3 worldPos = monitorPanel.TransformPoint(new Vector3(localPos.x, localPos.y, 0f));
-        Vector2 screenPos = renderCamera.WorldToScreenPoint(worldPos);
+        Vector2 screenPos = renderCamera.WorldToScreenPoint(GetWorldPosition());
 
-        InputState.Change(virtualMouse, new MouseState
-        {
+        // Fiziksel farenin o anki tuş durumlarını alıyoruz (basılı tutuluyorsa 1, tutulmuyorsa 0)
+        ushort buttonsState = 0;
+        if (physicalMouse.leftButton.isPressed) buttonsState |= 1 << 0;
+        if (physicalMouse.rightButton.isPressed) buttonsState |= 1 << 1;
+        if (physicalMouse.middleButton.isPressed) buttonsState |= 1 << 2;
+
+        // Hem yeni pozisyonu hem de tuşların basılı tutulma durumunu tek seferde gönderiyoruz.
+        // Böylece sürükleme (dragging) işlemi kesintiye uğramaz.
+        InputState.Change(virtualMouse, new MouseState 
+        { 
             position = screenPos,
-            buttons = (ushort)((Mouse.current.leftButton.isPressed ? 1 << 0 : 0) |
-                        (Mouse.current.rightButton.isPressed ? 1 << 1 : 0) |
-                        (Mouse.current.middleButton.isPressed ? 1 << 2 : 0))
+            buttons = buttonsState
         });
     }
 
-    private void PushPositionToDevice()
+    #endregion
+
+    #region Utility
+
+    private Vector3 GetWorldPosition()
     {
-        if (virtualMouse == null) return;
-
-        Vector3 worldPos = monitorPanel.TransformPoint(new Vector3(localPos.x, localPos.y, 0f));
-        Vector2 screenPos = renderCamera.WorldToScreenPoint(worldPos);
-
-        InputState.Change(virtualMouse, new MouseState { position = screenPos });
+        return monitorPanel.TransformPoint(new Vector3(localPos.x, localPos.y, 0f));
     }
-
-    private void ForwardButtonEvents()
-    {
-        if (virtualMouse == null) return;
-
-        var p = physicalMouse;
-
-        if (p.leftButton.wasPressedThisFrame) QueueButton(MouseButton.Left, true);
-        if (p.leftButton.wasReleasedThisFrame) QueueButton(MouseButton.Left, false);
-        if (p.rightButton.wasPressedThisFrame) QueueButton(MouseButton.Right, true);
-        if (p.rightButton.wasReleasedThisFrame) QueueButton(MouseButton.Right, false);
-    }
-
-    private void QueueButton(MouseButton button, bool pressed)
-    {
-        var state = new MouseState { position = virtualMouse.position.ReadValue() };
-        state.WithButton(button, pressed);
-        InputSystem.QueueStateEvent(virtualMouse, state);
-    }
-
 
     private void RemoveVirtualMouse()
     {
@@ -223,16 +267,15 @@ public class ScreenConfinement : MonoBehaviour
         }
     }
 
-    /// <summary>Cursoru panel merkezine taşır.</summary>
-    private void CenterCursor()
+    public void CenterCursor()
     {
         localPos = Vector2.zero;
         if (isActive)
         {
             SyncCursorGraphic();
-            PushToDevice();
+            UpdateDeviceState();
         }
     }
 
-    private void OnDestroy() => RemoveVirtualMouse();
+    #endregion
 }
