@@ -3,28 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-/// <summary>
-/// Galeri uygulaması — CameraStorage'daki fotoğrafları gösterir.
-///
-/// PREFAB YAPISI:
-///   GalleryApp (bu script)
-///   ├── TitleBar ...
-///   └── Content
-///       ├── ThumbnailScroll (ScrollRect)
-///       │   └── Viewport → ThumbnailGrid (GridLayoutGroup)  ← thumbnailGrid
-///       ├── PreviewPanel (Image)                             ← previewPanel
-///       │   └── PreviewImage (RawImage)                     ← previewImage
-///       ├── NavBar
-///       │   ├── PrevButton (Button)                         ← prevButton
-///       │   ├── PhotoIndexText (TMP)                        ← indexText
-///       │   └── NextButton (Button)                         ← nextButton
-///       └── EmptyLabel (TMP)                                ← emptyLabel
-/// </summary>
 public class GalleryApp : AppWindow
 {
     [Header("Galeri UI")]
     [SerializeField] private Transform thumbnailGrid;
-    [SerializeField] private RawImage thumbnailPrefab;
+    [SerializeField] private GameObject thumbnailPrefab;
 
     [Header("Önizleme")]
     [SerializeField] private GameObject previewPanel;
@@ -81,9 +64,9 @@ public class GalleryApp : AppWindow
         // Thumbnail'ları oluştur
         for (int i = 0; i < photos.Count; i++)
         {
-            int idx = i; // closure için kopyala
-            RawImage thumb = Instantiate(thumbnailPrefab, thumbnailGrid);
-            thumb.texture = photos[i];
+            int idx = i;
+            GameObject thumb = Instantiate(thumbnailPrefab, thumbnailGrid);
+            thumb.GetComponentInChildren<RawImage>().texture = photos[i];
 
             // Tıklanınca önizlemeye geç
             Button btn = thumb.GetComponent<Button>();

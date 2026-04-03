@@ -8,11 +8,15 @@ public class MusicService : MonoBehaviour
 
     [SerializeField] private AudioClip[] tracks;
 
-    // ── Events ──
-    public event Action<int> OnTrackChanged;      // yeni track index
-    public event Action<bool> OnPlayStateChanged; // true = çalıyor
+    /// <summary>
+    /// <typeparam name="int">New track index</typeparam>
+    /// </summary>
+    public event Action<int> OnTrackChanged;
+    /// <summary>
+    /// <typeparam name="bool">Is Playing</typeparam>
+    /// </summary>
+    public event Action<bool> OnPlayStateChanged;
 
-    // ── Public state ──────────────────────────────────────────────
     public int CurrentIndex  { get; private set; } = -1;
     public bool IsPlaying    => audioSource.isPlaying;
     public AudioClip[] Tracks => tracks;
@@ -20,11 +24,14 @@ public class MusicService : MonoBehaviour
 
     private AudioSource audioSource;
 
-    // ── Lifecycle ─────────────────────────────────────────────────
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); 
+            return;
+        }
         Instance = this;
 
         audioSource = GetComponent<AudioSource>();
@@ -45,11 +52,10 @@ public class MusicService : MonoBehaviour
 
     private void LateUpdate()
     {
+        //This must be at LateUpdate do not modify.
         CheckTrackEnd();
     }
-
-    // ── Power ─────────────────────────────────────────────────────
-
+    
     private void OnPowerOut()
     {
         audioSource.Stop();
@@ -106,28 +112,20 @@ public class MusicService : MonoBehaviour
             PlayTrack(CurrentIndex - 1);
     }
 
-    public void SetVolume(float volume)
-    {
-        audioSource.volume = volume;
-    }
-
+    public void SetVolume(float volume) => audioSource.volume = volume;
     public float GetVolume() => audioSource.volume;
 
-    // ── Internal ──────────────────────────────────────────────────
 
     private void CheckTrackEnd()
     {
         if (CurrentIndex < 0 || audioSource.clip == null) return;
         if (audioSource.isPlaying) return;
-        // Clip yüklü, çalmıyor ama biz pause da etmedik → bitti
-        // Pause durumunu "time < length" ile ayırt ediyoruz
         if (audioSource.time > 0f && audioSource.time < audioSource.clip.length) return;
 
         if (CurrentIndex < tracks.Length - 1)
             PlayNext();
         else
         {
-            // Playlist bitti, başa sar
             CurrentIndex = -1;
             OnPlayStateChanged?.Invoke(false);
         }

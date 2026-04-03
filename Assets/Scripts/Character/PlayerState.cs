@@ -1,8 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Oyuncunun anlık hareket durumunu tutan saf veri deposu.
-/// </summary>
 public class PlayerState : MonoBehaviour
 {
     public static PlayerState Instance { get; private set; }

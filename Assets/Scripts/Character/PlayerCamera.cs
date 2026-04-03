@@ -21,12 +21,9 @@ public class PlayerCamera : MonoBehaviour
     public void UpdateRotation(CameraInput input)
     {
         eulerAngles += new Vector3(-input.Look.y, input.Look.x) * sensitivity;
-
         eulerAngles.x = Mathf.Clamp(eulerAngles.x, xAngleClampBetween.x, xAngleClampBetween.y);
-
         transform.eulerAngles = eulerAngles;
     }
-
     
     public void UpdatePosition(Transform target)
     {

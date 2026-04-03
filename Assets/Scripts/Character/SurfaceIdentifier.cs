@@ -3,7 +3,8 @@ using UnityEngine;
 public enum SurfaceType
 {
     Default,
-    Rock
+    Rock,
+    Grass
 }
 
 public class SurfaceIdentifier : MonoBehaviour

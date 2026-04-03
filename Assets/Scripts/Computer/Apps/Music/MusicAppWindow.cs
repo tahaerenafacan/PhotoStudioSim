@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +26,7 @@ public class MusicAppWindow : AppWindow
     [SerializeField] private Sprite pausedSprite;
     [SerializeField] private Button nextButton;
     [SerializeField] private Slider progressBar;
-    [SerializeField] private TextMeshProUGUI timestampText; // 2:50/3:10
+    [SerializeField] private TextMeshProUGUI timestampText; //i.e 2:50/3:10
  
     // ── Runtime ─────────────────────────────────────────────
     private MusicService service;
@@ -47,15 +46,8 @@ public class MusicAppWindow : AppWindow
         service.OnPlayStateChanged += OnPlayStateChanged;
     }
  
-    protected override void OnClosed()
-    {
-        Unsubscribe();
-    }
-
-    private void OnDestroy()
-    {
-        Unsubscribe();
-    }
+    protected override void OnClosed() => Unsubscribe();
+    private void OnDestroy() => Unsubscribe();
  
     private void Unsubscribe()
     {
@@ -144,9 +136,7 @@ public class MusicAppWindow : AppWindow
     {
         bool hasTrack = service.CurrentIndex >= 0;
  
-        trackNameText.text = hasTrack
-            ? service.Tracks[service.CurrentIndex].name
-            : "—";
+        trackNameText.text = hasTrack ? service.Tracks[service.CurrentIndex].name : "No active track";
  
         RefreshPlaylistHighlight(service.CurrentIndex);
         RefreshPlayButton(service.IsPlaying);
