@@ -23,7 +23,7 @@ public class CustomerSpawner : MonoBehaviour
             return null;
         }
 
-        var instance = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
+        CustomerController instance = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
         Debug.Log($"CustomerSpawner: Spawned customer {instance.name} at {spawnPoint.position}", this);
         instance.Initialize(
             entranceTarget,

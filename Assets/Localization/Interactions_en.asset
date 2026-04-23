@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Take Envelope
     m_Metadata:
       m_Items: []
+  - m_Id: 6593315492712448
+    m_Localized: Add to envelope
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

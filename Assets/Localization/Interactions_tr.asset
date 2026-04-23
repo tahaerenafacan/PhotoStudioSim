@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: "Mektup \xE7\u0131kart"
     m_Metadata:
       m_Items: []
+  - m_Id: 6593315492712448
+    m_Localized: Zarfa koy
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

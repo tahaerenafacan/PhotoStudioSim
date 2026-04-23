@@ -22,8 +22,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
-  type: 1
   itemPrefab: {fileID: 3077581064403022476, guid: def311ebe22efe34cb424466dae9b570, type: 3}
+  isInteractable: 0
   interactHint:
     m_TableReference:
       m_TableCollectionName: 
@@ -36,9 +36,9 @@ MonoBehaviour:
   isUseable: 1
   useHint:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8e4e5389e2ba5de4e8a3659620bcdfd4
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 7538593792
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

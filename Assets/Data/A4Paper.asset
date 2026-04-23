@@ -22,13 +22,13 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
-  type: 1
   itemPrefab: {fileID: 6210493951262195286, guid: 57432facf14a0384a9d085817f1af3ec, type: 3}
+  isInteractable: 1
   interactHint:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6593315492712448
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

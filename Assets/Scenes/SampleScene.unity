@@ -533,7 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ed40db9e932af4b865d67c2bb9f2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrderGenerator
-  questHUD: {fileID: 53201091}
 --- !u!114 &305005515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4284,6 +4283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acd327ac116ab2418f3332e3e781a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrderManager
+  questHUD: {fileID: 53201091}
 --- !u!4 &1857183350
 Transform:
   m_ObjectHideFlags: 0

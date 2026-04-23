@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
   itemName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4b757296a2bfcb947acc0c01cb31c642
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 147418632192
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
-  type: 1
   itemPrefab: {fileID: 7009502286320311814, guid: 47d75766ba3ed794fb98d915e81df34d, type: 3}
+  isInteractable: 0
   interactHint:
     m_TableReference:
       m_TableCollectionName: 

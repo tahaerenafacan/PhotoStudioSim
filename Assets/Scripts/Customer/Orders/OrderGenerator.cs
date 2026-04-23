@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour, IOrderGenerator
 {
-    [SerializeField] private QuestHUD questHUD;
-
     public OrderData GenerateOrder()
     {
         var orderTypePicker = Random.value;
 
-        OrderData orderData = null;
-
+        OrderData orderData;
         switch (orderTypePicker)
         {
             case < 0.4f:
@@ -23,8 +20,6 @@ public class OrderGenerator : MonoBehaviour, IOrderGenerator
                 break;
         }
 
-        questHUD.SetQuestDisplay(orderData);
-        Debug.Log($"OrderGenerator: Generated order {orderData.OrderType} with quality {orderData.RequestedQuality}");
         return orderData;
     }
 
