@@ -8,8 +8,7 @@ using UnityEngine.Localization;
 
 public class ItemCamera : BasePickableItem, IUsable
 {
-    [SerializeField] private LocalizedString useHint;
-    public LocalizedString UseHint => useHint;
+    public LocalizedString UseHint => Definition.useHint;
     
     [SerializeField] private Canvas screenCanvas;
     

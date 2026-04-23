@@ -12,14 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f109cc59c1895428a298ed570d7bfb, type: 3}
   m_Name: A4Paper
   m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
-  itemName: Printed A4 Paper
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:4b757296a2bfcb947acc0c01cb31c642
+    m_TableEntryReference:
+      m_KeyId: 7874138112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   type: 1
   itemPrefab: {fileID: 6210493951262195286, guid: 57432facf14a0384a9d085817f1af3ec, type: 3}
-  interactHint: 
-  currencyValue: 1
+  interactHint:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   isUseable: 0
-  useHint: 
-  effect: {fileID: 0}
+  useHint:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   holdPositionOffset: {x: 0.2, y: -0.1, z: 0.4}
   holdRotationOffset: {x: 90, y: -160, z: 0}
+  references:
+    version: 2
+    RefIds: []

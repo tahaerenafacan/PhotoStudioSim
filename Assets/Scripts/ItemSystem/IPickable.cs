@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Yerden alınabilen her item bu arayüzü implement eder.
+/// BasePickableItem tarafından implement edilen, yerden alınabilen itemlerin sahip olması gereken temel fonksiyonları tanımlar.
 /// </summary>
 public interface IPickable
 {

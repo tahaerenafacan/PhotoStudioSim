@@ -89,7 +89,14 @@ public class PlayerInteraction : MonoBehaviour
                     DetectedPickable = detectedPick;
                 }
 
-                DetectedInteractable = hitCol.GetComponent<IInteractable>();
+                if (hitCol.TryGetComponent(out IInteractable detectedInteractable) && detectedInteractable.CanInteract)
+                {
+                    DetectedInteractable = detectedInteractable;
+                }
+                else
+                {
+                    DetectedInteractable = null;
+                }
             }
         }
 
@@ -107,12 +114,13 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        if (DetectedInteractable != null)
+        if (DetectedInteractable != null && DetectedInteractable.CanInteract)
         {
             DetectedInteractable.Interact();
         }
     }
     
+    //DEBUG
     private void OnGUI()
     {
         if (!enableDebug) return;

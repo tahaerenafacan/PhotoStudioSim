@@ -103,15 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemCamera
   definition: {fileID: 11400000, guid: 38b0efb1a8896ef46a033cb048093876, type: 2}
   throwForceMultiplier: 1
-  useHint:
-    m_TableReference:
-      m_TableCollectionName: GUID:8e4e5389e2ba5de4e8a3659620bcdfd4
-    m_TableEntryReference:
-      m_KeyId: 7538593792
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
   screenCanvas: {fileID: 6656756351606555141}
   lensCamera: {fileID: 5942438005398057594}
   viewfinderTexture: {fileID: 8400000, guid: bacc56e425cb75e4e8129c7861405e13, type: 2}
@@ -127,9 +118,6 @@ MonoBehaviour:
   flashImage: {fileID: 3223397582225005343}
   flashOnSprite: {fileID: 21300000, guid: 494ee7129da387d46b7b84ad35e1d5dc, type: 3}
   flashOffSprite: {fileID: 21300000, guid: b03d092513b87a24b841350f17a96b3d, type: 3}
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &4475839788772746723
 MonoBehaviour:
   m_ObjectHideFlags: 0

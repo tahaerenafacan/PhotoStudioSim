@@ -21,8 +21,8 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable
     [Header("Fırlatma")]
     [SerializeField] private float throwForceMultiplier = 1f;
 
-    public string ItemName => definition.itemName;
-    public string PickupHint => definition != null ? definition.itemName : "Al";
+    public string ItemName => definition.itemName.GetLocalizedString();
+    public string PickupHint => definition != null ? definition.itemName.GetLocalizedString() : "Al";
     
     protected Rigidbody Rb { get; private set; }
     private Collider[] colliders;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewApp", menuName = "Computer/App Definition")]
+[CreateAssetMenu(fileName = "NewApp", menuName = "PSSGame/Computer/App Definition")]
 public class AppDefinition : ScriptableObject
 {
     public string appName;

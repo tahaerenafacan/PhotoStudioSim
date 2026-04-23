@@ -28,6 +28,7 @@ public class ComputerMonitor : MonoBehaviour, IInteractable
 
     // ── IInteractable ────────────────────────────────────────────
     public LocalizedString InteractHint =>  interactHint;
+    public bool CanInteract => !ComputerState.Instance.IsPlayerSit;
 
     public void Interact()
     {

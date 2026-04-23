@@ -6,6 +6,8 @@ public class ItemPaperPrinter : MonoBehaviour, IInteractable, INetworkDevice
 {
     [SerializeField] private NetworkDeviceSO networkData;
     [SerializeField] private LocalizedString interactHint;
+
+    [SerializeField] private Material displayMat;
     
     [Header("Printer Settings")]
     [SerializeField] private PrintQuality maxSupportedQuality = PrintQuality.Average;
@@ -21,6 +23,7 @@ public class ItemPaperPrinter : MonoBehaviour, IInteractable, INetworkDevice
     [SerializeField] private PrintedPaper prefabA5;
     
     public LocalizedString InteractHint => interactHint;
+    public bool CanInteract => !isPrinting;
     public NetworkDeviceSO GetNetworkDeviceData() => networkData;
     public PrintQuality GetMaxSupportedQuality() => maxSupportedQuality;
     public bool GetIsColoredSupported() => isColoredSupported;
@@ -36,10 +39,12 @@ public class ItemPaperPrinter : MonoBehaviour, IInteractable, INetworkDevice
         if (isPowered)
         {
             Router.Instance.Connect(this);
+            displayMat.EnableKeyword("_EMISSION");
         }
         else
         {
             Router.Instance.Disconnect(this);
+            displayMat.DisableKeyword("_EMISSION");
         }
     }
     

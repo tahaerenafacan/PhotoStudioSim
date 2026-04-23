@@ -5,6 +5,7 @@ public class ComputerCase : MonoBehaviour, IInteractable
 {
     [SerializeField] private LocalizedString interactHint;
     public LocalizedString InteractHint => interactHint;
+    public bool CanInteract => true;
 
     public void Interact()
     {

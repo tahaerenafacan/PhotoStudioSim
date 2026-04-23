@@ -27,6 +27,14 @@ MonoBehaviour:
     m_Key: computermonitor.interact
     m_Metadata:
       m_Items: []
+  - m_Id: 523597052760064
+    m_Key: customer.completeOrder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6573169407545344
+    m_Key: envelopestack.Spawn
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

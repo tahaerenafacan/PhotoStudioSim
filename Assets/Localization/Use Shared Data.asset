@@ -16,7 +16,7 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 8e4e5389e2ba5de4e8a3659620bcdfd4
   m_Entries:
   - m_Id: 7538593792
-    m_Key: camera.use
+    m_Key: use.camera
     m_Metadata:
       m_Items: []
   m_Metadata:

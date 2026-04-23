@@ -1,13 +1,23 @@
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
-public class PrintedPaper : BasePickableItem
+public class PrintedPaper : BasePickableItem, IInteractable
 {
     [SerializeField] private MeshRenderer paperRenderer;
     /// <summary>Birden fazla materyal varsa resmin uygulanacağı materyal indexi.</summary>
     [SerializeField] private int materialIndex = 0;
 
     private PrintSettings settings;
+    private Texture2D printedTexture;
+
+    public LocalizedString InteractHint => Definition.interactHint;
+    public bool CanInteract => PlayerItemHolder.Instance != null
+        && PlayerItemHolder.Instance.IsHoldingItem
+        && PlayerItemHolder.Instance.CurrentItem is ItemEnvelope;
+
+    public Texture2D PrintedTexture => printedTexture;
+    public PrintSettings Settings => settings;
 
     public void Setup(Texture2D printedImage, PrintSettings settings)
     {
@@ -24,6 +34,7 @@ public class PrintedPaper : BasePickableItem
         if (paperRenderer == null || source == null) return;
 
         Texture2D processed = ProcessTexture(source);
+        printedTexture = processed;
 
         // Diğer kağıt prefablarını etkilememek için yeni materyal instance'ı
         Material[] mats = paperRenderer.materials;
@@ -174,5 +185,17 @@ public class PrintedPaper : BasePickableItem
     {
         SetCollidersActive(true);
         Rb.isKinematic = false;
+    }
+
+    public void Interact()
+    {
+        if (PlayerItemHolder.Instance == null)
+            return;
+
+        if (PlayerItemHolder.Instance.CurrentItem is ItemEnvelope envelope)
+        {
+            if (envelope.TryStorePrintedPaper(this))
+                gameObject.SetActive(false);
+        }
     }
 }
