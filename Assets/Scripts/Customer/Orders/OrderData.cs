@@ -7,7 +7,10 @@ public class OrderData
     public OrderType OrderType;
     public PhotoOrderVariant PhotoVariant;
     public string Description;
-    public PrintQuality RequestedQuality;
+    public PrintPaperSize PaperSize;
+    public PrintPaperOrientation PaperOrientation;
+    public PrintPaperFit PaperFit;
+    public bool IsColored;
     public float RequestedAt;
 
     public static OrderData CreatePhotoOrder(PhotoOrderVariant variant)
@@ -17,7 +20,10 @@ public class OrderData
             OrderType = OrderType.PhotoShooting,
             PhotoVariant = variant,
             Description = $"Photo shoot request: {variant}",
-            RequestedQuality = GetRandomQuality(),
+            PaperSize = GetRandomPaperSize(),
+            PaperOrientation = GetRandomPaperOrientation(),
+            PaperFit = GetRandomPaperFit(),
+            IsColored = GetRandomIsColored(),
             RequestedAt = UnityEngine.Time.time
         };
     }
@@ -28,7 +34,10 @@ public class OrderData
         {
             OrderType = OrderType.UsbExtraction,
             Description = "USB extraction request",
-            RequestedQuality = GetRandomQuality(),
+            PaperSize = GetRandomPaperSize(),
+            PaperOrientation = GetRandomPaperOrientation(),
+            PaperFit = GetRandomPaperFit(),
+            IsColored = GetRandomIsColored(),
             RequestedAt = UnityEngine.Time.time
         };
     }
@@ -39,7 +48,10 @@ public class OrderData
         {
             OrderType = OrderType.PhotoCopy,
             Description = "Photo copy request",
-            RequestedQuality = GetRandomQuality(),
+            PaperSize = GetRandomPaperSize(),
+            PaperOrientation = GetRandomPaperOrientation(),
+            PaperFit = GetRandomPaperFit(),
+            IsColored = GetRandomIsColored(),
             RequestedAt = UnityEngine.Time.time
         };
     }
@@ -48,5 +60,28 @@ public class OrderData
     {
         PrintQuality[] qualities = (PrintQuality[])Enum.GetValues(typeof(PrintQuality));
         return qualities[UnityEngine.Random.Range(0, qualities.Length)];
+    }
+
+    private static PrintPaperSize GetRandomPaperSize()
+    {
+        PrintPaperSize[] sizes = (PrintPaperSize[])Enum.GetValues(typeof(PrintPaperSize));
+        return sizes[UnityEngine.Random.Range(0, sizes.Length)];
+    }
+
+    private static PrintPaperOrientation GetRandomPaperOrientation()
+    {
+        PrintPaperOrientation[] orientations = (PrintPaperOrientation[])Enum.GetValues(typeof(PrintPaperOrientation));
+        return orientations[UnityEngine.Random.Range(0, orientations.Length)];
+    }
+
+    private static PrintPaperFit GetRandomPaperFit()
+    {
+        PrintPaperFit[] fits = (PrintPaperFit[])Enum.GetValues(typeof(PrintPaperFit));
+        return fits[UnityEngine.Random.Range(0, fits.Length)];
+    }
+
+    private static bool GetRandomIsColored()
+    {
+        return UnityEngine.Random.value > 0.5f;
     }
 }

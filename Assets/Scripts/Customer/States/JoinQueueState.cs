@@ -17,15 +17,14 @@ public class JoinQueueState : CustomerStateBase
         }
 
         SetDestination(queuePosition.position);
-        UnityEngine.Debug.Log($"JoinQueueState: {Controller.name} moving to queue position", Controller);
     }
 
     public override void Tick()
     {
-        if (!HasReachedDestination)
-        {
-            return;
-        }
+        if (!HasReachedDestination) return;
+        
+        // Stop walking animation when waiting in queue
+        StopMovement();
 
         if (!Controller.QueueManager.IsFirstInQueue(Controller))
         {
@@ -41,7 +40,6 @@ public class JoinQueueState : CustomerStateBase
         Controller.CustomerData.QueueLeaveAt = UnityEngine.Time.time;
         Controller.QueueManager.LeaveQueue(Controller);
         Controller.StateMachine.SetState(new MoveToServiceState(Controller));
-        UnityEngine.Debug.Log($"JoinQueueState: {Controller.name} leaving queue, moving to service", Controller);
     }
 
     public override void Exit()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OrderGenerator : MonoBehaviour, IOrderGenerator
+public class OrderGenerator : MonoBehaviour
 {
     public OrderData GenerateOrder()
     {

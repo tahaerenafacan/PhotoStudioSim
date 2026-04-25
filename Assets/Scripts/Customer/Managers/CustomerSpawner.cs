@@ -24,7 +24,6 @@ public class CustomerSpawner : MonoBehaviour
         }
 
         CustomerController instance = Instantiate(customerPrefab, spawnPoint.position, spawnPoint.rotation);
-        Debug.Log($"CustomerSpawner: Spawned customer {instance.name} at {spawnPoint.position}", this);
         instance.Initialize(
             entranceTarget,
             exitTarget,

@@ -15,18 +15,13 @@ public class ExitShopState : CustomerStateBase
         }
 
         SetDestination(Controller.ExitTarget.position);
-        UnityEngine.Debug.Log($"ExitShopState: {Controller.name} exiting shop", Controller);
     }
 
     public override void Tick()
     {
-        if (!HasReachedDestination)
-        {
-            return;
-        }
-
+        if (!HasReachedDestination) return;
+        
         Controller.StateMachine.SetState(new DespawnState(Controller));
-        UnityEngine.Debug.Log($"ExitShopState: {Controller.name} reached exit, despawning", Controller);
     }
 
     public override void Exit()

@@ -127,8 +127,6 @@ public class CustomerController : MonoBehaviour, IInteractable
         CustomerData.OrderCreatedAt = Time.time;
         orderManager.RegisterOrder(CustomerData.AssignedOrder);
         OnOrderCreated?.Invoke(CustomerData.AssignedOrder);
-        Debug.Log($"CustomerController: Created order {CustomerData.AssignedOrder.PhotoVariant}, {CustomerData.AssignedOrder.RequestedQuality}");
-        Debug.Log($"CustomerController: Created order {CustomerData.AssignedOrder.OrderType} for customer {name}", this);
     }
 
     public void NotifyServiceStarted()

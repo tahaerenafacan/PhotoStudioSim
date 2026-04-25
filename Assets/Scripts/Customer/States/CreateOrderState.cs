@@ -28,12 +28,10 @@ public class CreateOrderState : CustomerStateBase
         Controller.NotifyServiceStarted();
         serviceTable.BeginService(Controller.CustomerData.AssignedOrder, Controller.NotifyServiceCompleted);
         Controller.StateMachine.SetState(new WaitForServiceCompletionState(Controller, serviceTable));
-        UnityEngine.Debug.Log($"CreateOrderState: {Controller.name} started service at table {serviceTable.name}", Controller);
     }
 
     public override void Tick()
     {
-        // No periodic logic required for the creation step.
     }
 
     public override void Exit()

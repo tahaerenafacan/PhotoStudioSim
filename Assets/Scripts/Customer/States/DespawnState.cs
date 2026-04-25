@@ -9,7 +9,6 @@ public class DespawnState : CustomerStateBase
     public override void Enter()
     {
         Controller.NotifyDespawning();
-        UnityEngine.Debug.Log($"DespawnState: {Controller.name} despawning", Controller);
         UnityEngine.Object.Destroy(Controller.gameObject);
     }
 

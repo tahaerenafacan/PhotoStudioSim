@@ -11,7 +11,8 @@ public class WaitForServiceCompletionState : CustomerStateBase
 
     public override void Enter()
     {
-        // The service table begins processing the order immediately.
+        // Stop walking animation when waiting for service
+        StopMovement();
     }
 
     public override void Tick()

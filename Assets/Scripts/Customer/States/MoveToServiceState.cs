@@ -26,7 +26,9 @@ public class MoveToServiceState : CustomerStateBase
             return;
         }
 
+        // Stop walking animation when waiting at service table
         StopMovement();
+        
         Controller.StateMachine.SetState(new CreateOrderState(Controller, reservedServiceTable));
     }
 

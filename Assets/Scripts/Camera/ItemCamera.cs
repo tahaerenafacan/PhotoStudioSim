@@ -96,17 +96,12 @@ public class ItemCamera : BasePickableItem, IUsable
     
     public void TransferToComputer()
     {
-        if (localPhotos.Count == 0)
-        {
-            Debug.Log("[GameCamera] Aktarılacak fotoğraf yok.");
-            return;
-        }
+        if (localPhotos.Count == 0) return;
+        
 
         CameraStorage.Instance.Upload(localPhotos);
-        int count = localPhotos.Count;
+        //int count = localPhotos.Count;
         localPhotos.Clear();
-
-        Debug.Log($"[GameCamera] {count} fotoğraf bilgisayara aktarıldı.");
     }
 
     public void OnUseStart()
@@ -125,7 +120,6 @@ public class ItemCamera : BasePickableItem, IUsable
         isHeld = true;
         lensCamera.enabled = true;
         screenCanvas.gameObject.SetActive(true);
-        //TODO: disable crosshair
     }
 
     protected override void OnDropped()
@@ -144,14 +138,11 @@ public class ItemCamera : BasePickableItem, IUsable
     
     private void TakePhoto()
     {
-        if (localPhotos.Count >= maxLocalPhotos)
-        {
-            Debug.Log("[GameCamera] Hafıza dolu, önce bilgisayara aktar.");
-            return;
-        }
+        if (localPhotos.Count >= maxLocalPhotos) return;
+        
         if (viewfinderTexture == null)
         {
-            Debug.LogWarning("[GameCamera] viewfinderTexture atanmamış!");
+            Debug.LogError("[GameCamera] viewfinderTexture atanmamış!");
             return;
         }
 

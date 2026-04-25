@@ -22,12 +22,13 @@ public class CustomerStateMachine
             CurrentState.Exit();
         }
 
+        Debug.Log($"CustomerStateMachine: {controller.name} transitioned from {CurrentState?.GetType().Name} to state {nextState?.GetType().Name}", controller);
+
         CurrentState = nextState;
 
         if (CurrentState != null)
         {
             CurrentState.Enter();
         }
-        Debug.Log($"CustomerStateMachine: {controller.name} transitioned to state {CurrentState?.GetType().Name}", controller);
     }
 }

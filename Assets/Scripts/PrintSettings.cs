@@ -35,4 +35,16 @@ public struct PrintSettings
     public PrintPaperFit paperFit;
     public bool isColored;
     public PrintQuality quality;
+
+    public static PrintSettings FromOrderData(OrderData orderData)
+    {
+        return new PrintSettings
+        {
+            targetPrinter = null,
+            paperSize = orderData.PaperSize,
+            paperOrientation = orderData.PaperOrientation,
+            paperFit = orderData.PaperFit,
+            isColored = orderData.IsColored,
+        };
+    }
 }
