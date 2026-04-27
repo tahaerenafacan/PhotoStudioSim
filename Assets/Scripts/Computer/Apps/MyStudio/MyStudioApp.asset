@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MyStudioApp
   m_EditorClassIdentifier: Assembly-CSharp::AppDefinition
   appName: MyStudio
-  icon: {fileID: 21300000, guid: 3866b3d8fd5d1ac40b59c08a0bf86390, type: 3}
-  windowPrefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: a53f1b9a254a2954aacc7eaaffd00007, type: 3}
+  windowPrefab: {fileID: 6164196996972984482, guid: 8b3166657507c2c438ee36e56c26f5ab, type: 3}
   installedByDefault: 1

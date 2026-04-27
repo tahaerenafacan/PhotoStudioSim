@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3828769764991702617}
-  - component: {fileID: 2580998852592891175}
+  - component: {fileID: 3842635467938710113}
   m_Layer: 5
   m_Name: ReviewItem
   m_TagString: Untagged
@@ -257,7 +257,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 750, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2580998852592891175
+--- !u!114 &3842635467938710113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,10 +266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5079694228104484561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe450594e852ea741a32da5e1be89386, type: 3}
+  m_Script: {fileID: 11500000, guid: d2d019cd35e457c42b584e6289f09971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReviewItem
-  likeIcon: {fileID: 2262357764651988975}
+  likeImage: {fileID: 2262357764651988975}
   starsContainer: {fileID: 8186518415215934453}
   commentText: {fileID: 5776543641859196209}
 --- !u!1 &5599718824937072673

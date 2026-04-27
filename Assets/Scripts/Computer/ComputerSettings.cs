@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +8,7 @@ public class ComputerSettings : MonoBehaviour
     public static ComputerSettings Instance { get; private set; }
 
     [SerializeField] private Image wallpaperImage;
+    [SerializeField] private TextMeshProUGUI timeText;
     
     private Sprite wallpaper;
 
@@ -17,6 +20,16 @@ public class ComputerSettings : MonoBehaviour
             return; 
         }
         Instance = this;
+    }
+
+    void Start()
+    {
+        TimeManager.Instance.OnTimeChanged += UpdateTimeDisplay;
+    }
+
+    private void UpdateTimeDisplay(int hour, int minute)
+    {
+        timeText.text = $"{hour:00}:{minute:00}";
     }
 
     public void SetWallpaper(Sprite wallpaper)
