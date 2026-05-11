@@ -38,6 +38,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-tr
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a444ef51bf9dfcc4da4f843a20b3cd1a
     m_Address: Reviews_tr

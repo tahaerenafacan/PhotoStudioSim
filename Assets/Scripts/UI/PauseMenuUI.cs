@@ -33,7 +33,7 @@ public class PauseMenuUI : MonoBehaviour
 
     private void OpenSettings()
     {
-        throw new NotImplementedException();
+        GameManager.Instance.OpenSettings();
     }
 
     private void ConfirmQuitToDesktop()

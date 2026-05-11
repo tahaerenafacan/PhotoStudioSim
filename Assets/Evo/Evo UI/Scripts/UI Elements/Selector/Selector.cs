@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization; // Unity Localization namespace'i eklendi
 
 namespace Evo.UI
 {
@@ -63,10 +64,15 @@ namespace Evo.UI
         {
             public string label;
             public Sprite icon;
+            
+            [Header("Unity Localization")]
+            public LocalizedString localizedString;
+            public LocalizedSprite localizedIcon;
+
             public UnityEvent onItemSelection = new();
 
 #if EVO_LOCALIZATION
-            [Header("Localization")]
+            [Header("Evo Localization")]
             public string tableKey;
 #endif
 
@@ -146,18 +152,41 @@ namespace Evo.UI
 
             var currentItem = items[selectedIndex];
 
-            if (textObject != null && textObject.text != currentItem.label)
-                textObject.text = currentItem.label;
+            // --- 1. Text Logic ---
+            string displayText = currentItem.label; // Fallback to label by default
+
+            // Eğer localizedString mevcutsa ve içi boş değilse oradan çekmeyi dene
+            if (currentItem.localizedString != null && !currentItem.localizedString.IsEmpty)
+            {
+                string locText = currentItem.localizedString.GetLocalizedString();
+                if (!string.IsNullOrEmpty(locText))
+                {
+                    displayText = locText;
+                }
+            }
+
+            if (textObject != null && textObject.text != displayText)
+                textObject.text = displayText;
+
+            // --- 2. Icon Logic ---
+            Sprite displayIcon = currentItem.icon; // Fallback to icon by default
+
+            // Eğer localizedIcon mevcutsa oradan çekmeyi dene
+            if (currentItem.localizedIcon != null && !currentItem.localizedIcon.IsEmpty)
+            {
+                // Arayüzün anında güncellenmesi için WaitForCompletion kullanılır
+                displayIcon = currentItem.localizedIcon.LoadAssetAsync().WaitForCompletion();
+            }
 
             if (iconObject != null)
             {
-                bool hasIcon = currentItem.icon != null;
+                bool hasIcon = displayIcon != null;
 
                 if (iconObject.gameObject.activeSelf != hasIcon) { iconObject.gameObject.SetActive(hasIcon); }
-                if (hasIcon && iconObject.sprite != currentItem.icon) { iconObject.sprite = currentItem.icon; }
+                if (hasIcon && iconObject.sprite != displayIcon) { iconObject.sprite = displayIcon; }
             }
 
-            // Update buttons (Streamlined logic)
+            // --- Update buttons ---
             if (prevButton != null)
             {
                 bool shouldBeInteractable = loop || selectedIndex > 0;

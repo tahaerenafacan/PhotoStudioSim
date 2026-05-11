@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
+using OccaSoftware.SuperSimpleSkybox.Runtime;
 
 public class TimeManager : MonoBehaviour
 {
@@ -19,12 +20,21 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float nightSunIntensity = 0.1f; // Gece güneş/ay ışığı gücü
     [SerializeField] private float daySunIntensity = 3f; // Gündüz güneş ışığı gücü
 
+    [Header("Sky")]
+    [SerializeField] private Sun sun;
+    [SerializeField] private Moon moon;
+    [SerializeField, Range(-90f, 90f)] private float skyLatitudeOffset = 30f;
+    
     // Public Properties
     public int CurrentDay { get; private set; } = 1;
     public float CurrentTimeOfDay { get; private set; } // 0 ile 24 arası sürekli akan zaman
     public float DayProgress => CurrentTimeOfDay / 24f; // 0 ile 1 arası 
     public bool IsDay { get; private set; } = true;
     public float SunIntensity { get; private set; } = 1f;
+
+    public float SunriseHour => sunriseHour;
+    public float SunsetHour => sunsetHour;
+    public bool IsTimeRunning { get; private set; } = true;
 
     public event Action<int> OnDayChanged;
     public event Action<int, int> OnTimeChanged;
@@ -52,19 +62,23 @@ public class TimeManager : MonoBehaviour
     {
         UpdateTime();
         UpdateDayNightCycle();
+        UpdateSkyObjects();
         CheckTimeChangedEvent();
         HandleDebugInput();
     }
 
     private void UpdateTime()
     {
+        if (!IsTimeRunning) return;
+
         CurrentTimeOfDay += Time.deltaTime * timeMultiplier;
 
-        if (CurrentTimeOfDay >= 24f)
+        // Gece yarısı geçişini engelle; yatağa basılana kadar 23:59'da bekle
+        const float dayEndTime = 23f + (59f / 60f);
+        if (CurrentTimeOfDay >= dayEndTime)
         {
-            CurrentTimeOfDay %= 24f; // 24'ü geçerse sıfırla ama küsuratı koru (örn: 24.1 -> 0.1)
-            CurrentDay++;
-            OnDayChanged?.Invoke(CurrentDay);
+            CurrentTimeOfDay = dayEndTime;
+            IsTimeRunning = false;
         }
     }
 
@@ -107,6 +121,36 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    private void UpdateSkyObjects()
+    {
+        UpdateSunRotation();
+        UpdateMoonRotation();
+    }
+
+    private void UpdateSunRotation()
+    {
+        if (sun == null) return;
+
+        // Gündoğumu (0°) → öğle (90°) → günbatımı (180°)
+        float t = Mathf.InverseLerp(sunriseHour, sunsetHour, CurrentTimeOfDay);
+        float xAngle = Mathf.Lerp(0f, 180f, t);
+        sun.transform.rotation = Quaternion.Euler(xAngle, skyLatitudeOffset, 0f);
+    }
+
+    private void UpdateMoonRotation()
+    {
+        if (moon == null) return;
+
+        // Gece yayı: günbatımı → gece yarısı → gündoğumu (24:00 sınırını aşarak hesapla)
+        float nightDuration = (24f - sunsetHour) + sunriseHour;
+        float nightProgress = CurrentTimeOfDay >= sunsetHour
+            ? (CurrentTimeOfDay - sunsetHour) / nightDuration
+            : (24f - sunsetHour + CurrentTimeOfDay) / nightDuration;
+
+        float xAngle = Mathf.Lerp(0f, 180f, Mathf.Clamp01(nightProgress));
+        moon.transform.rotation = Quaternion.Euler(xAngle, skyLatitudeOffset, 0f);
+    }
+
     private void HandleDebugInput()
     {
 #if UNITY_EDITOR
@@ -145,5 +189,19 @@ public class TimeManager : MonoBehaviour
     public void SetTime(float newHour)
     {
         CurrentTimeOfDay = Mathf.Clamp(newHour, 0f, 24f);
+    }
+
+    /// <summary>
+    /// Yatağa tıklandığında çağrılır.
+    /// Günü ilerletir, zamanı initialHour'a döndürür ve akışı yeniden başlatır.
+    /// OnDayChanged event'i tetikler.
+    /// </summary>
+    public void SleepAndAdvanceDay()
+    {
+        CurrentDay++;
+        CurrentTimeOfDay = initialHour;
+        IsTimeRunning = true;
+        lastBroadcastedMinute = -1; // Bir sonraki frame'de OnTimeChanged'i zorla tetikle
+        OnDayChanged?.Invoke(CurrentDay);
     }
 }

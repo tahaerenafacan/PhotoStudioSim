@@ -46,6 +46,58 @@ MonoBehaviour:
     m_Localized: "\xC7\u0131k\u0131\u015F"
     m_Metadata:
       m_Items: []
+  - m_Id: 16631649531187200
+    m_Localized: "\u0130stek listenize ekleyin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631782083776512
+    m_Localized: Youtube'de abone olun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631884147970048
+    m_Localized: "Discord sunucumuza kat\u0131l\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631963315458048
+    m_Localized: Bizi twitter'da takip edin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580345433378816
+    m_Localized: Dil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580483107213312
+    m_Localized: "\u0130ngilizce"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580559015727104
+    m_Localized: "T\xFCrk\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584816125235200
+    m_Localized: "S\u0131f\u0131rla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584852754092032
+    m_Localized: Kaydet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061426104324096
+    m_Localized: Genel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061506634960896
+    m_Localized: Grafikler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061537165299712
+    m_Localized: Sesler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061579095756800
+    m_Localized: "Tu\u015Flar"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

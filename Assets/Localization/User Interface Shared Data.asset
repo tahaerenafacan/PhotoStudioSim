@@ -43,6 +43,58 @@ MonoBehaviour:
     m_Key: ui.quit
     m_Metadata:
       m_Items: []
+  - m_Id: 16631649531187200
+    m_Key: ui.whistlist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631782083776512
+    m_Key: ui.subscribe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631884147970048
+    m_Key: ui.joindc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631963315458048
+    m_Key: ui.twitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580345433378816
+    m_Key: ui.settings.language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580483107213312
+    m_Key: ui.settings.langugage.en
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580559015727104
+    m_Key: ui.settings.language.tr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584816125235200
+    m_Key: ui.settings.reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584852754092032
+    m_Key: ui.settings.save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061426104324096
+    m_Key: ui.settings.general
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061506634960896
+    m_Key: ui.settings.graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061537165299712
+    m_Key: ui.settings.audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061579095756800
+    m_Key: ui.settings.keybinds
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

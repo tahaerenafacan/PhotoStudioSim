@@ -58,6 +58,7 @@ public class PlayerInteraction : MonoBehaviour
         shouldCheckInteraction = false;
         DetectedPickable = null;
         DetectedInteractable = null;
+        OnDetectionChanged?.Invoke(null, null);
         OnShouldCheckInteractionStateChanged?.Invoke(shouldCheckInteraction);
     }
 

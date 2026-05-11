@@ -16,11 +16,13 @@ namespace Evo.UI
         SerializedProperty enableIcon;
         SerializedProperty icon;
         SerializedProperty iconSize;
+        SerializedProperty localizedIcon; // Eklendi
 
         // Text
         SerializedProperty enableText;
         SerializedProperty text;
         SerializedProperty textSize;
+        SerializedProperty localizedText; // Eklendi
 
         // Layout
         SerializedProperty dynamicScale;
@@ -65,10 +67,12 @@ namespace Evo.UI
             enableIcon = serializedObject.FindProperty("enableIcon");
             icon = serializedObject.FindProperty("icon");
             iconSize = serializedObject.FindProperty("iconSize");
+            localizedIcon = serializedObject.FindProperty("localizedIcon"); // Eklendi
 
             enableText = serializedObject.FindProperty("enableText");
             text = serializedObject.FindProperty("text");
             textSize = serializedObject.FindProperty("textSize");
+            localizedText = serializedObject.FindProperty("localizedText"); // Eklendi
 
             dynamicScale = serializedObject.FindProperty("dynamicScale");
             reverseArrangement = serializedObject.FindProperty("reverseArrangement");
@@ -166,6 +170,8 @@ namespace Evo.UI
                                 {
                                     EvoEditorGUI.BeginContainer(3);
                                     EvoEditorGUI.DrawProperty(icon, "Source Sprite", null, false, true);
+                                    GUILayout.Space(3);
+                                    EvoEditorGUI.DrawProperty(localizedIcon, "Localized Sprite", null, false, true); // Eklendi
                                     if (iconElement.objectReferenceValue != null)
                                     {
                                         EvoEditorGUI.AddLayoutSpace();
@@ -187,6 +193,8 @@ namespace Evo.UI
                                 {
                                     EvoEditorGUI.BeginContainer(3);
                                     EvoEditorGUI.DrawProperty(text, "Button Text", null, true, true);
+                                    EvoEditorGUI.DrawProperty(localizedText, "Localized Text", null, false, true); // Eklendi
+                                    GUILayout.Space(3);
                                     EvoEditorGUI.DrawProperty(textSize, "Text Size", null, false, true);
 #if EVO_LOCALIZATION
                                     if (btnTarget.enableLocalization && btnTarget.localizedObject)

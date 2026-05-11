@@ -46,6 +46,58 @@ MonoBehaviour:
     m_Localized: Quit
     m_Metadata:
       m_Items: []
+  - m_Id: 16631649531187200
+    m_Localized: Wishlist on Steam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631782083776512
+    m_Localized: Subscribe on YouTube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631884147970048
+    m_Localized: Join our Discord server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16631963315458048
+    m_Localized: Follow us on Twitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580345433378816
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580483107213312
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17580559015727104
+    m_Localized: Turkish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584816125235200
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17584852754092032
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061426104324096
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061506634960896
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061537165299712
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18061579095756800
+    m_Localized: Keybinds
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

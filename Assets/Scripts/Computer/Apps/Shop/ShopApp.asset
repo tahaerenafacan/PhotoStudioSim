@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AppDefinition
   appName: Zamazing
   icon: {fileID: 21300000, guid: 596b2ba2464fc0d4d93a5f4a4a492b27, type: 3}
-  windowPrefab: {fileID: 0}
+  windowPrefab: {fileID: 2797740820778331258, guid: 4762cc38de3379f4886df15a36c41630, type: 3}
   installedByDefault: 1

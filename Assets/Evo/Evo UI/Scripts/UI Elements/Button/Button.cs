@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization;
 
 namespace Evo.UI
 {
@@ -14,11 +15,13 @@ namespace Evo.UI
         [EvoHeader("Icon", Constants.CUSTOM_EDITOR_ID)]
         public bool enableIcon = true;
         public Sprite icon;
+        public LocalizedSprite localizedIcon;
         [Range(1, 200)] public float iconSize = 30;
 
         [EvoHeader("Text", Constants.CUSTOM_EDITOR_ID)]
         public bool enableText = true;
         public string text = "Button";
+        public LocalizedString localizedText;
         [Range(1, 200)] public float textSize = 24;
 
         [EvoHeader("Layout", Constants.CUSTOM_EDITOR_ID)]
@@ -65,6 +68,13 @@ namespace Evo.UI
             }
         }
 #endif
+
+        protected override void Start()
+        {
+            base.Start();
+            localizedText.StringChanged += (_) => UpdateUI();
+            localizedIcon.AssetChanged += (_) => UpdateUI();
+        }
 
         public override void OnPointerClick(PointerEventData eventData)
         {
@@ -135,11 +145,23 @@ namespace Evo.UI
             if (customContent || imageObject == null)
                 return;
 
-            imageObject.gameObject.SetActive(enableIcon && newIcon);
+            Sprite displayIcon = icon;
+
+            // Localized Icon kontrolü
+            if (localizedIcon != null && !localizedIcon.IsEmpty)
+            {
+                var loadedIcon = localizedIcon.LoadAssetAsync().WaitForCompletion();
+                if (loadedIcon != null)
+                {
+                    displayIcon = loadedIcon;
+                }
+            }
+
+            imageObject.gameObject.SetActive(enableIcon && displayIcon);
 
             if (enableIcon)
             {
-                imageObject.sprite = icon;
+                imageObject.sprite = displayIcon;
                 if (iconElement != null)
                 {
                     iconElement.preferredWidth = iconSize;
@@ -167,7 +189,22 @@ namespace Evo.UI
 
             if (enableText)
             {
-                if (!bypassText) { textObject.text = text; }
+                if (!bypassText)
+                {
+                    string displayText = text;
+
+                    // Localized String kontrolü
+                    if (localizedText != null && !localizedText.IsEmpty)
+                    {
+                        string locText = localizedText.GetLocalizedString();
+                        if (!string.IsNullOrEmpty(locText))
+                        {
+                            displayText = locText;
+                        }
+                    }
+
+                    textObject.text = displayText;
+                }
                 textObject.fontSize = textSize;
             }
         }

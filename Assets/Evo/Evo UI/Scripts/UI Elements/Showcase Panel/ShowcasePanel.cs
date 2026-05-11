@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.Localization;
+using System;
 
 namespace Evo.UI
 {
@@ -23,11 +25,8 @@ namespace Evo.UI
         [Range(0.05f, 2f)] public float animationDuration = 0.25f;
         public Vector2 slideOffset = new(0, 15);
 
-#if EVO_LOCALIZATION
-        [EvoHeader("Localization", Constants.CUSTOM_EDITOR_ID)]
+        [EvoHeader("Unity Localization", Constants.CUSTOM_EDITOR_ID)]
         public bool enableLocalization = true;
-        public Localization.LocalizedObject localizedObject;
-#endif
 
         [EvoHeader("References", Constants.CUSTOM_EDITOR_ID)]
         [SerializeField] private Transform buttonParent;
@@ -51,6 +50,9 @@ namespace Evo.UI
         WaitForSeconds cachedHoverWait;
         WaitForSecondsRealtime cachedHoverWaitRealtime;
 
+        private Dictionary<Item, LocalizedString.ChangeHandler> titleDelegates = new();
+        private Dictionary<Item, LocalizedString.ChangeHandler> descDelegates = new();
+
         // Constants
         const float HoverTransitionDelay = 0.15f;
         const float AnimationSplit = 0.5f;
@@ -67,17 +69,22 @@ namespace Evo.UI
             public UnityEvent onClick = new();
             [HideInInspector] public Button button;
 
-#if EVO_LOCALIZATION
-            [Header("Localization")]
-            public string titleKey;
-            public string descriptionKey;
-#endif
+            [Header("Unity Localization")]
+            public LocalizedString localizedTitle;
+            public LocalizedString localizedDescription;
         }
 
         void OnEnable()
         {
             if (!isInitialized) { Initialize(); }
             else { ShowCurrentItem(); }
+
+            if (enableLocalization) SubscribeLocalization();
+        }
+
+        void OnDisable()
+        {
+            if (enableLocalization) UnsubscribeLocalization();
         }
 
         void Update()
@@ -94,29 +101,6 @@ namespace Evo.UI
                 timerCount = 0;
             }
         }
-
-#if EVO_LOCALIZATION
-        void Start()
-        {
-            if (enableLocalization)
-            {
-                localizedObject = Localization.LocalizedObject.Check(gameObject);
-                if (localizedObject != null)
-                {
-                    Localization.LocalizationManager.OnLanguageSet += UpdateLocalization;
-                    UpdateLocalization();
-                }
-            }
-        }
-
-        void OnDestroy()
-        {
-            if (enableLocalization && localizedObject != null)
-            {
-                Localization.LocalizationManager.OnLanguageSet -= UpdateLocalization;
-            }
-        }
-#endif
 
         public void Initialize()
         {
@@ -183,10 +167,8 @@ namespace Evo.UI
 
         void HandleButtonHover(int index, Button hoveredButton)
         {
-            // Disable other buttons during hover (optimized)
             SetButtonsInteractable(false, hoveredButton);
 
-            // Stop existing hover coroutine and start new one
             if (hoverCoroutine != null) StopCoroutine(hoverCoroutine);
             hoverCoroutine = StartCoroutine(SetItemByHover(index));
         }
@@ -295,7 +277,6 @@ namespace Evo.UI
             items[currentIndex].button.SetState(InteractionState.Normal);
             yield return StartCoroutine(PlayOutAnimation());
 
-            // Move to next index
             currentIndex = (currentIndex + 1) % items.Count;
 
             SetItemContent(currentIndex);
@@ -305,8 +286,6 @@ namespace Evo.UI
             if (backgroundShadow != null)
             {
                 Color tsColor = items[currentIndex].shadowColor;
-
-                // Only animate if there's actually a color difference
                 if (backgroundShadow.color != tsColor)
                 {
                     if (shadowCoroutine != null) { StopCoroutine(shadowCoroutine); }
@@ -339,8 +318,6 @@ namespace Evo.UI
             if (backgroundShadow != null)
             {
                 Color tsColor = items[currentIndex].shadowColor;
-
-                // Only animate if there's actually a color difference
                 if (backgroundShadow.color != tsColor)
                 {
                     if (shadowCoroutine != null) { StopCoroutine(shadowCoroutine); }
@@ -357,7 +334,6 @@ namespace Evo.UI
             float elapsed = 0f;
             float duration = animationDuration * AnimationSplit;
 
-            // Get starting values
             Vector2 textStartPos = Vector2.zero;
             float textStartAlpha = 1f;
             float bgStartAlpha = 1f;
@@ -372,7 +348,6 @@ namespace Evo.UI
             if (shouldAnimateBackground)
                 bgStartAlpha = backgroundCanvasGroup.alpha;
 
-            // Animate out
             while (elapsed < duration)
             {
                 elapsed += useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
@@ -386,7 +361,6 @@ namespace Evo.UI
                 yield return null;
             }
 
-            // Ensure final out state
             FinalizeTextAnimation(-slideOffset, 0f);
             if (shouldAnimateBackground) { FinalizeBackgroundAnimation(0f); }
         }
@@ -419,23 +393,61 @@ namespace Evo.UI
                 yield return null;
             }
 
-            // Ensure final in state
             FinalizeTextAnimation(Vector2.zero, 1f);
             if (shouldAnimateBackground) { FinalizeBackgroundAnimation(1f); }
         }
 
-#if EVO_LOCALIZATION
-        void UpdateLocalization(Localization.LocalizationLanguage language = null)
+        #region Unity Localization Integration
+
+        void SubscribeLocalization()
         {
             foreach (Item item in items)
             {
-                if (!string.IsNullOrEmpty(item.titleKey)) { item.title = localizedObject.GetString(item.titleKey); }
-                if (!string.IsNullOrEmpty(item.descriptionKey)) { item.description = localizedObject.GetString(item.descriptionKey); }
-            }
+                if (!titleDelegates.ContainsKey(item))
+                {
+                    titleDelegates[item] = (string value) =>
+                    {
+                        item.title = value;
+                        if (item.button != null) item.button.SetText(value);
+                    };
+                }
 
-            SetItemContent(currentIndex);
+                if (item.localizedTitle != null && !item.localizedTitle.IsEmpty)
+                {
+                    item.localizedTitle.StringChanged += titleDelegates[item];
+                }
+
+                // Description için delegeyi oluştur ve önbelleğe al
+                if (!descDelegates.ContainsKey(item))
+                {
+                    descDelegates[item] = (string value) =>
+                    {
+                        item.description = value;
+                        if (items.IndexOf(item) == currentIndex && textDisplay != null)
+                            textDisplay.text = value;
+                    };
+                }
+
+                if (item.localizedDescription != null && !item.localizedDescription.IsEmpty)
+                {
+                    item.localizedDescription.StringChanged += descDelegates[item];
+                }
+            }
         }
-#endif
+
+        void UnsubscribeLocalization()
+        {
+            foreach (Item item in items)
+            {
+                if (titleDelegates.ContainsKey(item) && item.localizedTitle != null && !item.localizedTitle.IsEmpty)
+                    item.localizedTitle.StringChanged -= titleDelegates[item];
+
+                if (descDelegates.ContainsKey(item) && item.localizedDescription != null && !item.localizedDescription.IsEmpty)
+                    item.localizedDescription.StringChanged -= descDelegates[item];
+            }
+        }
+
+        #endregion
 
 #if UNITY_EDITOR
         [HideInInspector] public bool objectFoldout = true;

@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     private PauseMenuUI pauseMenuUI;
+    private SettingsUI settingsUI;
+
     private bool isGamePaused = false;
 
     private void Awake()
@@ -20,25 +23,58 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InputManager.SetCursorLock(true);
+        Application.targetFrameRate = 144;
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene s, LoadSceneMode loadSceneMode)
+    {
+        if (s.name.Equals("PrototypeScene")) InputManager.SetCursorLock(true);
         pauseMenuUI = FindFirstObjectByType<PauseMenuUI>(FindObjectsInactive.Include);    
+        settingsUI = FindFirstObjectByType<SettingsUI>(FindObjectsInactive.Include);
     }
 
     public void TogglePauseGame()
     {
-        if (!isGamePaused)
+        if (pauseMenuUI == null) return;
+
+        isGamePaused = !isGamePaused;
+
+        if (isGamePaused)
         {
             InputManager.SetCursorLock(false);
             pauseMenuUI.gameObject.SetActive(true);
             Time.timeScale = 0f;
-            isGamePaused = true;
         }
         else
         {
             InputManager.SetCursorLock(true);
             pauseMenuUI.gameObject.SetActive(false);
+            settingsUI.gameObject.SetActive(false);
             Time.timeScale = 1f;
-            isGamePaused = false;
         }
+    }
+
+    public void OpenSettings()
+    {
+        if (settingsUI == null) return;
+
+        settingsUI.gameObject.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        if (settingsUI == null) return;
+
+        settingsUI.gameObject.SetActive(false);
     }
 }

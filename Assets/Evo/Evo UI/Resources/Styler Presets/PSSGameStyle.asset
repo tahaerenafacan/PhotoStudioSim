@@ -78,7 +78,7 @@ MonoBehaviour:
   spriteItems: []
   updateMode: 1
   audioFoldout: 0
-  colorFoldout: 1
+  colorFoldout: 0
   fontFoldout: 0
   spriteFoldout: 0
   settingsFoldout: 0
