@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestHUD : MonoBehaviour
 {
+    [SerializeField] private OrderManager orderManager;
     [SerializeField] private RectTransform questPanel;
     [SerializeField] private TextMeshProUGUI orderTypeText;
     [SerializeField] private TextMeshProUGUI orderDetailsText;
@@ -11,6 +12,22 @@ public class QuestHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI orientationText;
     [SerializeField] private TextMeshProUGUI fitText;
     [SerializeField] private TextMeshProUGUI paperSizeText;
+
+    [SerializeField] private float startXPos = 0f;
+    [SerializeField] private float endXPos = 350f;
+    [SerializeField] private float animationTime = 0.5f;
+    
+    private void OnEnable()
+    {
+        orderManager.OnOrderRegistered += SetQuestDisplay;
+        orderManager.OnOrderCompleted += CloseQuestDisplay;
+    }
+
+    private void OnDisable()
+    {
+        orderManager.OnOrderRegistered -= SetQuestDisplay;
+        orderManager.OnOrderCompleted -= CloseQuestDisplay;
+    }
 
     public void SetQuestDisplay(OrderData orderData)
     {
@@ -23,12 +40,12 @@ public class QuestHUD : MonoBehaviour
         fitText.text = $"Fit: {orderData.PaperFit}";
         paperSizeText.text = $"Paper Size: {orderData.PaperSize}";
 
-        questPanel.DOAnchorPosX(-350f, 0.5f).SetEase(Ease.OutBounce);
+        questPanel.DOAnchorPosX(endXPos, animationTime).SetEase(Ease.OutBounce);
     }
 
-    public void CloseQuestDisplay()
+    public void CloseQuestDisplay(OrderResult result)
     {
-        questPanel.DOAnchorPosX(0f, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
+        questPanel.DOAnchorPosX(startXPos, animationTime).SetEase(Ease.InBack).OnComplete(() =>
         {
             questPanel.gameObject.SetActive(false);
         });

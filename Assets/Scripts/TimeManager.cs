@@ -1,14 +1,12 @@
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
-using OccaSoftware.SuperSimpleSkybox.Runtime;
 
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; private set; }
 
     [Header("Time Settings")]
-    [Tooltip("Gerçek hayatta 1 günün kaç saniye süreceği (Örn: 1440 sn = 24 dakika)")]
     [SerializeField] private float dayDurationInRealSeconds = 1440f; 
     [Tooltip("Oyun başladığında saat kaç olacak? (0-24)")]
     [SerializeField, Range(0f, 24f)] private float initialHour = 6f;
@@ -16,18 +14,11 @@ public class TimeManager : MonoBehaviour
     [Header("Day & Night Settings")]
     [SerializeField, Range(0f, 24f)] private float sunriseHour = 6f; // Gündoğumu
     [SerializeField, Range(0f, 24f)] private float sunsetHour = 18f; // Günbatımı
-    [SerializeField] private float moonlightIntensity = 0.1f; // Gece güneş/ay ışığı gücü
-    [SerializeField] private float daySunIntensity = 3f; // Gündüz güneş ışığı gücü
-
-    [Header("Sky")]
-    [SerializeField] private Sun sun;
-    [SerializeField] private Moon moon;
-    [SerializeField, Range(-90f, 90f)] private float skyLatitudeOffset = 30f;
     
     // Public Properties
     public int CurrentDay { get; private set; } = 1;
-    public float CurrentTimeOfDay { get; private set; } // 0 ile 24 arası sürekli akan zaman
-    public float DayProgress => CurrentTimeOfDay / 24f; // 0 ile 1 arası 
+    public float CurrentTimeOfDay { get; private set; } // 0 - 24
+    public float NormalizedDayProgress => CurrentTimeOfDay / 24f; 
     public bool IsDay { get; private set; } = true;
     public float SunIntensity { get; private set; } = 1f;
 
@@ -59,15 +50,13 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        sun.MaximumLightIntensity = daySunIntensity;
-        moon.MaximumLightIntensity = moonlightIntensity;
+        UniStormManager.
     }
 
     private void Update()
     {
         UpdateTime();
         UpdateDayNightCycle();
-        UpdateSkyObjects();
         CheckTimeChangedEvent();
         HandleDebugInput();
     }
@@ -100,36 +89,6 @@ public class TimeManager : MonoBehaviour
             lastBroadcastedMinute = currentMinute;
             OnTimeChanged?.Invoke(GetHour(), currentMinute);
         }
-    }
-
-    private void UpdateSkyObjects()
-    {
-        UpdateSunRotation();
-        UpdateMoonRotation();
-    }
-
-    private void UpdateSunRotation()
-    {
-        if (sun == null) return;
-
-        // Gündoğumu (0°) → öğle (90°) → günbatımı (180°)
-        float t = Mathf.InverseLerp(sunriseHour, sunsetHour, CurrentTimeOfDay);
-        float xAngle = Mathf.Lerp(0f, 180f, t);
-        sun.transform.rotation = Quaternion.Euler(xAngle, skyLatitudeOffset, 0f);
-    }
-
-    private void UpdateMoonRotation()
-    {
-        if (moon == null) return;
-
-        // Gece yayı: günbatımı → gece yarısı → gündoğumu (24:00 sınırını aşarak hesapla)
-        float nightDuration = (24f - sunsetHour) + sunriseHour;
-        float nightProgress = CurrentTimeOfDay >= sunsetHour
-            ? (CurrentTimeOfDay - sunsetHour) / nightDuration
-            : (24f - sunsetHour + CurrentTimeOfDay) / nightDuration;
-
-        float xAngle = Mathf.Lerp(0f, 180f, Mathf.Clamp01(nightProgress));
-        moon.transform.rotation = Quaternion.Euler(xAngle, skyLatitudeOffset, 0f);
     }
 
     private void HandleDebugInput()

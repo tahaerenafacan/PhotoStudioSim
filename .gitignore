@@ -12,6 +12,12 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+/Assets/CelerisLab/
+/Assets/Draw XXL/
+/Assets/ThirdParty/
+/Assets/Plugins/
+/Assets/Unistorm Weather System/
+
 # Ignore the auto-generated AOT compatibility dll.
 /Assets/Plugins/Sirenix/Assemblies/AOT/*
 

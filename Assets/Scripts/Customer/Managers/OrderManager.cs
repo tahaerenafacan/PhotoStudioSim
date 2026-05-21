@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
-    [SerializeField] private QuestHUD questHUD;
-
     private readonly Dictionary<string, OrderData> registeredOrders = new();
 
     public event Action<OrderData> OnOrderRegistered;
@@ -26,7 +24,6 @@ public class OrderManager : MonoBehaviour
 
         registeredOrders.Add(order.OrderId, order);
         OnOrderRegistered?.Invoke(order);
-        questHUD.SetQuestDisplay(order);
     }
 
     public void CompleteOrder(OrderResult result)
@@ -43,12 +40,5 @@ public class OrderManager : MonoBehaviour
         }
 
         OnOrderCompleted?.Invoke(result);
-        questHUD.CloseQuestDisplay();
-    }
-
-    public OrderData GetOrder(string orderId)
-    {
-        registeredOrders.TryGetValue(orderId, out var order);
-        return order;
     }
 }
