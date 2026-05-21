@@ -5849,18 +5849,6 @@ MonoBehaviour:
   ColorSpaceSuggestionDismissed: 0
   RendersPerFrame: 1
   m_UniStormClouds: {fileID: 0}
-  OnHourChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDayChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnMonthChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnYearChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
   OnWeatherChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5890,8 +5878,8 @@ MonoBehaviour:
   CelestialTabNumbers: 0
   TimeFoldout: 1
   DateFoldout: 1
-  TimeSoundsFoldout: 1
-  TimeMusicFoldout: 1
+  TimeSoundsFoldout: 0
+  TimeMusicFoldout: 0
   SunFoldout: 1
   MoonFoldout: 1
   AtmosphereFoldout: 1
@@ -5919,13 +5907,13 @@ MonoBehaviour:
   CameraName: Main Camera
   StartingMinute: 0
   StartingHour: 17
-  Minute: 30
-  Hour: 19
-  Day: 25
-  Month: 6
-  Year: 2020
-  DayLength: 12
-  NightLength: 12
+  Minute: 0
+  Hour: 7
+  Day: 9
+  Month: 1
+  Year: 2008
+  DayLength: 1
+  NightLength: 1
   TimeOfDayUpdateSeconds: 5
   UseTimeOfDayUpdateControl: 1
   m_TimeFloat: 0
@@ -6128,7 +6116,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c574a7c95db0204d8f2627686dde9dd, type: 2}
   - {fileID: 11400000, guid: 2c22445a1c49d7f4587aad0d120738bb, type: 2}
   - {fileID: 11400000, guid: 9c9c95d0c839e12409171dc4a845551a, type: 2}
-  CurrentWeatherType: {fileID: 11400000, guid: ec37544ca0d8b3640b920a1f69c80705, type: 2}
+  CurrentWeatherType: {fileID: 11400000, guid: 5e51740885cc8c14497e44041aeb303e, type: 2}
   NextWeatherType: {fileID: 0}
   ByPassCoverageTransition: 0
   m_PrecipitationOdds: 50
@@ -6891,7 +6879,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CurrentSeason: 2
+  CurrentSeason: 4
   CloudType: 1
   CloudQuality: 2
   TemperatureType: 0
@@ -8817,54 +8805,6 @@ MonoBehaviour:
   m_Spacing: {x: 16, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
---- !u!1 &1463456044
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1463456046}
-  - component: {fileID: 1463456045}
-  m_Layer: 0
-  m_Name: TimeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1463456045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463456044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0056da5678d92ef40812fb0d0bf3d1c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  dayDurationInRealSeconds: 180
-  initialHour: 7.0180507
-  sunriseHour: 6
-  sunsetHour: 19
---- !u!4 &1463456046
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463456044}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.98064, y: 2.38552, z: -5.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1474513835
 GameObject:
   m_ObjectHideFlags: 0
@@ -12188,7 +12128,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 65
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -19278,8 +19218,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2649667855695125954}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: -11.994, y: 2.331, z: -4.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19991,10 +19931,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 518066575}
-  - {fileID: 1239773510}
   - {fileID: 832575519}
   - {fileID: 662695936}
-  - {fileID: 1463456046}
+  - {fileID: 1239773510}
   - {fileID: 1942652847}
   - {fileID: 634222515}
   - {fileID: 305005516}

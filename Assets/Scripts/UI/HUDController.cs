@@ -1,5 +1,6 @@
 using MoreMountains.Tools;
 using TMPro;
+using UniStorm;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
@@ -47,10 +48,10 @@ public class HUDController : MonoBehaviour
     private void Start()
     {
         CurrencyManager.Instance.OnBalanceChanged += OnBalanceChanged;
-        OnBalanceChanged(CurrencyManager.Instance.GetMoney());
+        OnBalanceChanged(CurrencyManager.Instance.GetMoney()); //Initialize
 
-        TimeManager.Instance.OnTimeChanged += OnTimeChanged;
-        OnTimeChanged(TimeManager.Instance.GetHour(), TimeManager.Instance.GetMinute());
+        UniStormManager.Instance.OnMinuteChanged += OnTimeChanged;
+        OnTimeChanged(); //Initialize
 
         PlayerItemHolder.Instance.OnHeldItemChanged += OnHeldItemChanged;
 
@@ -104,9 +105,9 @@ public class HUDController : MonoBehaviour
         }
     }
 
-    private void OnTimeChanged(int hour, int minute)
+    private void OnTimeChanged()
     {
-        timeText.text = hour.ToString("00") + ":" + minute.ToString("00");
+        timeText.text = UniStormManager.Instance.GetHour().ToString("00") + ":" + UniStormManager.Instance.GetMinutes().ToString("00");
     }
 
     private void OnBalanceChanged(int newMoney)

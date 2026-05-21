@@ -1,5 +1,5 @@
-using System;
 using TMPro;
+using UniStorm;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,12 +24,12 @@ public class ComputerSettings : MonoBehaviour
 
     void Start()
     {
-        TimeManager.Instance.OnTimeChanged += UpdateTimeDisplay;
+        UniStormManager.Instance.OnMinuteChanged += UpdateTimeDisplay;
     }
 
-    private void UpdateTimeDisplay(int hour, int minute)
+    private void UpdateTimeDisplay()
     {
-        timeText.text = $"{hour:00}:{minute:00}";
+        timeText.text = $"{UniStormManager.Instance.GetHour()}:{UniStormManager.Instance.GetMinutes()}";
     }
 
     public void SetWallpaper(Sprite wallpaper)
