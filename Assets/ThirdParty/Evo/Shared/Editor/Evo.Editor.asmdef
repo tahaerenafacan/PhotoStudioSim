@@ -1,6 +1,0 @@
-{
-    "name": "Evo.Editor",
-    "references": ["Evo"],
-    "includePlatforms": ["Editor"],
-    "excludePlatforms": []
-}

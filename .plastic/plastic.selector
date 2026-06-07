@@ -1,3 +1,0 @@
-repository "PhotoStudioSim/PhotoStudioSim@18966898632354@cloud"
-  path "/"
-    smartbranch "/main"
