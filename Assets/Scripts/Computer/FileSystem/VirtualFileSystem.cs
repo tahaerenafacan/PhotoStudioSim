@@ -97,13 +97,12 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
 
         // ── File API ─────────────────────────────────────────────────
 
-        public VirtualFile CreateFile(VirtualFolder parent, string name, string extension,
-            VirtualFileType fileType, object content, long sizeBytes = 1024)
+        public VirtualFile CreateFile(VirtualFolder parent, string fileName, VirtualFileExtension extension, VirtualFileType fileType, object content, long sizeBytes = 1024)
         {
-            var file = new VirtualFile(name, extension, fileType, content, sizeBytes);
+            var file = new VirtualFile(fileName, extension, fileType, content, sizeBytes);
             if (!parent.AddChild(file))
             {
-                Debug.LogWarning($"[VFS] '{name}' zaten var.");
+                Debug.LogWarning($"[VFS] '{fileName}' zaten var.");
                 return null;
             }
             GetDriveForFolder(parent)?.AddUsedBytes(sizeBytes);

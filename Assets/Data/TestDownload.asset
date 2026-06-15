@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestDownload
   m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.FileSystem.DownloadableItemSO
   fileName: TestFile
-  fileExtension: .txt
+  fileExtension: txt
   fileType: 2
   previewIcon: {fileID: 21300000, guid: 76941f4022497f8499c379a9f6b67a1a, type: 3}
   description: A test file for testing

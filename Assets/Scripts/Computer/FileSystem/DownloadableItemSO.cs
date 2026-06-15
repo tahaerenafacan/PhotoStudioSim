@@ -11,7 +11,7 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
     {
         [Header("File Info")]
         public string fileName;
-        public string fileExtension;
+        public VirtualFileExtension fileExtension;
         public VirtualFileType fileType;
         public Sprite previewIcon;
         [TextArea] public string description;

@@ -44,7 +44,7 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
 
                 string name = $"Photo_{System.DateTime.Now:yyyyMMdd_HHmmss}_{i}";
                 long approxSize = photo.width * photo.height * 3L;
-                vfs.CreateFile(photosFolder, name, "png", VirtualFileType.Image, photo, approxSize);
+                vfs.CreateFile(photosFolder, name, VirtualFileExtension.PNG, VirtualFileType.Image, photo, approxSize);
             }
 
             lastSyncedCount = storage.Count;

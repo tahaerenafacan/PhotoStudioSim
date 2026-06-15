@@ -17,6 +17,7 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
         [SerializeField] private Image           iconImage;
         [SerializeField] private Image           selectionHighlight;
         [SerializeField] private LayoutElement   indentLayout;
+        [SerializeField] private LayoutElement   iconSpacer;
 
         private Button button;
         private float  lastClickTime;
@@ -37,6 +38,7 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
             if (nameLabel)    nameLabel.text    = name;
             if (icon != null && iconImage) iconImage.sprite = icon;
             if (indentLayout) indentLayout.minWidth = indentDepth * 14f;
+            if (iconSpacer) iconSpacer.minWidth     = indentDepth * 14f;
             Debug.Log(indentDepth);
             
             onSingleClick = onSingleClickAction;

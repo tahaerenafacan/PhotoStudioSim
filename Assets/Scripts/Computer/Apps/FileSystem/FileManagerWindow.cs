@@ -113,7 +113,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
                 entry.Setup(sub.Name, icon,
                     () => NavigateTo(captured), depth,
                     () => Select(captured, entry));
-                SpawnFolderTree(sub, depth + 1);
+                //SpawnFolderTree(sub, depth + 1);
             }
         }
 
@@ -141,7 +141,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
                 var entry    = Instantiate(fileEntryPrefab, fileGridParent);
                 var captured = file;
                 entry.Setup($"{file.Name}.{file.Extension}",
-                    iconConfig?.defaultFileIcon,              // ← ileride fileType'a göre genişletilebilir
+                    iconConfig?.GetFileIconByType(file.FileType),              // ← ileride fileType'a göre genişletilebilir
                     null, 0,
                     () => Select(captured, entry));
             }

@@ -1,18 +1,18 @@
 namespace SyntaxSultan.ComputerSystem.FileSystem
 {
     public enum VirtualFileType { Unknown, Image, Document, AppPackage, Data }
+    public enum VirtualFileExtension { TXT, PNG }
 
     public class VirtualFile : VirtualFSNode
     {
-        public string Extension { get; }
+        public VirtualFileExtension Extension { get; }
         public VirtualFileType FileType { get; }
         public long SizeBytes { get; }
         private readonly object content;
 
-        public VirtualFile(string name, string extension, VirtualFileType fileType,
-            object content, long sizeBytes = 1024) : base(name)
+        public VirtualFile(string name, VirtualFileExtension extension, VirtualFileType fileType, object content, long sizeBytes = 1024) : base(name)
         {
-            Extension = extension.ToLower();
+            Extension = extension;
             FileType = fileType;
             this.content = content;
             SizeBytes = sizeBytes;

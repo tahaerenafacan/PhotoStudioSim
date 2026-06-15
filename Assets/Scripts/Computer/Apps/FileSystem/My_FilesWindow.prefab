@@ -954,12 +954,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f503d8a54a79b428dfbcb4448abeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  preset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   targetGraphic: {fileID: 0}
   targetText: {fileID: 8288969082746126315}
   objectType: 1
-  colorID: Background (Dim)
-  fontID: Jakarta - ExtraBold
+  colorID: TextPrimary
+  fontID: IBMC - Bold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1006,15 +1006,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4974f137cf27b1e4fa7063331fa2fb50, type: 2}
-  m_sharedMaterial: {fileID: 401440776477253220, guid: 4974f137cf27b1e4fa7063331fa2fb50, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3a2a868ceae3aa048af04e94cc230b60, type: 2}
+  m_sharedMaterial: {fileID: -8577345194072571759, guid: 3a2a868ceae3aa048af04e94cc230b60, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279899666
-  m_fontColor: {r: 0.07058824, g: 0.08627451, b: 0.101960786, a: 1}
+    rgba: 4289911787
+  m_fontColor: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
