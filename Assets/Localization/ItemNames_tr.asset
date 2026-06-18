@@ -42,6 +42,14 @@ MonoBehaviour:
     m_Localized: "Yaz\u0131c\u0131"
     m_Metadata:
       m_Items: []
+  - m_Id: 18842036079022080
+    m_Localized: USB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19967017131298816
+    m_Localized: Yatak
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

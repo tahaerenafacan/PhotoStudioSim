@@ -26,6 +26,26 @@ MonoBehaviour:
     m_Localized: SHUTDOWN
     m_Metadata:
       m_Items: []
+  - m_Id: 17258853453647872
+    m_Localized: USB Port
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17258804548063232
+    m_Localized: Eject USB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17258751423008768
+    m_Localized: Insert USB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17329689543954432
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17329663644127232
+    m_Localized: Create File
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

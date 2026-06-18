@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ffd49406a44c528a17d2d40a43ba99, type: 3}
+  m_Name: FolderIconConfig
+  m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.FileSystem.FolderIconConfig
+  defaultFolderIcon: {fileID: 21300000, guid: 6abc11ad563223e478f7236b6c2f5c97, type: 3}
+  defaultFileIcon: {fileID: 21300000, guid: 4dc1c452abbe80e46b5e0cc16c08353c, type: 3}
+  driveIcon: {fileID: 21300000, guid: b6cee676759b5ee478aee5c061f8c51a, type: 3}
+  specialFolders:
+  - folderName: Downloads
+    icon: {fileID: 21300000, guid: a1f53fe8fdc8fac4bbac5ff9600217ed, type: 3}
+  - folderName: Documents
+    icon: {fileID: 21300000, guid: 14bf7b633437a6a428a1ea462e212dd3, type: 3}
+  - folderName: Photos
+    icon: {fileID: 21300000, guid: f2bc44108749e114cb63b4378e913d2b, type: 3}
+  - folderName: Applications
+    icon: {fileID: 21300000, guid: 32fca3b9751dc844a9eca610057dcedb, type: 3}
+  fileTypes:
+  - fileType: 2
+    icon: {fileID: 21300000, guid: 87bf81f66a1625a42a968f63adc37c2f, type: 3}

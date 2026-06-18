@@ -12,8 +12,22 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private OrderManager orderManager;
     [SerializeField] private ShopRatingManager shopRatingManager;
     [SerializeField] private OrderGenerator orderGenerator;
+    [SerializeField] private float spawnInterval = 5f;
 
     public event System.Action<CustomerController> OnCustomerSpawned;
+
+    private float spawnTimer;
+
+    public void Update()
+    {
+        spawnTimer += Time.deltaTime;
+
+        if (spawnTimer >= spawnInterval)
+        {
+            SpawnCustomer();
+            spawnTimer = 0f;
+        }
+    }
 
     public CustomerController SpawnCustomer()
     {
@@ -35,13 +49,5 @@ public class CustomerSpawner : MonoBehaviour
 
         OnCustomerSpawned?.Invoke(instance);
         return instance;
-    }
-
-    public void Update()
-    {
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            SpawnCustomer();
-        }
     }
 }

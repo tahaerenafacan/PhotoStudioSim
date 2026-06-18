@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.Cinemachine;
 using UnityEngine.InputSystem;
@@ -5,7 +6,7 @@ using UnityEngine.Localization;
 
 namespace SyntaxSultan.ComputerSystem
 {
-    public class ComputerScreen : MonoBehaviour, IInteractable
+    public class ComputerScreen : MonoBehaviour, IInteractable, IComplexUsable
     {
         [Header("References")]
         [SerializeField] private Computer computer;
@@ -13,6 +14,7 @@ namespace SyntaxSultan.ComputerSystem
     
         [Header("Input (New Input System)")]
         [SerializeField] private InputActionReference exitAction;
+        [SerializeField] private LocalizedString exitHint;
     
         [Header("Localization")]
         [SerializeField] private LocalizedString interactHint;
@@ -21,12 +23,28 @@ namespace SyntaxSultan.ComputerSystem
         public LocalizedString InteractHint => interactHint;
         public LocalizedString InteractName => interactName;
         public bool CanInteract => computer != null && !computer.IsPlayerSitting;
+        
+        private List<ItemInteraction> interactions;
+        
+        protected void Awake()
+        {
+            InitializeInteractions();
+        }
+    
+        private void InitializeInteractions()
+        {
+            interactions = new List<ItemInteraction>();
+
+            var shootInteract = new ItemInteraction(exitAction, exitHint);
+            shootInteract.OnPerformed += ctx => StandUp();
+            interactions.Add(shootInteract);
+        }
 
         private void OnEnable()
         {
             if (exitAction != null)
             {
-                exitAction.action.performed += HandleStandUpInput;
+                //exitAction.action.performed += HandleStandUpInput;
             }
         }
 
@@ -34,7 +52,7 @@ namespace SyntaxSultan.ComputerSystem
         {
             if (exitAction != null)
             {
-                exitAction.action.performed -= HandleStandUpInput;
+                //exitAction.action.performed -= HandleStandUpInput;
             }
         }
 
@@ -46,6 +64,8 @@ namespace SyntaxSultan.ComputerSystem
 
         private void SitDown()
         {
+            PlayerItemHolder.Instance.BindExternalInteraction(this);
+            
             computer.SetPlayerSitting(true);
             seatCamera.Priority = 2;
         
@@ -63,6 +83,8 @@ namespace SyntaxSultan.ComputerSystem
 
         private void StandUp()
         {
+            PlayerItemHolder.Instance.UnbindExternalInteraction();
+            
             computer.SetPlayerSitting(false);
             seatCamera.Priority = -1;
             
@@ -70,6 +92,11 @@ namespace SyntaxSultan.ComputerSystem
             PlayerInteraction.Instance.EnableInteraction();
         
             if (exitAction != null) exitAction.action.Disable();
+        }
+
+        public List<ItemInteraction> GetInteractions()
+        {
+            return interactions;
         }
     }
 }

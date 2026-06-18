@@ -427,15 +427,25 @@ namespace UniStorm
         public int GetHour() => UniStormSystem.Instance.Hour;
         public int GetMinutes() => UniStormSystem.Instance.Minute;
         
-        public event System.Action OnHourChanged
+ 
+        public event System.Action<int, int> OnTimeChange
         {
-            add => UniStormSystem.Instance.OnHourChangeEvent += value;
-            remove => UniStormSystem.Instance.OnHourChangeEvent -= value;
+            add    => UniStormSystem.Instance.OnTimeChangeEvent += value;
+            remove => UniStormSystem.Instance.OnTimeChangeEvent -= value;
         }
-        public event System.Action OnMinuteChanged
+
+        public void SetTimeFlow(bool enable)
         {
-            add => UniStormSystem.Instance.OnMinuteChangeEvent += value;
-            remove => UniStormSystem.Instance.OnMinuteChangeEvent -= value;
+            if (UniStormSystem.Instance.UniStormInitialized)
+            {
+                UniStormSystem.Instance.TimeFlow = enable ? UniStormSystem.EnableFeature.Enabled : UniStormSystem.EnableFeature.Disabled;
+            }
+        }
+
+        public void NextDay()
+        {
+            UniStormSystem.Instance.CalculateDays();
+            SetTimeFlow(true);
         }
     }
 }

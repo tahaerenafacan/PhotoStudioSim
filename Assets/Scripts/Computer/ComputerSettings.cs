@@ -24,12 +24,12 @@ public class ComputerSettings : MonoBehaviour
 
     void Start()
     {
-        UniStormManager.Instance.OnMinuteChanged += UpdateTimeDisplay;
+        UniStormManager.Instance.OnTimeChange += UpdateTimeDisplay;
     }
 
-    private void UpdateTimeDisplay()
+    private void UpdateTimeDisplay(int hour, int minute)
     {
-        timeText.text = $"{UniStormManager.Instance.GetHour():00}:{UniStormManager.Instance.GetMinutes():00}";
+        timeText.text = $"{hour:00}:{minute:00}";
     }
 
     public void SetWallpaper(Sprite wallpaper)

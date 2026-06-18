@@ -24,6 +24,7 @@ public class PlayerItemHolder : MonoBehaviour
     [SerializeField] private float dropForce = 2f;
 
     public event Action<bool, BasePickableItem> OnHeldItemChanged;
+    public event Action<IComplexUsable> OnInteractionOptionsChanged; 
     
     public bool IsHoldingItem => currentItem != null;
     public BasePickableItem CurrentItem => currentItem;
@@ -47,6 +48,18 @@ public class PlayerItemHolder : MonoBehaviour
         mainCamera = Camera.main;
         InputManager.Instance.OnDropKeyPressed += Drop;
     }
+
+    public void BindExternalInteraction(IComplexUsable complexUsable)
+    {
+        currentComplexUsable = complexUsable;
+        BindInteractions();
+    }
+
+    public void UnbindExternalInteraction()
+    {
+        UnbindInteractions();
+        currentComplexUsable = null;
+    }
     
     private void BindInteractions()
     {
@@ -63,6 +76,8 @@ public class PlayerItemHolder : MonoBehaviour
             if (interaction.OnPerformed != null) action.performed += interaction.OnPerformed;
             if (interaction.OnCanceled != null) action.canceled += interaction.OnCanceled;
         }
+        
+        OnInteractionOptionsChanged?.Invoke(currentComplexUsable);
     }
 
     private void UnbindInteractions()
@@ -81,6 +96,8 @@ public class PlayerItemHolder : MonoBehaviour
 
             action.Disable();
         }
+        
+        OnInteractionOptionsChanged?.Invoke(null);
     }
     
 

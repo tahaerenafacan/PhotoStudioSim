@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,11 +11,11 @@ public class InteractionHUDContainer : MonoBehaviour
         public Sprite icon;
     }
 
-    [Header("UI Spawn Ayarları")]
+    [Header("UI Spawn Settings")]
     [SerializeField] private GameObject interactionItemPrefab; 
     [SerializeField] private Transform containerParent;
-
-    [Header("İkon Eşleştirmeleri")]
+    
+    [Header("Icon Mapping")]
     [SerializeField] private List<ActionIconMapping> actionIcons = new List<ActionIconMapping>();
 
     private List<GameObject> spawnedUIElements = new List<GameObject>();
@@ -30,7 +29,7 @@ public class InteractionHUDContainer : MonoBehaviour
     {
         if (PlayerItemHolder.Instance != null)
         {
-            PlayerItemHolder.Instance.OnHeldItemChanged += HandleHeldItemChanged;
+            PlayerItemHolder.Instance.OnInteractionOptionsChanged += PlayerItemHolder_OnInteractionOptionsChanged;
         }
     }
 
@@ -38,26 +37,20 @@ public class InteractionHUDContainer : MonoBehaviour
     {
         if (PlayerItemHolder.Instance != null)
         {
-            PlayerItemHolder.Instance.OnHeldItemChanged -= HandleHeldItemChanged;
+            PlayerItemHolder.Instance.OnInteractionOptionsChanged -= PlayerItemHolder_OnInteractionOptionsChanged;
         }
     }
 
-    private void HandleHeldItemChanged(bool isHolding, BasePickableItem item)
+    private void PlayerItemHolder_OnInteractionOptionsChanged(IComplexUsable complexUsable)
     {
         ClearUI();
 
-        if (!isHolding || item == null) return;
+        List<ItemInteraction> interactions = complexUsable?.GetInteractions();
+        if (interactions == null) return;
 
-        // Eğer eşya çoklu etkileşim sistemini destekliyorsa listele
-        if (item is IComplexUsable complexUsable)
+        foreach (var interaction in interactions)
         {
-            var interactions = complexUsable.GetInteractions();
-            if (interactions == null) return;
-
-            foreach (var interaction in interactions)
-            {
-                SpawnInteractionUI(interaction);
-            }
+            SpawnInteractionUI(interaction);
         }
     }
 
@@ -67,7 +60,7 @@ public class InteractionHUDContainer : MonoBehaviour
 
         GameObject uiObj = Instantiate(interactionItemPrefab, containerParent);
         spawnedUIElements.Add(uiObj);
-
+        
         if (uiObj.TryGetComponent<ExtraInteractionItem>(out var uiItem))
         {
             // InputActionReference'a karşılık gelen ikonu sözlükten bul

@@ -530,6 +530,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""417afa73-5848-4acf-b39d-58c705ff40b2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CycleParam"",
+                    ""type"": ""Button"",
+                    ""id"": ""e19028bb-5363-4386-b752-d7e20d918ecb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -576,6 +594,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""573e5b08-7fa4-4d7c-b717-f3ba64e0ef2c"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02c08323-074f-4897-b6a4-131fe914196a"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CycleParam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -602,6 +642,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Camera_ToogleFlash = m_Camera.FindAction("ToogleFlash", throwIfNotFound: true);
         m_Camera_UploadPhotos = m_Camera.FindAction("UploadPhotos", throwIfNotFound: true);
         m_Camera_Focus = m_Camera.FindAction("Focus", throwIfNotFound: true);
+        m_Camera_ToggleMode = m_Camera.FindAction("ToggleMode", throwIfNotFound: true);
+        m_Camera_CycleParam = m_Camera.FindAction("CycleParam", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -968,6 +1010,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Camera_ToogleFlash;
     private readonly InputAction m_Camera_UploadPhotos;
     private readonly InputAction m_Camera_Focus;
+    private readonly InputAction m_Camera_ToggleMode;
+    private readonly InputAction m_Camera_CycleParam;
     /// <summary>
     /// Provides access to input actions defined in input action map "Camera".
     /// </summary>
@@ -995,6 +1039,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Camera/Focus".
         /// </summary>
         public InputAction @Focus => m_Wrapper.m_Camera_Focus;
+        /// <summary>
+        /// Provides access to the underlying input action "Camera/ToggleMode".
+        /// </summary>
+        public InputAction @ToggleMode => m_Wrapper.m_Camera_ToggleMode;
+        /// <summary>
+        /// Provides access to the underlying input action "Camera/CycleParam".
+        /// </summary>
+        public InputAction @CycleParam => m_Wrapper.m_Camera_CycleParam;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1033,6 +1085,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Focus.started += instance.OnFocus;
             @Focus.performed += instance.OnFocus;
             @Focus.canceled += instance.OnFocus;
+            @ToggleMode.started += instance.OnToggleMode;
+            @ToggleMode.performed += instance.OnToggleMode;
+            @ToggleMode.canceled += instance.OnToggleMode;
+            @CycleParam.started += instance.OnCycleParam;
+            @CycleParam.performed += instance.OnCycleParam;
+            @CycleParam.canceled += instance.OnCycleParam;
         }
 
         /// <summary>
@@ -1056,6 +1114,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Focus.started -= instance.OnFocus;
             @Focus.performed -= instance.OnFocus;
             @Focus.canceled -= instance.OnFocus;
+            @ToggleMode.started -= instance.OnToggleMode;
+            @ToggleMode.performed -= instance.OnToggleMode;
+            @ToggleMode.canceled -= instance.OnToggleMode;
+            @CycleParam.started -= instance.OnCycleParam;
+            @CycleParam.performed -= instance.OnCycleParam;
+            @CycleParam.canceled -= instance.OnCycleParam;
         }
 
         /// <summary>
@@ -1210,5 +1274,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnFocus(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ToggleMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleMode(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CycleParam" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCycleParam(InputAction.CallbackContext context);
     }
 }

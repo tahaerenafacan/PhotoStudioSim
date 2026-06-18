@@ -42,6 +42,26 @@ MonoBehaviour:
     m_Localized: Zarfa koy
     m_Metadata:
       m_Items: []
+  - m_Id: 25472230739005440
+    m_Localized: Bilgisayardan Kalk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26545315151990784
+    m_Localized: "G\xFCn\xFC bitir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850052556574720
+    m_Localized: "Foto\u011Fraflar\u0131 Y\xFCkle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850119082430464
+    m_Localized: "Modu De\u011Fi\u015Ftir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850149390471168
+    m_Localized: "Parametre De\u011Fi\u015F"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

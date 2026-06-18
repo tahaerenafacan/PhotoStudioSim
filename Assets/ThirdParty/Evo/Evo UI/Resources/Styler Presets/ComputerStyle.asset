@@ -20,61 +20,39 @@ MonoBehaviour:
   - itemID: Notification SFX
     audioAsset: {fileID: 8300000, guid: 04ee76c723465b54196cedac182ba2c1, type: 3}
   colorItems:
-  - itemID: Primary
-    colorValue: {r: 0.3529412, g: 0.8235294, b: 0.8235294, a: 1}
-  - itemID: Primary (Soft)
-    colorValue: {r: 0.18431373, g: 0.5568628, b: 0.5568628, a: 0.039215688}
-  - itemID: Primary (Tint)
-    colorValue: {r: 0.5882353, g: 0.92941177, b: 0.92941177, a: 0.19607843}
-  - itemID: Secondary
-    colorValue: {r: 0.9019608, g: 0.8352941, b: 0.7647059, a: 1}
-  - itemID: Accent
-    colorValue: {r: 1, g: 0.48235294, b: 0.44705883, a: 1}
-  - itemID: Accent (Soft)
-    colorValue: {r: 0.81960785, g: 0.36862746, b: 0.3372549, a: 0.05882353}
-  - itemID: Accent (Tint)
-    colorValue: {r: 1, g: 0.8784314, b: 0.50980395, a: 0.29411766}
-  - itemID: Background
-    colorValue: {r: 0.101960786, g: 0.10980392, b: 0.1254902, a: 1}
-  - itemID: Background (Dim)
-    colorValue: {r: 0.07450981, g: 0.078431375, b: 0.09019608, a: 1}
-  - itemID: Background (Tint)
-    colorValue: {r: 0.14117648, g: 0.15294118, b: 0.1764706, a: 0.60784316}
-  - itemID: Creamy
+  - itemID: WindowBackground
+    colorValue: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  - itemID: SidebarBackground
+    colorValue: {r: 0.11372549, g: 0.1254902, b: 0.12941177, a: 1}
+  - itemID: SelectionHighlight
+    colorValue: {r: 0.3137255, g: 0.28627452, b: 0.27058825, a: 1}
+  - itemID: HoverHighlight
+    colorValue: {r: 0.23529412, g: 0.21960784, b: 0.21176471, a: 1}
+  - itemID: TextPrimary
     colorValue: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 1}
+  - itemID: TextSecondary
+    colorValue: {r: 0.65882355, g: 0.6, b: 0.5176471, a: 1}
+  - itemID: IconFolder
+    colorValue: {r: 0.84313726, g: 0.6, b: 0.12941177, a: 1}
+  - itemID: IconDownloads
+    colorValue: {r: 0.5137255, g: 0.64705884, b: 0.59607846, a: 1}
+  - itemID: IconPhotos
+    colorValue: {r: 0.827451, g: 0.5254902, b: 0.60784316, a: 1}
+  - itemID: IconApplications
+    colorValue: {r: 0.9843137, g: 0.28627452, b: 0.20392157, a: 1}
+  - itemID: IconDocuments
+    colorValue: {r: 0.72156864, g: 0.73333335, b: 0.14901961, a: 1}
+  - itemID: IconDrive
+    colorValue: {r: 0.98039216, g: 0.7411765, b: 0.18431373, a: 1}
+  - itemID: IconUSB
+    colorValue: {r: 0.98039216, g: 0.7411765, b: 0.18431373, a: 1}
+  - itemID: DividerLine
+    colorValue: {r: 0.23529412, g: 0.21960784, b: 0.21176471, a: 1}
+  - itemID: DiskUsageBar
+    colorValue: {r: 0.98039216, g: 0.7411765, b: 0.18431373, a: 1}
+  - itemID: TextPrimaryTint
+    colorValue: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 0.39215687}
   fontItems:
-  - itemID: Inter - Thin
-    fontAsset: {fileID: 11400000, guid: 81facff2346e3014a96115fb92776dc2, type: 2}
-  - itemID: Inter - Extra Light
-    fontAsset: {fileID: 11400000, guid: 90090ec4440362042a5368c61913bd2f, type: 2}
-  - itemID: Inter - Light
-    fontAsset: {fileID: 11400000, guid: b9eaf5570922ec845b483eb8974e9cef, type: 2}
-  - itemID: Inter - Regular
-    fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  - itemID: Inter - Medium
-    fontAsset: {fileID: 11400000, guid: ca41716b31c560c4ab5667448aaae70c, type: 2}
-  - itemID: Inter - Semi Bold
-    fontAsset: {fileID: 11400000, guid: 7b816c6270cdaaf4ca2d5919e6dbca0d, type: 2}
-  - itemID: Inter - Bold
-    fontAsset: {fileID: 11400000, guid: 8788bd9d9a3de504b832c80b8618fbff, type: 2}
-  - itemID: Inter - Extra Bold
-    fontAsset: {fileID: 11400000, guid: 961c0212f9d0c3d4da8c1a034e9a13bf, type: 2}
-  - itemID: Inter - Black
-    fontAsset: {fileID: 11400000, guid: 4be21f40c8e9ed149abd8691e94e799d, type: 2}
-  - itemID: IBM - Regular
-    fontAsset: {fileID: 11400000, guid: 6bcd061f0bf6fef4dbb26eb02a6ec325, type: 2}
-  - itemID: IBM - Medium
-    fontAsset: {fileID: 11400000, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
-  - itemID: IBM - Semi Bold
-    fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  - itemID: IBM - Bold
-    fontAsset: {fileID: 11400000, guid: 20bf2c0d379d09b42940be8f6e7feb78, type: 2}
-  - itemID: Jakarta - Bold
-    fontAsset: {fileID: 11400000, guid: 9b99ff29afe83824da0effbdf96d534a, type: 2}
-  - itemID: Jakarta - ExtraBold
-    fontAsset: {fileID: 11400000, guid: 4974f137cf27b1e4fa7063331fa2fb50, type: 2}
-  - itemID: Space - Bold
-    fontAsset: {fileID: 11400000, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
   - itemID: IBMC - Bold
     fontAsset: {fileID: 11400000, guid: 3a2a868ceae3aa048af04e94cc230b60, type: 2}
   - itemID: IBMC - Medium
@@ -84,7 +62,7 @@ MonoBehaviour:
   spriteItems: []
   updateMode: 1
   audioFoldout: 0
-  colorFoldout: 0
+  colorFoldout: 1
   fontFoldout: 1
   spriteFoldout: 0
-  settingsFoldout: 0
+  settingsFoldout: 1
