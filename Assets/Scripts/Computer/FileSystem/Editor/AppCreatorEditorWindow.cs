@@ -20,9 +20,8 @@ public class AppCreatorEditorWindow : EditorWindow
     private Sprite      appIcon;
     private AppWindow   windowPrefab;
     private bool        createPrefabVariant = true;
-    private bool        installedByDefault  = true;
-    private string      soSavePath   = "Assets/ScriptableObjects/Apps";
-    private string      prefabSavePath = "Assets/Prefabs/Computer/Apps";
+    private string      soSavePath     = "Assets/Scripts/Computer/Apps";
+    private string      prefabSavePath = "Assets/Scripts/Computer/Apps";
 
     private Vector2 scrollPos;
 
@@ -37,27 +36,26 @@ public class AppCreatorEditorWindow : EditorWindow
     {
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
-        DrawSectionHeader("App Bilgileri");
-        appName = EditorGUILayout.TextField("App Adı", appName);
+        DrawSectionHeader("App Data");
+        appName = EditorGUILayout.TextField("App Name", appName);
         appIcon = (Sprite)EditorGUILayout.ObjectField(
-            "İkon", appIcon, typeof(Sprite), false);
-        installedByDefault = EditorGUILayout.Toggle("Varsayılan kurulu", installedByDefault);
+            "Icon", appIcon, typeof(Sprite), false);
 
         EditorGUILayout.Space(8);
-        DrawSectionHeader("Pencere Prefab");
+        DrawSectionHeader("Window Prefab");
         windowPrefab = (AppWindow)EditorGUILayout.ObjectField(
             "Base Window Prefab", windowPrefab, typeof(AppWindow), false);
         createPrefabVariant = EditorGUILayout.Toggle(
             "Prefab Varyant Oluştur", createPrefabVariant);
 
         EditorGUILayout.Space(8);
-        DrawSectionHeader("Kayıt Yolları");
-        soSavePath     = EditorGUILayout.TextField("SO Yolu",     soSavePath);
-        prefabSavePath = EditorGUILayout.TextField("Prefab Yolu", prefabSavePath);
+        DrawSectionHeader("Save Path");
+        soSavePath     = EditorGUILayout.TextField("SO Path",     soSavePath);
+        prefabSavePath = EditorGUILayout.TextField("Prefab Path", prefabSavePath);
 
         EditorGUILayout.Space(16);
         EditorGUI.BeginDisabledGroup(string.IsNullOrWhiteSpace(appName));
-        if (GUILayout.Button("Oluştur", GUILayout.Height(40)))
+        if (GUILayout.Button("Create", GUILayout.Height(40)))
             CreateApp();
         EditorGUI.EndDisabledGroup();
 
@@ -71,15 +69,14 @@ public class AppCreatorEditorWindow : EditorWindow
         EnsureDirectory(soSavePath);
 
         // 1. AppDefinition SO oluştur
-        string safeName = appName.Replace(" ", "_");
-        string soPath   = $"{soSavePath}/{safeName}_AppDef.asset";
+        string safeName = appName.Trim();
+        string soPath   = $"{soSavePath}/{safeName}App.asset";
 
         if (!ConfirmOverwrite(soPath)) return;
 
         var def = CreateInstance<AppDefinition>();
         def.appName           = appName;
         def.icon              = appIcon;
-        def.installedByDefault = installedByDefault;
 
         // 2. İsteğe bağlı prefab varyant
         if (createPrefabVariant && windowPrefab != null)

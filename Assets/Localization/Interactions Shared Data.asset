@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: leavecomputer
     m_Metadata:
       m_Items: []
+  - m_Id: 26545315151990784
+    m_Key: bed.sleep
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

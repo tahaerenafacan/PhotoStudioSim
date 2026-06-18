@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: Leave Computer
     m_Metadata:
       m_Items: []
+  - m_Id: 26545315151990784
+    m_Localized: End the Day
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

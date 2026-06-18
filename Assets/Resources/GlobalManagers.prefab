@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a1da0d8a2baa34089bf098c8f619de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
-  saveKey: GameSettings
 --- !u!1 &5143928799450751328
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd1ecb1613a6084693dfec8620fa930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  dayEndTime:
+    hour: 18
+    minute: 0
+  dayStartTime:
+    hour: 8
+    minute: 0
 --- !u!1 &5495989898231310168
 GameObject:
   m_ObjectHideFlags: 0

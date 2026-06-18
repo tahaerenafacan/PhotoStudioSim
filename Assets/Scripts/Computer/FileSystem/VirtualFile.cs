@@ -1,7 +1,7 @@
 namespace SyntaxSultan.ComputerSystem.FileSystem
 {
     public enum VirtualFileType { Unknown, Image, Document, AppPackage, Data }
-    public enum VirtualFileExtension { TXT, PNG }
+    public enum VirtualFileExtension { TXT, PNG, APP }
 
     public class VirtualFile : VirtualFSNode
     {

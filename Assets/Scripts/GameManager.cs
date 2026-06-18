@@ -1,16 +1,29 @@
 using System;
+using UniStorm;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Serializable]
+    public struct TimeStruct
+    {
+        public int  hour;
+        public int minute;
+    }
+    
     public static GameManager Instance { get; private set; }
 
     public event Action OnGamePause;
     public event Action OnGameResume;
+    public event Action OnDayEndedEvent;
+    
+    [SerializeField] private TimeStruct dayEndTime;
+    [SerializeField] private TimeStruct dayStartTime;
     
     private bool isGamePaused;
+    private bool isDayEnded;
 
     private void Awake()
     {
@@ -27,6 +40,22 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 144;
+        UniStormManager.Instance.OnTimeChange += UniStormManager_OnMinuteChanged;
+    }
+
+    private void UniStormManager_OnMinuteChanged(int hour, int minute)
+    {
+        if (hour >= dayEndTime.hour && minute >= dayEndTime.minute)
+        {
+            isDayEnded = true;
+            OnDayEndedEvent?.Invoke();
+            UniStormManager.Instance.SetTimeFlow(false);
+        }
+        else if (isDayEnded)
+        {
+            UniStormManager.Instance.SetTimeFlow(true);
+            isDayEnded = false;
+        }
     }
 
     private void Update()
@@ -89,5 +118,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             OnGameResume?.Invoke();
         }
+    }
+
+    public void EndDayAndSleep()
+    {
+        UniStormManager.Instance.NextDay();
+        UniStormManager.Instance.SetTime(dayStartTime.hour, dayStartTime.minute);
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0357e0bb757fc144ad7029d2566450c, type: 3}
-  m_Name: My_Files_AppDef
+  m_Name: MyFilesApp
   m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.AppDefinition
   appName: My Files
   icon: {fileID: 21300000, guid: b7dfb0b5c9e8cf1419d0b43bc217ed8d, type: 3}

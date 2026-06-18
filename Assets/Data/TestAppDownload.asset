@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0295be1233a457a9753fc5262fa690b, type: 3}
-  m_Name: TestDownload
+  m_Name: TestAppDownload
   m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.FileSystem.DownloadableItemSO
-  fileName: TestFile
-  fileExtension: 0
-  fileType: 2
+  fileName: 3D Printer App Download
+  fileExtension: 2
+  fileType: 3
   previewIcon: {fileID: 21300000, guid: 76941f4022497f8499c379a9f6b67a1a, type: 3}
   description: A test file for testing
   downloadTimeSeconds: 5
   fileSizeBytes: 1048576
-  appToInstall: {fileID: 0}
+  appToInstall: {fileID: 11400000, guid: 1c5000e3ab375ae4c8727a1a4b519bc5, type: 2}
   imageContent: {fileID: 0}
-  textContent: ADASDASDASVDASDAHHGDALKSDHAKSDKLAJSDHLKASDKLJADKLASHDKLASHDKJAHSDKALKSDJAKSJDASHD
+  textContent: 

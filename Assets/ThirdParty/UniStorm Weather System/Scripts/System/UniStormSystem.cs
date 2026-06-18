@@ -32,8 +32,7 @@ namespace UniStorm
         public UniStormClouds m_UniStormClouds;
 
         //Events
-        public event Action OnHourChangeEvent;
-        public event Action OnMinuteChangeEvent;
+        public event Action<int, int> OnTimeChangeEvent;
         public event Action OnDayChangeEvent;
         public event Action OnMonthChangeEvent;
         public event Action OnYearChangeEvent;
@@ -694,14 +693,7 @@ namespace UniStorm
             TimeOfDayAudioSource = TempAudioSource.GetComponent<AudioSource>();
             TimeOfDayAudioSource.outputAudioMixerGroup = UniStormAudioMixer.FindMatchingGroups("Master/Ambience")[0];
             m_TimeOfDaySoundsSeconds = Random.Range(TimeOfDaySoundsSecondsMin, TimeOfDaySoundsSecondsMax + 1);
-
-            GameObject TempAudioSourceMusic = new GameObject("UniStorm Time of Day Music");
-            TempAudioSourceMusic.transform.SetParent(this.transform);
-            TempAudioSourceMusic.transform.localPosition = Vector3.zero;
-            TempAudioSourceMusic.AddComponent<AudioSource>();
-            TimeOfDayMusicAudioSource = TempAudioSourceMusic.GetComponent<AudioSource>();
-            TimeOfDayMusicAudioSource.outputAudioMixerGroup = UniStormAudioMixer.FindMatchingGroups("Master/Music")[0];
-
+            
             UniStormWindZone = GameObject.Find("UniStorm Windzone").GetComponent<WindZone>();
             m_StarsRenderer = GameObject.Find("UniStorm Stars").GetComponent<Renderer>();
             m_StarsMaterial = m_StarsRenderer.material;
@@ -834,13 +826,7 @@ namespace UniStorm
             {
                 WeatherForecast[Hour] = CurrentWeatherType;
             }
-
-            //Only create our UniStorm UI if it is enabled
-            if (UseUniStormMenu == UniStormSystem.EnableFeature.Enabled)
-            {
-                CreateUniStormMenu();
-            }
-
+            
             Material m_CloudsMaterial = m_UniStormClouds.skyMaterial;
             if (CustomizeQuality == CustomizeQualityEnum.Yes && CloudType == CloudTypeEnum.Volumetric)
             {
@@ -1402,6 +1388,11 @@ namespace UniStorm
         //If follow player is enabled, adjust the distant UniStorm components to the player's position
         void FollowPlayer()
         {
+            if (PlayerTransform == null)
+            {
+                Debug.LogWarning("PlayerTransform is null");
+                return;
+            }
             m_MoonLight.transform.position = PlayerTransform.position;
             m_SunLight.transform.position = PlayerTransform.position;
         }
@@ -1528,10 +1519,7 @@ namespace UniStorm
                 m_MoonTransform.localScale = new Vector3(m_MoonTransform.localScale.x, m_MoonTransform.localScale.y, m_MoonTransform.localScale.z);
             }
 
-            //if (MoonShaftsEffect == EnableFeature.Enabled)
-            //{
             CreateMoonShafts();
-            //}
         }
 
         //Sets up UniStorm's sun
@@ -1565,10 +1553,7 @@ namespace UniStorm
                 m_SunTransform.localEulerAngles = new Vector3(270, 0, 0);
             }
 
-            //if (SunShaftsEffect == EnableFeature.Enabled)
-            //{
             CreatSunShafts();
-            //}
         }
 
         void CreatSunShafts()
@@ -1640,60 +1625,6 @@ namespace UniStorm
             m_LightningSeconds = Random.Range(LightningSecondsMin, LightningSecondsMax);
             m_UniStormLightningSystem.LightningLightIntensityMin = LightningLightIntensityMin;
             m_UniStormLightningSystem.LightningLightIntensityMax = LightningLightIntensityMax;
-        }
-
-        //A public function for UniStorm's UI Menu to change the weather with a dropdown
-        public void ChangeWeatherUI()
-        {
-            CurrentWeatherType = AllWeatherTypes[WeatherDropdown.value];
-            TransitionWeather();
-        }
-
-        //If enabled, create our UniStorm UI and Canvas.
-        void CreateUniStormMenu()
-        {
-            //Resource load UI here
-            UniStormCanvas = Instantiate((GameObject)Resources.Load("UniStorm Canvas") as GameObject, transform.position, Quaternion.identity);
-            UniStormCanvas.name = "UniStorm Canvas";
-
-            TimeSlider = GameObject.Find("Time Slider").GetComponent<Slider>();
-            TimeSliderGameObject = TimeSlider.gameObject;
-            TimeSlider.onValueChanged.AddListener(delegate { CalculateTimeSlider(); }); //Create an event to control UniStorm's time with a slider
-            OnHourChangeEvent +=  UpdateTimeSlider;
-            TimeSlider.maxValue = 0.995f;
-
-            WeatherButtonGameObject = GameObject.Find("Change Weather Button");
-
-            WeatherDropdown = GameObject.Find("Weather Dropdown").GetComponent<Dropdown>();
-            GameObject.Find("Change Weather Button").GetComponent<Button>().onClick.AddListener(delegate { ChangeWeatherUI(); });
-
-            List<string> m_DropOptions = new List<string> { };
-
-            for (int i = 0; i < AllWeatherTypes.Count; i++)
-            {
-                m_DropOptions.Add(AllWeatherTypes[i].WeatherTypeName);
-            }
-
-            WeatherDropdown.AddOptions(m_DropOptions);
-            TimeSlider.value = m_TimeFloat;
-
-            WeatherDropdown.value = AllWeatherTypes.IndexOf(CurrentWeatherType);
-
-            if (FindAnyObjectByType<UnityEngine.EventSystems.EventSystem>() == null)
-            {
-                GameObject m_EventSystem = new GameObject();
-                m_EventSystem.name = "EventSystem";
-#if (ENABLE_LEGACY_INPUT_MANAGER)
-                m_EventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
-                m_EventSystem.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
-#elif (ENABLE_INPUT_SYSTEM)
-                m_EventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
-                m_EventSystem.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
-#endif
-            }
-
-            m_MenuToggle = false;
-            ToggleUniStormMenu();
         }
 
         //Gets a custom DateTime using UniStorm's current date
@@ -1792,24 +1723,6 @@ namespace UniStorm
                     //m_UniStormClouds.numRendersPerFrame = RendersPerFrame;
                 }
 
-                if (UseUniStormMenu == EnableFeature.Enabled)
-                {
-                    //Some versions of Unity cannot have the Canvas disabled without causing issues with dropdown menus.
-                    //So, disable the button and slider gameobjects then move the dropdown menu up 300 units so it is no longer visible. 
-                    //Revese everything when the menu is enabled again.
-#if (ENABLE_LEGACY_INPUT_MANAGER)
-                    if (Input.GetKeyDown(UniStormMenuKey))
-                    {
-                        ToggleUniStormMenu();
-                    }
-#elif (ENABLE_INPUT_SYSTEM)
-                    if (UnityEngine.InputSystem.Keyboard.current[UniStormMenuKey].wasPressedThisFrame)
-                    {
-                        ToggleUniStormMenu();
-                    }
-#endif
-                }
-
                 //Only calculate our time if TimeFlow is enabled
                 if (TimeFlow == UniStormSystem.EnableFeature.Enabled)
                 {
@@ -1853,13 +1766,12 @@ namespace UniStorm
                 if (m_LastMinute != Minute)
                 {
                     m_LastMinute = Minute;
-                    OnMinuteChangeEvent?.Invoke();
+                    OnTimeChangeEvent?.Invoke(Hour, Minute);
                 }
 
                 MoveSun();
                 UpdateColors();
                 PlayTimeOfDaySound();
-                PlayTimeOfDayMusic();
                 CalculateTimeOfDay();
 
                 //Generate our lightning, if the randomized lightning seconds have been met
@@ -2012,7 +1924,7 @@ namespace UniStorm
         //Calculate all of our hourly updates
         void HourlyUpdate()
         {
-            OnHourChangeEvent?.Invoke();
+            OnTimeChangeEvent?.Invoke(Hour, Minute);
 
             MoveSun();
 
@@ -2222,76 +2134,6 @@ namespace UniStorm
 
                     m_TimeOfDaySoundsTimer = 0;
                 }
-            }
-        }
-
-        //Calculates our time of day sounds according to the hour and randomized seconds set by the user.
-        void PlayTimeOfDayMusic()
-        {
-            m_TimeOfDayMusicTimer += Time.deltaTime;
-
-            if (m_TimeOfDayMusicTimer >= m_CurrentMusicClipLength + TimeOfDayMusicDelay || m_UpdateTimeOfDayMusic && TransitionMusicOnTimeOfDayChange == EnableFeature.Enabled || m_UpdateBiomeTimeOfDayMusic)
-            {
-                if (CurrentTimeOfDay == CurrentTimeOfDayEnum.Morning)
-                {
-                    //Morning Music
-                    if (MorningMusic.Count != 0)
-                    {
-                        if (MusicVolumeCoroutine != null) { StopCoroutine(MusicVolumeCoroutine); }
-                        AudioClip RandomMorningSound = MorningMusic[Random.Range(0, MorningMusic.Count)];
-                        if (RandomMorningSound != null)
-                        {
-                            MusicVolumeCoroutine = StartCoroutine(MusicFadeSequence(MusicTransitionLength, RandomMorningSound));
-                            m_CurrentMusicClipLength = RandomMorningSound.length;
-                        }
-                    }
-                }
-                else if (CurrentTimeOfDay == CurrentTimeOfDayEnum.Day)
-                {
-                    //Day Music
-                    if (DayMusic.Count != 0)
-                    {
-                        if (MusicVolumeCoroutine != null) { StopCoroutine(MusicVolumeCoroutine); }
-                        AudioClip RandomDaySound = DayMusic[Random.Range(0, DayMusic.Count)];
-                        if (RandomDaySound != null)
-                        {
-                            MusicVolumeCoroutine = StartCoroutine(MusicFadeSequence(MusicTransitionLength, RandomDaySound));
-                            m_CurrentMusicClipLength = RandomDaySound.length;
-                        }
-                    }
-                }
-                else if (CurrentTimeOfDay == CurrentTimeOfDayEnum.Evening)
-                {
-                    //Evening Music
-                    if (EveningMusic.Count != 0)
-                    {
-                        if (MusicVolumeCoroutine != null) { StopCoroutine(MusicVolumeCoroutine); }
-                        AudioClip RandomEveningSound = EveningMusic[Random.Range(0, EveningMusic.Count)];
-                        if (RandomEveningSound != null)
-                        {
-                            MusicVolumeCoroutine = StartCoroutine(MusicFadeSequence(MusicTransitionLength, RandomEveningSound));
-                            m_CurrentMusicClipLength = RandomEveningSound.length;
-                        }
-                    }
-                }
-                else if (CurrentTimeOfDay == CurrentTimeOfDayEnum.Night)
-                {
-                    //Night Music
-                    if (NightMusic.Count != 0)
-                    {
-                        if (MusicVolumeCoroutine != null) { StopCoroutine(MusicVolumeCoroutine); }
-                        AudioClip RandomNightSound = NightMusic[Random.Range(0, NightMusic.Count)];
-                        if (RandomNightSound != null)
-                        {
-                            MusicVolumeCoroutine = StartCoroutine(MusicFadeSequence(MusicTransitionLength, RandomNightSound));
-                            m_CurrentMusicClipLength = RandomNightSound.length;
-                        }
-                    }
-                }
-
-                m_TimeOfDayMusicTimer = 0;
-                m_UpdateTimeOfDayMusic = false;
-                m_UpdateBiomeTimeOfDayMusic = false;
             }
         }
 
@@ -2719,7 +2561,7 @@ namespace UniStorm
         }
 
         //Calculates our days and updates our Animation curves.
-        void CalculateDays()
+        public void CalculateDays()
         {
             CalculatePrecipiation();
             TemperatureCurve.Evaluate(m_PreciseCurveTime);
@@ -3641,54 +3483,6 @@ namespace UniStorm
 
                     yield return null;
                 }
-            }
-        }
-
-        IEnumerator MusicFadeSequence(float TransitionTime, AudioClip NewMusicClip)
-        {
-            if (UniStormInitialized)
-            {
-                float CurrentValue = TimeOfDayMusicAudioSource.volume;
-                float LerpValue = CurrentValue;
-                float t = 0;
-
-                //Fade out for transition, only if the AudioSource has a clip
-                if (TimeOfDayMusicAudioSource.clip != null)
-                {
-                    while ((t / TransitionTime) < 1)
-                    {
-                        t += Time.deltaTime;
-                        LerpValue = Mathf.Lerp(CurrentValue, 0, t / TransitionTime);
-                        TimeOfDayMusicAudioSource.volume = LerpValue;
-
-                        yield return null;
-                    }
-                }
-                else
-                {
-                    TimeOfDayMusicAudioSource.volume = 0;
-                }
-
-                //Assign new music clip
-                TimeOfDayMusicAudioSource.clip = NewMusicClip;
-                TimeOfDayMusicAudioSource.Play();
-
-                //Reset values to fade in from 0
-                CurrentValue = TimeOfDayMusicAudioSource.volume;
-                LerpValue = CurrentValue;
-                t = 0;
-
-                //Fade back in with new clip
-                while ((t / TransitionTime) < 1)
-                {
-                    t += Time.deltaTime;
-                    LerpValue = Mathf.Lerp(CurrentValue, MusicVolume, t / TransitionTime);
-                    TimeOfDayMusicAudioSource.volume = LerpValue;
-
-                    yield return null;
-                }
-
-                m_TimeOfDayMusicTimer = 0;
             }
         }
 

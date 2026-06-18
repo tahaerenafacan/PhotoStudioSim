@@ -18,8 +18,8 @@ public class HUDController : MonoBehaviour
         CurrencyManager.Instance.OnBalanceChanged += OnBalanceChanged;
         OnBalanceChanged(CurrencyManager.Instance.GetMoney()); //Initialize
 
-        UniStormManager.Instance.OnMinuteChanged += OnTimeChanged;
-        OnTimeChanged(); //Initialize
+        UniStormManager.Instance.OnTimeChange += OnTimeChanged;
+        OnTimeChanged(UniStormManager.Instance.GetHour(), UniStormManager.Instance.GetMinutes());
 
         PlayerItemHolder.Instance.OnHeldItemChanged += OnHeldItemChanged;
 
@@ -43,9 +43,9 @@ public class HUDController : MonoBehaviour
         //TODO: isholding item show drop hint & show item name
     }
 
-    private void OnTimeChanged()
+    private void OnTimeChanged(int hour, int min)
     {
-        timeText.text = UniStormManager.Instance.GetHour().ToString("00") + ":" + UniStormManager.Instance.GetMinutes().ToString("00");
+        timeText.text = $"{hour:00}:{min:00}";
     }
 
     private void OnBalanceChanged(int newMoney)

@@ -99,8 +99,8 @@ namespace SyntaxSultan.ComputerSystem.Apps
             var entry = Instantiate(driveEntryPrefab, driveTreeParent);
             var capturedRoot = drive.Root;
             entry.Setup($"[{drive.DriveName}] {drive.DriveLabel}",
-                iconConfig?.driveIcon,
-                () => NavigateTo(capturedRoot));
+                iconConfig?.driveIcon, 
+                onSingleClickAction:() => NavigateTo(capturedRoot));
         }
 
         private void SpawnFolderTree(VirtualFolder folder, int depth)
@@ -110,10 +110,11 @@ namespace SyntaxSultan.ComputerSystem.Apps
                 var entry    = Instantiate(folderEntryPrefab, driveTreeParent);
                 var captured = sub;
                 Sprite icon  = iconConfig?.GetFolderIcon(sub.Name);
-                entry.Setup(sub.Name, icon,
-                    () => NavigateTo(captured), depth,
-                    () => Select(captured, entry));
-                //SpawnFolderTree(sub, depth + 1);
+                entry.Setup(sub.Name, 
+                    icon,
+                    depth,
+                    null, 
+                    () => NavigateTo(captured));
             }
         }
 
@@ -132,7 +133,8 @@ namespace SyntaxSultan.ComputerSystem.Apps
                 var captured = sub;
                 Sprite icon  = iconConfig?.GetFolderIcon(sub.Name);
                 entry.Setup(sub.Name, icon,
-                    () => NavigateTo(captured), 0,
+                    0, 
+                    () => NavigateTo(captured),
                     () => Select(captured, entry));
             }
 
@@ -141,8 +143,9 @@ namespace SyntaxSultan.ComputerSystem.Apps
                 var entry    = Instantiate(fileEntryPrefab, fileGridParent);
                 var captured = file;
                 entry.Setup($"{file.Name}.{file.Extension}",
-                    iconConfig?.GetFileIconByType(file.FileType),              // ← ileride fileType'a göre genişletilebilir
-                    null, 0,
+                    iconConfig?.GetFileIconByType(file.FileType),
+                    0, 
+                    null,
                     () => Select(captured, entry));
             }
 
@@ -174,8 +177,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
         private void CopySelectedToInternal()
         {
             if (selectedNode is not VirtualFile file) return;
-            var target = vfs.InternalRoot.FindChild("Documents") as VirtualFolder
-                         ?? vfs.InternalRoot;
+            var target = vfs.InternalRoot.FindChild("Documents") as VirtualFolder ?? vfs.InternalRoot;
             bool ok = vfs.CopyFile(file, target);
             if (statusText) statusText.text = ok ? "Dosya kopyalandı." : "Kopyalama başarısız.";
         }

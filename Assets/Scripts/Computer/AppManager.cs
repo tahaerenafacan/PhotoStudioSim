@@ -19,7 +19,7 @@ namespace SyntaxSultan.ComputerSystem
 
         private void Start()
         {
-            foreach (var app in initialApps.Where(a => a != null && a.installedByDefault))
+            foreach (var app in initialApps)
             {
                 InstallApp(app);
             }

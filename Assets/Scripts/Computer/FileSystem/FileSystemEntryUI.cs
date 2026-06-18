@@ -30,16 +30,15 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
         {
             button = GetComponent<Button>();
             button.onClick.AddListener(HandleClick);
-            if (selectionHighlight) selectionHighlight.enabled = false;
+            //if (selectionHighlight) selectionHighlight.enabled = false;
         }
 
-        public void Setup(string name, Sprite icon, Action onDoubleClickAction, int indentDepth = 0, Action onSingleClickAction = null)
+        public void Setup(string name, Sprite icon, int indentDepth = 0, Action onDoubleClickAction = null, Action onSingleClickAction = null)
         {
             if (nameLabel)    nameLabel.text    = name;
             if (icon != null && iconImage) iconImage.sprite = icon;
             if (indentLayout) indentLayout.minWidth = indentDepth * 14f;
             if (iconSpacer) iconSpacer.minWidth     = indentDepth * 14f;
-            Debug.Log(indentDepth);
             
             onSingleClick = onSingleClickAction;
             onDoubleClick = onDoubleClickAction;
@@ -47,7 +46,7 @@ namespace SyntaxSultan.ComputerSystem.FileSystem
 
         public void SetSelected(bool selected)
         {
-            if (selectionHighlight) selectionHighlight.enabled = selected;
+            //if (selectionHighlight) selectionHighlight.enabled = selected;
         }
 
         private void HandleClick()
