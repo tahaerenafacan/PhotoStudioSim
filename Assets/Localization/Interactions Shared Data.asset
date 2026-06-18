@@ -47,6 +47,18 @@ MonoBehaviour:
     m_Key: bed.sleep
     m_Metadata:
       m_Items: []
+  - m_Id: 26850052556574720
+    m_Key: camera.UploadPhotos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850119082430464
+    m_Key: camera.ToggleMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850149390471168
+    m_Key: camera.CycleParam
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

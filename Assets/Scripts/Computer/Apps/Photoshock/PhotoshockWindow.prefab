@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  m_Color: {r: 0.101960786, g: 0.10980392, b: 0.1254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -92,8 +92,8 @@ MonoBehaviour:
   targetGraphic: {fileID: 1691880690507851113}
   targetText: {fileID: 0}
   objectType: 0
-  colorID: WindowBackground
-  fontID: IBMC - Bold
+  colorID: Background
+  fontID: Inter - Thin
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3258613615673135358}
   - component: {fileID: 673914476097515246}
   m_Layer: 5
-  m_Name: AppWindow
+  m_Name: PhotoshockWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   openEase: 27
   closeEase: 26
   Definition: {fileID: 0}
+  Desktop: {fileID: 0}
 --- !u!114 &673914476097515246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3137255, g: 0.28627452, b: 0.27058825, a: 1}
+  m_Color: {r: 0.14117648, g: 0.15686275, b: 0.17254902, a: 0.60784316}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -623,12 +624,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f503d8a54a79b428dfbcb4448abeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
-  preset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
+  preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
   targetGraphic: {fileID: 338694129435340728}
   targetText: {fileID: 0}
   objectType: 0
-  colorID: SelectionHighlight
-  fontID: IBMC - Bold
+  colorID: Background (Tint)
+  fontID: Inter - Thin
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -712,7 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -803,8 +804,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289911787
-  m_fontColor: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 1}
+    rgba: 4285692927
+  m_fontColor: {r: 1, g: 0.48235294, b: 0.44705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -821,10 +822,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 16
   m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -882,7 +883,7 @@ MonoBehaviour:
   targetGraphic: {fileID: 0}
   targetText: {fileID: 255160247585418622}
   objectType: 1
-  colorID: TextPrimary
+  colorID: Accent
   fontID: IBMC - Semi Bold
   spriteID: 
   useCustomColor: 0

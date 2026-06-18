@@ -50,6 +50,18 @@ MonoBehaviour:
     m_Localized: End the Day
     m_Metadata:
       m_Items: []
+  - m_Id: 26850052556574720
+    m_Localized: Upload Photos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850119082430464
+    m_Localized: Toggle Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850149390471168
+    m_Localized: Cycle Params
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
