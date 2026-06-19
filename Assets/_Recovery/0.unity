@@ -6064,17 +6064,6 @@ MonoBehaviour:
   isColoredSupported: 1
   blackPagePerMinute: 10
   colorPagePerMinute: 5
-  inkSystem:
-    maxInkLevel: 100
-    colorInkPerPage: 2
-    blackInkPerPage: 3
-    cyan: 100
-    magenta: 100
-    yellow: 100
-    black: 100
-  paperTray:
-    maxCapacity: 50
-    currentCount: 50
   paperSpawnPoint: {fileID: 306428968}
   paperSpawnEndPoint: {fileID: 898501554}
   prefabA3: {fileID: 6210493951262195286, guid: 57432facf14a0384a9d085817f1af3ec, type: 3}

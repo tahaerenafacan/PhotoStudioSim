@@ -1,105 +1,180 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Localization;
 
-public class ItemPaperPrinter : MonoBehaviour, IInteractable, INetworkDevice
+namespace SyntaxSultan.PrinterSystem
 {
-    [SerializeField] private NetworkDeviceSO networkData;
-    [SerializeField] private LocalizedString interactHint;
-    [SerializeField] private LocalizedString interactName;
-
-    [SerializeField] private Material displayMat;
-    
-    [Header("Printer Settings")]
-    [SerializeField] private PrintQuality maxSupportedQuality = PrintQuality.Average;
-    [SerializeField] private bool isColoredSupported = true;
-    [SerializeField] private int blackPagePerMinute = 10;
-    [SerializeField] private int colorPagePerMinute = 5;
-    
-    [Header("Print Settings")]
-    [SerializeField] private Transform paperSpawnPoint;    // Kağıdın çıkmaya başlayacağı yer
-    [SerializeField] private Transform paperSpawnEndPoint; // Kağıdın çıktıktan sonra gittiği son nokta
-    [SerializeField] private PrintedPaper prefabA3;
-    [SerializeField] private PrintedPaper prefabA4;
-    [SerializeField] private PrintedPaper prefabA5;
-    
-    public LocalizedString InteractHint => interactHint;
-    public LocalizedString InteractName => interactName;
-    public bool CanInteract => !isPrinting;
-    public NetworkDeviceSO GetNetworkDeviceData() => networkData;
-    public PrintQuality GetMaxSupportedQuality() => maxSupportedQuality;
-    public bool GetIsColoredSupported() => isColoredSupported;
-    
-    private bool isPowered = false;
-    private bool isPrinting = false;
-
-    public void Interact()
+    /// <summary>
+    /// Fiziksel yazıcı cihazı. Baskı, tarama ve güç yönetimini orkestra eder.
+    ///
+    /// Interact() context-aware çalışır:
+    ///   - Elimizde PrintedPaper varsa → tarama başlatılır
+    ///   - Aksi hâlde → güç toggle
+    ///
+    /// PrintDocument() dışarıdan (GalleryApp vb.) çağrılır; validasyon burada yapılır.
+    /// </summary>
+    public class ItemPaperPrinter : MonoBehaviour, IInteractable, INetworkDevice
     {
-        if (isPrinting) return;
+        [SerializeField] private NetworkDeviceSO networkData;
+        [SerializeField] private LocalizedString interactHint;
+        [SerializeField] private LocalizedString interactName;
+        [SerializeField] private Material displayMat;
+
+        [Header("Printer Specs")]
+        [SerializeField] private PrintQuality maxSupportedQuality = PrintQuality.Average;
+        [SerializeField] private bool isColoredSupported          = true;
+        [SerializeField] private int  blackPagePerMinute          = 10;
+        [SerializeField] private int  colorPagePerMinute          = 5;
+
+        [Header("Ink System")]
+        [SerializeField] private PrinterInkSystem inkSystem = new();
+
+        [Header("Paper Tray")]
+        [SerializeField] private PrinterPaperTray paperTray = new();
+
+        [Header("Paper Prefabs & Spawn Points")]
+        [SerializeField] private Transform    paperSpawnPoint;
+        [SerializeField] private Transform    paperSpawnEndPoint;
+        [SerializeField] private PrintedPaper prefabA3;
+        [SerializeField] private PrintedPaper prefabA4;
+        [SerializeField] private PrintedPaper prefabA5;
+
+        public LocalizedString InteractHint => interactHint;
+        public LocalizedString InteractName => interactName;
+        public bool CanInteract => true;
+
+        public PrinterInkSystem InkSystem  => inkSystem;
+        public PrinterPaperTray PaperTray  => paperTray;
+        public PrintQuality MaxSupportedQuality => maxSupportedQuality;
+        public bool IsColoredSupported => isColoredSupported;
+        public bool IsPowered          => isPowered;
+        public bool IsPrinting         => isPrinting;
+
+        public event Action<PrinterError> OnPrintError;
+        public event Action<PrintedPaper> OnPrintCompleted;
+        public event Action<bool>         OnScanCompleted;  // true → başarılı
+        public event Action<bool>         OnPowerChanged;
+
+        public NetworkDeviceSO GetNetworkDeviceData() => networkData;
+
+        private bool isPowered;
+        private bool isPrinting;
+        private readonly PrinterScanner scanner = new();
         
-        isPowered = !isPowered;
-        if (isPowered)
+        public void Interact()
         {
-            Router.Instance.Connect(this);
-            displayMat.EnableKeyword("_EMISSION");
-        }
-        else
-        {
-            Router.Instance.Disconnect(this);
-            displayMat.DisableKeyword("_EMISSION");
-        }
-    }
-    
-    // Galeriden çağırılacak fiziksel yazdırma metodu
-    public void PrintDocument(PrintSettings settings, Texture2D imageToPrint)
-    {
-        if (!isPowered || isPrinting) return;
+            if (PlayerItemHolder.Instance?.CurrentItem is PrintedPaper paper)
+            {
+                bool success = scanner.Scan(paper);
+                OnScanCompleted?.Invoke(success);
+                return;
+            }
 
-        PrintedPaper paperPrefabToSpawn = null;
-
-        switch (settings.paperSize)
-        {
-            case PrintPaperSize.A3: paperPrefabToSpawn = prefabA3; break;
-            case PrintPaperSize.A4: paperPrefabToSpawn = prefabA4; break;
-            case PrintPaperSize.A5: paperPrefabToSpawn = prefabA5; break;
+            TogglePower();
         }
 
-        if (paperPrefabToSpawn != null && paperSpawnPoint != null)
+        // ── Print API ──────────────────────────────────────────────
+
+        public void PrintDocument(PrintSettings settings, Texture2D imageToPrint)
         {
-            PrintedPaper spawnedPaper = Instantiate(paperPrefabToSpawn, paperSpawnPoint.position, paperSpawnPoint.rotation);
-            
+            PrinterError error = ValidatePrint(settings);
+            if (error != PrinterError.None)
+            {
+                OnPrintError?.Invoke(error);
+                Debug.LogWarning($"[ItemPaperPrinter] Baskı hatası: {error}");
+                return;
+            }
+
+            PrintedPaper prefab = ResolvePaperPrefab(settings.paperSize);
+            if (prefab == null || paperSpawnPoint == null) return;
+
+            paperTray.TryConsume();
+            inkSystem.ConsumeInk(settings.isColored);
+
+            PrintedPaper spawnedPaper = Instantiate(prefab, paperSpawnPoint.position, paperSpawnPoint.rotation);
             spawnedPaper.Setup(imageToPrint, settings);
             spawnedPaper.TogglePhysics(false);
-            
-            float ppm = settings.isColored ? colorPagePerMinute : blackPagePerMinute;
-            float printDuration = 60f / ppm;
 
-            StartCoroutine(AnimatePaperEject(spawnedPaper, printDuration));
+            float ppm      = settings.isColored ? colorPagePerMinute : blackPagePerMinute;
+            float duration = 60f / ppm;
+            StartCoroutine(AnimatePaperEject(spawnedPaper, duration));
         }
-    }
-    
-    /// <summary>
-    /// Kağıdı spawnPoint'ten endPoint'e fizik simüle etmeden kaydırır.
-    /// Yan etki: isPrinting state'ini yönetir, dışarıdan erişilmemeli.
-    /// </summary>
-    private IEnumerator AnimatePaperEject(PrintedPaper paper, float duration)
-    {
-        isPrinting = true;
 
-        Vector3 startPos = paperSpawnPoint.position;
-        Vector3 endPos   = paperSpawnEndPoint.position;
-        float elapsed    = 0f;
+        // ── Refill API (dışarıdan çağrılır) ───────────────────────
 
-        while (elapsed < duration)
+        public void RefillCyan(float amount)    => inkSystem.RefillCyan(amount);
+        public void RefillMagenta(float amount) => inkSystem.RefillMagenta(amount);
+        public void RefillYellow(float amount)  => inkSystem.RefillYellow(amount);
+        public void RefillBlack(float amount)   => inkSystem.RefillBlack(amount);
+        public void RefillAllInk(float amount)  => inkSystem.RefillAll(amount);
+        public int  RefillPaper(int amount)     => paperTray.Refill(amount);
+
+        // ── Private ────────────────────────────────────────────────
+
+        /// <summary>
+        /// Baskı öncesi tüm koşulları öncelik sırasıyla kontrol eder.
+        /// Sıralama kasıtlı: offline → zaten basılıyor → kağıt → mürekkep.
+        /// </summary>
+        private PrinterError ValidatePrint(PrintSettings settings)
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-            paper.transform.position = Vector3.Lerp(startPos, endPos, t);
-            yield return null;
+            if (!isPowered)                              return PrinterError.PrinterOffline;
+            if (isPrinting)                              return PrinterError.AlreadyPrinting;
+            if (!paperTray.HasPaper)                     return PrinterError.NoPaper;
+            if (!inkSystem.CanPrint(settings.isColored)) return PrinterError.InkEmpty;
+            return PrinterError.None;
         }
 
-        paper.transform.position = endPos;
-        paper.TogglePhysics(true);
-        isPrinting = false;
+        private PrintedPaper ResolvePaperPrefab(PrintPaperSize size) => size switch
+        {
+            PrintPaperSize.A3 => prefabA3,
+            PrintPaperSize.A4 => prefabA4,
+            PrintPaperSize.A5 => prefabA5,
+            _                 => prefabA4
+        };
+
+        private void TogglePower()
+        {
+            isPowered = !isPowered;
+
+            if (isPowered)
+            {
+                Router.Instance.Connect(this);
+                displayMat?.EnableKeyword("_EMISSION");
+            }
+            else
+            {
+                Router.Instance.Disconnect(this);
+                displayMat?.DisableKeyword("_EMISSION");
+            }
+
+            OnPowerChanged?.Invoke(isPowered);
+        }
+
+        /// <summary>
+        /// Kağıdı spawn noktasından çıkış noktasına kaydırır.
+        /// Yan etki: isPrinting flag'ini yönetir; doğrudan çağrılmamalı.
+        /// </summary>
+        private IEnumerator AnimatePaperEject(PrintedPaper paper, float duration)
+        {
+            isPrinting = true;
+
+            Vector3 startPos = paperSpawnPoint.position;
+            Vector3 endPos   = paperSpawnEndPoint.position;
+            float elapsed    = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                paper.transform.position = Vector3.Lerp(startPos, endPos, Mathf.Clamp01(elapsed / duration));
+                yield return null;
+            }
+
+            paper.transform.position = endPos;
+            paper.TogglePhysics(true);
+            isPrinting = false;
+
+            OnPrintCompleted?.Invoke(paper);
+        }
     }
 }
