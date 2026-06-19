@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SyntaxSultan.PrinterSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,7 +75,7 @@ public class PrintPopup : MonoBehaviour
         if (availablePrinters.Count > 0 && printerSelectDropdown.value < availablePrinters.Count)
         {
             if (availablePrinters[printerSelectDropdown.value] is ItemPaperPrinter printer)
-                maxQuality = printer.GetMaxSupportedQuality();
+                maxQuality = printer.MaxSupportedQuality;
         }
 
         availableQualities.Clear();
