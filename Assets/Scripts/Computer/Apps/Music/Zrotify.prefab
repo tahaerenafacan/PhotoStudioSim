@@ -641,8 +641,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ultra Great Music Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
-  m_sharedMaterial: {fileID: -2852952519022039778, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41b3a576a993f0a498f4e75eef9fe309, type: 2}
+  m_sharedMaterial: {fileID: -4733871740985283053, guid: 41b3a576a993f0a498f4e75eef9fe309, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.8
+  m_fontSize: 32.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -778,8 +778,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Playlist
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
-  m_sharedMaterial: {fileID: -2852952519022039778, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41b3a576a993f0a498f4e75eef9fe309, type: 2}
+  m_sharedMaterial: {fileID: -4733871740985283053, guid: 41b3a576a993f0a498f4e75eef9fe309, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1515,8 +1515,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 2:50/3:20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
-  m_sharedMaterial: {fileID: -2852952519022039778, guid: 69c7192704fc7b64dbb9cb7f5132f2a0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c09310899e7924b418c3f83cc9535485, type: 2}
+  m_sharedMaterial: {fileID: 505517303638756474, guid: c09310899e7924b418c3f83cc9535485, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2722,7 +2722,6 @@ MonoBehaviour:
   openEase: 27
   closeEase: 26
   Definition: {fileID: 0}
-  Desktop: {fileID: 0}
   playlistContainer: {fileID: 3264542396849432240}
   playListItemPrefab: {fileID: 6257198454034411017, guid: 134b6b2fb1c7ee8488f2bce8657ae4c2, type: 3}
   recordImage: {fileID: 555101244578426487}

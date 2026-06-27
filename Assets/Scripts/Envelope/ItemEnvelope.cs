@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using SyntaxSultan.InventoryModule;
+using SyntaxSultan.PrinterSystem;
 using UnityEngine;
 
 [System.Serializable]

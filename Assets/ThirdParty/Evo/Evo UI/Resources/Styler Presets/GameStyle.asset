@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42939178eadba994ab57405394a12e26, type: 3}
+  m_Name: GameStyle
+  m_EditorClassIdentifier: 
+  audioItems:
+  - itemID: Hover SFX
+    audioAsset: {fileID: 8300000, guid: dd9ee4ce18edbc34191b74119ac21f4f, type: 3}
+  - itemID: Click SFX
+    audioAsset: {fileID: 8300000, guid: 503de6bf0c32f134f96d4a92662f3e45, type: 3}
+  - itemID: Notification SFX
+    audioAsset: {fileID: 8300000, guid: 04ee76c723465b54196cedac182ba2c1, type: 3}
+  colorItems:
+  - itemID: Primary
+    colorValue: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
+  - itemID: Primary (Soft)
+    colorValue: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 0.039215688}
+  - itemID: Primary (Tint)
+    colorValue: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 0.19607843}
+  - itemID: Secondary
+    colorValue: {r: 0.23529412, g: 0.21960784, b: 0.21176471, a: 1}
+  - itemID: Accent
+    colorValue: {r: 0.99607843, g: 0.5019608, b: 0.09803922, a: 1}
+  - itemID: Accent (Soft)
+    colorValue: {r: 0.99607843, g: 0.5019608, b: 0.09803922, a: 0.05882353}
+  - itemID: Accent (Tint)
+    colorValue: {r: 0.99607843, g: 0.5019608, b: 0.09803922, a: 0.29411766}
+  - itemID: Background
+    colorValue: {r: 0.11372549, g: 0.1254902, b: 0.12941177, a: 1}
+  - itemID: Background (Dim)
+    colorValue: {r: 0.07058824, g: 0.08627451, b: 0.101960786, a: 1}
+  - itemID: Background (Tint)
+    colorValue: {r: 0.14117648, g: 0.15686275, b: 0.17254902, a: 0.60784316}
+  - itemID: Creamy
+    colorValue: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 1}
+  fontItems:
+  - itemID: Rubik - Black
+    fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  - itemID: Rubik - BlackItalic
+    fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  - itemID: Rubik - Bold
+    fontAsset: {fileID: 11400000, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
+  - itemID: Rubik - Bold Italic
+    fontAsset: {fileID: 11400000, guid: 7452f6fefe7cdf64d8cf57bbf47c8333, type: 2}
+  - itemID: Rubik - Extra Bold
+    fontAsset: {fileID: 11400000, guid: aa97e42dd5096b54f8b2c3e4a2e6e9c1, type: 2}
+  - itemID: Rubik - Extra Bold Italic
+    fontAsset: {fileID: 11400000, guid: 0d007ea73edbd3b4a9608fa1ae886ce2, type: 2}
+  - itemID: Rubik - Italic
+    fontAsset: {fileID: 11400000, guid: cba67d9b66f5da046bcbece20015579d, type: 2}
+  - itemID: Rubik - Light
+    fontAsset: {fileID: 11400000, guid: 66a2414384ddcfe4ebcf86adce448bf9, type: 2}
+  - itemID: Rubik - Light Italic
+    fontAsset: {fileID: 11400000, guid: a291f4b211e0e494ca5b89203aa44aa2, type: 2}
+  - itemID: Rubik - Medium
+    fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  - itemID: Rubik - Regular
+    fontAsset: {fileID: 11400000, guid: af096d34f281f5b4d8786167b606a970, type: 2}
+  - itemID: Rubik - SemiBold
+    fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  - itemID: Rubik - SemiBold Italic
+    fontAsset: {fileID: 11400000, guid: 373625284e1179f4f842980d54c5135c, type: 2}
+  - itemID: Space - Bold
+    fontAsset: {fileID: 11400000, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
+  - itemID: Space - Light
+    fontAsset: {fileID: 11400000, guid: b87ba3749445c14408f1e761674fb92d, type: 2}
+  - itemID: Space - Medium
+    fontAsset: {fileID: 11400000, guid: 296c3106b47e4f243bd42e9a852290d0, type: 2}
+  - itemID: Space - Regular
+    fontAsset: {fileID: 11400000, guid: a02a8f936ab4c07458ec912edd9f36bd, type: 2}
+  - itemID: Space - SemiBold
+    fontAsset: {fileID: 11400000, guid: 2f416f956388f434ab10cbe21dfc9f9b, type: 2}
+  spriteItems: []
+  updateMode: 1
+  audioFoldout: 0
+  colorFoldout: 0
+  fontFoldout: 1
+  spriteFoldout: 1
+  settingsFoldout: 0

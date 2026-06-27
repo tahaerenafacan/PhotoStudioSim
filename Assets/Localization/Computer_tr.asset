@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: "Dosya Olu\u015Ftur"
     m_Metadata:
       m_Items: []
+  - m_Id: 20184028251803648
+    m_Localized: "Yaz\u0131c\u0131 Bulunamad\u0131"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

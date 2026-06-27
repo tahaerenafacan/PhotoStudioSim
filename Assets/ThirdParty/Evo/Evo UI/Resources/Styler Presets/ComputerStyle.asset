@@ -52,17 +52,21 @@ MonoBehaviour:
     colorValue: {r: 0.98039216, g: 0.7411765, b: 0.18431373, a: 1}
   - itemID: TextPrimaryTint
     colorValue: {r: 0.92156863, g: 0.85882354, b: 0.69803923, a: 0.39215687}
+  - itemID: C
+    colorValue: {r: 0, g: 1, b: 1, a: 1}
+  - itemID: M
+    colorValue: {r: 1, g: 0, b: 1, a: 1}
+  - itemID: Y
+    colorValue: {r: 1, g: 1, b: 0, a: 1}
+  - itemID: K
+    colorValue: {r: 0, g: 0, b: 0, a: 1}
   fontItems:
-  - itemID: IBMC - Bold
-    fontAsset: {fileID: 11400000, guid: 3a2a868ceae3aa048af04e94cc230b60, type: 2}
-  - itemID: IBMC - Medium
-    fontAsset: {fileID: 11400000, guid: 5ecf2836760348b40a2a920b903634bb, type: 2}
-  - itemID: IBMC - Semi Bold
-    fontAsset: {fileID: 11400000, guid: 7c88c830435bcb643b72ff0b7c69c2b4, type: 2}
+  - itemID: Jetbrains Mono
+    fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   spriteItems: []
   updateMode: 1
   audioFoldout: 0
-  colorFoldout: 1
-  fontFoldout: 1
+  colorFoldout: 0
+  fontFoldout: 0
   spriteFoldout: 0
-  settingsFoldout: 1
+  settingsFoldout: 0

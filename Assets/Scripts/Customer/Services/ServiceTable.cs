@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
+using SyntaxSultan.PrinterSystem;
 using UnityEngine;
-using UnityEngine.Localization;
 
 public class ServiceTable : MonoBehaviour, IServiceTable
 {

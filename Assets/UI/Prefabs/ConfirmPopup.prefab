@@ -34,10 +34,10 @@ RectTransform:
   - {fileID: 8647515307353023258}
   m_Father: {fileID: 8240417714879581192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 76.29, y: -30.605}
-  m_SizeDelta: {x: 152.58, y: 61.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &6365055302988551105
 CanvasGroup:
@@ -110,10 +110,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 200124632978030898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 345, y: -15.605}
-  m_SizeDelta: {x: 690, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6756557044532536955
 CanvasRenderer:
@@ -140,7 +140,7 @@ MonoBehaviour:
   targetText: {fileID: 4521641316594386127}
   objectType: 1
   colorID: Primary
-  fontID: IBM - Regular
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -187,8 +187,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Are you sure you want to leave?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bcd061f0bf6fef4dbb26eb02a6ec325, type: 2}
-  m_sharedMaterial: {fileID: -2407682036160643539, guid: 6bcd061f0bf6fef4dbb26eb02a6ec325, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -350,10 +350,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9193502355645581924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31, y: -30.605}
-  m_SizeDelta: {x: 22, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5922061436501552079
 CanvasRenderer:
@@ -380,7 +380,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -489,10 +489,10 @@ RectTransform:
   - {fileID: 8200618984861327891}
   m_Father: {fileID: 6320295630508585744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83, y: -30.605}
-  m_SizeDelta: {x: 166, y: 61.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &4138693047898434604
 CanvasGroup:
@@ -681,7 +681,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 212.20999}
+  m_SizeDelta: {x: 750, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180344897934170964
 MonoBehaviour:
@@ -786,7 +786,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -936,7 +936,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 1
   overrideAlpha: 0
@@ -1012,8 +1012,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 667, y: -30}
-  m_SizeDelta: {x: 166, y: 61.21}
+  m_AnchoredPosition: {x: 663.91504, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3151789620440311425
 MonoBehaviour:
@@ -1124,9 +1124,26 @@ MonoBehaviour:
   eventsFoldout: 0
   enableIcon: 1
   icon: {fileID: 21300000, guid: f8fe00a6df49c0b4784be7db94e72972, type: 3}
+  localizedIcon:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
   iconSize: 22
   enableText: 1
   text: Confirm
+  localizedText:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textSize: 24
   dynamicScale: 1
   reverseArrangement: 0
@@ -1146,6 +1163,9 @@ MonoBehaviour:
   contentFitter: {fileID: 2004312300316441971}
   contentLayout: {fileID: 7644124076010454676}
   objectFoldout: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2004312300316441971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,7 +1299,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 1
   overrideAlpha: 0
@@ -1397,7 +1417,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1600,7 +1620,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1718,7 +1738,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1776,10 +1796,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9193502355645581924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 101.5, y: -30.605}
-  m_SizeDelta: {x: 89, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8558329135260842723
 CanvasRenderer:
@@ -1806,7 +1826,7 @@ MonoBehaviour:
   targetText: {fileID: 3577680997011653404}
   objectType: 1
   colorID: Primary
-  fontID: IBM - Semi Bold
+  fontID: Rubik - SemiBold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1853,8 +1873,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Confirm
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  m_sharedMaterial: {fileID: -907821326424623699, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  m_sharedMaterial: {fileID: 3430013254921321853, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2016,7 +2036,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -2075,10 +2095,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3006898301227529238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31, y: -30.605}
-  m_SizeDelta: {x: 22, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4734534295830406262
 CanvasRenderer:
@@ -2105,7 +2125,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 1
   overrideAlpha: 0
@@ -2275,7 +2295,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2383,7 +2403,7 @@ MonoBehaviour:
   targetText: {fileID: 3486234896715672805}
   objectType: 1
   colorID: Primary
-  fontID: IBM - Medium
+  fontID: Rubik - Bold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2430,8 +2450,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
-  m_sharedMaterial: {fileID: 3935734620920240856, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
+  m_sharedMaterial: {fileID: 126381529674273732, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2744,7 +2764,7 @@ GameObject:
   m_Icon: {fileID: 2800000, guid: b5cbb71f3d9c9a24cbf09ebe87d16c67, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6747928120589347022
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2888,8 +2908,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 492.71, y: -30}
-  m_SizeDelta: {x: 152.58, y: 61.21}
+  m_AnchoredPosition: {x: 484.17502, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5826488682062321100
 MonoBehaviour:
@@ -3000,9 +3020,26 @@ MonoBehaviour:
   eventsFoldout: 0
   enableIcon: 1
   icon: {fileID: 21300000, guid: 83d372a598c79ef4ab0107c11ce05fd9, type: 3}
+  localizedIcon:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
   iconSize: 22
   enableText: 1
   text: Cancel
+  localizedText:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textSize: 24
   dynamicScale: 1
   reverseArrangement: 0
@@ -3022,6 +3059,9 @@ MonoBehaviour:
   contentFitter: {fileID: 4187739150743508566}
   contentLayout: {fileID: 7687623873615421609}
   objectFoldout: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &4187739150743508566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3095,10 +3135,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3006898301227529238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.79, y: -30.605}
-  m_SizeDelta: {x: 75.58, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1477685023251578908
 CanvasRenderer:
@@ -3125,9 +3165,9 @@ MonoBehaviour:
   targetText: {fileID: 6844058135165371135}
   objectType: 1
   colorID: Primary
-  fontID: IBM - Semi Bold
+  fontID: Rubik - SemiBold
   spriteID: 
-  useCustomColor: 1
+  useCustomColor: 0
   overrideAlpha: 0
   alphaOverride: 1
   enableInteraction: 1
@@ -3172,15 +3212,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cancel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  m_sharedMaterial: {fileID: -907821326424623699, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  m_sharedMaterial: {fileID: 3430013254921321853, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284769535
-  m_fontColor: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3335,7 +3375,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3453,7 +3493,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 1
   overrideAlpha: 0
@@ -3620,10 +3660,10 @@ RectTransform:
   - {fileID: 7231058228370249422}
   m_Father: {fileID: 400089716447887342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -77}
-  m_SizeDelta: {x: 690, y: 31.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &6346169894177425046
 MonoBehaviour:

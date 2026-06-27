@@ -131,8 +131,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Wallpapers
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1f6f3c48c4339d40a4e834c7fffd389, type: 2}
-  m_sharedMaterial: {fileID: -3008902574216895255, guid: e1f6f3c48c4339d40a4e834c7fffd389, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2406c3605bb5de14985a52a3591199d0, type: 2}
+  m_sharedMaterial: {fileID: 422621371669693393, guid: 2406c3605bb5de14985a52a3591199d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -441,7 +441,6 @@ MonoBehaviour:
   openEase: 27
   closeEase: 26
   Definition: {fileID: 0}
-  Desktop: {fileID: 0}
   wallpapersContainer: {fileID: 8376732765894246230}
   wallpaperPreviewBoxPrefab: {fileID: 8232060448350520628, guid: 8b09490657e3d034db841dd971ba4b1b, type: 3}
   wallpapers:

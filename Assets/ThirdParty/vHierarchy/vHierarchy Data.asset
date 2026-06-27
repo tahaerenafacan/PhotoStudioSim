@@ -15,6 +15,7 @@ MonoBehaviour:
   sceneDatas_byGuid:
     keys:
     - 99c9720ab356a0642a771bea13969a05
+    - 2cf1f46594cc93a4498f521e4ace2779
     values:
     - goDatas_byGlobalId:
         keys:
@@ -129,6 +130,39 @@ MonoBehaviour:
           iconNameOrGuid: Folder Icon
           isIconRecursive: 1
           isColorRecursive: 1
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-9184797878846604713-0
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-231274643932363062-0
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-3302483129636409727-0
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-5471752741908174799-0
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-5370303663035625597-0
+        - globalObjectIdString: GlobalObjectId_V1-1-2cf1f46594cc93a4498f521e4ace2779-357171604680461193-0
+        values:
+        - colorIndex: 9
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 9
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 9
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 8
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 8
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 8
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
   bookmarks: []
   bookmarkedScenePaths:
   - Assets/Scenes/PrototypeScene.unity

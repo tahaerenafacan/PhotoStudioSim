@@ -56,16 +56,18 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  interactName:
+    m_TableReference:
+      m_TableCollectionName: GUID:196ce7f8933b5444b9d2f0b279bf144e
+    m_TableEntryReference:
+      m_KeyId: 29702360820342784
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   navMeshAgent: {fileID: 6669942720460471538}
   destinationTolerance: 0.25
   controller: {fileID: 5271824984499469300}
-  entranceTarget: {fileID: 0}
-  exitTarget: {fileID: 0}
-  queueManager: {fileID: 0}
-  serviceTableManager: {fileID: 0}
-  orderManager: {fileID: 0}
-  shopRatingManager: {fileID: 0}
-  orderGenerator: {fileID: 0}
   references:
     version: 2
     RefIds: []

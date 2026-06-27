@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OrderType
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -151,11 +151,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 5147993300491548021}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 5147993300491548021}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -248,8 +248,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Fit:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -331,11 +331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 4212178950298500745}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 4212178950298500745}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -428,8 +428,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Color:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -511,11 +511,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 4355511153976181217}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 4355511153976181217}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -608,8 +608,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quest
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
-  m_sharedMaterial: {fileID: 1061796920860754004, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
+  m_sharedMaterial: {fileID: 126381529674273732, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -695,7 +695,7 @@ MonoBehaviour:
   targetText: {fileID: 8738434915248305685}
   objectType: 1
   colorID: Creamy
-  fontID: Space - Bold
+  fontID: Rubik - Bold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -839,8 +839,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Size:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -922,11 +922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 1399222273801482344}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 1399222273801482344}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1296,8 +1296,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Orientation:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1379,11 +1379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 1817535557238575888}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 1817535557238575888}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1544,8 +1544,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Order Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
-  m_sharedMaterial: {fileID: -1986535430470338095, guid: 7891b6019d9520046beeba33711d49b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
+  m_sharedMaterial: {fileID: 4735668244506898125, guid: 3bfdc99f80051294fbd5043f7b14aae7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1627,11 +1627,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Evo.UI::Evo.UI.StylerObject
   preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
-  targetGraphic: {fileID: 5343339716211828088}
-  targetText: {fileID: 0}
-  objectType: 0
+  targetGraphic: {fileID: 0}
+  targetText: {fileID: 5343339716211828088}
+  objectType: 1
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Medium
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0

@@ -252,7 +252,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -474,8 +474,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Remove SD Card
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
-  m_sharedMaterial: {fileID: 1061796920860754004, guid: f344c80f6f093a74da05b01e6a6ffd7f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  m_sharedMaterial: {fileID: 3430013254921321853, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.05
+  m_fontSize: 27
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -561,7 +561,7 @@ MonoBehaviour:
   targetText: {fileID: 2701230552566787247}
   objectType: 1
   colorID: Primary
-  fontID: Space - Bold
+  fontID: Rubik - SemiBold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0

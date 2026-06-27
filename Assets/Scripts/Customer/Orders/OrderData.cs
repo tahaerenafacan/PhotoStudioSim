@@ -1,4 +1,7 @@
 using System;
+using SyntaxSultan.PrinterSystem;
+using UnityEngine;
+using Random = System.Random;
 
 [Serializable]
 public class OrderData
@@ -11,6 +14,7 @@ public class OrderData
     public PrintPaperOrientation PaperOrientation;
     public PrintPaperFit PaperFit;
     public bool IsColored;
+    public int Quantity;
     public float RequestedAt;
 
     public static OrderData CreatePhotoOrder(PhotoOrderVariant variant)
@@ -24,6 +28,7 @@ public class OrderData
             PaperOrientation = GetRandomPaperOrientation(),
             PaperFit = GetRandomPaperFit(),
             IsColored = GetRandomIsColored(),
+            Quantity = UnityEngine.Random.Range(0, 100),
             RequestedAt = UnityEngine.Time.time
         };
     }

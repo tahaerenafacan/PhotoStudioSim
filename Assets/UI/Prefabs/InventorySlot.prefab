@@ -148,7 +148,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -358,7 +358,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 20, y: 17.735}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4647741835688875732
 CanvasRenderer:
@@ -390,8 +390,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
-  m_sharedMaterial: {fileID: 3935734620920240856, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  m_sharedMaterial: {fileID: 3430013254921321853, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.35
+  m_fontSize: 14.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -18,7 +18,7 @@ namespace SyntaxSultan.PrinterSystem
         public bool HasPaper     => currentCount > 0;
 
         /// <summary>UI progress bar için normalize edilmiş doluluk oranı (0–1).</summary>
-        public float FillRatio => maxCapacity > 0 ? (float)currentCount / maxCapacity : 0f;
+        public float NormalizedFillRatio => maxCapacity > 0 ? (float)currentCount / maxCapacity : 0f;
 
         public event Action OnPaperCountChanged;
 

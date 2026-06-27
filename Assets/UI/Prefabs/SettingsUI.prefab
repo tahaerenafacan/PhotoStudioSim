@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 243.51477, y: -30}
+  m_AnchoredPosition: {x: 357.78998, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7271582087880002575
@@ -325,7 +325,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
   targetText: {fileID: 2893327298686120840}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: IBM - Semi Bold
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -638,14 +638,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: Graphics
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  m_sharedMaterial: {fileID: -907821326424623699, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279861502
+    rgba: 854651120
   m_fontColor: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 0.19607843}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -771,7 +771,7 @@ MonoBehaviour:
   targetText: {fileID: 5506199574459469056}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: IBM - Semi Bold
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -818,8 +818,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Keybinds
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  m_sharedMaterial: {fileID: -907821326424623699, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   targetText: {fileID: 5455304359769587093}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1542,8 +1542,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2503,7 +2503,7 @@ MonoBehaviour:
   targetText: {fileID: 8049857337569242539}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2550,8 +2550,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Reset
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2929,7 +2929,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3331,7 +3331,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3487,7 +3487,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -3605,7 +3605,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3842,7 +3842,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3950,7 +3950,7 @@ MonoBehaviour:
   targetText: {fileID: 4744561819018222798}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3997,8 +3997,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4271,7 +4271,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   targetText: {fileID: 2999882899498172228}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -4426,8 +4426,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "50\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4870,7 +4870,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5320,7 +5320,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5409,7 +5409,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5598,7 +5598,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5775,7 +5775,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5864,7 +5864,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6221,7 +6221,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6380,7 +6380,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6498,7 +6498,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -7101,7 +7101,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7240,7 +7240,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7612,7 +7612,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7731,7 +7731,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7839,7 +7839,7 @@ MonoBehaviour:
   targetText: {fileID: 5314583673176864108}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7886,8 +7886,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Save
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8019,7 +8019,7 @@ MonoBehaviour:
   targetText: {fileID: 6945869168301600106}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8066,8 +8066,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8339,7 +8339,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8402,7 +8402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 79.18853, y: -30}
+  m_AnchoredPosition: {x: 116.71, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6161405628909991754
@@ -8888,7 +8888,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8976,7 +8976,7 @@ MonoBehaviour:
   targetText: {fileID: 4325932018273217915}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9023,8 +9023,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9207,7 +9207,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9296,7 +9296,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9574,7 +9574,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9862,7 +9862,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -10075,7 +10075,7 @@ MonoBehaviour:
   targetText: {fileID: 9002771783137908210}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: IBM - Semi Bold
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -10122,8 +10122,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Audio
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
-  m_sharedMaterial: {fileID: -907821326424623699, guid: 9abf68c8c9c5b5a4aafc79a7bc951d45, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10256,7 +10256,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -10472,7 +10472,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 1
   overrideAlpha: 0
@@ -10836,7 +10836,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11004,7 +11004,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -11122,7 +11122,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11242,7 +11242,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11563,7 +11563,7 @@ MonoBehaviour:
   targetText: {fileID: 1816034107041339465}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11610,8 +11610,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11774,7 +11774,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11912,7 +11912,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12296,7 +12296,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12405,7 +12405,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12575,7 +12575,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12713,7 +12713,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12860,7 +12860,7 @@ MonoBehaviour:
   targetText: {fileID: 232125437649881504}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12907,8 +12907,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13041,7 +13041,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -13585,7 +13585,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -13827,7 +13827,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -13974,7 +13974,7 @@ MonoBehaviour:
   targetText: {fileID: 4964534434032195506}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14021,8 +14021,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Header
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14261,7 +14261,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14354,8 +14354,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Not available in demo :(
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9eaf5570922ec845b483eb8974e9cef, type: 2}
-  m_sharedMaterial: {fileID: 9205109390366172157, guid: b9eaf5570922ec845b483eb8974e9cef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14441,7 +14441,7 @@ MonoBehaviour:
   targetText: {fileID: 7792819986110016061}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Inter - Light
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15050,7 +15050,7 @@ MonoBehaviour:
   targetText: {fileID: 1663570896407549105}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15097,8 +15097,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15260,7 +15260,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15378,7 +15378,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15817,7 +15817,7 @@ MonoBehaviour:
   targetText: {fileID: 6845822471951646411}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15864,8 +15864,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Header
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16027,7 +16027,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16145,7 +16145,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16330,7 +16330,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16419,7 +16419,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16998,7 +16998,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17116,7 +17116,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17234,7 +17234,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17585,7 +17585,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17703,7 +17703,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18053,7 +18053,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18116,7 +18116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 397.3111, y: -30}
+  m_AnchoredPosition: {x: 585.94495, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4265296195514431406
@@ -18511,7 +18511,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18909,7 +18909,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19187,7 +19187,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19415,7 +19415,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19735,7 +19735,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19853,7 +19853,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20206,7 +20206,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20324,7 +20324,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20489,7 +20489,7 @@ MonoBehaviour:
   targetText: {fileID: 4521833266201921002}
   objectType: 1
   colorID: Primary
-  fontID: Inter - Regular
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20536,8 +20536,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "33\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
-  m_sharedMaterial: {fileID: 3107891133831500437, guid: 6bdb9c1d8b3ace1408d2de12e30ae744, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20699,7 +20699,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20788,7 +20788,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -21189,7 +21189,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -21399,7 +21399,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -21482,7 +21482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 552.98486, y: -30}
+  m_AnchoredPosition: {x: 814.865, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5843949115178572284
@@ -21843,7 +21843,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -21961,7 +21961,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -22193,7 +22193,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -22421,7 +22421,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -22539,7 +22539,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -23203,7 +23203,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -23669,7 +23669,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -23807,7 +23807,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24084,7 +24084,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24252,7 +24252,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24447,7 +24447,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24614,7 +24614,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24702,7 +24702,7 @@ MonoBehaviour:
   targetText: {fileID: 2334983463508603888}
   objectType: 1
   colorID: Accent
-  fontID: IBM - Medium
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24749,14 +24749,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: General
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
-  m_sharedMaterial: {fileID: 3935734620920240856, guid: 75e321a956b8b9743be9507de9f36cd4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 854651120
+    rgba: 4279861502
   m_fontColor: {r: 0.99607843, g: 0.5019608, b: 0.09803922, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -25081,7 +25081,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -25401,7 +25401,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Inter - Thin
+  fontID: Rubik - Black
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -25807,6 +25807,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -25860,9 +25864,17 @@ PrefabInstance:
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_fontSizeBase
       value: 38
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_TextWrappingMode
       value: 0
@@ -25919,6 +25931,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1943652026543797241, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
@@ -25954,103 +25970,103 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 690
       objectReference: {fileID: 0}
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.44
       objectReference: {fileID: 0}
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 375
       objectReference: {fileID: 0}
     - target: {fileID: 200124632978030898, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -77
       objectReference: {fileID: 0}
     - target: {fileID: 400089716447887342, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 209.44
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.440002
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1226136358243208100, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.440002
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 2028831507412303631, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 157.31
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 58.440002
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 78.655
       objectReference: {fileID: 0}
     - target: {fileID: 3006898301227529238, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     - target: {fileID: 6320295630508585744, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -26062,15 +26078,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320295630508585744, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 172.17
       objectReference: {fileID: 0}
     - target: {fileID: 6320295630508585744, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 58.440002
       objectReference: {fileID: 0}
     - target: {fileID: 6320295630508585744, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 667
+      value: 663.91504
       objectReference: {fileID: 0}
     - target: {fileID: 6320295630508585744, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26158,27 +26174,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 690
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.44
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 7231058228370249422, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -14.22
       objectReference: {fileID: 0}
     - target: {fileID: 7867767006736902849, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_Name
@@ -26190,27 +26206,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 95.17
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.440002
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 104.585
       objectReference: {fileID: 0}
     - target: {fileID: 8200618984861327891, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     - target: {fileID: 8240417714879581192, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -26222,15 +26238,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240417714879581192, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 157.31
       objectReference: {fileID: 0}
     - target: {fileID: 8240417714879581192, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 58.440002
       objectReference: {fileID: 0}
     - target: {fileID: 8240417714879581192, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 492.71
+      value: 484.17502
       objectReference: {fileID: 0}
     - target: {fileID: 8240417714879581192, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26238,51 +26254,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80.31
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 28.440002
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 97.155
       objectReference: {fileID: 0}
     - target: {fileID: 8647515307353023258, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 172.17
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 58.440002
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 86.085
       objectReference: {fileID: 0}
     - target: {fileID: 9193502355645581924, guid: 903919d4011423940847c77ba2ce788b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -29.220001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26573,6 +26589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -26625,6 +26645,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.45
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7923031707023888438, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -26672,6 +26700,10 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -26966,6 +26998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -27018,6 +27054,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.45
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7923031707023888438, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27065,6 +27109,10 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -27472,6 +27520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -27524,6 +27576,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.45
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7923031707023888438, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27571,6 +27631,10 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -27865,6 +27929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -27917,6 +27985,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.45
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7923031707023888438, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27964,6 +28040,10 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -28001,6 +28081,10 @@ PrefabInstance:
     - target: {fileID: 71883234528991868, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_Name
       value: SettingsItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 368738180267651887, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     - target: {fileID: 719580430330471994, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -28130,6 +28214,14 @@ PrefabInstance:
       propertyPath: onSelectionChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2050076641583059391, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203650467521441244, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 2903763694487668016, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -28173,6 +28265,14 @@ PrefabInstance:
     - target: {fileID: 2966396644326264679, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060355529586018213, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650117536303156312, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     - target: {fileID: 4150813329149951996, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_Pivot.x
@@ -28254,6 +28354,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4220557108673813072, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281243127737259568, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 4281243127737259568, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_overflowMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281243127737259568, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 4808057410804678387, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251504311588139196, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436708789781092474, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118061894178905080, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383902448156174959, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 7303551050648054630, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 17580345433378816
@@ -28295,9 +28435,17 @@ PrefabInstance:
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_fontSizeBase
       value: 38
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
@@ -28349,6 +28497,18 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572494313980627765, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211460199662963819, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28763,6 +28923,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5760698972967612186, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
+      objectReference: {fileID: 0}
     - target: {fileID: 5873615767136490983, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -28815,6 +28979,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 38.45
       objectReference: {fileID: 0}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+    - target: {fileID: 7394463464933512737, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
     - target: {fileID: 7923031707023888438, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -28862,6 +29034,10 @@ PrefabInstance:
     - target: {fileID: 7984839624202223192, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003127519107532555, guid: 3bad5397d370e38458b3273d6259c5a8, type: 3}
+      propertyPath: fontID
+      value: Rubik - Black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

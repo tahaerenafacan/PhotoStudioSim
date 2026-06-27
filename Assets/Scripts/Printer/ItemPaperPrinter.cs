@@ -78,6 +78,7 @@ namespace SyntaxSultan.PrinterSystem
 
         public void PrintDocument(PrintSettings settings, Texture2D imageToPrint)
         {
+            Debug.Log(settings);
             PrinterError error = ValidatePrint(settings);
             if (error != PrinterError.None)
             {
@@ -139,12 +140,12 @@ namespace SyntaxSultan.PrinterSystem
 
             if (isPowered)
             {
-                Router.Instance.Connect(this);
+                Router.Instance?.Connect(this);
                 displayMat?.EnableKeyword("_EMISSION");
             }
             else
             {
-                Router.Instance.Disconnect(this);
+                Router.Instance?.Disconnect(this);
                 displayMat?.DisableKeyword("_EMISSION");
             }
 

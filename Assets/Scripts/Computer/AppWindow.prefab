@@ -93,7 +93,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: WindowBackground
-  fontID: IBMC - Bold
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: SelectionHighlight
-  fontID: IBMC - Bold
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -796,8 +796,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: App Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c88c830435bcb643b72ff0b7c69c2b4, type: 2}
-  m_sharedMaterial: {fileID: 5389671716521952114, guid: 7c88c830435bcb643b72ff0b7c69c2b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
+  m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -883,7 +883,7 @@ MonoBehaviour:
   targetText: {fileID: 255160247585418622}
   objectType: 1
   colorID: TextPrimary
-  fontID: IBMC - Semi Bold
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
