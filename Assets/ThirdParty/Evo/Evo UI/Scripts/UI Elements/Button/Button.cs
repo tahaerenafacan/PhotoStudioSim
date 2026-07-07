@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace Evo.UI
 {
@@ -194,7 +195,7 @@ namespace Evo.UI
                     string displayText = text;
 
                     // Localized String kontrolü
-                    if (localizedText != null && !localizedText.IsEmpty)
+                    if (localizedText != null && !localizedText.IsEmpty && LocalizationSettings.SelectedLocale != null)
                     {
                         string locText = localizedText.GetLocalizedString();
                         if (!string.IsNullOrEmpty(locText))

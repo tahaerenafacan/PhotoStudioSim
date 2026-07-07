@@ -2,7 +2,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-public class QuestHUD : MonoBehaviour
+public class QuestUIController : MonoBehaviour
 {
     [SerializeField] private OrderManager orderManager;
     [SerializeField] private RectTransform questPanel;
@@ -14,7 +14,7 @@ public class QuestHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI paperSizeText;
 
     [SerializeField] private float startXPos = 0f;
-    [SerializeField] private float endXPos = 350f;
+    [SerializeField] private float endXPos = -400f;
     [SerializeField] private float animationTime = 0.5f;
     
     private CanvasGroup canvasGroup;
@@ -36,12 +36,12 @@ public class QuestHUD : MonoBehaviour
     {
         FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, true);
 
-        orderTypeText.text = $"Quest: {orderData.OrderType}";
+        orderTypeText.text =    $"Quest: {orderData.OrderType}";
         orderDetailsText.text = orderData.Description;
-        colorText.text = $"Color: {(orderData.IsColored ? "Colored" : "Black & White")}";
-        orientationText.text = $"Orientation: {orderData.PaperOrientation}";
-        fitText.text = $"Fit: {orderData.PaperFit}";
-        paperSizeText.text = $"Paper Size: {orderData.PaperSize}";
+        colorText.text =        $"Color: {(orderData.IsColored ? "Colored" : "Black & White")}";
+        orientationText.text =  $"Orientation: {orderData.PaperOrientation}";
+        fitText.text =          $"Fit: {orderData.PaperFit}";
+        paperSizeText.text =    $"Paper Size: {orderData.PaperSize}";
 
         questPanel.DOAnchorPosX(endXPos, animationTime).SetEase(Ease.OutBounce);
     }

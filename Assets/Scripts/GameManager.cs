@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private bool isGamePaused;
     private bool isDayEnded;
 
+    public string StudioName { get; set; }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

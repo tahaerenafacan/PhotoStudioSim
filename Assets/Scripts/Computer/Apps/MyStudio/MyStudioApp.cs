@@ -25,7 +25,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
 
         private void UpdateStudioInfo()
         {
-            studioNameText.text = "My Studio Placeholder";
+            studioNameText.text = GameManager.Instance.StudioName;
             FunctionLibrary.SetStars(studioStarsContainer, ShopRatingManager.Instance.CurrentShopStarLevel, starPrefab, emptyStarPrefab);
         }
 

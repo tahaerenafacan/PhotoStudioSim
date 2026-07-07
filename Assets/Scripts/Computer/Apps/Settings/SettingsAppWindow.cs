@@ -10,7 +10,6 @@ namespace SyntaxSultan.ComputerSystem.Apps
 
         private WallpaperPreviewBox selectedBox;
 
-
         protected override void OnOpened()
         {
             selectedBox = null;
@@ -33,7 +32,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
             selectedBox = box;
             selectedBox.SetSelected(true);
 
-            ComputerSettings.Instance.SetWallpaper(wallpaper);
+            Computer.Instance.Settings.SetWallpaper(wallpaper);
         }
     }
 

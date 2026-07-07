@@ -767,7 +767,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889993760407786408}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   fillGradientReverse: 0
   outlineWidth: 5
   outlineColorMode: 1
-  outlineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outlineColor: {r: 1, g: 0.6470588, b: 0, a: 1}
   outlineGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   radiusMode: 0
   independentCorners: 1
   squircleCorners: 0
-  cornerRadius: {x: 32, y: 64, z: 32, w: 32}
+  cornerRadius: {x: 32, y: 32, z: 32, w: 32}
   innerShadowOffset: {x: 5, y: 5}
   innerShadowSize: 5
   innerShadowSoftness: 0
