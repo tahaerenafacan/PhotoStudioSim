@@ -7,9 +7,10 @@ public class Bed : MonoBehaviour, IInteractable
 {
     public event Action OnSleep;
     [SerializeField] private LocalizedString interactHint;
+    [SerializeField] private LocalizedString cantInteractHint;
     [SerializeField] private LocalizedString itemName;
     
-    public LocalizedString InteractHint => interactHint;
+    public LocalizedString InteractHint => CanInteract ? interactHint : cantInteractHint;
     public LocalizedString InteractName => itemName;
     public bool CanInteract => UniStormSystem.Instance.TimeFlow == UniStormSystem.EnableFeature.Disabled; 
     public void Interact()

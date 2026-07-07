@@ -62,6 +62,10 @@ MonoBehaviour:
     m_Localized: "Parametre De\u011Fi\u015F"
     m_Metadata:
       m_Items: []
+  - m_Id: 33758211189235712
+    m_Localized: "Saat 18'den \xF6nce uyuyamazs\u0131n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

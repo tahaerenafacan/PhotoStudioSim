@@ -895,6 +895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bed83h
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3272bf5cd1a5604459348cd33d929e90, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1113,29 +1117,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8198597925175714434}
     m_Modifications:
-    - target: {fileID: 1374089014020166911, guid: 463598194164baa49a38481b28500dff, type: 3}
-      propertyPath: cornerRadius.y
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374089014020166911, guid: 463598194164baa49a38481b28500dff, type: 3}
-      propertyPath: outlineColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374089014020166911, guid: 463598194164baa49a38481b28500dff, type: 3}
-      propertyPath: outlineColor.g
-      value: 0.6470588
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374089014020166911, guid: 463598194164baa49a38481b28500dff, type: 3}
-      propertyPath: outlineColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1889993760407786408, guid: 463598194164baa49a38481b28500dff, type: 3}
       propertyPath: m_Name
       value: Quest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7208966103150227012, guid: 463598194164baa49a38481b28500dff, type: 3}
-      propertyPath: m_Alpha
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7497302067216411779, guid: 463598194164baa49a38481b28500dff, type: 3}
       propertyPath: m_Pivot.x
@@ -5863,6 +5847,15 @@ MonoBehaviour:
       m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
     m_TableEntryReference:
       m_KeyId: 26545315151990784
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  cantInteractHint:
+    m_TableReference:
+      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
+    m_TableEntryReference:
+      m_KeyId: 33758211189235712
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -17292,7 +17285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2866691994525059447, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 183562480
+      value: 4279861502
       objectReference: {fileID: 0}
     - target: {fileID: 2943207932605567835, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.y
@@ -17928,7 +17921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651524443865092075, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 854651120
+      value: 4293980400
       objectReference: {fileID: 0}
     - target: {fileID: 5674379362969096606, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18400,7 +18393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7501264843562473260, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 854651120
+      value: 4293980400
       objectReference: {fileID: 0}
     - target: {fileID: 7597393210204068381, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.x

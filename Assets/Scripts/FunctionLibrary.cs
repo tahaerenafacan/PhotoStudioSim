@@ -10,6 +10,21 @@ public static class FunctionLibrary
         }
     }
 
+    public static void SetLayerRecursively(Transform root, int layer)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        root.gameObject.layer = layer;
+
+        foreach (Transform child in root)
+        {
+            SetLayerRecursively(child, layer);
+        }
+    }
+
     public static void SetStars(RectTransform starsContainer, int starCount, GameObject starPrefab, GameObject emptyStarPrefab)
     {
         DestroyChildren(starsContainer);

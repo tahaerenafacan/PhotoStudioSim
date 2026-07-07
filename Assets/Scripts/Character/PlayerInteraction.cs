@@ -28,7 +28,10 @@ public class PlayerInteraction : MonoBehaviour
     public bool HasDetection => DetectedPickable != null || DetectedInteractable != null;
     public event Action<bool> OnShouldCheckInteractionStateChanged;
     public event Action<BasePickableItem, IInteractable> OnDetectionChanged;
-    
+
+    BasePickableItem prevPickable;
+    IInteractable prevInteractable;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,6 +59,17 @@ public class PlayerInteraction : MonoBehaviour
     public void DisableInteraction()
     {
         shouldCheckInteraction = false;
+
+        int interactableLayerValue = LayerMask.NameToLayer("Interactable");
+        if (interactableLayerValue >= 0)
+        {
+            if (DetectedPickable != null)
+                FunctionLibrary.SetLayerRecursively(DetectedPickable.transform, interactableLayerValue);
+
+            if (DetectedInteractable is MonoBehaviour detectedInteractableBehaviour)
+                FunctionLibrary.SetLayerRecursively(detectedInteractableBehaviour.transform, interactableLayerValue);
+        }
+
         DetectedPickable = null;
         DetectedInteractable = null;
         OnDetectionChanged?.Invoke(null, null);
@@ -70,17 +84,24 @@ public class PlayerInteraction : MonoBehaviour
 
     private void PerformRaycast()
     {
-        var prevPickable = DetectedPickable;
-        var prevInteractable = DetectedInteractable;
-    
+        prevPickable = DetectedPickable;
+        prevInteractable = DetectedInteractable;
+
         DetectedPickable = null;
         DetectedInteractable = null;
 
         if (mainCam)
         {
             Ray ray = mainCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            int raycastMask = interactableLayer.value;
+            int outlineLayer = LayerMask.NameToLayer("Outline");
 
-            if (Physics.Raycast(ray, out RaycastHit hit, interactionRange, interactableLayer))
+            if (outlineLayer >= 0)
+            {
+                raycastMask |= 1 << outlineLayer;
+            }
+
+            if (Physics.Raycast(ray, out RaycastHit hit, interactionRange, raycastMask))
             {
                 Collider hitCol = hit.collider;
 
@@ -90,7 +111,7 @@ public class PlayerInteraction : MonoBehaviour
                     DetectedPickable = detectedPick;
                 }
 
-                if (hitCol.TryGetComponent(out IInteractable detectedInteractable) && detectedInteractable.CanInteract)
+                if (hitCol.TryGetComponent(out IInteractable detectedInteractable))
                 {
                     DetectedInteractable = detectedInteractable;
                 }
@@ -101,8 +122,42 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
+        HandleOutline(DetectedPickable, DetectedInteractable);
+
         if (prevPickable != DetectedPickable || prevInteractable != DetectedInteractable)
             OnDetectionChanged?.Invoke(DetectedPickable, DetectedInteractable);
+    }
+
+    private void HandleOutline(BasePickableItem pickable, IInteractable interactable)
+    {
+        int interactableLayerValue = LayerMask.NameToLayer("Interactable");
+        int outlineLayerValue = LayerMask.NameToLayer("Outline");
+
+        Transform currentTarget = null;
+
+        if (pickable != null)
+        {
+            currentTarget = pickable.transform;
+        }
+        else if (interactable is MonoBehaviour interactableBehaviour)
+        {
+            currentTarget = interactableBehaviour.transform;
+        }
+
+        if (prevPickable != null && prevPickable.transform != currentTarget)
+        {
+            FunctionLibrary.SetLayerRecursively(prevPickable.transform, interactableLayerValue >= 0 ? interactableLayerValue : 0);
+        }
+
+        if (prevInteractable is MonoBehaviour prevInteractableBehaviour && prevInteractableBehaviour.transform != currentTarget)
+        {
+            FunctionLibrary.SetLayerRecursively(prevInteractableBehaviour.transform, interactableLayerValue >= 0 ? interactableLayerValue : 0);
+        }
+
+        if (currentTarget != null && outlineLayerValue >= 0)
+        {
+            FunctionLibrary.SetLayerRecursively(currentTarget, outlineLayerValue);
+        }
     }
 
     private void HandleInteractInput()
