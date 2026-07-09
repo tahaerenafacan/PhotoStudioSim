@@ -12,7 +12,6 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class StudioNamePopupController : MonoBehaviour
 {
-    // Diğer sistemlerin abone olabileceği tek doğruluk kaynağı (SSOT): onaylanan isim sadece burada yayılır.
     public event Action<string> OnConfirmed;
     public event Action OnCancelled;
 
@@ -35,7 +34,6 @@ public class StudioNamePopupController : MonoBehaviour
         confirmButton = root.Q<Button>("ConfirmButton");
         cancelButton = root.Q<Button>("CancelButton");
 
-        // Popup sahne yüklendiğinde otomatik açılmamalı; sadece Show() ile tetiklenmeli.
         SetVisible(false);
     }
 

@@ -1,20 +1,14 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-/// <summary>
-/// Yerden alınabilen tüm itemlerin temel sınıfı.
-/// 
-/// KULLANIM:
-///   - Sadece alınabilen item  → BasePickableItem'ı extend et
-///   - Alınabilen + kullanılabilen → BasePickableItem + IUsable implement et
-///   - Alınabilen + interact     → BasePickableItem + IInteractable implement et
-/// </summary>
 [RequireComponent(typeof(Rigidbody))]
-public abstract class BasePickableItem : MonoBehaviour, IPickable
+public abstract class BasePickableItem : MonoBehaviour, IPickable, IPlaceable
 {
     [FormerlySerializedAs("definition")] 
     [SerializeField] private ItemDefinition itemData;
     [SerializeField] private float throwForceMultiplier = 1f;
+    [SerializeField] private bool allowVerticalPlacement = false;
+
 
     public UnityEngine.Localization.LocalizedString GetItemName() => itemData.itemName;
     public bool IsHeld { get; private set; }
@@ -22,7 +16,30 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable
     protected ItemDefinition ItemData => itemData;
     protected Rigidbody Rb { get; private set; }
     private Collider[] colliders;
+    private Renderer[] cachedRenderers;
 
+    // ─────────────────────────────────────────────────────────────
+    // IPlaceable Implementasyonu
+
+    public Transform PlacementTransform => transform;
+    public Collider[] PlacementColliders => colliders;
+    public Renderer[] PlacementRenderers => cachedRenderers;
+    public bool AllowVerticalPlacement => allowVerticalPlacement;
+
+
+    public void SetPlacementCollidersEnabled(bool isEnabled)
+    {
+        TogglePhysics(isEnabled);
+    }
+
+    public void OnPlacementConfirmed()
+    {
+        TogglePhysics(true);
+    }
+
+    public void OnPlacementCancelled() { }
+
+    //------------------------------------------------------------------
     
     /// <summary>ItemDefinition'ı runtime'da set etmek için (spawn edilen itemlar).</summary>
     public void Initialize(ItemDefinition def)
@@ -39,6 +56,7 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable
         }
         Rb = GetComponent<Rigidbody>();
         colliders = GetComponentsInChildren<Collider>(true);
+        cachedRenderers = GetComponentsInChildren<Renderer>(true);
         gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 

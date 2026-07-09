@@ -162,6 +162,7 @@ public class CustomerController : MonoBehaviour, IInteractable
             };
 
             int rating = shopRatingManager.CalculateRating(context);
+            ReputationManager.Instance.AddReputation(rating);
             OnRatingSubmitted?.Invoke(this, rating);
             Debug.Log($"CustomerController: Submitted rating {rating} for customer {name}", this);
         }
