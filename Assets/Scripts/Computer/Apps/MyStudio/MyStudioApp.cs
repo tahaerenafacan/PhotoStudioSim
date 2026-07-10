@@ -50,7 +50,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
         }
         private void OnReputationLevelUp(int newLevel)
         {
-            reputationLevelText.text = newLevel.ToString();
+            reputationLevelText.text = "Reputation LVL: " + newLevel.ToString();
         }
 
         private void LoadReviews()
