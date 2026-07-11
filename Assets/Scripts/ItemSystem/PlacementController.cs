@@ -239,7 +239,12 @@ public class PlacementController : MonoBehaviour
     {
         if (!TryCalculatePlacementPose(out Vector3 pose, out Quaternion rotation, out Vector3 surfaceNormal)) return;
 
+        // Önce ham pozisyon/rotasyonu uygula; bounds hesaplaması güncel transform'a ihtiyaç duyar.
         activePlaceable.PlacementTransform.SetPositionAndRotation(pose, rotation);
+
+        // Objenin altını (collider bounds'a göre) tam yüzeye oturt; içine gömülmesini engeller.
+        Vector3 restingPose = ResolveRestingPosition(activePlaceable, pose, surfaceNormal);
+        activePlaceable.PlacementTransform.position = restingPose;
 
         bool isFlatEnough = IsSurfaceAngleValid(surfaceNormal, activePlaceable.AllowVerticalPlacement);
         bool wasValid = isCurrentPoseValid;
@@ -250,6 +255,42 @@ public class PlacementController : MonoBehaviour
             OnPlacementValidityChanged?.Invoke(isCurrentPoseValid);
             ApplyPreviewMaterial(isCurrentPoseValid);
         }
+    }
+
+    /// <summary>
+    /// Nesnenin collider bounds'una göre, yüzey normali doğrultusunda en alt noktasının
+    /// tam olarak vuruş noktasında olacağı pozisyonu hesaplar. Bu olmadan pivot ortadaysa
+    /// nesne yüzeyin içine gömülür (örn. masa üstüne konurken masanın içine batması).
+    /// </summary>
+    private Vector3 ResolveRestingPosition(IPlaceable placeable, Vector3 rawPosition, Vector3 normal)
+    {
+        Bounds? combinedBounds = null;
+        foreach (var col in placeable.PlacementColliders)
+        {
+            if (col == null) continue;
+            if (combinedBounds == null) combinedBounds = col.bounds;
+            else
+            {
+                var b = combinedBounds.Value;
+                b.Encapsulate(col.bounds);
+                combinedBounds = b;
+            }
+        }
+
+        if (combinedBounds == null) return rawPosition;
+
+        // AABB'nin normal yönündeki en alt (min) desteğini bul (support function).
+        Bounds bounds = combinedBounds.Value;
+        float supportRadius = Mathf.Abs(bounds.extents.x * normal.x)
+                             + Mathf.Abs(bounds.extents.y * normal.y)
+                             + Mathf.Abs(bounds.extents.z * normal.z);
+        float centerProjection = Vector3.Dot(bounds.center, normal);
+        float minProjection = centerProjection - supportRadius;
+
+        float targetProjection = Vector3.Dot(rawPosition, normal) + surfaceOffset;
+        float correction = targetProjection - minProjection;
+
+        return rawPosition + normal * correction;
     }
 
     /// <summary>Yüzey normali yeterince "yatay/yere yakın" değilse (duvar vb.) ve item izin vermiyorsa geçersizdir.</summary>

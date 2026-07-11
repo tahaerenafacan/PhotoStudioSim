@@ -4091,6 +4091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7896945472903568986}
+  - component: {fileID: 4160418322442792497}
   m_Layer: 5
   m_Name: CartItem
   m_TagString: Untagged
@@ -4122,3 +4123,23 @@ RectTransform:
   m_AnchoredPosition: {x: 745, y: 0}
   m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4160418322442792497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935219635063440721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17e0e07cc9af4bc5be923be438f7143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.Apps.CartEntryUI
+  iconImage: {fileID: 8258301642872672550}
+  nameLabel: {fileID: 7310976823819911498}
+  quantityLabel: {fileID: 1657403196472293243}
+  priceLabel: {fileID: 2240553376514838238}
+  incrementButton: {fileID: 1480547097646025020}
+  decrementButton: {fileID: 1988457068192087864}
+  affordableColor: {r: 0, g: 1, b: 0, a: 1}
+  unaffordableColor: {r: 1, g: 0, b: 0, a: 1}
