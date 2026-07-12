@@ -28,6 +28,7 @@ namespace SyntaxSultan.ShopSystem
         public void Initialize(ShopItemDefinition item)
         {
             containedItem = item;
+            base.Initialize(item.itemDefinition);
         }
 
         public void Interact()

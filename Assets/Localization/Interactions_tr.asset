@@ -66,6 +66,10 @@ MonoBehaviour:
     m_Localized: "Saat 18'den \xF6nce uyuyamazs\u0131n"
     m_Metadata:
       m_Items: []
+  - m_Id: 35533294337515520
+    m_Localized: "Paketi a\xE7"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

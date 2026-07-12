@@ -63,6 +63,10 @@ MonoBehaviour:
     m_Key: bed.cantSleep
     m_Metadata:
       m_Items: []
+  - m_Id: 35533294337515520
+    m_Key: openBox
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
 
     public event Action OnDropKeyPressed;
     public event Action OnInteractKeyPressed;
+    public event Action OnPickupKeyPressed;
     public event Action<int> OnQuickSlotKeyPressed;
 
     private PlayerInputActions actions;
@@ -48,7 +49,8 @@ public class InputManager : MonoBehaviour
     {
         actions.Player.Pause.performed    += Pause_Performed;
         actions.Player.Drop.performed     += Drop_Performed;
-        actions.Interactions.Pickup.performed += Interact_Performed;
+        actions.Interactions.Pickup.performed += Pickup_Performed;
+        actions.Interactions.Interact.performed += Interact_Performed;
         actions.Player.QuickSlot.performed += QuickSlot_Performed;
     }
 
@@ -56,8 +58,14 @@ public class InputManager : MonoBehaviour
     {
         actions.Player.Pause.performed    -= Pause_Performed;
         actions.Player.Drop.performed     -= Drop_Performed;
-        actions.Interactions.Pickup.performed -= Interact_Performed;
+        actions.Interactions.Pickup.performed -= Pickup_Performed;
+        actions.Interactions.Interact.performed -= Interact_Performed;
         actions.Player.QuickSlot.performed -= QuickSlot_Performed;
+    }
+
+    private void Pickup_Performed(InputAction.CallbackContext context)
+    {
+        OnPickupKeyPressed?.Invoke();
     }
 
     private void QuickSlot_Performed(InputAction.CallbackContext context)

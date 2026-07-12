@@ -65,6 +65,7 @@ namespace SyntaxSultan.ShopSystem
         public void RegisterLocker(IDeliveryLocker locker)
         {
             if (!registeredLockers.Contains(locker))
+                Debug.Log($"[OrderDeliveryManager] Dolap kaydedildi: {locker}");
                 registeredLockers.Add(locker);
         }
 
@@ -84,6 +85,7 @@ namespace SyntaxSultan.ShopSystem
         {
             foreach (var locker in registeredLockers)
             {
+            Debug.Log($"[OrderDeliveryManager] Sipariş {order.OrderId} teslim edilmeye çalışılıyor: {order.Item.name}");
                 if (!locker.TryReserveSlot(out Transform slot)) continue;
 
                 var box = Instantiate(cargoBoxPrefab, slot.position, slot.rotation);

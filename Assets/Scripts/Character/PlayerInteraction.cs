@@ -45,9 +45,10 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         mainCam = Camera.main;
+        if (!mainCam) Debug.LogError("[PlayerInteraction] Ana kamera bulunamadı!");
+
         InputManager.Instance.OnInteractKeyPressed += HandleInteractInput;
-        if (!mainCam)
-            Debug.LogError("[PlayerInteraction] Ana kamera bulunamadı!");
+        InputManager.Instance.OnPickupKeyPressed += HandlePickup;
     }
 
     private void Update()
@@ -162,15 +163,18 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleInteractInput()
     {
+        if (DetectedInteractable != null && DetectedInteractable.CanInteract)
+        {
+            DetectedInteractable.Interact();
+        }
+    }
+
+    private void HandlePickup()
+    {
         if (DetectedPickable != null)
         {
             PlayerItemHolder.Instance.TryPickup(DetectedPickable);
             return;
-        }
-
-        if (DetectedInteractable != null && DetectedInteractable.CanInteract)
-        {
-            DetectedInteractable.Interact();
         }
     }
     

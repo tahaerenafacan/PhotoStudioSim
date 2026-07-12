@@ -5176,8 +5176,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934931466}
+  - component: {fileID: 934931467}
   m_Layer: 0
-  m_Name: Hop
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5198,6 +5199,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1504437510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934931467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934931465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358663f0e446e48f7887bf87fa547556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ShopSystem.OrderDeliveryManager
+  cargoBoxPrefab: {fileID: 6199024774214013866, guid: 4eb1586c7f4054ddbb64aa5cc226e5ce, type: 3}
 --- !u!1 &946725625
 GameObject:
   m_ObjectHideFlags: 0
@@ -17196,7 +17210,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 65
+  field of view: 33.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -20717,7 +20731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2866691994525059447, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4279861502
+      value: 183562480
       objectReference: {fileID: 0}
     - target: {fileID: 2943207932605567835, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.y
@@ -20845,7 +20859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425031367256721679, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 854651120
+      value: 183562480
       objectReference: {fileID: 0}
     - target: {fileID: 3494588973472498445, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.y
@@ -21341,7 +21355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460330253678835591, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 854651120
+      value: 183562480
       objectReference: {fileID: 0}
     - target: {fileID: 5471714494177424162, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_AnchorMax.y
@@ -22381,7 +22395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889906671800840053, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 854651120
+      value: 183562480
       objectReference: {fileID: 0}
     - target: {fileID: 8969849774101087375, guid: 16a86fc9baa87fa4691df2e469d49218, type: 3}
       propertyPath: m_Color.a
@@ -27453,8 +27467,8 @@ RectTransform:
   m_Children:
   - {fileID: 4646601775283588075}
   - {fileID: 8727414955584427101}
-  - {fileID: 6392365999494891803}
   - {fileID: 275834458}
+  - {fileID: 6392365999494891803}
   - {fileID: 156316848}
   - {fileID: 4859367569797805261}
   - {fileID: 5709501832963407236}
@@ -27755,8 +27769,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2649667855695125954}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: -11.994, y: 2.331, z: -4.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

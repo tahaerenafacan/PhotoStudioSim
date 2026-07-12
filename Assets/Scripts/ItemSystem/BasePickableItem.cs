@@ -49,11 +49,6 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable, IPlaceable
 
     protected virtual void Awake()
     {
-        if (!itemData)
-        {
-            Debug.LogError($"[BasePickableItem] {gameObject.name} için ItemDefinition atanmamış!");
-            return;
-        }
         Rb = GetComponent<Rigidbody>();
         colliders = GetComponentsInChildren<Collider>(true);
         cachedRenderers = GetComponentsInChildren<Renderer>(true);

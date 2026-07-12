@@ -12,8 +12,8 @@ namespace SyntaxSultan.ShopSystem
 
         public bool HasFreeSlot => GetFreeSlot() != null;
 
-        private void OnEnable() => OrderDeliveryManager.Instance?.RegisterLocker(this);
-        private void OnDisable() => OrderDeliveryManager.Instance?.UnregisterLocker(this);
+        private void Start() => OrderDeliveryManager.Instance.RegisterLocker(this);
+        private void OnDestroy() => OrderDeliveryManager.Instance.UnregisterLocker(this);
 
         public bool TryReserveSlot(out Transform slotTransform)
         {
