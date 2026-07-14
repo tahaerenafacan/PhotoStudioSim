@@ -11,18 +11,30 @@ public class ComputerConnectionUI : MonoBehaviour
         connectionPanel.gameObject.SetActive(false);
     }
 
-    public void ShowConnectionPanel()
+    public void ToggleConnectionPanel()
+    {
+        if (connectionPanel.gameObject.activeSelf)
+        {
+            HideConnectionPanel();
+        }
+        else
+        {
+            ShowConnectionPanel();
+        }
+    }
+
+    private void ShowConnectionPanel()
     {
         connectionPanel.gameObject.SetActive(true);
         DOTween.Sequence().Append(
-            connectionPanel.DOAnchorPosY(0f, animationDuration).SetEase(Ease.OutBack)
+            connectionPanel.DOAnchorPosY(50f, animationDuration).SetEase(Ease.OutBack)
             );
     }
 
-    public void HideConnectionPanel()
+    private void HideConnectionPanel()
     {
         DOTween.Sequence().Append(
-            connectionPanel.DOAnchorPosY(-500f, animationDuration).SetEase(Ease.InBack)
+            connectionPanel.DOAnchorPosY(-300f, animationDuration).SetEase(Ease.InBack)
             ).OnComplete(() => connectionPanel.gameObject.SetActive(false));
     }
 }

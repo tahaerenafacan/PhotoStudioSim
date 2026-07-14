@@ -6,6 +6,7 @@ namespace SyntaxSultan.ComputerSystem.Apps
     public class MyStudioApp : AppWindow
     {
         [SerializeField] private TextMeshProUGUI studioNameText;
+        [SerializeField] private Evo.UI.Button changeStudioNameButton;
         [SerializeField] private RectTransform studioStarsContainer;
         [SerializeField] private GameObject starPrefab;
         [SerializeField] private GameObject emptyStarPrefab;
@@ -16,17 +17,40 @@ namespace SyntaxSultan.ComputerSystem.Apps
         [SerializeField] private RectTransform reviewsContainer;
         [SerializeField] private ReviewItem reviewPrefab;
 
+        [Header("Reputation")]
+        [SerializeField] private TextMeshProUGUI reputationText;
+        [SerializeField] private TextMeshProUGUI reputationLevelText;
+
         protected override void OnOpened()
         {
             base.OnOpened();
             UpdateStudioInfo();
             LoadReviews();
+
+            ReputationManager.Instance.OnReputationChanged += OnReputationChanged;
+            ReputationManager.Instance.OnReputationLevelUp += OnReputationLevelUp;
+        }
+        protected override void OnClosed()
+        {
+            base.OnClosed();
+            ReputationManager.Instance.OnReputationChanged -= OnReputationChanged;
+            ReputationManager.Instance.OnReputationLevelUp -= OnReputationLevelUp;
         }
 
         private void UpdateStudioInfo()
         {
-            studioNameText.text = "My Studio Placeholder";
+            studioNameText.text = GameManager.Instance.StudioName;
             FunctionLibrary.SetStars(studioStarsContainer, ShopRatingManager.Instance.CurrentShopStarLevel, starPrefab, emptyStarPrefab);
+            reputationText.text = "Reputation: " + ReputationManager.Instance.Reputation.ToString();
+            reputationLevelText.text = ReputationManager.Instance.ReputationLevel.ToString();
+        }
+        private void OnReputationChanged(int newReputation)
+        {
+            reputationText.text = "Reputation: " + newReputation.ToString();
+        }
+        private void OnReputationLevelUp(int newLevel)
+        {
+            reputationLevelText.text = "Reputation LVL: " + newLevel.ToString();
         }
 
         private void LoadReviews()

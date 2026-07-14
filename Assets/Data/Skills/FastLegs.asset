@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4dfbbb5d8b4a5a98a1507350a7398, type: 3}
+  m_Name: FastLegs
+  m_EditorClassIdentifier: Assembly-CSharp::MovementSpeedSkill
+  skillName: Fastest Legs in the World
+  description: You worked hard now you are faster than Usain Bolt
+  cost: 1
+  icon: {fileID: 21300000, guid: 4917e012654944a4ab22122b10eba9ec, type: 3}
+  prerequisites:
+  - {fileID: 11400000}
+  treePosition: {x: -120, y: 0}
+  speedIncrease: 2

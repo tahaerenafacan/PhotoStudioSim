@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: item.bed
     m_Metadata:
       m_Items: []
+  - m_Id: 28955054600871936
+    m_Key: item.box
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

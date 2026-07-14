@@ -5,6 +5,8 @@ namespace SyntaxSultan.ComputerSystem
 {
     public class Computer : MonoBehaviour
     {
+        public static Computer Instance { get; private set; }
+
         public bool IsPoweredOn { get; private set; }
         public bool IsPlayerSitting { get; private set; }
 
@@ -15,6 +17,19 @@ namespace SyntaxSultan.ComputerSystem
     
         public event Action OnPlayerSatDown;
         public event Action OnPlayerStoodUp;
+
+        [SerializeField] private ComputerSettings settings;
+        public ComputerSettings Settings => settings;
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this) 
+            { 
+                Destroy(gameObject); 
+                return; 
+            }
+            Instance = this;
+        }
 
         private void Start()
         {
