@@ -5,7 +5,6 @@ using TMPro;
 namespace SyntaxSultan.ComputerSystem
 {
     [RequireComponent(typeof(Button))]
-
     public class DesktopIcon : MonoBehaviour
     {
         [SerializeField] private Image iconImage;

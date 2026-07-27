@@ -76,11 +76,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.FileSystem.RemovableDriveItem
   itemData: {fileID: 11400000, guid: bc49727ec22a9334aba4455f5575eb9a, type: 2}
   throwForceMultiplier: 1
+  allowVerticalPlacement: 0
   driveName: USB
   driveLabel: Removable Drive
   capacityMB: 32
   preloadedFiles:
   - {fileID: 11400000, guid: b1f72cc986095944fb571c4e0ac91c29, type: 2}
+  - {fileID: 11400000, guid: 0310ef1905ebddc4b92f161e86e1c358, type: 2}
+  - {fileID: 11400000, guid: b77f93f95d7f10741b1055173f503cd9, type: 2}
 --- !u!65 &2804565112394439395
 BoxCollider:
   m_ObjectHideFlags: 0

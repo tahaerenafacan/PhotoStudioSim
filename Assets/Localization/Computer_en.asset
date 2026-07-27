@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: Printer Not Found
     m_Metadata:
       m_Items: []
+  - m_Id: 32956991803871232
+    m_Localized: No photo yet!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

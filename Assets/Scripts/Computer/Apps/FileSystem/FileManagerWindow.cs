@@ -36,6 +36,9 @@ namespace SyntaxSultan.ComputerSystem.Apps
         [SerializeField] private TMP_InputField  newFolderNameInput;
         [SerializeField] private TextMeshProUGUI currentPathText;
         [SerializeField] private TextMeshProUGUI statusText;
+        
+        [Header("App Integrations")]
+        [SerializeField] private AppDefinition galleryAppDefinition;
 
         private VirtualFileSystem vfs;
         private VirtualFolder     currentFolder;
@@ -142,14 +145,30 @@ namespace SyntaxSultan.ComputerSystem.Apps
             {
                 var entry    = Instantiate(fileEntryPrefab, fileGridParent);
                 var captured = file;
+
+                // Fotoğraf dosyasına çift tıklanınca PhotoViewer'ı bu dosyanın klasörüyle (izole) aç
+                System.Action onDoubleClick = file.FileType == VirtualFileType.Image
+                    ? () => OpenGalleryForFile(captured)
+                    : null;
+
                 entry.Setup($"{file.Name}.{file.Extension}",
                     iconConfig?.GetFileIconByType(file.FileType),
-                    0, 
-                    null,
+                    0,
+                    onDoubleClick,
                     () => Select(captured, entry));
             }
 
             UpdateStatus();
+        }
+        
+        /// <summary>
+        /// Bir fotoğraf dosyasına çift tıklandığında PhotoViewer'ı (GalleryApp) o dosyanın
+        /// bulunduğu klasör bağlamıyla açar. Örn. USB'deki tek bir alt klasörü izole şekilde göstermek için.
+        /// </summary>
+        private void OpenGalleryForFile(VirtualFile file)
+        {
+            if (galleryAppDefinition == null || file.Parent == null) return;
+            WindowManager?.AppManager?.RequestOpenApp(galleryAppDefinition, file);
         }
 
         // ── Toolbar Actions ──────────────────────────────────────────
@@ -202,6 +221,11 @@ namespace SyntaxSultan.ComputerSystem.Apps
 
         private static void ClearChildren(Transform parent)
         {
+            if (parent == null)
+            {
+                Debug.Log("Parent null");
+                return;
+            }
             foreach (Transform child in parent)
                 Destroy(child.gameObject);
         }

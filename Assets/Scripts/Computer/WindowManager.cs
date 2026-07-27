@@ -10,6 +10,7 @@ namespace SyntaxSultan.ComputerSystem
     {
         [SerializeField] private Computer computer;
         [SerializeField] private AppManager appManager;
+        public AppManager AppManager => appManager;
         
         [Header("UI Components")]
         [SerializeField] private ComputerSplashScreen splashScreen;
@@ -118,7 +119,7 @@ namespace SyntaxSultan.ComputerSystem
             computer.CompleteShutdown();
         }
 
-        public void OpenWindow(AppDefinition def)
+        public void OpenWindow(AppDefinition def, object context = null)
         {
             if (def.windowPrefab == null) return;
 
@@ -129,7 +130,7 @@ namespace SyntaxSultan.ComputerSystem
             }
 
             AppWindow window = Instantiate(def.windowPrefab, windowParent);
-            window.Setup(def, this);
+            window.Setup(def, this, context);
 
             openWindows.Add(window);
             activeWindows[def] = window;

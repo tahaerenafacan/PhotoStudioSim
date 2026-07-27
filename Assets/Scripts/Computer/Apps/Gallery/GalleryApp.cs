@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
+using SyntaxSultan.ComputerSystem.FileSystem;
 using Computer.Apps.Gallery;
 using SyntaxSultan.PrinterSystem;
 using UnityEngine;
@@ -10,22 +11,26 @@ namespace SyntaxSultan.ComputerSystem.Apps
 {
     public class GalleryApp : AppWindow
     {
-        [Header("Galeri UI")] [SerializeField] private Transform thumbnailGrid;
-        [SerializeField] private GameObject thumbnailPrefab;
+        [Header("Galeri UI")] 
+        [SerializeField] private Transform thumbnailGrid;
+        [SerializeField] private PhotoItem thumbnailPrefab;
         [SerializeField] private TextMeshProUGUI emptyLabel;
+        [SerializeField] private TextMeshProUGUI currentPathText;
 
-        [Header("Preview Panel")] [SerializeField]
-        private GameObject previewPanel;
-
+        [Header("Preview Panel")] 
+        [SerializeField] private GameObject previewPanel;
         [SerializeField] private RawImage previewImage;
         [SerializeField] private Button prevButton;
         [SerializeField] private Button nextButton;
         [SerializeField] private TextMeshProUGUI indexText;
         [SerializeField] private Button printButton;
 
-        [Header("Printing")] [SerializeField] private PrintPopup printPopup;
+        [Header("Printing")] 
+        [SerializeField] private PrintPopup printPopup;
 
+        private VirtualFolder targetFolder;
         private List<Texture2D> photos = new();
+        private List<VirtualFile> photoFiles = new();
         private int currentIndex = -1;
 
         protected override void Awake()
@@ -58,25 +63,59 @@ namespace SyntaxSultan.ComputerSystem.Apps
             nextButton?.onClick.AddListener(ShowNext);
             printButton?.onClick.AddListener(PrintButtonClicked);
 
-            CameraStorage.Instance.OnPhotosChanged += RefreshGallery;
+            // Context 3 türden biri olabilir:
+            //  - VirtualFile  → dosya yöneticisinden bir fotoğrafa çift tıklandı: o dosyanın klasörü açılır ve o fotoğraf önizlemede seçili gelir
+            //  - VirtualFolder → belirli bir klasör bağlamıyla açılış isteği (örn. USB izole görünüm)
+            //  - null         → masaüstü ikonu: varsayılan iç disk Photos klasörü
+            VirtualFile fileToPreview = Context as VirtualFile;
+            targetFolder = fileToPreview?.Parent
+                           ?? Context as VirtualFolder
+                           ?? VirtualFileSystem.Instance.GetPhotosFolder();
+
+            VirtualFileSystem.Instance.OnFileSystemChanged += HandleFolderChanged;
             RefreshGallery();
+
+            if (fileToPreview != null)
+            {
+                int index = photoFiles.IndexOf(fileToPreview);
+                if (index >= 0) ShowPhoto(index);
+            }
         }
 
         protected override void OnClosed()
         {
-            CameraStorage.Instance.OnPhotosChanged -= RefreshGallery;
+            if (VirtualFileSystem.Instance != null)
+                VirtualFileSystem.Instance.OnFileSystemChanged -= HandleFolderChanged;
         }
 
-        // ── Galeri ──────────────────────────────────────────────────
-
+        private void HandleFolderChanged(VirtualFolder changedFolder)
+        {
+            if (changedFolder == targetFolder) RefreshGallery();
+        }
+        
         private void RefreshGallery()
         {
-            photos = new List<Texture2D>(CameraStorage.Instance.Photos);
+            photos.Clear();
+            photoFiles.Clear();
+
+            if (currentPathText) currentPathText.text = targetFolder != null ? targetFolder.GetFullPath() : "-";
+
+            if (targetFolder != null)
+            {
+                foreach (var file in targetFolder.GetFiles())
+                {
+                    if (file.FileType != VirtualFileType.Image) continue;
+                    var tex = file.GetContent<Texture2D>();
+                    if (tex == null) continue;
+
+                    photos.Add(tex);
+                    photoFiles.Add(file); // Aynı index'te photos ile eşleşir; unique dosya adı sayesinde ShowPhoto ile geri bulunabilir
+                }
+            }
 
             FunctionLibrary.DestroyChildren(thumbnailGrid);
 
             bool hasPhotos = photos.Count > 0;
-
             if (emptyLabel) emptyLabel.gameObject.SetActive(!hasPhotos);
 
             if (!hasPhotos)
@@ -89,14 +128,9 @@ namespace SyntaxSultan.ComputerSystem.Apps
             // Thumbnail'ları oluştur
             for (int i = 0; i < photos.Count; i++)
             {
-                int idx = i;
-                GameObject thumb = Instantiate(thumbnailPrefab, thumbnailGrid);
-                thumb.GetComponentInChildren<RawImage>().texture = photos[i];
-
-                // Tıklanınca önizlemeye geç
-                Button btn = thumb.GetComponent<Button>();
-                if (btn == null) btn = thumb.gameObject.AddComponent<Button>();
-                btn.onClick.AddListener(() => ShowPhoto(idx));
+                int index = i;
+                PhotoItem photo = Instantiate(thumbnailPrefab, thumbnailGrid);
+                photo.SetImage(photos[index], () => ShowPhoto(index));
             }
         }
 

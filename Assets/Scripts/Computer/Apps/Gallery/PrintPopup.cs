@@ -53,23 +53,25 @@ namespace Computer.Apps.Gallery
             cancelButton.onClick.AddListener(ClosePrintPopup);
             printerDropdown.onItemSelected.AddListener(OnPrinterDropdownChanged);
         }
+        
+        private void Start()
+        {
+            if (Router.Instance != null)
+            {
+                Router.Instance.OnNetworkDevicesChanged += RefreshPrinterList;
+            }
+        }
 
         private void OnDestroy()
         {
             printButton.onClick.RemoveListener(PrintButtonClicked);
             cancelButton.onClick.RemoveListener(ClosePrintPopup);
             printerDropdown.onItemSelected.RemoveListener(OnPrinterDropdownChanged);
+            
+            if (Router.Instance != null)
+                Router.Instance.OnNetworkDevicesChanged -= RefreshPrinterList;
         }
 
-        private void Start()
-        {
-            RefreshPrinterList(null, null);
-            if (Router.Instance != null)
-            {
-                Router.Instance.OnNetworkDevicesChanged += RefreshPrinterList;
-            }
-        }
-    
         private void RefreshPrinterList(object sender, NetworkDevicesChangedEventArgs networkDevicesChangedEventArgs)
         {
             availablePrinters = Router.Instance.GetDevicesByType(NetworkDeviceType.Printer);

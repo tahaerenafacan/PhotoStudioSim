@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: printerNotFound
     m_Metadata:
       m_Items: []
+  - m_Id: 32956991803871232
+    m_Key: galleryApp.NoPhoto
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

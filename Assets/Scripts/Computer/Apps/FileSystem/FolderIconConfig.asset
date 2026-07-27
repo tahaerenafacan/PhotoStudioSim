@@ -27,3 +27,5 @@ MonoBehaviour:
   fileTypes:
   - fileType: 2
     icon: {fileID: 21300000, guid: 87bf81f66a1625a42a968f63adc37c2f, type: 3}
+  - fileType: 1
+    icon: {fileID: 21300000, guid: 3d4569ee9c34302408457ebd12f5384a, type: 3}

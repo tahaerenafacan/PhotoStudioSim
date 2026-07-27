@@ -1526,6 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb6c1a156744244ad8844ef365ed246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.ComputerSystem.Apps.FileManagerWindow
+  Definition: {fileID: 0}
   titleText: {fileID: 255160247585418622}
   titleBar: {fileID: 6686003899781560450}
   icon: {fileID: 6706118498789341188}
@@ -1534,7 +1535,6 @@ MonoBehaviour:
   closeDuration: 0.15
   openEase: 27
   closeEase: 26
-  Definition: {fileID: 0}
   iconConfig: {fileID: 11400000, guid: 7d0d48657654a4f45b6f94bf6251ba65, type: 2}
   driveTreeParent: {fileID: 1827942992116441243}
   fileGridParent: {fileID: 4890404164605855863}
@@ -1547,6 +1547,8 @@ MonoBehaviour:
   newFolderNameInput: {fileID: 1813396004349540993}
   currentPathText: {fileID: 1325323466562054363}
   statusText: {fileID: 2447457367791417011}
+  appManager: {fileID: 0}
+  galleryAppDefinition: {fileID: 11400000, guid: 6a1bfaef467f4c24e9cced7d74ac343e, type: 2}
 --- !u!1 &2340085293809520498
 GameObject:
   m_ObjectHideFlags: 0

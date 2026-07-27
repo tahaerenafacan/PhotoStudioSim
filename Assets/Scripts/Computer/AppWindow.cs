@@ -11,6 +11,11 @@ namespace SyntaxSultan.ComputerSystem
 
     public class AppWindow : MonoBehaviour, IPointerDownHandler
     {
+        [HideInInspector] public AppDefinition Definition;
+        protected RectTransform RectT { get; private set; }
+        protected object Context { get; private set; }
+        protected WindowManager WindowManager => windowManager;
+        
         [SerializeField] private TextMeshProUGUI titleText;
         [SerializeField] private RectTransform titleBar;
         [SerializeField] private Image icon;
@@ -21,14 +26,10 @@ namespace SyntaxSultan.ComputerSystem
         [SerializeField] private Ease openEase = Ease.OutBack;
         [SerializeField] private Ease closeEase = Ease.InBack;
 
-        [HideInInspector] public AppDefinition Definition;
         private WindowManager windowManager;
-
-        protected RectTransform RectT { get; private set; }
         private CanvasGroup canvasGroup;
         private RectTransform parentRectT;
         private Camera canvasCamera;
-
 
         protected virtual void Awake()
         {
@@ -45,12 +46,13 @@ namespace SyntaxSultan.ComputerSystem
             closeButton.onClick.AddListener(Close);
         }
 
-        public void Setup(AppDefinition def, WindowManager wm)
+        public void Setup(AppDefinition appData, WindowManager winManager, object context = null)
         {
-            Definition = def;
-            windowManager = wm;
-            if (icon) icon.sprite = def.icon;
-            if (titleText) titleText.text = def.appName;
+            Definition = appData;
+            windowManager = winManager;
+            Context = context;
+            if (icon) icon.sprite = appData.icon;
+            if (titleText) titleText.text = appData.appName;
             OnOpened();
             PlayOpenAnimation();
         }

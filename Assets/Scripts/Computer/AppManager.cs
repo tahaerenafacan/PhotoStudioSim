@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace SyntaxSultan.ComputerSystem
@@ -11,7 +10,8 @@ namespace SyntaxSultan.ComputerSystem
 
         private readonly List<AppDefinition> installedApps = new();
     
-        public event Action<AppDefinition> OnAppOpened;
+        // context, PhotoViewer gibi belirli bir klasörle açılması gereken app'ler için
+        public event Action<AppDefinition, object> OnAppOpened;        
         public event Action<AppDefinition> OnAppClosed;
         public event Action OnAppsRefreshed;
 
@@ -44,10 +44,10 @@ namespace SyntaxSultan.ComputerSystem
             }
         }
 
-        public void RequestOpenApp(AppDefinition def)
+        public void RequestOpenApp(AppDefinition def, object context = null)
         {
             if (!installedApps.Contains(def)) return;
-            OnAppOpened?.Invoke(def);
+            OnAppOpened?.Invoke(def,  context);
         }
 
         public void RequestCloseApp(AppDefinition def)

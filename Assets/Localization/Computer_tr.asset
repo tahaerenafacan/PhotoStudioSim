@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: "Yaz\u0131c\u0131 Bulunamad\u0131"
     m_Metadata:
       m_Items: []
+  - m_Id: 32956991803871232
+    m_Localized: "Hi\xE7 foto\u011Fraf yok."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
