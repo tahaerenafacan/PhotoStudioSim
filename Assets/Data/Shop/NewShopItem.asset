@@ -15,4 +15,4 @@ MonoBehaviour:
   itemDefinition: {fileID: 11400000, guid: bc49727ec22a9334aba4455f5575eb9a, type: 2}
   category: {fileID: 11400000, guid: bbdbfa71e469a4a959756b2978585571, type: 2}
   price: 50
-  deliveryTimeSeconds: 60
+  deliveryTimeSeconds: 3

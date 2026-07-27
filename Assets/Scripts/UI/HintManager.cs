@@ -12,6 +12,8 @@ public class HintManager : MonoBehaviour
     [Header("Pickup Hint Settings")]
     [SerializeField] private CanvasGroup pickupHint;
     [SerializeField] private LayoutElement pickupLayout;
+    [SerializeField] private LocalizedString pickupLocalizedString;
+    [SerializeField] private TMPro.TextMeshProUGUI pickupHintText;
 
     [Header("Interact Hint Settings")] 
     [SerializeField] private TMPro.TextMeshProUGUI interactHintText;
@@ -38,7 +40,15 @@ public class HintManager : MonoBehaviour
 
         string resolvedInteract = interactText?.GetLocalizedString();
         if (!string.IsNullOrEmpty(resolvedInteract))
-            interactHintText.text = resolvedInteract;
+        {
+            interactHintText.text = $"<sprite name=\"f\"/> {resolvedInteract}";
+        }
+        
+        string resolvedPickup = pickupLocalizedString?.GetLocalizedString();
+        if (!string.IsNullOrEmpty(resolvedPickup))
+        {
+            pickupHintText.text = $"<sprite name=\"e\"/> {resolvedPickup}";
+        }
 
         ToggleUIElement(interactHint, interactLayout, interact);
         ToggleUIElement(pickupHint, pickupLayout, pickup);

@@ -145,12 +145,12 @@ public class PlayerInteraction : MonoBehaviour
             currentTarget = interactableBehaviour.transform;
         }
 
-        if (prevPickable != null && prevPickable.transform != currentTarget)
+        if (prevPickable && prevPickable.transform != currentTarget)
         {
             FunctionLibrary.SetLayerRecursively(prevPickable.transform, interactableLayerValue >= 0 ? interactableLayerValue : 0);
         }
 
-        if (prevInteractable is MonoBehaviour prevInteractableBehaviour && prevInteractableBehaviour.transform != currentTarget)
+        if (prevInteractable is MonoBehaviour prevInteractableBehaviour && prevInteractableBehaviour && prevInteractableBehaviour.transform != currentTarget)
         {
             FunctionLibrary.SetLayerRecursively(prevInteractableBehaviour.transform, interactableLayerValue >= 0 ? interactableLayerValue : 0);
         }

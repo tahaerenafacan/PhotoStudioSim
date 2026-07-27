@@ -78,7 +78,8 @@ namespace SyntaxSultan.PrinterSystem
 
         public void PrintDocument(PrintSettings settings, Texture2D imageToPrint)
         {
-            Debug.Log(settings);
+            if (isPrinting) return; 
+
             PrinterError error = ValidatePrint(settings);
             if (error != PrinterError.None)
             {
@@ -87,22 +88,56 @@ namespace SyntaxSultan.PrinterSystem
                 return;
             }
 
-            PrintedPaper prefab = ResolvePaperPrefab(settings.paperSize);
-            if (prefab == null || paperSpawnPoint == null) return;
+            StartCoroutine(PrintRoutine(settings, imageToPrint));
+        }
 
-            paperTray.TryConsume();
-            inkSystem.ConsumeInk(settings.isColored);
-
-            PrintedPaper spawnedPaper = Instantiate(prefab, paperSpawnPoint.position, paperSpawnPoint.rotation);
-            spawnedPaper.Setup(imageToPrint, settings);
-            spawnedPaper.TogglePhysics(false);
+        private IEnumerator PrintRoutine(PrintSettings settings, Texture2D imageToPrint)
+        {
+            isPrinting = true;
 
             float ppm      = settings.isColored ? colorPagePerMinute : blackPagePerMinute;
             float duration = 60f / ppm;
-            StartCoroutine(AnimatePaperEject(spawnedPaper, duration));
+
+            for (int i = 0; i < settings.quantity; i++)
+            {
+                PrintedPaper prefab = ResolvePaperPrefab(settings.paperSize);
+                if (prefab == null || paperSpawnPoint == null) 
+                {
+                    isPrinting = false;
+                    yield break;
+                }
+
+                paperTray.TryConsume();
+                inkSystem.ConsumeInk(settings.isColored);
+
+                PrintedPaper spawnedPaper = Instantiate(prefab, paperSpawnPoint.position, paperSpawnPoint.rotation);
+                spawnedPaper.Setup(imageToPrint, settings);
+                spawnedPaper.TogglePhysics(false);
+
+                yield return StartCoroutine(AnimatePaperEject(spawnedPaper, duration));
+            }
+
+            isPrinting = false;
         }
 
-        // ── Refill API (dışarıdan çağrılır) ───────────────────────
+        private IEnumerator AnimatePaperEject(PrintedPaper paper, float duration)
+        {
+            Vector3 startPos = paperSpawnPoint.position;
+            Vector3 endPos   = paperSpawnEndPoint.position;
+            float elapsed    = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                paper.transform.position = Vector3.Lerp(startPos, endPos, Mathf.Clamp01(elapsed / duration));
+                yield return null;
+            }
+
+            paper.transform.position = endPos;
+            paper.TogglePhysics(true);
+
+            OnPrintCompleted?.Invoke(paper);
+        }
 
         public void RefillCyan(float amount)    => inkSystem.RefillCyan(amount);
         public void RefillMagenta(float amount) => inkSystem.RefillMagenta(amount);
@@ -111,7 +146,6 @@ namespace SyntaxSultan.PrinterSystem
         public void RefillAllInk(float amount)  => inkSystem.RefillAll(amount);
         public int  RefillPaper(int amount)     => paperTray.Refill(amount);
 
-        // ── Private ────────────────────────────────────────────────
 
         /// <summary>
         /// Baskı öncesi tüm koşulları öncelik sırasıyla kontrol eder.
@@ -150,32 +184,6 @@ namespace SyntaxSultan.PrinterSystem
             }
 
             OnPowerChanged?.Invoke(isPowered);
-        }
-
-        /// <summary>
-        /// Kağıdı spawn noktasından çıkış noktasına kaydırır.
-        /// Yan etki: isPrinting flag'ini yönetir; doğrudan çağrılmamalı.
-        /// </summary>
-        private IEnumerator AnimatePaperEject(PrintedPaper paper, float duration)
-        {
-            isPrinting = true;
-
-            Vector3 startPos = paperSpawnPoint.position;
-            Vector3 endPos   = paperSpawnEndPoint.position;
-            float elapsed    = 0f;
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                paper.transform.position = Vector3.Lerp(startPos, endPos, Mathf.Clamp01(elapsed / duration));
-                yield return null;
-            }
-
-            paper.transform.position = endPos;
-            paper.TogglePhysics(true);
-            isPrinting = false;
-
-            OnPrintCompleted?.Invoke(paper);
         }
     }
 }
