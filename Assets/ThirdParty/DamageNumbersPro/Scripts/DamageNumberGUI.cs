@@ -38,9 +38,9 @@ namespace DamageNumbersPro
         protected override void InternalOnSpawn()
         {
             // Only damage numbers of the same parent can interact with each other
-            if(spamGroup != "" && transform.parent != null)
+            if (spamGroup != "" && transform.parent != null)
             {
-                spamGroup += GetInstanceID();
+                spamGroup += transform.parent.GetInstanceID();
             }
 
             // GUI Alpha Fix
