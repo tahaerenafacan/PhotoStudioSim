@@ -658,6 +658,34 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Broom"",
+            ""id"": ""c68b20ad-e5d1-4894-b994-a929d68856c8"",
+            ""actions"": [
+                {
+                    ""name"": ""Clean"",
+                    ""type"": ""Button"",
+                    ""id"": ""09e29b30-cce5-4d82-8acc-de2e05521d54"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""56a346d5-0925-4ea7-a5ce-c78cf113b834"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Clean"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -686,6 +714,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Camera_Focus = m_Camera.FindAction("Focus", throwIfNotFound: true);
         m_Camera_ToggleMode = m_Camera.FindAction("ToggleMode", throwIfNotFound: true);
         m_Camera_CycleParam = m_Camera.FindAction("CycleParam", throwIfNotFound: true);
+        // Broom
+        m_Broom = asset.FindActionMap("Broom", throwIfNotFound: true);
+        m_Broom_Clean = m_Broom.FindAction("Clean", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -693,6 +724,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputActions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Interactions.enabled, "This will cause a leak and performance issues, PlayerInputActions.Interactions.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Camera.enabled, "This will cause a leak and performance issues, PlayerInputActions.Camera.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Broom.enabled, "This will cause a leak and performance issues, PlayerInputActions.Broom.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1217,6 +1249,102 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="CameraActions" /> instance referencing this action map.
     /// </summary>
     public CameraActions @Camera => new CameraActions(this);
+
+    // Broom
+    private readonly InputActionMap m_Broom;
+    private List<IBroomActions> m_BroomActionsCallbackInterfaces = new List<IBroomActions>();
+    private readonly InputAction m_Broom_Clean;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Broom".
+    /// </summary>
+    public struct BroomActions
+    {
+        private @PlayerInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public BroomActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Broom/Clean".
+        /// </summary>
+        public InputAction @Clean => m_Wrapper.m_Broom_Clean;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Broom; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="BroomActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(BroomActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="BroomActions" />
+        public void AddCallbacks(IBroomActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BroomActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BroomActionsCallbackInterfaces.Add(instance);
+            @Clean.started += instance.OnClean;
+            @Clean.performed += instance.OnClean;
+            @Clean.canceled += instance.OnClean;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="BroomActions" />
+        private void UnregisterCallbacks(IBroomActions instance)
+        {
+            @Clean.started -= instance.OnClean;
+            @Clean.performed -= instance.OnClean;
+            @Clean.canceled -= instance.OnClean;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BroomActions.UnregisterCallbacks(IBroomActions)" />.
+        /// </summary>
+        /// <seealso cref="BroomActions.UnregisterCallbacks(IBroomActions)" />
+        public void RemoveCallbacks(IBroomActions instance)
+        {
+            if (m_Wrapper.m_BroomActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="BroomActions.AddCallbacks(IBroomActions)" />
+        /// <seealso cref="BroomActions.RemoveCallbacks(IBroomActions)" />
+        /// <seealso cref="BroomActions.UnregisterCallbacks(IBroomActions)" />
+        public void SetCallbacks(IBroomActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BroomActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BroomActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="BroomActions" /> instance referencing this action map.
+    /// </summary>
+    public BroomActions @Broom => new BroomActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
     /// </summary>
@@ -1366,5 +1494,20 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCycleParam(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Broom" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="BroomActions.AddCallbacks(IBroomActions)" />
+    /// <seealso cref="BroomActions.RemoveCallbacks(IBroomActions)" />
+    public interface IBroomActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Clean" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnClean(InputAction.CallbackContext context);
     }
 }

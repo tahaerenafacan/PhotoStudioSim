@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: Led Ekran
     m_Metadata:
       m_Items: []
+  - m_Id: 36544566288306176
+    m_Localized: "S\xFCp\xFCrge"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

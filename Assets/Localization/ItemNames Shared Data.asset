@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: item.LedPanelName
     m_Metadata:
       m_Items: []
+  - m_Id: 36544566288306176
+    m_Key: item.Broom
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

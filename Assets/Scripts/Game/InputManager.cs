@@ -133,16 +133,6 @@ public class InputManager : MonoBehaviour
 
     public bool GetSprintInput() => localSprint;
 
-    /// <summary>Sol tık bu frame basıldı mı? (Kullanımı başlat)</summary>
     public bool GetUseInputDown()
         => Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
-
-    /// <summary>Sol tık bu frame bırakıldı mı? (Kullanımı durdur)</summary>
-    public bool GetUseInputUp()
-        => Mouse.current != null && Mouse.current.leftButton.wasReleasedThisFrame;
-
-    /// <summary>Sol tık şu an basılı tutuluyor mu?</summary>
-    public bool GetUseInput()
-        => Mouse.current != null && Mouse.current.leftButton.isPressed;
-
 }

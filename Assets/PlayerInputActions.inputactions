@@ -572,6 +572,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Broom",
+            "id": "c68b20ad-e5d1-4894-b994-a929d68856c8",
+            "actions": [
+                {
+                    "name": "Clean",
+                    "type": "Button",
+                    "id": "09e29b30-cce5-4d82-8acc-de2e05521d54",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "56a346d5-0925-4ea7-a5ce-c78cf113b834",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clean",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

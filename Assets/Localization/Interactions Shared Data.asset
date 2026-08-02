@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Key: ledPanel.Toggle
     m_Metadata:
       m_Items: []
+  - m_Id: 43132560688402432
+    m_Key: broom.Clean
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

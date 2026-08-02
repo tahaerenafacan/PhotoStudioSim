@@ -74,6 +74,10 @@ MonoBehaviour:
     m_Localized: "A\xE7/Kapat"
     m_Metadata:
       m_Items: []
+  - m_Id: 43132560688402432
+    m_Localized: "S\xFCp\xFCr"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 99c9720ab356a0642a771bea13969a05
     - 2cf1f46594cc93a4498f521e4ace2779
+    - 35299a6a99d6dfe4bb709527ba95aab0
     values:
     - goDatas_byGlobalId:
         keys:
@@ -163,6 +164,19 @@ MonoBehaviour:
           iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 0
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-35299a6a99d6dfe4bb709527ba95aab0-308573102-0
+        - globalObjectIdString: GlobalObjectId_V1-2-35299a6a99d6dfe4bb709527ba95aab0-5751442371154641561-1303725571
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+        - colorIndex: 7
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
   bookmarks: []
   bookmarkedScenePaths:
   - Assets/Scenes/PrototypeScene.unity

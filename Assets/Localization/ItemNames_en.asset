@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: Led Panel
     m_Metadata:
       m_Items: []
+  - m_Id: 36544566288306176
+    m_Localized: Broom
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

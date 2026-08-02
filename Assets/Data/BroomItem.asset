@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f109cc59c1895428a298ed570d7bfb, type: 3}
+  m_Name: BroomItem
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:4b757296a2bfcb947acc0c01cb31c642
+    m_TableEntryReference:
+      m_KeyId: 36544566288306176
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 4b19e4cbb30ac0c439a74de57feb1ba7, type: 3}
+  itemPrefab: {fileID: 7748722880437907481, guid: b4425b72626b1af4098f5a2a2c1585bb, type: 3}
+  holdPositionOffset: {x: 0.26, y: -0.77, z: 1.3}
+  holdRotationOffset: {x: -60.14, y: 0, z: 0}
+  references:
+    version: 2
+    RefIds: []

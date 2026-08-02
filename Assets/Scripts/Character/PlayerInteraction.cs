@@ -1,4 +1,5 @@
 using System;
+using SyntaxSultan.DirtSystem;
 using UnityEngine;
 
 /// <summary>
@@ -25,15 +26,20 @@ public class PlayerInteraction : MonoBehaviour
     
     public BasePickableItem DetectedPickable { get; private set; }
     public IInteractable DetectedInteractable { get; private set; }
+    public ICleanable DetectedCleanable { get; private set; }
+    
     public bool HasDetection => DetectedPickable != null || DetectedInteractable != null;
     public event Action<bool> OnShouldCheckInteractionStateChanged;
     public event Action<BasePickableItem, IInteractable> OnDetectionChanged;
+    public event Action<ICleanable> OnCleanableChanged;
 
     BasePickableItem prevPickable;
     IInteractable prevInteractable;
+    ICleanable prevCleanable;
     
     private int raycastMask;
-    private int outlineLayer;
+    private int outlineLayerValue;
+    private int interactableLayerValue;
 
     private void Awake()
     {
@@ -48,9 +54,11 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         mainCam = Camera.main;
-        raycastMask = interactableLayer.value;
-        outlineLayer = LayerMask.NameToLayer("Outline");
         if (!mainCam) Debug.LogError("[PlayerInteraction] Ana kamera bulunamadı!");
+        
+        raycastMask = interactableLayer.value;
+        outlineLayerValue =      LayerMask.NameToLayer("Outline");
+        interactableLayerValue = LayerMask.NameToLayer("Interactable");
 
         InputManager.Instance.OnInteractKeyPressed += HandleInteractInput;
         InputManager.Instance.OnPickupKeyPressed += HandlePickup;
@@ -65,8 +73,7 @@ public class PlayerInteraction : MonoBehaviour
     public void DisableInteraction()
     {
         shouldCheckInteraction = false;
-
-        int interactableLayerValue = LayerMask.NameToLayer("Interactable");
+        
         if (interactableLayerValue >= 0)
         {
             if (DetectedPickable != null)
@@ -78,7 +85,9 @@ public class PlayerInteraction : MonoBehaviour
 
         DetectedPickable = null;
         DetectedInteractable = null;
+        DetectedCleanable = null;
         OnDetectionChanged?.Invoke(null, null);
+        OnCleanableChanged?.Invoke(null);
         OnShouldCheckInteractionStateChanged?.Invoke(shouldCheckInteraction);
     }
 
@@ -92,17 +101,19 @@ public class PlayerInteraction : MonoBehaviour
     {
         prevPickable = DetectedPickable;
         prevInteractable = DetectedInteractable;
+        prevCleanable = DetectedCleanable;
 
         DetectedPickable = null;
         DetectedInteractable = null;
+        DetectedCleanable = null;
 
         if (mainCam)
         {
             Ray ray = mainCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
-            if (outlineLayer >= 0)
+            if (outlineLayerValue >= 0)
             {
-                raycastMask |= 1 << outlineLayer;
+                raycastMask |= 1 << outlineLayerValue;
             }
 
             if (Physics.Raycast(ray, out RaycastHit hit, interactionRange, raycastMask))
@@ -123,20 +134,33 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     DetectedInteractable = null;
                 }
+                
+                if (hitCol.TryGetComponent(out ICleanable detectedCleanable))
+                {
+                    DetectedCleanable = detectedCleanable;
+                }
+                else
+                {
+                    DetectedCleanable = null;
+                }
             }
         }
 
         HandleOutline(DetectedPickable, DetectedInteractable);
 
         if (prevPickable != DetectedPickable || prevInteractable != DetectedInteractable)
+        {
             OnDetectionChanged?.Invoke(DetectedPickable, DetectedInteractable);
+        }
+        if (prevCleanable != DetectedCleanable && PlayerItemHolder.Instance.CurrentItem is BroomItem)
+        {
+            OnCleanableChanged?.Invoke(DetectedCleanable);
+            Debug.Log("Cleanable");
+        }
     }
 
     private void HandleOutline(BasePickableItem pickable, IInteractable interactable)
     {
-        int interactableLayerValue = LayerMask.NameToLayer("Interactable");
-        int outlineLayerValue = LayerMask.NameToLayer("Outline");
-
         Transform currentTarget = null;
 
         if (pickable != null)
@@ -174,59 +198,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandlePickup()
     {
-        if (DetectedPickable != null)
-        {
-            PlayerItemHolder.Instance.TryPickup(DetectedPickable);
-            return;
-        }
-    }
-    
-    //DEBUG
-    private void OnGUI()
-    {
-        if (!enableDebug) return;
-        
-        GUI.color = new Color(0f, 0f, 0f, 0.6f);
-        GUI.DrawTexture(new Rect(10, 10, 300, 120), Texture2D.whiteTexture);
-        GUI.color = Color.white;
-
-        GUIStyle style = new GUIStyle(GUI.skin.label)
-        {
-            fontSize = 13,
-            fontStyle = FontStyle.Bold
-        };
-
-        float x = 18, y = 14, lineH = 22;
-
-        style.normal.textColor = Color.cyan;
-        GUI.Label(new Rect(x, y, 280, lineH), "── PlayerInteraction Debug ──", style);
-        y += lineH;
-
-        // Raycast durumu
-        style.normal.textColor = HasDetection ? Color.green : Color.red;
-        GUI.Label(new Rect(x, y, 280, lineH),
-            $"Raycast: {(HasDetection ? "HIT" : "MISS")}", style);
-        y += lineH;
-
-        // IPickable
-        style.normal.textColor = DetectedPickable != null ? Color.yellow : Color.gray;
-        GUI.Label(new Rect(x, y, 280, lineH),
-            $"IPickable:     {(DetectedPickable != null ? DetectedPickable.GetType().Name : "—")}", style);
-        y += lineH;
-
-        // IInteractable
-        style.normal.textColor = DetectedInteractable != null ? Color.yellow : Color.gray;
-        GUI.Label(new Rect(x, y, 280, lineH),
-            $"IInteractable: {(DetectedInteractable != null ? DetectedInteractable.GetType().Name : "—")}", style);
-        y += lineH;
-
-        // Holding item
-        bool holding = PlayerItemHolder.Instance != null && PlayerItemHolder.Instance.IsHoldingItem;
-        style.normal.textColor = holding ? Color.magenta : Color.gray;
-        GUI.Label(new Rect(x, y, 280, lineH),
-            $"Holding Item:  {(holding ? "EVET" : "HAYIR")}", style);
-        if (holding)
-            GUI.Label(new Rect(x + 150, y, 280, lineH),
-                $"| {PlayerItemHolder.Instance.CurrentItem.ToString()}", style);
+        if (DetectedPickable == null) return;
+        PlayerItemHolder.Instance.TryPickup(DetectedPickable);
     }
 }
