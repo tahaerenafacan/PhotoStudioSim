@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377988076d8b7d8499d9d81bbe32ce50, type: 3}
+  m_Name: RePivot Welcome
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  title: "RePivot \u2014 Pivot Adjuster"
+  sections:
+  - heading: Welcome
+    text: "Thank you for purchasing RePivot!\n\nRePivot lets you reposition the pivot
+      point of any scene GameObject using a simple wrapper-parent technique. Editor-only
+      \u2014 no runtime footprint."
+    linkText: 
+    url: 
+  - heading: Quick Start
+    text: "1. Open  Tools > SplashArt > Pivot Adjuster\n2. Select a GameObject in
+      the Scene\n3. Choose a pivot position (preset grid, manual entry, or scene
+      handle)\n4. Click \"Apply Pivot\"\n\nThe original object does not visually
+      move \u2014 only the pivot (parent origin) changes. Undo with Ctrl+Z / Cmd+Z
+      at any time."
+    linkText: 
+    url: 
+  - heading: Requirements
+    text: "Unity 6 (6000.0) or newer\nAny render pipeline (Built-in, URP, HDRP)\nEditor
+      only \u2014 nothing included in player builds"
+    linkText: 
+    url: 
+  - heading: Documentation
+    text: Full offline documentation is included in the package.
+    linkText: Open Documentation (PDF)
+    url: '{doc}'
+  - heading: Support
+    text: If you encounter any issues or have feature requests, please contact us
+      through the Asset Store publisher page.
+    linkText: SplashArt Toolbox on Asset Store
+    url: https://assetstore.unity.com/publishers/87608
+  loadedLayout: 0

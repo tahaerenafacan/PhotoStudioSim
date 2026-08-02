@@ -67,6 +67,10 @@ MonoBehaviour:
     m_Key: openBox
     m_Metadata:
       m_Items: []
+  - m_Id: 42786891331129344
+    m_Key: ledPanel.Toggle
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

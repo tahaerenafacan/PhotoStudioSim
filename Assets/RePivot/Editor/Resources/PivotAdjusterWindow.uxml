@@ -1,0 +1,117 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+
+    <ui:ScrollView>
+        <ui:VisualElement class="rp-root">
+
+            <ui:VisualElement class="rp-section">
+                <ui:Label class="rp-section__header" text="Selection" />
+                <ui:Label name="lbl-selected-object" class="rp-object-name"
+                          text="No object selected" />
+                <ui:Label name="lbl-selection-status" class="rp-status" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="rp-section">
+                <ui:Label class="rp-section__header" text="Pivot Presets" />
+
+                <ui:VisualElement class="rp-preset-mode">
+                    <ui:Button name="btn-mode-vertices" class="rp-preset-mode__btn rp-preset-mode__btn--active" text="Vertices" />
+                    <ui:Button name="btn-mode-edges"    class="rp-preset-mode__btn" text="Edges" />
+                    <ui:Button name="btn-mode-faces"    class="rp-preset-mode__btn" text="Faces" />
+                    <ui:Button name="btn-mode-center"   class="rp-preset-mode__btn" text="Center" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="preset-vertices" class="rp-preset-panel">
+                    <ui:VisualElement class="rp-preset-group">
+                        <ui:Label class="rp-preset-group__label" text="Front" />
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-vertex-front-top-left"     class="rp-preset__btn" text="Top Left" />
+                            <ui:Button name="btn-vertex-front-top-right"    class="rp-preset__btn" text="Top Right" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-vertex-front-bottom-left"  class="rp-preset__btn" text="Bottom Left" />
+                            <ui:Button name="btn-vertex-front-bottom-right" class="rp-preset__btn" text="Bottom Right" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="rp-preset-group">
+                        <ui:Label class="rp-preset-group__label" text="Back" />
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-vertex-back-top-left"     class="rp-preset__btn" text="Top Left" />
+                            <ui:Button name="btn-vertex-back-top-right"    class="rp-preset__btn" text="Top Right" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-vertex-back-bottom-left"  class="rp-preset__btn" text="Bottom Left" />
+                            <ui:Button name="btn-vertex-back-bottom-right" class="rp-preset__btn" text="Bottom Right" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="preset-edges" class="rp-preset-panel">
+                    <ui:VisualElement class="rp-preset-group">
+                        <ui:Label class="rp-preset-group__label" text="Top Edges" />
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-edge-top-front" class="rp-preset__btn" text="Front" />
+                            <ui:Button name="btn-edge-top-back"  class="rp-preset__btn" text="Back" />
+                            <ui:Button name="btn-edge-top-left"  class="rp-preset__btn" text="Left" />
+                            <ui:Button name="btn-edge-top-right" class="rp-preset__btn" text="Right" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="rp-preset-group">
+                        <ui:Label class="rp-preset-group__label" text="Bottom Edges" />
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-edge-bottom-front" class="rp-preset__btn" text="Front" />
+                            <ui:Button name="btn-edge-bottom-back"  class="rp-preset__btn" text="Back" />
+                            <ui:Button name="btn-edge-bottom-left"  class="rp-preset__btn" text="Left" />
+                            <ui:Button name="btn-edge-bottom-right" class="rp-preset__btn" text="Right" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="rp-preset-group">
+                        <ui:Label class="rp-preset-group__label" text="Vertical Edges" />
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-edge-vertical-front-left"  class="rp-preset__btn" text="Front Left" />
+                            <ui:Button name="btn-edge-vertical-front-right" class="rp-preset__btn" text="Front Right" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="rp-preset-row">
+                            <ui:Button name="btn-edge-vertical-back-left"   class="rp-preset__btn" text="Back Left" />
+                            <ui:Button name="btn-edge-vertical-back-right"  class="rp-preset__btn" text="Back Right" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="preset-faces" class="rp-preset-panel">
+                    <ui:VisualElement class="rp-preset-row rp-preset-row--center">
+                        <ui:Button name="btn-face-top" class="rp-preset__btn rp-preset__btn--half" text="Top" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="rp-preset-row">
+                        <ui:Button name="btn-face-left"  class="rp-preset__btn" text="Left" />
+                        <ui:Button name="btn-face-front" class="rp-preset__btn" text="Front" />
+                        <ui:Button name="btn-face-right" class="rp-preset__btn" text="Right" />
+                        <ui:Button name="btn-face-back"  class="rp-preset__btn" text="Back" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="rp-preset-row rp-preset-row--center">
+                        <ui:Button name="btn-face-bottom" class="rp-preset__btn rp-preset__btn--half" text="Bottom" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="preset-center" class="rp-preset-panel">
+                    <ui:VisualElement class="rp-preset-row">
+                        <ui:Button name="btn-center-bounds" class="rp-preset__btn" text="Bounds Center" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="rp-section">
+                <ui:Label class="rp-section__header" text="Manual Position" />
+                <uie:Vector3Field name="vec3-manual-pivot" label="Pivot" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="rp-section">
+                <ui:Button name="btn-apply" text="Apply Pivot" class="rp-btn--apply" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+
+</ui:UXML>

@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7178262570059918360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderObjects
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.RenderObjects
+  m_Active: 1
+  settings:
+    passTag: RenderObjects
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 128
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 8
+      passOperation: 2
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &-7102396520422998951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderObjects
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.RenderObjects
+  m_Active: 1
+  settings:
+    passTag: RenderObjects
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 128
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: cf3448e58062b4a98917d1cfc8c73ccd, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
+    overrideDepthState: 1
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 6
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &-6965311893211531521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,15 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UniStormSunShaftsFeature
   m_Active: 1
   settings:
-    isEnabled: 1
+    isEnabled: 0
     renderPassEvent: 500
     resolution: 1
     screenBlendMode: 0
     celestialName: UniStorm Moon
-    radialBlurIterations: 2
-    sunColor: {r: 1, g: 1, b: 1, a: 1}
+    radialBlurIterations: 3
+    sunColor: {r: 0.31764707, g: 0.32156864, b: 0.32156864, a: 1}
     sunThreshold: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
-    sunShaftBlurRadius: 3
+    sunShaftBlurRadius: 3.32
     sunShaftIntensity: 1
     maxRadius: 0.3
     useDepthTexture: 1
@@ -53,13 +137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UniStormSunShaftsFeature
   m_Active: 1
   settings:
-    isEnabled: 0
+    isEnabled: 1
     renderPassEvent: 500
     resolution: 1
     screenBlendMode: 0
     celestialName: UniStorm Sun
     radialBlurIterations: 2
-    sunColor: {r: 0.4681659, g: 0.42742348, b: 0.3919813, a: 1}
+    sunColor: {r: 0.4528302, g: 0.43659666, b: 0.41224635, a: 1}
     sunThreshold: {r: 0.5568628, g: 0.5372549, b: 0.48235294, a: 1}
     sunShaftBlurRadius: 3
     sunShaftIntensity: 1
@@ -89,17 +173,17 @@ MonoBehaviour:
     height: 1
     heightDensity: 2
     startDistance: 0
-    SunColor: {r: 0, g: 0, b: 0, a: 1}
+    SunColor: {r: 0.6603774, g: 0.63595825, b: 0.6011926, a: 1}
     MoonColor: {r: 0.33023313, g: 0.36793935, b: 0.38679242, a: 1}
     TopColor: {r: 0, g: 0, b: 0, a: 0}
-    BottomColor: {r: 0.080337346, g: 0.12431035, b: 0.15027046, a: 1}
-    BlendHeight: 0.009548796
+    BottomColor: {r: 0.44588825, g: 0.49321982, b: 0.5660378, a: 1}
+    BlendHeight: 0.014999998
     FogGradientHeight: 0.5
-    SunIntensity: 0.036449973
-    MoonIntensity: 0.22495013
+    SunIntensity: 0.064939745
+    MoonIntensity: -0.008934458
     SunFalloffIntensity: 9.4
-    SunControl: -0.0068686395
-    MoonControl: 0.77295506
+    SunControl: 1.0000697
+    MoonControl: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +215,9 @@ MonoBehaviour:
   - {fileID: -5328334996114347514}
   - {fileID: -6965311893211531521}
   - {fileID: -5819028875659500513}
-  m_RendererFeatureMap: ad6b866f10d7b46c
+  - {fileID: -7178262570059918360}
+  - {fileID: -7102396520422998951}
+  m_RendererFeatureMap: ad6b866f10d7b46ce893187f39b0619c597c37aafe376f9d
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

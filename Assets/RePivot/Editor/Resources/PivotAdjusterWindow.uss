@@ -1,0 +1,123 @@
+.rp-root {
+    padding: 8px 4px;
+}
+
+.rp-section {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-width: 1px;
+    border-color: var(--unity-colors-inspector_titlebar-border);
+    border-radius: 3px;
+}
+
+.rp-section__header {
+    -unity-font-style: bold;
+    font-size: 12px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-inspector_titlebar-border);
+}
+
+.rp-object-name {
+    -unity-font-style: bold;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+
+.rp-status {
+    font-size: 11px;
+    white-space: normal;
+    min-height: 14px;
+}
+
+.rp-status--warning {
+    -unity-font-style: italic;
+}
+
+.rp-preset-mode {
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.rp-preset-mode__btn {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 24px;
+    margin: 0 1px;
+    font-size: 11px;
+    -unity-text-align: middle-center;
+    border-width: 1px;
+}
+
+.rp-preset-mode__btn--active {
+    -unity-font-style: bold;
+    background-color: var(--unity-colors-highlight-background);
+    border-color: var(--unity-colors-highlight-background);
+    color: var(--unity-colors-highlight-text);
+}
+
+.rp-preset-panel {
+    margin-top: 2px;
+}
+
+.rp-preset-group {
+    margin-bottom: 6px;
+}
+
+.rp-preset-group__label {
+    -unity-font-style: bold;
+    font-size: 11px;
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.rp-preset-row {
+    flex-direction: row;
+    margin-bottom: 2px;
+}
+
+.rp-preset-row--center {
+    justify-content: center;
+}
+
+.rp-preset__btn {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 22px;
+    height: 22px;
+    margin: 1px 2px;
+    font-size: 11px;
+    -unity-text-align: middle-center;
+    border-width: 1px;
+    overflow: hidden;
+}
+
+.rp-preset__btn--active {
+    -unity-font-style: bold;
+    background-color: var(--unity-colors-highlight-background);
+    border-color: var(--unity-colors-highlight-background);
+    color: var(--unity-colors-highlight-text);
+}
+
+/* Face Top / Bottom: centered at half row width */
+.rp-preset__btn--half {
+    flex-grow: 0;
+    width: 50%;
+}
+
+.rp-btn--apply {
+    -unity-font-style: bold;
+    height: 30px;
+    font-size: 12px;
+}
+
+.rp-btn--warning {
+    margin-top: 4px;
+    height: 24px;
+    font-size: 11px;
+}

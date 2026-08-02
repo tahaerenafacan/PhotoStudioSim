@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioItems:
   - itemID: Hover SFX
-    audioAsset: {fileID: 8300000, guid: dd9ee4ce18edbc34191b74119ac21f4f, type: 3}
+    audioAsset: {fileID: 0}
   - itemID: Click SFX
-    audioAsset: {fileID: 8300000, guid: 503de6bf0c32f134f96d4a92662f3e45, type: 3}
-  - itemID: Notification SFX
-    audioAsset: {fileID: 8300000, guid: 04ee76c723465b54196cedac182ba2c1, type: 3}
+    audioAsset: {fileID: 8300000, guid: e10c29fe0e2d95d439fac26b6f72e59e, type: 3}
   colorItems:
   - itemID: WindowBackground
     colorValue: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
@@ -65,7 +63,7 @@ MonoBehaviour:
     fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   spriteItems: []
   updateMode: 1
-  audioFoldout: 0
+  audioFoldout: 1
   colorFoldout: 0
   fontFoldout: 0
   spriteFoldout: 0

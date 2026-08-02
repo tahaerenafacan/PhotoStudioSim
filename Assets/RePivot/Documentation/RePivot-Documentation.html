@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RePivot Documentation</title>
+    <style>
+        :root {
+            --text: #1a1a1a;
+            --muted: #555;
+            --border: #ddd;
+            --bg-code: #f5f5f5;
+            --accent: #0078da;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        h1 { font-size: 28px; margin-bottom: 4px; }
+        h2 { font-size: 22px; margin-top: 36px; margin-bottom: 12px; border-bottom: 2px solid var(--border); padding-bottom: 6px; }
+        h3 { font-size: 17px; margin-top: 24px; margin-bottom: 8px; }
+        p, li { margin-bottom: 8px; }
+        ul, ol { padding-left: 24px; }
+        code {
+            font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+            font-size: 13px;
+            background: var(--bg-code);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: var(--bg-code);
+            padding: 14px 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 12px 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        pre code { background: none; padding: 0; }
+        table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+        th, td { text-align: left; padding: 8px 12px; border: 1px solid var(--border); }
+        th { background: var(--bg-code); font-weight: 600; }
+        .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+        .note {
+            background: #e8f4fd;
+            border-left: 4px solid var(--accent);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .warning {
+            background: #fff8e1;
+            border-left: 4px solid #f5a623;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        @media print {
+            body { max-width: 100%; padding: 20px; }
+            h2 { page-break-after: avoid; }
+            pre, table { page-break-inside: avoid; }
+            .note, .warning { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>RePivot</h1>
+<p class="subtitle">
+    Version 1.1.0 &nbsp;|&nbsp; Publisher: SplashArt Toolbox &nbsp;|&nbsp;
+    Namespace: <code>io.splashart.RePivot</code>
+</p>
+
+<hr>
+
+<h2>Requirements</h2>
+
+<table>
+    <tr><th>Requirement</th><th>Minimum Version</th></tr>
+    <tr><td><strong>Unity</strong></td><td>6 (6000.0) or newer</td></tr>
+    <tr><td><strong>Render Pipeline</strong></td><td>Any (Built-in, URP, HDRP)</td></tr>
+    <tr><td><strong>Platform</strong></td><td>Editor only — no runtime footprint</td></tr>
+</table>
+
+<p><strong>Dependencies:</strong> <code>com.unity.modules.uielements</code>,
+<code>com.unity.modules.imgui</code> (both included in Unity by default).</p>
+
+<div class="note">
+    <strong>Note:</strong> This tool uses UI Toolkit and Unity 6 APIs exclusively.
+    It will <strong>not</strong> compile on Unity 2022 or earlier.
+</div>
+
+<h2>Installation</h2>
+
+<h3>From the Unity Asset Store</h3>
+<ol>
+    <li>Open <strong>Window &rarr; Asset Store</strong> (or the Unity Hub Asset Store tab).</li>
+    <li>Search for <strong>"RePivot"</strong> by SplashArt Toolbox.</li>
+    <li>Click <strong>Import</strong> and accept all files.</li>
+    <li>Verify the following folder exists:
+        <pre><code>Assets/RePivot/</code></pre>
+    </li>
+</ol>
+
+<h3>From a <code>.unitypackage</code> File</h3>
+<ol>
+    <li>Double-click the downloaded <code>.unitypackage</code> file.</li>
+    <li>In the Import dialog, ensure <strong>all files</strong> are selected.</li>
+    <li>Click <strong>Import</strong>.</li>
+</ol>
+
+<h2>How to Use</h2>
+
+<h3>Opening the Tool</h3>
+<p>Navigate to:</p>
+<pre><code>Window &rarr; SplashArt &rarr; RePivot</code></pre>
+<p>The RePivot window will open as a dockable panel.</p>
+
+<h3>Basic Workflow</h3>
+<ol>
+    <li><strong>Select a GameObject</strong> in the Scene or Hierarchy.
+        <ul>
+            <li>The window displays the object name and current status.</li>
+            <li>If the object is a Prefab instance, a warning and an <strong>Unpack Prefab</strong> button appear. Unpack before adjusting.</li>
+        </ul>
+    </li>
+    <li><strong>Choose a pivot position</strong> using one of three methods:
+
+        <table>
+            <tr><th>Method</th><th>Description</th></tr>
+            <tr><td><strong>Quick Presets</strong></td><td>Choose <strong>Vertices</strong>, <strong>Edges</strong>, <strong>Faces</strong>, or <strong>Center</strong>, then click a named bounds anchor such as Front Top Left, Top Front Edge, or Bounds Center.</td></tr>
+            <tr><td><strong>Manual Entry</strong></td><td>Type exact world-space coordinates into the Vector3 field.</td></tr>
+            <tr><td><strong>Scene Handle</strong></td><td>Drag the orange position handle directly in the Scene View.</td></tr>
+        </table>
+    </li>
+    <li><strong>Click "Apply Pivot"</strong>.
+        <ul>
+            <li>A wrapper GameObject (<code>ObjectName_Pivot</code>) is created at the chosen position.</li>
+            <li>The original object is re-parented under the wrapper.</li>
+            <li>The object does <strong>not</strong> visually move — only the pivot (parent origin) changes.</li>
+        </ul>
+    </li>
+    <li><strong>Undo</strong> at any time with <strong>Ctrl+Z</strong> / <strong>Cmd+Z</strong>. The entire operation is collapsed into a single undo step.</li>
+</ol>
+
+<h3>Re-adjusting a Pivot</h3>
+<p>If the target already has a <code>_Pivot</code> wrapper, clicking <strong>Apply Pivot</strong> repositions the existing wrapper instead of nesting a new one.</p>
+
+<h3>Scene View Visualisation</h3>
+<p>While the window is open and an object is selected:</p>
+<ul>
+    <li>A <strong>cyan wireframe cube</strong> shows the combined renderer bounds.</li>
+    <li>An <strong>orange disc and position handle</strong> marks the proposed pivot location.</li>
+    <li>A <strong>"Pivot" label</strong> floats above the handle for clarity.</li>
+</ul>
+
+<h2>Known Limitations</h2>
+
+<ul>
+    <li><strong>UI elements (RectTransform) are not supported.</strong> The tool detects RectTransform components and disables controls with a status message.</li>
+    <li><strong>Non-uniform ancestor scale.</strong> When a target's parent hierarchy contains non-uniform scale, the child's <code>lossyScale</code> restoration after re-parenting is approximate. This is a Unity engine limitation — <code>lossyScale</code> is read-only and cannot always be decomposed exactly.</li>
+    <li><strong>Multi-selection.</strong> When multiple GameObjects are selected, only the active (primary) object is shown and operated on.</li>
+    <li><strong>Prefab instances must be unpacked</strong> before adjusting. The tool provides a one-click Unpack button.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<table>
+    <tr><th>Problem</th><th>Solution</th></tr>
+    <tr><td>"No object selected" message</td><td>Select a GameObject in the Scene Hierarchy. Project assets are not supported.</td></tr>
+    <tr><td>"UI elements not supported"</td><td>The selected object has a RectTransform. RePivot works with standard Transform objects only.</td></tr>
+    <tr><td>"Prefab instance — unpack before adjusting"</td><td>Click the <strong>Unpack Prefab</strong> button in the tool window.</td></tr>
+    <tr><td>Controls disabled during Play mode</td><td>Exit Play mode. Scene modifications are disabled while playing.</td></tr>
+    <tr><td>Bounds wireframe not visible</td><td>The object has no enabled Renderer components.</td></tr>
+    <tr><td>Pivot position shows NaN</td><td>Ensure the manual coordinates contain valid numbers.</td></tr>
+</table>
+
+<h2>API Reference</h2>
+
+<p>All core logic is in the <code>PivotLogic</code> static class
+(<code>io.splashart.RePivot</code> namespace).</p>
+
+<table>
+    <tr><th>Method</th><th>Signature</th><th>Description</th></tr>
+    <tr>
+        <td><code>AdjustPivot</code></td>
+        <td><code>GameObject AdjustPivot(GameObject target, Vector3 newPivotWorldPos)</code></td>
+        <td>Creates (or repositions) a <code>_Pivot</code> wrapper parent at the given world position. Returns the wrapper, or <code>null</code> if validation fails. Single undo step.</td>
+    </tr>
+    <tr>
+        <td><code>CalculateBounds</code></td>
+        <td><code>Bounds CalculateBounds(GameObject target)</code></td>
+        <td>Returns the combined world-space AABB of all enabled renderers (excluding <code>ParticleSystemRenderer</code>).</td>
+    </tr>
+    <tr>
+        <td><code>CalculateAnchorPosition</code></td>
+        <td><code>Vector3 CalculateAnchorPosition(Bounds bounds, Anchor3D anchor)</code></td>
+        <td>Maps a three-axis <code>Anchor3D</code> value to a world-space point on the given bounds, supporting vertices, edge midpoints, face centers, and bounds center.</td>
+    </tr>
+    <tr>
+        <td><code>IsSafeToModify</code></td>
+        <td><code>bool IsSafeToModify(GameObject target)</code></td>
+        <td>Returns <code>false</code> if the target is part of an unpacked Prefab instance.</td>
+    </tr>
+    <tr>
+        <td><code>IsSceneObject</code></td>
+        <td><code>bool IsSceneObject(GameObject target)</code></td>
+        <td>Returns <code>true</code> if the target exists in a scene (not a Project asset on disk).</td>
+    </tr>
+    <tr>
+        <td><code>HasPivotWrapper</code></td>
+        <td><code>bool HasPivotWrapper(GameObject target)</code></td>
+        <td>Returns <code>true</code> if the target's immediate parent ends with <code>_Pivot</code>.</td>
+    </tr>
+    <tr>
+        <td><code>HasVisibleRenderers</code></td>
+        <td><code>bool HasVisibleRenderers(GameObject target)</code></td>
+        <td>Returns <code>true</code> if the target or children have at least one enabled, non-particle renderer.</td>
+    </tr>
+    <tr>
+        <td><code>IsUIElement</code></td>
+        <td><code>bool IsUIElement(GameObject target)</code></td>
+        <td>Returns <code>true</code> if the target has a <code>RectTransform</code> component.</td>
+    </tr>
+    <tr>
+        <td><code>IsFinite</code></td>
+        <td><code>bool IsFinite(Vector3 v)</code></td>
+        <td>Returns <code>true</code> if all three components are finite.</td>
+    </tr>
+</table>
+
+<h2>Folder Structure</h2>
+
+<pre><code>Assets/RePivot/
+├── CHANGELOG.md
+├── Third Party Notices.txt
+├── RePivot Welcome.asset
+├── Documentation/
+│   ├── README.md
+│   ├── LICENSE.md
+│   ├── RePivot-Documentation.html
+│   └── RePivot-Documentation.pdf
+├── Editor/
+│   ├── io.splashart.RePivot.Editor.asmdef
+│   ├── PivotAdjusterCore.cs
+│   ├── PivotAdjusterWindow.cs
+│   ├── RPDocHelper.cs
+│   ├── RPReadme.cs
+│   ├── RPReadmeEditor.cs
+│   └── Resources/
+│       ├── PivotAdjusterWindow.uxml
+│       └── PivotAdjusterWindow.uss
+├── Samples/
+│   └── RePivotDemo.unity
+└── Tests/
+    └── Editor/
+        ├── io.splashart.RePivot.Tests.Editor.asmdef
+        └── PivotLogicTests.cs</code></pre>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I use this on Prefab instances?</h3>
+<p>You must unpack the Prefab first. The tool detects Prefab instances and offers a one-click Unpack button. Alternatively, open the Prefab in Prefab Mode to edit its internal hierarchy directly.</p>
+
+<h3>Does this add any runtime components or scripts?</h3>
+<p>No. The assembly definition is Editor-only. Nothing is included in player builds.</p>
+
+<h3>What happens to existing child objects?</h3>
+<p>They remain as children of the original object, which is now a child of the new wrapper. The entire sub-hierarchy is preserved.</p>
+
+<h3>Can I undo the pivot change?</h3>
+<p>Yes. Press Ctrl+Z (Cmd+Z on macOS) to undo. The wrapper is destroyed and the original hierarchy is restored.</p>
+
+<h3>Does the tool work with all render pipelines?</h3>
+<p>Yes. RePivot manipulates transforms and hierarchy only — it does not interact with materials, shaders, or rendering features. It works identically on Built-in, URP, and HDRP.</p>
+
+<hr>
+
+<p style="text-align: center; color: var(--muted); font-size: 13px; margin-top: 40px;">
+    &copy; 2026 SplashArt Toolbox. All rights reserved.<br>
+    Licensed under the Unity Asset Store EULA.
+</p>
+
+</body>
+</html>

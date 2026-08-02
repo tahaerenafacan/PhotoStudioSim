@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: Kutu
     m_Metadata:
       m_Items: []
+  - m_Id: 36208702148431872
+    m_Localized: Led Ekran
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

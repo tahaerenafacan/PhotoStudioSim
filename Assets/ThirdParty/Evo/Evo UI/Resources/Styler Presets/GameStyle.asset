@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioItems:
   - itemID: Hover SFX
-    audioAsset: {fileID: 8300000, guid: dd9ee4ce18edbc34191b74119ac21f4f, type: 3}
+    audioAsset: {fileID: 8300000, guid: 2b6970975331d3d40b46162abb12755b, type: 3}
   - itemID: Click SFX
-    audioAsset: {fileID: 8300000, guid: 503de6bf0c32f134f96d4a92662f3e45, type: 3}
-  - itemID: Notification SFX
-    audioAsset: {fileID: 8300000, guid: 04ee76c723465b54196cedac182ba2c1, type: 3}
+    audioAsset: {fileID: 8300000, guid: 87d287d920dbd274984887dc8949e18f, type: 3}
   colorItems:
   - itemID: Primary
     colorValue: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
@@ -81,8 +79,8 @@ MonoBehaviour:
     fontAsset: {fileID: 11400000, guid: 2f416f956388f434ab10cbe21dfc9f9b, type: 2}
   spriteItems: []
   updateMode: 1
-  audioFoldout: 0
+  audioFoldout: 1
   colorFoldout: 0
   fontFoldout: 1
-  spriteFoldout: 1
+  spriteFoldout: 0
   settingsFoldout: 0

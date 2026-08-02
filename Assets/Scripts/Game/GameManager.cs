@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 144;
-        UniStormManager.Instance.OnTimeChange += UniStormManager_OnMinuteChanged;
+        if (UniStormManager.Instance) UniStormManager.Instance.OnTimeChange += UniStormManager_OnMinuteChanged;
     }
 
     private void UniStormManager_OnMinuteChanged(int hour, int minute)

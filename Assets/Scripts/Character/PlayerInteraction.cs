@@ -31,6 +31,9 @@ public class PlayerInteraction : MonoBehaviour
 
     BasePickableItem prevPickable;
     IInteractable prevInteractable;
+    
+    private int raycastMask;
+    private int outlineLayer;
 
     private void Awake()
     {
@@ -45,6 +48,8 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         mainCam = Camera.main;
+        raycastMask = interactableLayer.value;
+        outlineLayer = LayerMask.NameToLayer("Outline");
         if (!mainCam) Debug.LogError("[PlayerInteraction] Ana kamera bulunamadı!");
 
         InputManager.Instance.OnInteractKeyPressed += HandleInteractInput;
@@ -94,8 +99,6 @@ public class PlayerInteraction : MonoBehaviour
         if (mainCam)
         {
             Ray ray = mainCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            int raycastMask = interactableLayer.value;
-            int outlineLayer = LayerMask.NameToLayer("Outline");
 
             if (outlineLayer >= 0)
             {

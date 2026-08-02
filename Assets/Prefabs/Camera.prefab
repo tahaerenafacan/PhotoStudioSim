@@ -60,8 +60,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4284219, y: 0.25, z: 0.16931926}
-  m_Center: {x: 0.0036253333, y: 0.020000003, z: -0.0024318248}
+  m_Size: {x: 0.4284219, y: 0.2362735, z: 0.16931926}
+  m_Center: {x: 0.0036253333, y: 0.013136759, z: -0.0024318248}
 --- !u!54 &5858647515997932337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemCamera
   itemData: {fileID: 11400000, guid: 38b0efb1a8896ef46a033cb048093876, type: 2}
   throwForceMultiplier: 1
+  allowVerticalPlacement: 0
   lensCamera: {fileID: 5942438005398057594}
   viewfinderTexture: {fileID: 8400000, guid: bacc56e425cb75e4e8129c7861405e13, type: 2}
   cameraScreen: {fileID: 6947167317709787919}
@@ -732,7 +733,7 @@ GameObject:
   - component: {fileID: 8191773206471249613}
   - component: {fileID: 1239496257937902113}
   - component: {fileID: 271518388221573210}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Aperture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +913,7 @@ GameObject:
   - component: {fileID: 6895464905043832137}
   - component: {fileID: 4322776390344278266}
   - component: {fileID: 463344610393076182}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ISO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1093,7 @@ GameObject:
   - component: {fileID: 2281903102637441388}
   - component: {fileID: 580021744665684859}
   - component: {fileID: 7834118860504471298}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Shutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1174,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.45
+  m_fontSize: 22.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1272,7 +1273,7 @@ GameObject:
   - component: {fileID: 5504738611029124535}
   - component: {fileID: 1073805074424956638}
   - component: {fileID: 7790176131335684066}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: REC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1452,7 @@ GameObject:
   - component: {fileID: 2715769720509845317}
   - component: {fileID: 3725019641005117408}
   - component: {fileID: 337981731321814316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: detail_a_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,7 +1543,7 @@ GameObject:
   - component: {fileID: 986369296029109715}
   - component: {fileID: 8834881892764622531}
   - component: {fileID: 4410867112906033764}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Exposure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1723,7 @@ GameObject:
   - component: {fileID: 7009289326106233276}
   - component: {fileID: 2856610783446010973}
   - component: {fileID: 3363852677417582704}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ModeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1902,7 @@ GameObject:
   - component: {fileID: 2686993066752839437}
   - component: {fileID: 1734344347966738131}
   - component: {fileID: 3392202053312033475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: detail_b_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2086,7 +2087,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
@@ -2126,7 +2127,7 @@ MonoBehaviour:
   postProcessVolume: {fileID: 1272107130589152838}
   volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   enableAutoFocus: 1
   focusLayerMask:
     serializedVersion: 2
@@ -2161,7 +2162,7 @@ GameObject:
   - component: {fileID: 4042750483727444467}
   - component: {fileID: 5305433710414323104}
   - component: {fileID: 8253499705603534193}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ZoomText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2468,7 @@ GameObject:
   - component: {fileID: 5260465652590066566}
   - component: {fileID: 3748194190368459536}
   - component: {fileID: 3223397582225005343}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: FlashStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2543,7 +2544,7 @@ GameObject:
   - component: {fileID: 793544623957911095}
   - component: {fileID: 7868089844499287556}
   - component: {fileID: 4668481111799865318}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ActiveParamText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,7 +2723,7 @@ GameObject:
   - component: {fileID: 6826146155870891649}
   - component: {fileID: 5846059733005851434}
   - component: {fileID: 9008921736098072209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: camera_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2813,7 +2814,7 @@ GameObject:
   - component: {fileID: 6656756351606555141}
   - component: {fileID: 4966742872471819165}
   - component: {fileID: 6947167317709787919}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CameraScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2927,7 +2928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 624381563201173426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CamerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2964,7 +2965,7 @@ GameObject:
   - component: {fileID: 1908857949347875862}
   - component: {fileID: 1530899627549001123}
   - component: {fileID: 5898956201646064760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lens_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3054,7 +3055,7 @@ GameObject:
   - component: {fileID: 454620797031542590}
   - component: {fileID: 3153333672608191279}
   - component: {fileID: 6430878973291593308}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

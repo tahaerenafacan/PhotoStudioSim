@@ -70,6 +70,10 @@ MonoBehaviour:
     m_Localized: "Paketi a\xE7"
     m_Metadata:
       m_Items: []
+  - m_Id: 42786891331129344
+    m_Localized: "A\xE7/Kapat"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

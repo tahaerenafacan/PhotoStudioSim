@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 05b55c840e5fe1546a8cbdb990d00b83
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 377248
+  packageName: RePivot
+  packageVersion: 1.0
+  assetPath: Assets/RePivot/Tests/Editor/io.splashart.RePivot.Tests.Editor.asmdef
+  uploadId: 908682

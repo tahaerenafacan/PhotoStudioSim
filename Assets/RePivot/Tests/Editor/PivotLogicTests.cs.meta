@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f9de6f0229ee46049b0dff019e8551fb
+AssetOrigin:
+  serializedVersion: 1
+  productId: 377248
+  packageName: RePivot
+  packageVersion: 1.0
+  assetPath: Assets/RePivot/Tests/Editor/PivotLogicTests.cs
+  uploadId: 908682

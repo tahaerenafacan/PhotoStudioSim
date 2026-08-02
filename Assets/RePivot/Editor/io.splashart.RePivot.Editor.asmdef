@@ -1,0 +1,25 @@
+{
+    "name": "io.splashart.RePivot.Editor",
+    "rootNamespace": "io.splashart.RePivot",
+    "references": [],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.modules.uielements",
+            "expression": "1.0.0",
+            "define": "SPLASHART_HAS_UITOOLKIT"
+        },
+        {
+            "name": "Unity",
+            "expression": "6000.0.0",
+            "define": "SPLASHART_UNITY_6_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}

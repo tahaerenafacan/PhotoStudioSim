@@ -5656,7 +5656,7 @@ MonoBehaviour:
         Owner: {fileID: 1139517008}
         DebugActive: 0
         LoadingSceneName: LoadingScreen
-        DestinationSceneName: PrototypeScene
+        DestinationSceneName: GameScene
         LoadingMode: 1
         Priority: 4
         SecureLoad: 1

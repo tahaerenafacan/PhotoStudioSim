@@ -1,0 +1,14 @@
+{
+    "name": "io.splashart.RePivot.Tests.Editor",
+    "rootNamespace": "io.splashart.RePivot.Tests",
+    "references": ["io.splashart.RePivot.Editor"],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": ["nunit.framework.dll"],
+    "autoReferenced": false,
+    "defineConstraints": ["UNITY_INCLUDE_TESTS"],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
