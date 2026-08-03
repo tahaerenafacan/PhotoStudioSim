@@ -1,13 +1,21 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Evo.UI;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 
 public class SettingsUI : MonoBehaviour
 {
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private RectTransform settingsPanel;
+
+    [Header("Animation")] 
+    [SerializeField] private float closedPos;
+    [SerializeField] private float openPos;
+    [SerializeField] private float openTime;
+    private Tween onOffTween;
+    
     [Header("Action Buttons")]
     [SerializeField] private Button resetButton;
-    [SerializeField] private Button saveButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private ModalWindow confirmationPopup;
 
@@ -20,17 +28,17 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private Selector languageDropdown;
     [SerializeField] private Slider computerScreenDistanceSlider;
 
-    private bool isDirty;
     private List<Resolution> filteredResolutions = new List<Resolution>();
     private Settings localSettings;
 
     private void Start()
     {
-        // Performans için CanvasGroup/Canvas bileşeni ile kapatılması önerilir [cite: 11]
-        gameObject.SetActive(false); 
+        FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, false);
+        settingsPanel.anchoredPosition = new Vector2(closedPos, 0);
+        
+        localSettings = JsonUtility.FromJson<Settings>(JsonUtility.ToJson(SettingsManager.Instance.CurrentSettings));
 
         resetButton.onClick.AddListener(OnResetClicked);
-        saveButton.onClick.AddListener(OnSaveClicked);
         exitButton.onClick.AddListener(OnExitClicked);
 
         SetupResolutionDropdown();
@@ -39,19 +47,35 @@ public class SettingsUI : MonoBehaviour
 
     public void OpenSettings()
     {
-        gameObject.SetActive(true);
-        
-        // Mevcut ayarları manager'dan klonla
-        Settings current = SettingsManager.Instance.CurrentSettings;
-        localSettings = JsonUtility.FromJson<Settings>(JsonUtility.ToJson(current));
+        Debug.Log("Settings Opened");
+        FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, true);
 
+        localSettings = SettingsManager.Instance.CurrentSettings.Clone();
+
+        AnimatePanel(openPos, Ease.OutBack, (() => print("End")));
         UpdateUIElements();
-        isDirty = false;
     }
     
     public void CloseSettings()
     {
-        gameObject.SetActive(false);
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+
+        AnimatePanel(closedPos, Ease.InBack, () =>
+        {
+            FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, false);
+        });
+    }
+    
+    private void AnimatePanel(float targetPosX, Ease ease, TweenCallback onComplete = null)
+    {
+        onOffTween?.Kill();
+
+        onOffTween = settingsPanel
+            .DOAnchorPosX(targetPosX, openTime)
+            .SetEase(ease)
+            .SetUpdate(true)
+            .OnComplete(onComplete);
     }
 
     private void SetupResolutionDropdown()
@@ -81,51 +105,54 @@ public class SettingsUI : MonoBehaviour
         resolutionDropdown.onItemSelected.AddListener(index => {
             localSettings.resolutionWidth = filteredResolutions[index].width;
             localSettings.resolutionHeight = filteredResolutions[index].height;
-            Debug.Log(filteredResolutions[index].width + "x" + filteredResolutions[index].height);
-            MarkAsDirty();
+            ApplySettings();
         });
 
         fullscreenToggle.onValueChanged.AddListener(val => {
             localSettings.isFullscreen = val;
-            MarkAsDirty();
+            ApplySettings();
         });
 
         vsyncToggle.onValueChanged.AddListener(val => {
             localSettings.useVSync = val;
-            MarkAsDirty();
+            ApplySettings();
         });
 
         textureQualityDropdown.onItemSelected.AddListener(index => {
             localSettings.textureQuality = index;
-            MarkAsDirty();
+            ApplySettings();
         });
 
         fovSlider.onValueChanged.AddListener(val => {
             localSettings.fov = val;
-            MarkAsDirty();
+            ApplySettings();
         });
-
+        
         languageDropdown.onSelectionChanged.AddListener(index => {
-            ChangeLanguage(index);
+            localSettings.language = index;
+            ApplySettings();
         });
 
         computerScreenDistanceSlider.onValueChanged.AddListener(val =>
         {
             localSettings.computerScreenDistance = val;
-            MarkAsDirty();
+            ApplySettings();
         });
+    }
+    
+    private void ApplySettings()
+    {
+        SettingsManager.Instance.UpdateSetting(localSettings);
     }
 
     private void UpdateUIElements()
     {
-        // UI elemanlarını localSettings verilerine göre eşitle
         fullscreenToggle.isOn = localSettings.isFullscreen;
         vsyncToggle.isOn = localSettings.useVSync;
         textureQualityDropdown.SelectItem(localSettings.textureQuality);
         fovSlider.value = localSettings.fov;
         languageDropdown.SetSelection(localSettings.language);
 
-        // Çözünürlük eşleme
         int currentResIndex = 0;
         for (int i = 0; i < filteredResolutions.Count; i++)
         {
@@ -138,25 +165,7 @@ public class SettingsUI : MonoBehaviour
         }
         resolutionDropdown.selectedIndex = currentResIndex;
     }
-
-    private void MarkAsDirty() => isDirty = true;
-
-    private void OnSaveClicked()
-    {
-        // Geçici ayarları ana sisteme aktar ve JSON olarak kaydet
-        Settings globalSettings = SettingsManager.Instance.CurrentSettings;
-        globalSettings.resolutionWidth = localSettings.resolutionWidth;
-        globalSettings.resolutionHeight = localSettings.resolutionHeight;
-        globalSettings.isFullscreen = localSettings.isFullscreen;
-        globalSettings.useVSync = localSettings.useVSync;
-        globalSettings.textureQuality = localSettings.textureQuality;
-        globalSettings.fov = localSettings.fov;
-        globalSettings.language = localSettings.language;
-        globalSettings.computerScreenDistance = localSettings.computerScreenDistance;
-
-        SettingsManager.Instance.SaveSettings();
-        isDirty = false;
-    }
+    
 
     private void OnResetClicked()
     {
@@ -168,34 +177,17 @@ public class SettingsUI : MonoBehaviour
             SettingsManager.Instance.LoadDefaultSettings();
             localSettings = JsonUtility.FromJson<Settings>(JsonUtility.ToJson(SettingsManager.Instance.CurrentSettings));
             UpdateUIElements();
-            isDirty = false;
-            confirmationPopup.Close(); // Varsayılan pop-up kapatma metodu
+            confirmationPopup.Close();
         });
     }
 
     private void OnExitClicked()
     {
-        if (isDirty)
-        {
-            confirmationPopup.onConfirm.RemoveAllListeners();
-            confirmationPopup.SetTitle("Unsaved Changes");
-            confirmationPopup.SetDescription("You have unsaved changes. Are you sure you want to exit?");
-            confirmationPopup.Open();
-            confirmationPopup.onConfirm.AddListener(CloseSettings);
-        }
-        else
-        {
-            CloseSettings();
-        }
+        CloseSettings();
     }
-
-    public void ChangeLanguage(int languageIndex)
+    
+    private void OnDestroy()
     {
-        localSettings.language = languageIndex;
-        MarkAsDirty();
-        if (LocalizationSettings.AvailableLocales.Locales.Count > languageIndex)
-        {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
-        }
+        onOffTween?.Kill();
     }
 }

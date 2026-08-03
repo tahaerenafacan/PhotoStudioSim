@@ -10,4 +10,20 @@ public class Settings
     public float fov;
     public int language;
     public float computerScreenDistance;
+    
+    public Settings Clone()
+    {
+        // CurrentSettings referansını değil, bağımsız bir kopyasını döndürür.
+        return new Settings
+        {
+            resolutionWidth = resolutionWidth,
+            resolutionHeight = resolutionHeight,
+            isFullscreen = isFullscreen,
+            useVSync = useVSync,
+            textureQuality = textureQuality,
+            fov = fov,
+            language = language,
+            computerScreenDistance = computerScreenDistance
+        };
+    }
 }   

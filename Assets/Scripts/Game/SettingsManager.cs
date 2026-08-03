@@ -28,17 +28,24 @@ public class SettingsManager : MonoBehaviour
         filePath = Path.Combine(Application.persistentDataPath, "settings.json");
         LoadSettings();
     }
+    
+    public void UpdateSetting(Settings updatedSettings, bool persistToDisk = true)
+    {
+        CurrentSettings = updatedSettings;
+        ApplyAllSettings();
 
-    public void SaveSettings()
+        if (persistToDisk)
+            SaveSettings();
+    }
+
+    private void SaveSettings()
     {
         try
         {
             string json = JsonUtility.ToJson(CurrentSettings, true);
-            
             File.WriteAllText(filePath, json);
             
             Debug.Log($"Ayarlar başarıyla dış dosyaya kaydedildi: {filePath}");
-            ApplyAllSettings();
         }
         catch (Exception e)
         {
@@ -46,7 +53,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public void LoadSettings()
+    private void LoadSettings()
     {
         try
         {
@@ -54,7 +61,6 @@ public class SettingsManager : MonoBehaviour
             {
                 string json = File.ReadAllText(filePath);
                 CurrentSettings = JsonUtility.FromJson<Settings>(json);
-                //Debug.Log($"Ayarlar dış dosyadan başarıyla yüklendi: {filePath}");
             }
             else
             {
@@ -90,10 +96,20 @@ public class SettingsManager : MonoBehaviour
 
     private void ApplyAllSettings()
     {
-        Screen.SetResolution(CurrentSettings.resolutionWidth, CurrentSettings.resolutionHeight, CurrentSettings.isFullscreen);
-        QualitySettings.globalTextureMipmapLimit = CurrentSettings.textureQuality;
-        QualitySettings.vSyncCount = CurrentSettings.useVSync ? 1 : 0;
-        
+        if (Screen.width != CurrentSettings.resolutionWidth ||
+            Screen.height != CurrentSettings.resolutionHeight ||
+            Screen.fullScreen != CurrentSettings.isFullscreen)
+        {
+            Screen.SetResolution(CurrentSettings.resolutionWidth, CurrentSettings.resolutionHeight, CurrentSettings.isFullscreen);
+        }
+
+        if (QualitySettings.globalTextureMipmapLimit != CurrentSettings.textureQuality)
+            QualitySettings.globalTextureMipmapLimit = CurrentSettings.textureQuality;
+
+        int targetVSync = CurrentSettings.useVSync ? 1 : 0;
+        if (QualitySettings.vSyncCount != targetVSync)
+            QualitySettings.vSyncCount = targetVSync;
+
         OnFOVChanged?.Invoke(CurrentSettings.fov);
         OnComputerScreenDistanceChanged?.Invoke(CurrentSettings.computerScreenDistance);
         ApplyLanguage(CurrentSettings.language);
