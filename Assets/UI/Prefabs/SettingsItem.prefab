@@ -2486,8 +2486,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Language
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
-  m_sharedMaterial: {fileID: 126381529674273732, guid: 60a11252054b4a645801d6d6f43128e3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
+  m_sharedMaterial: {fileID: 3430013254921321853, guid: 18697fecc5a851b49a2a9cd2fcf5ece8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2511,7 +2511,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.6
+  m_fontSize: 41.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2573,7 +2573,7 @@ MonoBehaviour:
   targetText: {fileID: 7394463464933512737}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Bold
+  fontID: Rubik - SemiBold
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0

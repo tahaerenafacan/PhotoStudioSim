@@ -6,7 +6,7 @@ public class QueueManager : MonoBehaviour, IQueueManager
     [SerializeField] private List<Transform> queuePositions = new();
     private readonly List<CustomerController> queuedCustomers = new();
 
-    public bool HasQueuePositions => queuePositions.Count > 0;
+    public bool HasQueuePositions => queuePositions.Count > queuedCustomers.Count;
 
     public void RegisterQueueEntry(CustomerController customer)
     {

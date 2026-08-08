@@ -15,48 +15,64 @@ MonoBehaviour:
   m_TableCollectionName: ItemNames
   m_TableCollectionNameGuidString: 4b757296a2bfcb947acc0c01cb31c642
   m_Entries:
+  - m_Id: 37405202778017792
+    m_Key: a5_paper
+    m_Metadata:
+      m_Items: []
   - m_Id: 7874138112
-    m_Key: item.a4paper
+    m_Key: a4_paper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37405201175793664
+    m_Key: a3_paper
     m_Metadata:
       m_Items: []
   - m_Id: 89524654080
-    m_Key: item.camera
+    m_Key: camera
     m_Metadata:
       m_Items: []
   - m_Id: 147418632192
-    m_Key: item.envelope
+    m_Key: envelope
     m_Metadata:
       m_Items: []
   - m_Id: 17886923149271040
-    m_Key: item.computer
+    m_Key: computer
     m_Metadata:
       m_Items: []
   - m_Id: 17887573530632192
-    m_Key: item.monitor
+    m_Key: monitor
     m_Metadata:
       m_Items: []
   - m_Id: 18223631627706368
-    m_Key: item.paperprinter
+    m_Key: paper_printer
     m_Metadata:
       m_Items: []
   - m_Id: 18842036079022080
-    m_Key: item.usb
+    m_Key: usb
     m_Metadata:
       m_Items: []
   - m_Id: 19967017131298816
-    m_Key: item.bed
+    m_Key: bed
     m_Metadata:
       m_Items: []
   - m_Id: 28955054600871936
-    m_Key: item.box
+    m_Key: box
     m_Metadata:
       m_Items: []
   - m_Id: 36208702148431872
-    m_Key: item.LedPanelName
+    m_Key: led_panel
     m_Metadata:
       m_Items: []
   - m_Id: 36544566288306176
-    m_Key: item.Broom
+    m_Key: broom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37403436153950208
+    m_Key: customer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38846111075913728
+    m_Key: door
     m_Metadata:
       m_Items: []
   m_Metadata:

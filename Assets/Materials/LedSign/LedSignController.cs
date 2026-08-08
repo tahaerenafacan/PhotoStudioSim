@@ -9,13 +9,13 @@ using UnityEngine.Localization;
 [RequireComponent(typeof(Renderer))]
 public class LedSignController : MonoBehaviour
 {
-    [Header("Durum")]
+    [Header("State"), NaughtyAttributes.ReadOnly]
     [SerializeField] private bool isOpen = true;
 
-    [Header("Yazı Maskeleri (Localization Table üzerinden, dile göre otomatik değişir)")]
+    [Header("Yazı Maskeleri")]
     [Tooltip("Localization Tables penceresinde bir Asset Table oluşturup her dil için ilgili PNG'yi ata")]
-    [SerializeField] private LocalizedTexture openMaskRef;
-    [SerializeField] private LocalizedTexture closedMaskRef;
+    [SerializeField] private LocalizedAsset<Texture2D> openMaskRef;
+    [SerializeField] private LocalizedAsset<Texture2D> closedMaskRef;
 
     [Header("Renkler")]
     [SerializeField] private Color openColor = new Color(0f, 3f, 0.2f, 1f);   // yeşil, HDR emission
@@ -24,32 +24,52 @@ public class LedSignController : MonoBehaviour
     private Renderer targetRenderer;
     private MaterialPropertyBlock propBlock;
 
-    // Localization'dan gelen son yüklenmiş dokular - AssetChanged event'i ile güncel tutulur
     private Texture2D currentOpenMask;
     private Texture2D currentClosedMask;
 
     private static readonly int TextMaskId = Shader.PropertyToID("_TextMask");
     private static readonly int OnColorId = Shader.PropertyToID("_OnColor");
+    const int LedMaterialIndex = 1;
 
     private void Awake()
     {
         targetRenderer = GetComponent<Renderer>();
         propBlock = new MaterialPropertyBlock();
     }
-
-    private void OnEnable()
+    
+    private void Start()
     {
-        // Locale her değiştiğinde (veya ilk yüklemede) bu event tetiklenir,
-        // dil değişimini elle takip etmemize gerek kalmaz
-        openMaskRef.AssetChanged += OnOpenMaskChanged;
-        closedMaskRef.AssetChanged += OnClosedMaskChanged;
-    }
+        if (openMaskRef != null && !openMaskRef.IsEmpty)
+        {
+            openMaskRef.AssetChanged += OnOpenMaskChanged;
+        }
+        else
+        {
+            Debug.LogWarning("[LedSignController] openMaskRef Inspector üzerinde atanmamış veya tablosu boş!", this);
+        }
 
+        if (closedMaskRef != null && !closedMaskRef.IsEmpty)
+        {
+            closedMaskRef.AssetChanged += OnClosedMaskChanged;
+        }
+        else
+        {
+            Debug.LogWarning("[LedSignController] closedMaskRef Inspector üzerinde atanmamış veya tablosu boş!", this);
+        }
+    }
+    /*
     private void OnDisable()
     {
-        openMaskRef.AssetChanged -= OnOpenMaskChanged;
-        closedMaskRef.AssetChanged -= OnClosedMaskChanged;
-    }
+        if (openMaskRef != null && !openMaskRef.IsEmpty)
+        {
+            openMaskRef.AssetChanged -= OnOpenMaskChanged;
+        }
+
+        if (closedMaskRef != null && !closedMaskRef.IsEmpty)
+        {
+            closedMaskRef.AssetChanged -= OnClosedMaskChanged;
+        }
+    }*/
 
     public void ToggleOpen()
     {
@@ -63,15 +83,15 @@ public class LedSignController : MonoBehaviour
         ApplyState();
     }
 
-    private void OnOpenMaskChanged(Texture newMask)
+    public void OnOpenMaskChanged(Texture2D newMask)
     {
-        currentOpenMask = newMask as Texture2D;
+        currentOpenMask = newMask;
         ApplyState();
     }
 
-    private void OnClosedMaskChanged(Texture newMask)
+    public void OnClosedMaskChanged(Texture2D newMask)
     {
-        currentClosedMask = newMask as Texture2D;
+        currentClosedMask = newMask;
         ApplyState();
     }
 
@@ -86,12 +106,14 @@ public class LedSignController : MonoBehaviour
         {
             // Localization tablosu henüz yüklenmemiş olabilir (örn. sahne yeni başladı),
             // bu durumda ilgili AssetChanged event'i geldiğinde ApplyState zaten tekrar çağrılacak
+            Debug.LogWarning($"[LedSign] Mask yüklenemedi, isOpen={isOpen}. Addressables/Localization asenkron yükleme tamamlanmamış olabilir.");
             return;
         }
 
-        targetRenderer.GetPropertyBlock(propBlock);
+        targetRenderer.GetPropertyBlock(propBlock, LedMaterialIndex);
+        propBlock.Clear();
         propBlock.SetTexture(TextMaskId, maskToUse);
         propBlock.SetColor(OnColorId, emissionColor);
-        targetRenderer.SetPropertyBlock(propBlock);
+        targetRenderer.SetPropertyBlock(propBlock, LedMaterialIndex);
     }
 }

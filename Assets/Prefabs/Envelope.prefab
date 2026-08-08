@@ -95,8 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7524ec15d0392f44c86fbe9d38e91e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemEnvelope
-  definition: {fileID: 11400000, guid: 11555e5e01f98ef4386b44a33a8e5578, type: 2}
+  itemData: {fileID: 11400000, guid: 11555e5e01f98ef4386b44a33a8e5578, type: 2}
   throwForceMultiplier: 1
+  allowVerticalPlacement: 0
+  maxPhotoCount: 5
 --- !u!1001 &7649280559094513855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,15 +109,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1ffc586b00fc679428a5f077d4fd5b1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ffc586b00fc679428a5f077d4fd5b1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.02
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ffc586b00fc679428a5f077d4fd5b1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.02
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ffc586b00fc679428a5f077d4fd5b1e, type: 3}
       propertyPath: m_LocalPosition.x

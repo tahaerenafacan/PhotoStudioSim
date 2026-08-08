@@ -16,27 +16,27 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 4b7f5c90c5a4b0742bb4d5a1369a6b2d
   m_Entries:
   - m_Id: 5743431680
-    m_Key: computer.welcome
+    m_Key: welcome
     m_Metadata:
       m_Items: []
   - m_Id: 8922084085714944
-    m_Key: computer.shutdown
+    m_Key: shutdown
     m_Metadata:
       m_Items: []
   - m_Id: 17258751423008768
-    m_Key: computer.insertFlashDrive
+    m_Key: insert_flash_drive
     m_Metadata:
       m_Items: []
   - m_Id: 17258804548063232
-    m_Key: computer.ejectFlashDrive
+    m_Key: eject_flash_drive
     m_Metadata:
       m_Items: []
   - m_Id: 17258853453647872
-    m_Key: computer.usbPort
+    m_Key: usb_port
     m_Metadata:
       m_Items: []
   - m_Id: 17329663644127232
-    m_Key: createFile
+    m_Key: create_file
     m_Metadata:
       m_Items: []
   - m_Id: 17329689543954432
@@ -44,11 +44,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 20184028251803648
-    m_Key: printerNotFound
+    m_Key: printer_not_found
     m_Metadata:
       m_Items: []
   - m_Id: 32956991803871232
-    m_Key: galleryApp.NoPhoto
+    m_Key: app.gallery.no_photo
     m_Metadata:
       m_Items: []
   m_Metadata:

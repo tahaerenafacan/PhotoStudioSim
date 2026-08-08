@@ -51,7 +51,7 @@ MonoBehaviour:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1a2160504a324047bfc62e5dd644d67
-    m_Address: HUD_en
+    m_Address: KeyHints_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

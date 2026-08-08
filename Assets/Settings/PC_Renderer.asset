@@ -184,6 +184,27 @@ MonoBehaviour:
     SunFalloffIntensity: 9.4
     SunControl: 1.0000697
     MoonControl: 0
+--- !u!114 &-499360345563848489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1614fc811f8f184697d9bee70ab9fe5, type: 3}
+  m_Name: DecalRendererFeature
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalRendererFeature
+  m_Active: 1
+  m_Settings:
+    technique: 0
+    maxDrawDistance: 1000
+    decalLayers: 0
+    dBufferSettings:
+      surfaceData: 2
+    screenSpaceSettings:
+      normalBlend: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +238,8 @@ MonoBehaviour:
   - {fileID: -5819028875659500513}
   - {fileID: -7178262570059918360}
   - {fileID: -7102396520422998951}
-  m_RendererFeatureMap: ad6b866f10d7b46ce893187f39b0619c597c37aafe376f9d
+  - {fileID: -499360345563848489}
+  m_RendererFeatureMap: ad6b866f10d7b46ce893187f39b0619c597c37aafe376f9dd720c05369ea11f9
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

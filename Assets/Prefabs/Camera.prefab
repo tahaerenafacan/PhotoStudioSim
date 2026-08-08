@@ -152,27 +152,27 @@ MonoBehaviour:
     m_LocalVariables: []
   uploadPhotosHint:
     m_TableReference:
-      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
+      m_TableCollectionName: GUID:196ce7f8933b5444b9d2f0b279bf144e
     m_TableEntryReference:
-      m_KeyId: 26850052556574720
+      m_KeyId: 48870990395330560
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   toggleModeHint:
     m_TableReference:
-      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
+      m_TableCollectionName: GUID:196ce7f8933b5444b9d2f0b279bf144e
     m_TableEntryReference:
-      m_KeyId: 26850119082430464
+      m_KeyId: 48871179214508032
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   cycleParamHint:
     m_TableReference:
-      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
+      m_TableCollectionName: GUID:196ce7f8933b5444b9d2f0b279bf144e
     m_TableEntryReference:
-      m_KeyId: 26850149390471168
+      m_KeyId: 48871283715592192
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

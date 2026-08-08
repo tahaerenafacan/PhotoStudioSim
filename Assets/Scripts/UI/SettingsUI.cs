@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Evo.UI;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class SettingsUI : MonoBehaviour
@@ -28,6 +29,11 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private Selector languageDropdown;
     [SerializeField] private Slider computerScreenDistanceSlider;
 
+    [NaughtyAttributes.BoxGroup] 
+    [SerializeField] private RadialSlider masterAudioSlider;
+    [SerializeField] private RadialSlider uiAudioSlider;
+    [SerializeField] private RadialSlider sfxAudioSlider;
+
     private List<Resolution> filteredResolutions = new List<Resolution>();
     private Settings localSettings;
 
@@ -47,12 +53,11 @@ public class SettingsUI : MonoBehaviour
 
     public void OpenSettings()
     {
-        Debug.Log("Settings Opened");
         FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, true);
 
         localSettings = SettingsManager.Instance.CurrentSettings.Clone();
 
-        AnimatePanel(openPos, Ease.OutBack, (() => print("End")));
+        AnimatePanel(openPos, Ease.OutBack);
         UpdateUIElements();
     }
     
@@ -65,6 +70,18 @@ public class SettingsUI : MonoBehaviour
         {
             FunctionLibrary.SetCanvasGroupActive(ref canvasGroup, false);
         });
+    }
+
+    public void ToggleSettings()
+    {
+        if (canvasGroup.alpha > 0.1f)
+        {
+            CloseSettings();
+        }
+        else
+        {
+            OpenSettings();
+        }
     }
     
     private void AnimatePanel(float targetPosX, Ease ease, TweenCallback onComplete = null)
@@ -138,6 +155,19 @@ public class SettingsUI : MonoBehaviour
             localSettings.computerScreenDistance = val;
             ApplySettings();
         });
+        
+        masterAudioSlider.onValueChanged.AddListener(val =>
+        {
+            MMSoundManager.Instance.SetVolumeMaster(val/100f);
+        });
+        uiAudioSlider.onValueChanged.AddListener(val =>
+        {
+            MMSoundManager.Instance.SetVolumeUI(val/100f);
+        });
+        sfxAudioSlider.onValueChanged.AddListener(val =>
+        {
+            MMSoundManager.Instance.SetVolumeSfx(val/100f);
+        });
     }
     
     private void ApplySettings()
@@ -152,7 +182,19 @@ public class SettingsUI : MonoBehaviour
         textureQualityDropdown.SelectItem(localSettings.textureQuality);
         fovSlider.value = localSettings.fov;
         languageDropdown.SetSelection(localSettings.language);
+        resolutionDropdown.selectedIndex = GetSelectedResolutionIndex();
+        masterAudioSlider.Value = GetNormalizedTrackValue(MMSoundManager.MMSoundManagerTracks.Master);
+        uiAudioSlider.Value     = GetNormalizedTrackValue(MMSoundManager.MMSoundManagerTracks.UI);
+        sfxAudioSlider.Value    = GetNormalizedTrackValue(MMSoundManager.MMSoundManagerTracks.Sfx);
+    }
 
+    private float GetNormalizedTrackValue(MMSoundManager.MMSoundManagerTracks track)
+    {
+        return Mathf.RoundToInt(MMSoundManager.Instance.GetTrackVolume(track, false) * 100f);
+    }
+
+    private int GetSelectedResolutionIndex()
+    {
         int currentResIndex = 0;
         for (int i = 0; i < filteredResolutions.Count; i++)
         {
@@ -163,7 +205,7 @@ public class SettingsUI : MonoBehaviour
                 break;
             }
         }
-        resolutionDropdown.selectedIndex = currentResIndex;
+        return currentResIndex;
     }
     
 
@@ -176,6 +218,7 @@ public class SettingsUI : MonoBehaviour
         confirmationPopup.onConfirm.AddListener(() => {
             SettingsManager.Instance.LoadDefaultSettings();
             localSettings = JsonUtility.FromJson<Settings>(JsonUtility.ToJson(SettingsManager.Instance.CurrentSettings));
+            MMSoundManager.Instance.ResetSettings();
             UpdateUIElements();
             confirmationPopup.Close();
         });

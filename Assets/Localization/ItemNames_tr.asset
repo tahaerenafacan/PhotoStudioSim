@@ -62,6 +62,22 @@ MonoBehaviour:
     m_Localized: "S\xFCp\xFCrge"
     m_Metadata:
       m_Items: []
+  - m_Id: 37403436153950208
+    m_Localized: "M\xFC\u015Fteri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37405202778017792
+    m_Localized: "A5 Ka\u011F\u0131d\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37405201175793664
+    m_Localized: "A3 Ka\u011F\u0131d\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38846111075913728
+    m_Localized: "Kap\u0131"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

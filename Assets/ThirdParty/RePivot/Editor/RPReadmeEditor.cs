@@ -8,7 +8,7 @@ namespace io.splashart.RePivot
     public class RPReadmeEditor : UnityEditor.Editor
     {
         private const string k_ShowedReadmeKey = "RePivot.ShowedReadme";
-        private const string k_RePivotRoot = "Assets/RePivot";
+        private const string k_RePivotRoot = "Assets/ThirdParty/RePivot";
         private const float k_Space = 16f;
 
         private bool m_Initialized;

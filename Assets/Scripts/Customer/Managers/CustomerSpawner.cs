@@ -22,7 +22,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnInterval)
+        if (spawnTimer >= spawnInterval && queueManager.HasQueuePositions)
         {
             SpawnCustomer();
             spawnTimer = 0f;

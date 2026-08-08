@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: KeyHints Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: KeyHints
+  m_TableCollectionNameGuidString: 196ce7f8933b5444b9d2f0b279bf144e
+  m_Entries:
+  - m_Id: 38001823744
+    m_Key: drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1799091983339520
+    m_Key: pickup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15535035903234048
+    m_Key: camera.take_picture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15535142270783488
+    m_Key: camera.toggle_flash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15535301658529792
+    m_Key: camera.zoom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29702360820342784
+    m_Key: camera.focus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48865760626724864
+    m_Key: broom.clean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48870327825321984
+    m_Key: computer.stand_up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48870990395330560
+    m_Key: camera.upload_photos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48871179214508032
+    m_Key: camera.toggle_mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48871283715592192
+    m_Key: camera.cycle_params
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7178344698322616642
+  references:
+    version: 2
+    RefIds:
+    - rid: 7178344698322616642
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774213965924

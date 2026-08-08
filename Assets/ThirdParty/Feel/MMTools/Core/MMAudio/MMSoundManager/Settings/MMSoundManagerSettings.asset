@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa48f53704ecf834c9f5e203a06874d3, type: 3}
   m_Name: MMSoundManagerSettings
   m_EditorClassIdentifier: 
-  TargetAudioMixer: {fileID: 24100000, guid: 7e984f512e89b60468e829489e8883e3, type: 2}
-  MasterAudioMixerGroup: {fileID: 24300002, guid: 7e984f512e89b60468e829489e8883e3,
-    type: 2}
-  MusicAudioMixerGroup: {fileID: -2273146209696275378, guid: 7e984f512e89b60468e829489e8883e3,
-    type: 2}
-  SfxAudioMixerGroup: {fileID: -3165942800488051908, guid: 7e984f512e89b60468e829489e8883e3,
-    type: 2}
-  UIAudioMixerGroup: {fileID: -3783893103257190392, guid: 7e984f512e89b60468e829489e8883e3,
-    type: 2}
+  TargetAudioMixer: {fileID: 0}
+  MasterAudioMixerGroup: {fileID: 0}
+  MusicAudioMixerGroup: {fileID: 0}
+  SfxAudioMixerGroup: {fileID: 0}
+  UIAudioMixerGroup: {fileID: 0}
+  MixerValuesMultiplier: 20
   Settings:
     OverrideMixerSettings: 1
     MasterVolumeParameter: MasterVolume

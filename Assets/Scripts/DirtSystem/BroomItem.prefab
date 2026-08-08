@@ -140,16 +140,12 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 0058615b2cc892740af0be62f1a00827, type: 2}
   throwForceMultiplier: 1
   allowVerticalPlacement: 0
-  interactRange: 3
-  dirtLayerMask:
-    serializedVersion: 2
-    m_Bits: 448
   broomAction: {fileID: -1474808732969568999, guid: 02b507ec42b0299459d34dc80783d6be, type: 3}
   broomHint:
     m_TableReference:
-      m_TableCollectionName: GUID:597e0ad3f69743d459ceb0655f8bcc9b
+      m_TableCollectionName: GUID:196ce7f8933b5444b9d2f0b279bf144e
     m_TableEntryReference:
-      m_KeyId: 43132560688402432
+      m_KeyId: 48865760626724864
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

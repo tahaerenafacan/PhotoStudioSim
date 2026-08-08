@@ -12,6 +12,7 @@
   <Project Path="SingularityGroup.HotReload.Runtime.csproj" />
   <Project Path="NaughtyAttributes.Core.csproj" />
   <Project Path="Evo.UI.Editor.csproj" />
+  <Project Path="io.splashart.RePivot.Editor.csproj" />
   <Project Path="NaughtyAttributes.Test.csproj" />
   <Project Path="NaughtyAttributes.Editor.csproj" />
   <Project Path="Evo.csproj" />
@@ -20,5 +21,6 @@
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="SingularityGroup.HotReload.Runtime.Public.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" />
+  <Project Path="io.splashart.RePivot.Tests.Editor.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
 </Solution>

@@ -1,5 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Evo.UI;
+using NaughtyAttributes;
+using SyntaxSultan.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuUI : MonoBehaviour
 {
@@ -8,29 +12,32 @@ public class PauseMenuUI : MonoBehaviour
     [SerializeField] private AnimatedContainer animContainer;
     
     [SerializeField] private ModalWindow confirmationPopup;
+    
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button quitToMainMenuButton;
     [SerializeField] private Button quitToDesktopButton;
+    private readonly List<ButtonBinder> buttonBinders = new();
+    
     [SerializeField] private SettingsUI settingsUI;
+    
+    [Scene, SerializeField] private int mainMenuScene;
     
     private void Start()
     {
         GameManager.Instance.OnGamePause += GameManager_OnGamePause;
         GameManager.Instance.OnGameResume += GameManager_OnGameResume;
         
-        resumeButton.onClick.AddListener(ResumeGame);
-        settingsButton.onClick.AddListener(OpenSettings);
-        quitToMainMenuButton.onClick.AddListener(ConfirmQuitToMainMenu);
-        quitToDesktopButton.onClick.AddListener(ConfirmQuitToDesktop);
+        buttonBinders.Add(new ButtonBinder(resumeButton, ResumeGame));
+        buttonBinders.Add(new ButtonBinder(settingsButton, OpenSettings));
+        buttonBinders.Add(new ButtonBinder(quitToMainMenuButton, ConfirmQuitToMainMenu));
+        buttonBinders.Add(new ButtonBinder(quitToDesktopButton, ConfirmQuitToDesktop));
     }
     
     private void OnDestroy()
     {
-        resumeButton.onClick.RemoveListener(ResumeGame);
-        settingsButton.onClick.RemoveListener(OpenSettings);
-        quitToMainMenuButton.onClick.RemoveListener(ConfirmQuitToMainMenu);
-        quitToDesktopButton.onClick.RemoveListener(ConfirmQuitToDesktop);
+        foreach (var binder in buttonBinders)
+            binder.Unbind();
         
         if (GameManager.Instance == null) return;
         GameManager.Instance.OnGamePause -= GameManager_OnGamePause;
@@ -64,7 +71,14 @@ public class PauseMenuUI : MonoBehaviour
         confirmationPopup.onConfirm.RemoveAllListeners();
         confirmationPopup.SetTitle("Quit to Desktop");
         confirmationPopup.SetDescription("Are you sure you want to quit to desktop?\nAny unsaved progress will be lost.");
-        confirmationPopup.onConfirm.AddListener(Application.Quit);
+        confirmationPopup.onConfirm.AddListener((() =>
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false; 
+#else
+            Application.Quit(); 
+#endif
+        }));
         confirmationPopup.Open();
     }
 
@@ -73,7 +87,7 @@ public class PauseMenuUI : MonoBehaviour
         confirmationPopup.onConfirm.RemoveAllListeners();
         confirmationPopup.SetTitle("Quit to Main Menu");
         confirmationPopup.SetDescription("Are you sure you want to quit to the main menu?\nAny unsaved progress will be lost.");
-        confirmationPopup.onConfirm.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu") );
+        confirmationPopup.onConfirm.AddListener(() => SceneManager.LoadScene(mainMenuScene) );
         confirmationPopup.Open();
     }
 }

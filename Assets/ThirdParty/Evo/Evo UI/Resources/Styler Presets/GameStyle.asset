@@ -45,8 +45,6 @@ MonoBehaviour:
   - itemID: Bright Red
     colorValue: {r: 1, g: 0.19215687, b: 0.19215687, a: 1}
   fontItems:
-  - itemID: Rubik - Black
-    fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
   - itemID: Rubik - BlackItalic
     fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   - itemID: Rubik - Bold
@@ -84,7 +82,7 @@ MonoBehaviour:
   spriteItems: []
   updateMode: 1
   audioFoldout: 1
-  colorFoldout: 1
-  fontFoldout: 0
+  colorFoldout: 0
+  fontFoldout: 1
   spriteFoldout: 0
   settingsFoldout: 0

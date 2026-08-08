@@ -62,6 +62,22 @@ MonoBehaviour:
     m_Localized: Broom
     m_Metadata:
       m_Items: []
+  - m_Id: 37403436153950208
+    m_Localized: Customer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37405202778017792
+    m_Localized: A5 Paper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37405201175793664
+    m_Localized: A3 Paper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38846111075913728
+    m_Localized: Door
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

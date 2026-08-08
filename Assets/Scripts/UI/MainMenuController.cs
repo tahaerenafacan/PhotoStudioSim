@@ -1,31 +1,57 @@
+using System.Collections.Generic;
+using Evo.UI;
+using MoreMountains.Feedbacks;
+using SyntaxSultan.UI;
 using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private Evo.UI.Button newGameButton;
-    [SerializeField] private StudioNamePopupController studioNamePopup;
+    [SerializeField] private Button resumeGameButton;
+    [SerializeField] private Button newGameButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button quitButton;
+    
+    [SerializeField] private ModalWindow modalWindow;
+    [SerializeField] private SettingsUI settingsUI;
+    [SerializeField] private MMF_Player sceneLoader;
+    
+    private readonly List<ButtonBinder> buttonBinders =  new();
 
     private void Awake()
     {
-        newGameButton.onClick.AddListener(OnNewGameClicked);
+        buttonBinders.Add(new ButtonBinder(resumeGameButton, OnResumeClicked));
+        buttonBinders.Add(new ButtonBinder(newGameButton, OnNewGameClicked));
+        buttonBinders.Add(new ButtonBinder(settingsButton, OnSettingsClicked));
+        buttonBinders.Add(new ButtonBinder(quitButton, OnQuitClicked));
+    }
+    
+    private void OnDestroy()
+    {
+        foreach (var binder in buttonBinders)
+            binder.Unbind();
+    }
+
+    private void OnResumeClicked()
+    {
+        sceneLoader.PlayFeedbacks();
     }
 
     public void OnNewGameClicked()
     {
-        // If there are existing save show it will overwrite it, so we should ask for confirmation first.
-        // For now, we will just show the studio name popup directly.
-        OnCreateStudioClicked();
+        Debug.Log("OnNewGameClicked");
     }
-    private void OnCreateStudioClicked()
+    
+    private void OnSettingsClicked()
     {
-        studioNamePopup.Show("Photo Studio Simulator");
-        studioNamePopup.OnConfirmed += HandleStudioNameConfirmed;
+        settingsUI.ToggleSettings();
     }
-
-    private void HandleStudioNameConfirmed(string studioName)
+    
+    private void OnQuitClicked()
     {
-        Debug.Log($"Studio name confirmed: {studioName}");
-        GameManager.Instance.StudioName = studioName;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("PrototypeScene");
+        modalWindow.onConfirm.RemoveAllListeners();
+        modalWindow.SetTitle("Quit to Desktop");
+        modalWindow.SetDescription("Are you sure you want to quit the desktop?");
+        modalWindow.onConfirm.AddListener(Application.Quit);
+        modalWindow.Open();
     }
 }

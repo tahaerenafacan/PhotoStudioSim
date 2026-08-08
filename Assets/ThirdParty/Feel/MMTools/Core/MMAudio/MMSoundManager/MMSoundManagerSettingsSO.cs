@@ -35,12 +35,11 @@ namespace MoreMountains.Tools
 		public float MixerValuesMultiplier = 20;
         
 		[Header("Settings Unfold")]
-		/// the full settings for this MMSoundManager
 		[Tooltip("the full settings for this MMSoundManager")]
 		public MMSoundManagerSettings Settings;
 
-		protected const string _saveFolderName = "MMSoundManager/";
-		protected const string _saveFileName = "mmsound.settings";
+		protected const string _saveFolderName = "Audio/";
+		protected const string _saveFileName = "audio.settings";
     
 		#region SaveAndLoad
         
@@ -130,6 +129,7 @@ namespace MoreMountains.Tools
 		/// <returns></returns>
 		public virtual float GetTrackVolume(MMSoundManager.MMSoundManagerTracks track)
 		{
+			if (TargetAudioMixer == null) return 0f;
 			float volume = 1f;
 			switch (track)
 			{

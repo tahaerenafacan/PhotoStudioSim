@@ -16,95 +16,103 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 1f2954b52d092b1469ebbd268af8ca4e
   m_Entries:
   - m_Id: 1806084668248064
-    m_Key: ui.settings
+    m_Key: settings
     m_Metadata:
       m_Items: []
   - m_Id: 16560539527663616
-    m_Key: ui.quitToDesktop
+    m_Key: quit_to_desktop
     m_Metadata:
       m_Items: []
   - m_Id: 16560681689403392
-    m_Key: ui.quitToMainMenu
+    m_Key: quit_to_main_menu
     m_Metadata:
       m_Items: []
   - m_Id: 16560909117149184
-    m_Key: ui.play
+    m_Key: play
     m_Metadata:
       m_Items: []
   - m_Id: 16560959893393408
-    m_Key: ui.resume
+    m_Key: resume
     m_Metadata:
       m_Items: []
   - m_Id: 16624877118541824
-    m_Key: ui.newgame
+    m_Key: new_game
     m_Metadata:
       m_Items: []
   - m_Id: 16625240869556224
-    m_Key: ui.quit
+    m_Key: quit
     m_Metadata:
       m_Items: []
   - m_Id: 16631649531187200
-    m_Key: ui.whistlist
+    m_Key: whistlist
     m_Metadata:
       m_Items: []
   - m_Id: 16631782083776512
-    m_Key: ui.subscribe
+    m_Key: youtube
     m_Metadata:
       m_Items: []
   - m_Id: 16631884147970048
-    m_Key: ui.joindc
+    m_Key: discord
     m_Metadata:
       m_Items: []
   - m_Id: 16631963315458048
-    m_Key: ui.twitter
+    m_Key: twitter
     m_Metadata:
       m_Items: []
   - m_Id: 17580345433378816
-    m_Key: ui.settings.language
+    m_Key: language
     m_Metadata:
       m_Items: []
   - m_Id: 17580483107213312
-    m_Key: ui.settings.langugage.en
+    m_Key: langugage.en
     m_Metadata:
       m_Items: []
   - m_Id: 17580559015727104
-    m_Key: ui.settings.language.tr
+    m_Key: language.tr
     m_Metadata:
       m_Items: []
   - m_Id: 17584816125235200
-    m_Key: ui.settings.reset
+    m_Key: reset
     m_Metadata:
       m_Items: []
   - m_Id: 17584852754092032
-    m_Key: ui.settings.save
+    m_Key: save
     m_Metadata:
       m_Items: []
   - m_Id: 18061426104324096
-    m_Key: ui.settings.general
+    m_Key: general
     m_Metadata:
       m_Items: []
   - m_Id: 18061506634960896
-    m_Key: ui.settings.graphics
+    m_Key: graphics
     m_Metadata:
       m_Items: []
   - m_Id: 18061537165299712
-    m_Key: ui.settings.audio
+    m_Key: audio
     m_Metadata:
       m_Items: []
   - m_Id: 18061579095756800
-    m_Key: ui.settings.keybinds
+    m_Key: keybinds
     m_Metadata:
       m_Items: []
   - m_Id: 27470333180497920
-    m_Key: ui.settings.resolution
+    m_Key: resolution
     m_Metadata:
       m_Items: []
   - m_Id: 27470568736804864
-    m_Key: ui.settings.fullscreen
+    m_Key: fullscreen
     m_Metadata:
       m_Items: []
   - m_Id: 27470639461158912
-    m_Key: ui.settings.texturequality
+    m_Key: texture_quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48896880068120576
+    m_Key: audio.master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50312687646003200
+    m_Key: next_day
     m_Metadata:
       m_Items: []
   m_Metadata:

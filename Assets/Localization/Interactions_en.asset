@@ -42,28 +42,12 @@ MonoBehaviour:
     m_Localized: Add to envelope
     m_Metadata:
       m_Items: []
-  - m_Id: 25472230739005440
-    m_Localized: Leave Computer
-    m_Metadata:
-      m_Items: []
   - m_Id: 26545315151990784
     m_Localized: End the Day
     m_Metadata:
       m_Items: []
-  - m_Id: 26850052556574720
-    m_Localized: Upload Photos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 26850119082430464
-    m_Localized: Toggle Mode
-    m_Metadata:
-      m_Items: []
-  - m_Id: 26850149390471168
-    m_Localized: Cycle Params
-    m_Metadata:
-      m_Items: []
   - m_Id: 33758211189235712
-    m_Localized: You can't sleep until 6pm
+    m_Localized: You can't sleep in daytime
     m_Metadata:
       m_Items: []
   - m_Id: 35533294337515520
@@ -74,8 +58,8 @@ MonoBehaviour:
     m_Localized: Open/Close
     m_Metadata:
       m_Items: []
-  - m_Id: 43132560688402432
-    m_Localized: Clean
+  - m_Id: 45424582854037504
+    m_Localized: Open/Close
     m_Metadata:
       m_Items: []
   references:

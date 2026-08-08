@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public static class FunctionLibrary
@@ -48,5 +49,18 @@ public static class FunctionLibrary
         canvasGroup.interactable = isEnabled;
         canvasGroup.blocksRaycasts = isEnabled;
         canvasGroup.alpha = isEnabled ? 1 : 0;
+    }
+    
+    
+    public static void DoButtonPunch(RectTransform rectTransform)
+    {
+        if (rectTransform == null)
+        {
+            Debug.LogWarning($"DoButtonPunch called with null rectTransform: {rectTransform.name}");
+            return;
+        }
+        rectTransform.DOKill();
+        rectTransform.localScale = Vector3.one;
+        rectTransform.DOPunchScale(Vector3.one * 0.08f, 0.35f, vibrato: 6, elasticity: 0.6f);    
     }
 }

@@ -16,63 +16,47 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 597e0ad3f69743d459ceb0655f8bcc9b
   m_Entries:
   - m_Id: 15516160000
-    m_Key: interact.printer
+    m_Key: printer.toggle_power
     m_Metadata:
       m_Items: []
   - m_Id: 58407112704
-    m_Key: interact.computercase
+    m_Key: computer.toggle_power
     m_Metadata:
       m_Items: []
   - m_Id: 102824792064
-    m_Key: interact.computermonitor
+    m_Key: computer.sit_down
     m_Metadata:
       m_Items: []
   - m_Id: 523597052760064
-    m_Key: interact.customer.completeOrder
+    m_Key: customer.complete_order
     m_Metadata:
       m_Items: []
   - m_Id: 6573169407545344
-    m_Key: interact.envelopestack.Spawn
+    m_Key: envelope.spawn
     m_Metadata:
       m_Items: []
   - m_Id: 6593315492712448
-    m_Key: interact.a4paper
-    m_Metadata:
-      m_Items: []
-  - m_Id: 25472230739005440
-    m_Key: leavecomputer
+    m_Key: paper.add_to_envelope
     m_Metadata:
       m_Items: []
   - m_Id: 26545315151990784
     m_Key: bed.sleep
     m_Metadata:
       m_Items: []
-  - m_Id: 26850052556574720
-    m_Key: camera.UploadPhotos
-    m_Metadata:
-      m_Items: []
-  - m_Id: 26850119082430464
-    m_Key: camera.ToggleMode
-    m_Metadata:
-      m_Items: []
-  - m_Id: 26850149390471168
-    m_Key: camera.CycleParam
-    m_Metadata:
-      m_Items: []
   - m_Id: 33758211189235712
-    m_Key: bed.cantSleep
+    m_Key: bed.cant_sleep
     m_Metadata:
       m_Items: []
   - m_Id: 35533294337515520
-    m_Key: openBox
+    m_Key: box.unpack
     m_Metadata:
       m_Items: []
   - m_Id: 42786891331129344
-    m_Key: ledPanel.Toggle
+    m_Key: ledPanel.toggle_on_off
     m_Metadata:
       m_Items: []
-  - m_Id: 43132560688402432
-    m_Key: broom.Clean
+  - m_Id: 45424582854037504
+    m_Key: door.open_close
     m_Metadata:
       m_Items: []
   m_Metadata:
