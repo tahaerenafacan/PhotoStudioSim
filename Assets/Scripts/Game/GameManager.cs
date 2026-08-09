@@ -1,8 +1,10 @@
 using System;
+using SyntaxSultan.SavingSystem;
 using UniStorm;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +72,16 @@ public class GameManager : MonoBehaviour
         if (Keyboard.current.tKey.wasPressedThisFrame)
         {
             InputManager.ToggleCursorLock();
+        }
+
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            FindFirstObjectByType<JsonSavingSystem>().Save("save");
+        }
+
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            FindFirstObjectByType<JsonSavingSystem>().Load("save");
         }
     }
 

@@ -27,8 +27,8 @@ public class PlayerCharacter : MonoBehaviour, ICharacterController
     [SerializeField] private Transform cameraTarget;
     
     [Header("Speed")]
-    [SerializeField] private float walkSpeed = 6f;
-    [SerializeField] private float sprintSpeed = 12;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float crouchSpeed = 3f;
     
     [Header("Inertia")]
@@ -83,7 +83,6 @@ public class PlayerCharacter : MonoBehaviour, ICharacterController
 
     public void UpdateInput(CharacterInput input)
     {
-        
         //TODO: Add inertia to moving
         requestedRotation = input.Rotation;
         

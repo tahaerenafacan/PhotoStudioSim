@@ -1,7 +1,9 @@
 using System;
+using Newtonsoft.Json.Linq;
+using SyntaxSultan.SavingSystem;
 using UnityEngine;
 
-public class CurrencyManager : MonoBehaviour
+public class CurrencyManager : MonoBehaviour, IJsonSaveable
 {
     public static CurrencyManager Instance { get; private set; }
 
@@ -45,5 +47,15 @@ public class CurrencyManager : MonoBehaviour
         money -= amount;
         OnMoneySpent?.Invoke(amount);
         OnBalanceChanged?.Invoke(money);
+    }
+
+    public JToken CaptureAsJToken()
+    {
+        return JToken.FromObject(money);
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        money = state.ToObject<int>();
     }
 }

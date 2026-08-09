@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f109cc59c1895428a298ed570d7bfb, type: 3}
   m_Name: FlashDrive
   m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
+  itemId: 3dd9b9f9-0eb7-4888-85ed-d35a662c5a53
   itemName:
     m_TableReference:
       m_TableCollectionName: GUID:4b757296a2bfcb947acc0c01cb31c642

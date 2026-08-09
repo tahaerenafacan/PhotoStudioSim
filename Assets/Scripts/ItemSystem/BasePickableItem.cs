@@ -1,20 +1,20 @@
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Localization;
 
 [RequireComponent(typeof(Rigidbody))]
 public abstract class BasePickableItem : MonoBehaviour, IPickable, IPlaceable
 {
-    [FormerlySerializedAs("definition")] 
-    [SerializeField] private ItemDefinition itemData;
-    [SerializeField] private float throwForceMultiplier = 1f;
-    [SerializeField] private bool allowVerticalPlacement = false;
-
-
-    public UnityEngine.Localization.LocalizedString GetItemName() => itemData.itemName;
+    public string GetItemId() => itemData.ItemId;
+    public LocalizedString GetItemName() => itemData.itemName;
     public bool IsHeld { get; private set; }
     
     protected ItemDefinition ItemData => itemData;
     protected Rigidbody Rb { get; private set; }
+    
+    [SerializeField] private ItemDefinition itemData;
+    [SerializeField] private float throwForceMultiplier = 1f;
+    [SerializeField] private bool allowVerticalPlacement = false;
+    
     private Collider[] colliders;
     private Renderer[] cachedRenderers;
 

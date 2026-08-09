@@ -17,5 +17,4 @@ MonoBehaviour:
   cost: 1
   icon: {fileID: 21300000, guid: d5cd2010397d1b3478354f72bd2fffbe, type: 3}
   prerequisites: []
-  treePosition: {x: 0, y: 220}
   slotsToAdd: 1

@@ -1,4 +1,7 @@
 using System;
+using ItemSystem;
+using Newtonsoft.Json.Linq;
+using SyntaxSultan.SavingSystem;
 using UnityEngine;
 
 namespace SyntaxSultan.InventoryModule
@@ -11,7 +14,7 @@ namespace SyntaxSultan.InventoryModule
     ///   2. StorageRoot boş bırakılırsa otomatik oluşturulur.
     ///   3. UpgradeSlotCount() ile slot sayısını runtime'da artır (max 8).
     /// </summary>
-    public class InventorySystem : MonoBehaviour
+    public class InventorySystem : MonoBehaviour, IJsonSaveable
     {
         public static InventorySystem Instance { get; private set; }
 
@@ -114,5 +117,76 @@ namespace SyntaxSultan.InventoryModule
         }
 
         private bool IsValidIndex(int index) => index >= 0 && index < slots.Length;
+        
+        public JToken CaptureAsJToken()
+        {
+            // Her slotu itemId string'i olarak saklıyoruz; boş slot = null.
+            // Transform/fizik state'i saklanmıyor çünkü RetrieveFromInventory zaten sıfırlıyor.
+            JArray slotArray = new JArray();
+            foreach (InventorySlot slot in slots)
+            {
+                slotArray.Add(slot.IsEmpty ? null : slot.StoredItem.GetItemId());
+            }
+
+            JObject state = new JObject();
+            state["slotCount"] = slots.Length;
+            state["slots"] = slotArray;
+            return state;
+        }
+
+        public void RestoreFromJToken(JToken token)
+        {
+            JObject state = token.ToObject<JObject>();
+            int savedSlotCount = state["slotCount"].ToObject<int>();
+            JArray slotArray = (JArray)state["slots"];
+
+            ClearAllSlots();
+
+            // Save dosyası daha fazla slot içeriyorsa (upgrade sonrası kaydedilmişse) mevcut envanteri büyüt
+            if (savedSlotCount > slots.Length)
+                UpgradeSlotCount(savedSlotCount);
+
+            for (int i = 0; i < slotArray.Count; i++)
+            {
+                JToken idToken = slotArray[i];
+                if (idToken.Type == JTokenType.Null) continue;
+
+                RestoreItemIntoSlot(idToken.ToObject<string>(), i);
+            }
+        }
+        
+        /// <summary>
+        /// Sahne yeniden yüklenmeden restore çağrılırsa (ör. quickload), önceki
+        /// envanterdeki item objelerinin sahnede yetim kalmaması için temizler.
+        /// </summary>
+        private void ClearAllSlots()
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                BasePickableItem leftover = slots[i].Take();
+                if (leftover != null) Destroy(leftover.gameObject);
+            }
+        }
+
+        private void RestoreItemIntoSlot(string itemId, int slotIndex)
+        {
+            ItemDefinition def = ItemDatabase.GetById(itemId);
+            if (def == null || def.itemPrefab == null)
+            {
+                Debug.LogWarning($"[InventorySystem] itemId '{itemId}' ItemDatabase'de bulunamadı, slot {slotIndex} atlandı.");
+                return;
+            }
+
+            BasePickableItem instance = Instantiate(def.itemPrefab);
+            instance.Initialize(def);
+
+            // TryStore false dönerse item sahnede yetim (aktif, storage dışı) kalır — bunu tespit edip temizliyoruz
+            if (!TryStore(instance, slotIndex))
+            {
+                Debug.LogError($"[InventorySystem] '{itemId}' slot {slotIndex}'e restore edilemedi. " +
+                               $"IStorable implement ediyor mu / CanStore true mu kontrol et: {instance.GetType()}");
+                Destroy(instance.gameObject);
+            }
+        }
     }
 }
