@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6581de94875149c9a7c07b8bfc4cc484, type: 3}
+  m_Name: Steps_Basics
+  m_EditorClassIdentifier: Assembly-CSharp::SyntaxSultan.TutorialSystem.TutorialStepSO
+  title: Photo Basics
+  objectives:
+  - {fileID: 11400000, guid: e0ffe17d350c46f43bc1dd62bbf36c58, type: 2}
+  - {fileID: 11400000, guid: 827a18d326e5c034fbc32f1d08df6213, type: 2}

@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Key: next_day
     m_Metadata:
       m_Items: []
+  - m_Id: 50552967007686656
+    m_Key: objective
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

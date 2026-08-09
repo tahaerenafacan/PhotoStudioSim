@@ -118,6 +118,10 @@ MonoBehaviour:
     m_Localized: "Sonraki G\xFCn"
     m_Metadata:
       m_Items: []
+  - m_Id: 50552967007686656
+    m_Localized: "G\xF6revler"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

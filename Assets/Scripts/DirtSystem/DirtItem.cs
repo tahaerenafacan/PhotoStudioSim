@@ -1,4 +1,5 @@
 using System;
+using SyntaxSultan.TutorialSystem;
 using UnityEngine;
 
 namespace SyntaxSultan.DirtSystem
@@ -27,6 +28,7 @@ namespace SyntaxSultan.DirtSystem
                 if (currentProgress >= cleanDuration)
                 {
                     isCleaned = true;
+                    TutorialEventBus.Raise(TutorialObjectiveKeys.CleanDirt);
                     OnCleaned?.Invoke();
                     Destroy(gameObject);
                 }

@@ -1,5 +1,6 @@
 using System;
 using SyntaxSultan.SavingSystem;
+using SyntaxSultan.TutorialSystem;
 using UniStorm;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 144;
         if (UniStormManager.Instance) UniStormManager.Instance.OnTimeChange += UniStormManager_OnMinuteChanged;
+        if (TutorialManager.Instance) TutorialManager.Instance.StartSequence();
     }
 
     private void UniStormManager_OnMinuteChanged(int hour, int minute)

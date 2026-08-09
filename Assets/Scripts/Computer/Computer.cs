@@ -1,4 +1,5 @@
 using System;
+using SyntaxSultan.TutorialSystem;
 using UnityEngine;
 
 namespace SyntaxSultan.ComputerSystem
@@ -47,6 +48,7 @@ namespace SyntaxSultan.ComputerSystem
             if (IsPoweredOn) return;
             IsPoweredOn = true;
             OnBootStart?.Invoke();
+            TutorialEventBus.Raise(TutorialObjectiveKeys.BootComputer);
         }
 
         public void CompleteBoot()
