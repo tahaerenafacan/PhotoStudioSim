@@ -252,7 +252,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0

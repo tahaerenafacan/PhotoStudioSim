@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 791800362431795798}
   - component: {fileID: 3028860159105965390}
+  - component: {fileID: 7057933450167489975}
   m_Layer: 0
   m_Name: SettingsManager
   m_TagString: Untagged
@@ -125,6 +126,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a1da0d8a2baa34089bf098c8f619de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
+--- !u!114 &7057933450167489975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488169707301552250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1165bc99cb4223c4baed10172135afc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputIconResolver
+  actionIcons: []
+  controlIcons:
+  - bindingPath: <Keyboard>/e
+    icon: {fileID: -1350719223, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  - bindingPath: <Keyboard>/space
+    icon: {fileID: -1476951808, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  - bindingPath: <Keyboard>/f
+    icon: {fileID: -1569355150, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  - bindingPath: <Keyboard>/tab
+    icon: {fileID: 17416562, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  - bindingPath: <Keyboard>/c
+    icon: {fileID: 60565751, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  - bindingPath: <Keyboard>/leftShift
+    icon: {fileID: -2120801154, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
 --- !u!1 &5143928799450751328
 GameObject:
   m_ObjectHideFlags: 0

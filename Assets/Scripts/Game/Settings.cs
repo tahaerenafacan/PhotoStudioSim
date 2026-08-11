@@ -10,6 +10,7 @@ public class Settings
     public float fov;
     public int language;
     public float computerScreenDistance;
+    public string bindingOverridesJson;
     
     public Settings Clone()
     {
@@ -23,7 +24,8 @@ public class Settings
             textureQuality = textureQuality,
             fov = fov,
             language = language,
-            computerScreenDistance = computerScreenDistance
+            computerScreenDistance = computerScreenDistance,
+            bindingOverridesJson = bindingOverridesJson
         };
     }
 }   

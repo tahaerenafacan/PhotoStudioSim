@@ -7,4 +7,6 @@ public class OrderResult
     public float AccuracyScore;
     public float MaterialQualityScore;
     public float CompletedAt;
+    public int Earnings;
+    public int DeliveredPhotoCount;
 }

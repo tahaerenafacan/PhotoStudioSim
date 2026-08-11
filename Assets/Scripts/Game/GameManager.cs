@@ -46,7 +46,11 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 144;
         if (UniStormManager.Instance) UniStormManager.Instance.OnTimeChange += UniStormManager_OnMinuteChanged;
-        if (TutorialManager.Instance) TutorialManager.Instance.StartSequence();
+        if (TutorialManager.Instance)
+        {
+            TutorialManager.Instance.StartSequence();
+        }
+        else Debug.LogError("Where the fuck is the tutorial manager?");
     }
 
     private void UniStormManager_OnMinuteChanged(int hour, int minute)
@@ -84,6 +88,11 @@ public class GameManager : MonoBehaviour
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             FindFirstObjectByType<JsonSavingSystem>().Load("save");
+        }
+
+        if (Keyboard.current.yKey.wasPressedThisFrame)
+        {
+            TutorialManager.Instance.StartSequence();
         }
     }
 

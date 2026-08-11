@@ -147,6 +147,14 @@ public class CustomerController : MonoBehaviour, IInteractable
         CustomerData.ServiceCompletedAt = Time.time;
         orderManager?.CompleteOrder(orderResult);
 
+        if (orderResult != null && CustomerData.AssignedOrder != null)
+        {
+            int earnings = OrderEconomyCalculator.CalculateEarnings(CustomerData.AssignedOrder, orderResult, shopRatingManager?.CurrentShopStarLevel ?? 1);
+            orderResult.Earnings = earnings;
+            CurrencyManager.Instance?.AddCurrency(earnings);
+            Debug.Log($"CustomerController: Earned ${earnings} for customer {name}", this);
+        }
+
         OnServiceCompleted?.Invoke(this, orderResult);
 
         if (shopRatingManager != null)
@@ -164,7 +172,6 @@ public class CustomerController : MonoBehaviour, IInteractable
             int rating = shopRatingManager.CalculateRating(context);
             ReputationManager.Instance.AddReputation(rating);
             OnRatingSubmitted?.Invoke(this, rating);
-            Debug.Log($"CustomerController: Submitted rating {rating} for customer {name}", this);
         }
 
         PlayerItemHolder.Instance.ClearCurrentItem();

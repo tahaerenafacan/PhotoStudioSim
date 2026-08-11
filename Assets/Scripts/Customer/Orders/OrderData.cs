@@ -14,7 +14,7 @@ public class OrderData
     public PrintPaperOrientation PaperOrientation;
     public PrintPaperFit PaperFit;
     public bool IsColored;
-    public int Quantity;
+    public int Quantity = 1;
     public float RequestedAt;
 
     public static OrderData CreatePhotoOrder(PhotoOrderVariant variant)
@@ -28,7 +28,7 @@ public class OrderData
             PaperOrientation = GetRandomPaperOrientation(),
             PaperFit = GetRandomPaperFit(),
             IsColored = GetRandomIsColored(),
-            Quantity = UnityEngine.Random.Range(0, 100),
+            Quantity = UnityEngine.Random.Range(1, 6),
             RequestedAt = UnityEngine.Time.time
         };
     }
@@ -43,6 +43,7 @@ public class OrderData
             PaperOrientation = GetRandomPaperOrientation(),
             PaperFit = GetRandomPaperFit(),
             IsColored = GetRandomIsColored(),
+            Quantity = 1,
             RequestedAt = UnityEngine.Time.time
         };
     }
@@ -57,14 +58,9 @@ public class OrderData
             PaperOrientation = GetRandomPaperOrientation(),
             PaperFit = GetRandomPaperFit(),
             IsColored = GetRandomIsColored(),
+            Quantity = 1,
             RequestedAt = UnityEngine.Time.time
         };
-    }
-
-    private static PrintQuality GetRandomQuality()
-    {
-        PrintQuality[] qualities = (PrintQuality[])Enum.GetValues(typeof(PrintQuality));
-        return qualities[UnityEngine.Random.Range(0, qualities.Length)];
     }
 
     private static PrintPaperSize GetRandomPaperSize()

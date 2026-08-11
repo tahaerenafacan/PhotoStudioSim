@@ -12,21 +12,51 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private OrderManager orderManager;
     [SerializeField] private ShopRatingManager shopRatingManager;
     [SerializeField] private OrderGenerator orderGenerator;
+
+    [Header("Spawn Timing")]
     [SerializeField] private float spawnInterval = 5f;
+    [SerializeField] private float minSpawnInterval = 3f;
+    [SerializeField] private float maxSpawnInterval = 9f;
+    [SerializeField] private float busyTablePenalty = 1.3f;
 
     public event System.Action<CustomerController> OnCustomerSpawned;
 
     private float spawnTimer;
+    private float currentSpawnInterval;
 
-    public void Update()
+    private void Awake()
     {
+        currentSpawnInterval = Mathf.Clamp(spawnInterval, minSpawnInterval, maxSpawnInterval);
+    }
+
+    private void Update()
+    {
+        if (queueManager == null)
+            return;
+
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnInterval && queueManager.HasQueuePositions)
-        {
-            SpawnCustomer();
-            spawnTimer = 0f;
-        }
+        if (spawnTimer < currentSpawnInterval)
+            return;
+
+        if (!queueManager.HasQueuePositions)
+            return;
+
+        SpawnCustomer();
+        spawnTimer = 0f;
+        currentSpawnInterval = CalculateSpawnInterval();
+    }
+
+    private float CalculateSpawnInterval()
+    {
+        if (queueManager == null)
+            return Mathf.Clamp(spawnInterval, minSpawnInterval, maxSpawnInterval);
+
+        float fillRate = queueManager.QueueFillRatio;
+        float tableFactor = serviceTableManager != null && !serviceTableManager.HasAvailableTable ? busyTablePenalty : 1f;
+        float interval = spawnInterval * (1f + fillRate) * tableFactor;
+
+        return Mathf.Clamp(interval, minSpawnInterval, maxSpawnInterval);
     }
 
     public CustomerController SpawnCustomer()

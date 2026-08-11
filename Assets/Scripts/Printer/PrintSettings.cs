@@ -46,6 +46,7 @@ namespace SyntaxSultan.PrinterSystem
                 paperOrientation = orderData.PaperOrientation,
                 paperFit = orderData.PaperFit,
                 isColored = orderData.IsColored,
+                quality = PrintQuality.Low,
                 quantity = orderData.Quantity,
             };
         }

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using SyntaxSultan.InventoryModule;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization;
 
 namespace SyntaxSultan.DirtSystem
 {
-    public class BroomItem : BasePickableItem, IComplexUsable
+    public class BroomItem : BasePickableItem, IComplexUsable, IStorable
     {
         [SerializeField] private InputActionReference broomAction;
         [SerializeField] private LocalizedString broomHint;
@@ -19,7 +20,11 @@ namespace SyntaxSultan.DirtSystem
         private ICleanable currentCleanTarget;
         private float sweepTimer;
         private bool isBroomHeld;
-        
+
+        public bool CanStore => true;
+
+        public Sprite Icon => ItemData.icon;
+
         private void HandleBroomStarted(InputAction.CallbackContext ctx) => isBroomHeld = true;
         private void HandleBroomCanceled(InputAction.CallbackContext ctx) => isBroomHeld = false;
 

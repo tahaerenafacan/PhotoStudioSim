@@ -9,6 +9,11 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private RectTransform settingsPanel;
 
+    [Header("Rebind UI")]
+    [SerializeField] private RectTransform bindingsContainer;
+    [SerializeField] private GameObject bindingRowPrefab;
+    [SerializeField] private List<RebindActionEntry> rebindEntries;
+
     [Header("Animation")] 
     [SerializeField] private float closedPos;
     [SerializeField] private float openPos;
@@ -59,6 +64,7 @@ public class SettingsUI : MonoBehaviour
 
         AnimatePanel(openPos, Ease.OutBack);
         UpdateUIElements();
+        RefreshBindingRows();
     }
     
     public void CloseSettings()
@@ -169,7 +175,33 @@ public class SettingsUI : MonoBehaviour
             MMSoundManager.Instance.SetVolumeSfx(val/100f);
         });
     }
-    
+
+    private void RefreshBindingRows()
+    {
+        if (rebindEntries == null || rebindEntries.Count == 0) return;
+
+        for (int i = 0; i < rebindEntries.Count; i++)
+        {
+            var entry = rebindEntries[i];
+            if (entry.actionReference == null || entry.row == null) continue;
+
+            string actionName = entry.ActionName;
+            string displayString = actionName;
+            string bindingText = InputManager.Instance.GetBindingDisplayString(actionName, entry.bindingIndex) ?? string.Empty;
+            string effectivePath = InputManager.Instance.GetBindingEffectivePath(actionName, entry.bindingIndex);
+            var iconSprite = InputIconResolver.Instance?.GetControlIcon(effectivePath);
+            entry.row.Setup(actionName, displayString, bindingText, iconSprite, entry.bindingIndex, RequestRebind);
+        }
+    }
+
+    private void RequestRebind(string actionName, int bindingIndex)
+    {
+        InputManager.Instance?.StartInteractiveRebind(actionName, bindingIndex, success =>
+        {
+            RefreshBindingRows();
+        });
+    }
+
     private void ApplySettings()
     {
         SettingsManager.Instance.UpdateSetting(localSettings);

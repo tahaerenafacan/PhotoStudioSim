@@ -65,35 +65,39 @@ public class ServiceTable : MonoBehaviour, IServiceTable
         // Get envelope from player and verify papers
         float accuracyScore;
         float materialQualityScore;
+        int totalPapers;
 
         if (PlayerItemHolder.Instance?.CurrentItem is ItemEnvelope envelope)
         {
             var expectedSettings = PrintSettings.FromOrderData(currentOrder);
-            int totalPapers = envelope.StoredPhotos.Count;
+            totalPapers = envelope.StoredPhotos.Count;
 
             if (totalPapers > 0)
             {
                 float totalAccuracy = 0f;
+                float totalQuality = 0f;
 
                 foreach (var storedPhoto in envelope.StoredPhotos)
                 {
                     totalAccuracy += ComparePrintSettingsNormalized(storedPhoto.settings, expectedSettings);
+                    totalQuality += GetQualityScore(storedPhoto.settings.quality);
                 }
 
                 accuracyScore = totalAccuracy / totalPapers;
-
-                materialQualityScore = GetQualityScore(expectedSettings.quality);
+                materialQualityScore = totalQuality / totalPapers;
             }
             else
             {
                 accuracyScore = 0f;
                 materialQualityScore = 0f;
+                totalPapers = 0;
             }
         }
         else
         {
             accuracyScore = 0f;
             materialQualityScore = 0f;
+            totalPapers = 0;
         }
 
         var result = new OrderResult
@@ -101,10 +105,9 @@ public class ServiceTable : MonoBehaviour, IServiceTable
             OrderId = currentOrder.OrderId,
             AccuracyScore = accuracyScore,
             MaterialQualityScore = materialQualityScore,
-            CompletedAt = Time.time
+            CompletedAt = Time.time,
+            DeliveredPhotoCount = totalPapers
         };
-
-        Debug.Log($"ServiceTable: Completed order {currentOrder.OrderId} - Accuracy: {accuracyScore}, Quality: {materialQualityScore}");
 
         onServiceCompleteCallback?.Invoke(result);
         Release();

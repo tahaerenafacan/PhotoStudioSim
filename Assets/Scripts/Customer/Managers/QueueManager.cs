@@ -7,6 +7,9 @@ public class QueueManager : MonoBehaviour, IQueueManager
     private readonly List<CustomerController> queuedCustomers = new();
 
     public bool HasQueuePositions => queuePositions.Count > queuedCustomers.Count;
+    public int QueueCount => queuedCustomers.Count;
+    public int QueueCapacity => queuePositions.Count;
+    public float QueueFillRatio => QueueCapacity <= 0 ? 0f : queuedCustomers.Count / (float)QueueCapacity;
 
     public void RegisterQueueEntry(CustomerController customer)
     {

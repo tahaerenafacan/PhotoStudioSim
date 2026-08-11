@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using SyntaxSultan.TutorialSystem;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace SyntaxSultan.DirtSystem
 {
         public class DirtItem : MonoBehaviour, ICleanable
         {
+            [SerializeField] private MMF_Player cleanedFeedbacks;
             [SerializeField] private float cleanDuration = 3f;
 
             private float currentProgress;
@@ -30,7 +32,7 @@ namespace SyntaxSultan.DirtSystem
                     isCleaned = true;
                     TutorialEventBus.Raise(TutorialObjectiveKeys.CleanDirt);
                     OnCleaned?.Invoke();
-                    Destroy(gameObject);
+                    cleanedFeedbacks?.PlayFeedbacks();
                 }
             }
 

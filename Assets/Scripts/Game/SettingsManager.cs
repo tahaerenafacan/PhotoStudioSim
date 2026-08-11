@@ -11,6 +11,7 @@ public class SettingsManager : MonoBehaviour
     
     public static event Action<float> OnFOVChanged;
     public static event Action<float> OnComputerScreenDistanceChanged;
+    public static event Action<Settings> OnSettingsLoaded;
 
     private string filePath;
 
@@ -75,6 +76,7 @@ public class SettingsManager : MonoBehaviour
         }
 
         ApplyAllSettings();
+        OnSettingsLoaded?.Invoke(CurrentSettings);
     }
 
     public void LoadDefaultSettings()
@@ -88,7 +90,8 @@ public class SettingsManager : MonoBehaviour
             textureQuality = 0,
             fov = 60f,
             language = 0,
-            computerScreenDistance = 33f
+            computerScreenDistance = 33f,
+            bindingOverridesJson = string.Empty
         };
         
         SaveSettings();

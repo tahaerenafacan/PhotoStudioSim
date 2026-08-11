@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using SyntaxSultan.SavingSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace SyntaxSultan.TutorialSystem
 {
-    public class TutorialManager : MonoBehaviour
+    public class TutorialManager : MonoBehaviour, IJsonSaveable
     {
         public static TutorialManager Instance { get; private set; }
 
@@ -14,8 +16,12 @@ namespace SyntaxSultan.TutorialSystem
         public UnityEvent<TutorialStepSO, Dictionary<TutorialObjectiveSO, int>> OnStepUpdated = new();
         public UnityEvent OnSequenceCompleted = new();
 
+        private const string CurrentStepIndexKey = "currentStepIndex";
+        private const string ProgressKey = "progress";
+
         private int currentStepIndex = -1;
         private Dictionary<TutorialObjectiveSO, int> progress = new();
+        private readonly Dictionary<TutorialObjectiveSO, System.Action<int>> objectiveListeners = new();
 
         private void Awake()
         {
@@ -36,16 +42,22 @@ namespace SyntaxSultan.TutorialSystem
             currentStepIndex++;
             if (sequence == null || currentStepIndex >= sequence.steps.Length)
             {
+                progress.Clear();
+                ObjectiveListenersClear();
                 OnSequenceCompleted.Invoke();
                 return;
             }
 
             progress.Clear();
+            objectiveListeners.Clear();
+
             var step = sequence.steps[currentStepIndex];
             foreach (var objective in step.objectives)
             {
                 progress[objective] = 0;
-                TutorialEventBus.Subscribe(objective.eventKey, amount => OnObjectiveProgress(objective, amount));
+                System.Action<int> listener = amount => OnObjectiveProgress(objective, amount);
+                objectiveListeners[objective] = listener;
+                TutorialEventBus.Subscribe(objective.eventKey, listener);
             }
 
             OnStepUpdated.Invoke(step, progress);
@@ -80,12 +92,108 @@ namespace SyntaxSultan.TutorialSystem
 
         private void UnsubscribeCurrentStep()
         {
-            if (currentStepIndex < 0 || sequence == null || currentStepIndex >= sequence.steps.Length) return;
+            if (sequence == null || currentStepIndex < 0 || currentStepIndex >= sequence.steps.Length) return;
 
             foreach (var objective in sequence.steps[currentStepIndex].objectives)
             {
-                TutorialEventBus.Unsubscribe(objective.eventKey, amount => OnObjectiveProgress(objective, amount));
+                if (objectiveListeners.TryGetValue(objective, out var listener))
+                {
+                    TutorialEventBus.Unsubscribe(objective.eventKey, listener);
+                }
             }
+
+            objectiveListeners.Clear();
+        }
+
+        private void ObjectiveListenersClear()
+        {
+            if (sequence == null || currentStepIndex < 0 || currentStepIndex >= sequence.steps.Length) return;
+            foreach (var objective in sequence.steps[currentStepIndex].objectives)
+            {
+                if (objectiveListeners.TryGetValue(objective, out var listener))
+                {
+                    TutorialEventBus.Unsubscribe(objective.eventKey, listener);
+                }
+            }
+
+            objectiveListeners.Clear();
+        }
+
+        public JToken CaptureAsJToken()
+        {
+            JObject state = new JObject();
+            state[CurrentStepIndexKey] = currentStepIndex;
+
+            JArray progressArray = new JArray();
+            foreach (var kvp in progress)
+            {
+                if (kvp.Key == null) continue;
+                JObject objectiveState = new JObject();
+                objectiveState["objectiveName"] = kvp.Key.name;
+                objectiveState["progress"] = kvp.Value;
+                progressArray.Add(objectiveState);
+            }
+
+            state[ProgressKey] = progressArray;
+            return state;
+        }
+
+        public void RestoreFromJToken(JToken state)
+        {
+            if (state == null || state.Type != JTokenType.Object) return;
+
+            JObject stateObject = state.ToObject<JObject>();
+            currentStepIndex = stateObject[CurrentStepIndexKey]?.ToObject<int>() ?? -1;
+
+            UnsubscribeCurrentStep();
+            progress.Clear();
+            objectiveListeners.Clear();
+
+            if (sequence == null)
+            {
+                Debug.LogWarning("TutorialManager: no sequence assigned while restoring tutorial state.");
+                return;
+            }
+
+            if (currentStepIndex < 0)
+                return;
+
+            if (currentStepIndex >= sequence.steps.Length)
+            {
+                progress.Clear();
+                ObjectiveListenersClear();
+                OnSequenceCompleted.Invoke();
+                return;
+            }
+
+            var step = sequence.steps[currentStepIndex];
+            JArray progressArray = stateObject[ProgressKey] as JArray;
+            foreach (var objective in step.objectives)
+            {
+                int savedProgress = 0;
+                if (progressArray != null)
+                {
+                    foreach (JToken objectiveToken in progressArray)
+                    {
+                        JObject objectiveObject = objectiveToken as JObject;
+                        if (objectiveObject == null) continue;
+                        string objectiveName = objectiveObject["objectiveName"]?.ToObject<string>();
+                        if (objectiveName == objective.name)
+                        {
+                            savedProgress = objectiveObject["progress"]?.ToObject<int>() ?? 0;
+                            break;
+                        }
+                    }
+                }
+
+                progress[objective] = Mathf.Min(savedProgress, objective.requiredAmount);
+
+                System.Action<int> listener = amount => OnObjectiveProgress(objective, amount);
+                objectiveListeners[objective] = listener;
+                TutorialEventBus.Subscribe(objective.eventKey, listener);
+            }
+
+            OnStepUpdated.Invoke(step, progress);
         }
     }
 }

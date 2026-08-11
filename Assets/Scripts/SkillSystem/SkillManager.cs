@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using SyntaxSultan.SavingSystem;
 using UnityEngine;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager : MonoBehaviour, IJsonSaveable
 {
     public static SkillManager Instance { get; private set; }
 
@@ -16,6 +18,9 @@ public class SkillManager : MonoBehaviour
 
     public event Action<int> OnSkillPointsChanged;
     public event Action<SkillDefinition> OnSkillUnlocked;
+
+    private const string SkillPointsKey = "availableSkillPoints";
+    private const string UnlockedSkillsKey = "unlockedSkills";
 
     private void Awake()
     {
@@ -71,4 +76,53 @@ public class SkillManager : MonoBehaviour
         return true;
     }
 
+    public JToken CaptureAsJToken()
+    {
+        JObject state = new JObject();
+        state[SkillPointsKey] = AvailableSkillPoints;
+
+        JArray unlockedSkillNames = new JArray();
+        foreach (SkillDefinition skill in unlockedSkills)
+        {
+            if (skill != null)
+                unlockedSkillNames.Add(skill.name);
+        }
+
+        state[UnlockedSkillsKey] = unlockedSkillNames;
+        return state;
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        if (state == null || state.Type != JTokenType.Object)
+            return;
+
+        JObject stateObject = state.ToObject<JObject>();
+        AvailableSkillPoints = stateObject[SkillPointsKey]?.ToObject<int>() ?? AvailableSkillPoints;
+
+        unlockedSkills.Clear();
+        JArray unlockedSkillNames = stateObject[UnlockedSkillsKey] as JArray;
+        if (unlockedSkillNames != null)
+        {
+            foreach (JToken skillNameToken in unlockedSkillNames)
+            {
+                string skillName = skillNameToken.ToObject<string>();
+                if (string.IsNullOrEmpty(skillName))
+                    continue;
+
+                SkillDefinition skill = availableSkills.Find(x => x != null && x.name == skillName);
+                if (skill != null)
+                {
+                    unlockedSkills.Add(skill);
+                    skill.ApplySkill();
+                }
+                else
+                {
+                    Debug.LogWarning($"SkillManager: saved skill '{skillName}' not found in availableSkills.");
+                }
+            }
+        }
+
+        OnSkillPointsChanged?.Invoke(AvailableSkillPoints);
+    }
 }

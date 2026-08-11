@@ -4,6 +4,8 @@ public class ServiceTableManager : MonoBehaviour
 {
     [SerializeField] private ServiceTable serviceTable;
     
+    public bool HasAvailableTable => serviceTable != null && serviceTable.IsAvailable;
+
     public ServiceTable TryReserveTable(CustomerController customer)
     {
         if (serviceTable == null) return null;

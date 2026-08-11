@@ -12,13 +12,13 @@ public class HintManager : MonoBehaviour
     [Header("Pickup Hint Settings")]
     [SerializeField] private CanvasGroup pickupHint;
     [SerializeField] private LayoutElement pickupLayout;
+    [SerializeField] private HintIconDisplay pickupHintDisplay;
     [SerializeField] private LocalizedString pickupLocalizedString;
-    [SerializeField] private TMPro.TextMeshProUGUI pickupHintText;
 
     [Header("Interact Hint Settings")] 
-    [SerializeField] private TMPro.TextMeshProUGUI interactHintText;
     [SerializeField] private CanvasGroup interactHint;
     [SerializeField] private LayoutElement interactLayout;
+    [SerializeField] private HintIconDisplay interactHintDisplay;
     
     private void Start()
     {
@@ -41,13 +41,25 @@ public class HintManager : MonoBehaviour
         string resolvedInteract = interactText?.GetLocalizedString();
         if (!string.IsNullOrEmpty(resolvedInteract))
         {
-            interactHintText.text = $"<sprite name=\"f\"/> {resolvedInteract}";
+            string interactEffectivePath = InputManager.Instance?.GetPrimaryBindingEffectivePath("Interactions/Interact") ?? string.Empty;
+            Sprite interactIcon = InputIconResolver.Instance?.GetControlIcon(interactEffectivePath);
+            interactHintDisplay?.Setup(interactIcon, resolvedInteract);
+        }
+        else if (interactHintDisplay != null)
+        {
+            interactHintDisplay.Setup(null, string.Empty);
         }
         
         string resolvedPickup = pickupLocalizedString?.GetLocalizedString();
         if (!string.IsNullOrEmpty(resolvedPickup))
         {
-            pickupHintText.text = $"<sprite name=\"e\"/> {resolvedPickup}";
+            string pickupBinding = InputManager.Instance?.GetPrimaryBindingEffectivePath("Interactions/Pickup") ?? string.Empty;
+            var pickupIcon = InputIconResolver.Instance?.GetControlIcon(pickupBinding);
+            pickupHintDisplay?.Setup(pickupIcon, resolvedPickup);
+        }
+        else if (pickupHintDisplay != null)
+        {
+            pickupHintDisplay.Setup(null, string.Empty);
         }
 
         ToggleUIElement(interactHint, interactLayout, interact);
