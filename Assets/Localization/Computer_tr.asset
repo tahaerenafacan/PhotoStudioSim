@@ -54,6 +54,14 @@ MonoBehaviour:
     m_Localized: "Hi\xE7 foto\u011Fraf yok."
     m_Metadata:
       m_Items: []
+  - m_Id: 38758588257521664
+    m_Localized: "Yazd\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38758645904035840
+    m_Localized: "\u0130ptal"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

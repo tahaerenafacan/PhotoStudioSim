@@ -17,6 +17,8 @@ MonoBehaviour:
     audioAsset: {fileID: 0}
   - itemID: Click SFX
     audioAsset: {fileID: 8300000, guid: e10c29fe0e2d95d439fac26b6f72e59e, type: 3}
+  - itemID: PageChange
+    audioAsset: {fileID: 8300000, guid: d2116408d42d23246862451183dc30f0, type: 3}
   colorItems:
   - itemID: WindowBackground
     colorValue: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
@@ -64,7 +66,7 @@ MonoBehaviour:
   spriteItems: []
   updateMode: 1
   audioFoldout: 1
-  colorFoldout: 0
+  colorFoldout: 1
   fontFoldout: 0
   spriteFoldout: 0
   settingsFoldout: 0

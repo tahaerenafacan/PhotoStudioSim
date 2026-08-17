@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using SyntaxSultan.ComputerSystem.FileSystem;
 using Computer.Apps.Gallery;
 using SyntaxSultan.PrinterSystem;
@@ -20,10 +19,10 @@ namespace SyntaxSultan.ComputerSystem.Apps
         [Header("Preview Panel")] 
         [SerializeField] private GameObject previewPanel;
         [SerializeField] private RawImage previewImage;
-        [SerializeField] private Button prevButton;
-        [SerializeField] private Button nextButton;
+        [SerializeField] private Evo.UI.Button prevButton;
+        [SerializeField] private Evo.UI.Button nextButton;
         [SerializeField] private TextMeshProUGUI indexText;
-        [SerializeField] private Button printButton;
+        [SerializeField] private Evo.UI.Button printButton;
 
         [Header("Printing")] 
         [SerializeField] private PrintPopup printPopup;

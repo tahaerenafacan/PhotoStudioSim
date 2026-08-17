@@ -44,9 +44,7 @@ public class CurrencyManager : MonoBehaviour, IJsonSaveable
             return;
         }
 
-        money -= amount;
-        OnMoneySpent?.Invoke(amount);
-        OnBalanceChanged?.Invoke(money);
+        AddCurrency(-amount);
     }
 
     public JToken CaptureAsJToken()

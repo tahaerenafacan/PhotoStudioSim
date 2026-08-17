@@ -51,6 +51,14 @@ MonoBehaviour:
     m_Key: app.gallery.no_photo
     m_Metadata:
       m_Items: []
+  - m_Id: 38758588257521664
+    m_Key: app.gallery.print
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38758645904035840
+    m_Key: cancel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

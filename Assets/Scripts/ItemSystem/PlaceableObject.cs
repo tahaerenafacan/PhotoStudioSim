@@ -6,12 +6,12 @@ public class PlaceableObject : MonoBehaviour, IPlaceable
     [SerializeField] private Renderer[] placementRenderers;
 
     [Tooltip("False ise bu obje duvar gibi dikey yüzeylere yerleştirilemez.")]
-    [SerializeField] private bool allowVerticalPlacement = false;
+    [SerializeField] private IPlaceable.PlacementType allowancePlacement;
 
     public Transform PlacementTransform => transform;
     public Collider[] PlacementColliders => placementColliders;
     public Renderer[] PlacementRenderers => placementRenderers;
-    public bool AllowVerticalPlacement => allowVerticalPlacement;
+    public IPlaceable.PlacementType PlacementAllowance => allowancePlacement;
 
     public void SetPlacementCollidersEnabled(bool isEnabled)
     {

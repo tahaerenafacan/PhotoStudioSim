@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public interface IPlaceable
@@ -7,9 +8,17 @@ public interface IPlaceable
 
     Renderer[] PlacementRenderers { get; }
 
-    bool AllowVerticalPlacement { get; }
+    PlacementType PlacementAllowance { get; }
 
     void SetPlacementCollidersEnabled(bool isEnabled);
     void OnPlacementConfirmed();
     void OnPlacementCancelled();
+    
+    public enum PlacementType
+    {
+        OnlyHorizontal,
+        OnlyVertical,
+        Both
+    }
 }
+

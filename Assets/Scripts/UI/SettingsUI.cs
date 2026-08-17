@@ -10,8 +10,6 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private RectTransform settingsPanel;
 
     [Header("Rebind UI")]
-    [SerializeField] private RectTransform bindingsContainer;
-    [SerializeField] private GameObject bindingRowPrefab;
     [SerializeField] private List<RebindActionEntry> rebindEntries;
 
     [Header("Animation")] 

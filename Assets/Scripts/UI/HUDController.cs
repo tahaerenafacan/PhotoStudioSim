@@ -1,5 +1,7 @@
 using TMPro;
 using UniStorm;
+using DamageNumbersPro;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -8,6 +10,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] private HintManager hintManager;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private RectTransform moneyRectTransform;
+    [SerializeField] private DamageNumber moneyGainPrefab;
+    [SerializeField] private MMF_Player onMoneyGainedEffect;
+    [SerializeField] private Color moneyGainColor;
+    [SerializeField] private Color moneySpendColor;
 
     [Header("Localization")]
     [SerializeField] private LocalizedString localizedPickupHint;
@@ -17,6 +24,8 @@ public class HUDController : MonoBehaviour
     {
         CurrencyManager.Instance.OnBalanceChanged += OnBalanceChanged;
         OnBalanceChanged(CurrencyManager.Instance.GetMoney()); //Initialize
+        
+        CurrencyManager.Instance.OnMoneyAdded += OnMoneyAdded;
 
         UniStormManager.Instance.OnTimeChange += OnTimeChanged;
         OnTimeChanged(UniStormManager.Instance.GetHour(), UniStormManager.Instance.GetMinutes());
@@ -24,6 +33,23 @@ public class HUDController : MonoBehaviour
         PlayerItemHolder.Instance.OnHeldItemChanged += OnHeldItemChanged;
 
         PlayerInteraction.Instance.OnDetectionChanged += OnInteractionDetectionChanged;
+    }
+
+    private void OnMoneyAdded(int amount)
+    {
+        DamageNumber spawnedDN = moneyGainPrefab.SpawnGUI(moneyRectTransform, Vector2.zero, amount);
+        if (amount > 0 && onMoneyGainedEffect != null)
+        {
+            onMoneyGainedEffect.GetFeedbackOfType<MMF_TMPColor>().DestinationColor = moneyGainColor;
+            spawnedDN.SetColor(moneyGainColor);
+            onMoneyGainedEffect.PlayFeedbacks();
+        }
+        else if  (amount < 0 && onMoneyGainedEffect != null)
+        {
+            onMoneyGainedEffect.GetFeedbackOfType<MMF_TMPColor>().DestinationColor = moneySpendColor;
+            spawnedDN.SetColor(moneySpendColor);
+            onMoneyGainedEffect.PlayFeedbacks();
+        }
     }
 
     private void OnInteractionDetectionChanged(BasePickableItem pickableItem, IInteractable interactable)

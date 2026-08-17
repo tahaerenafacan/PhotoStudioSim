@@ -84,17 +84,14 @@ namespace SyntaxSultan.CameraSystem
         {
             interactions = new List<ItemInteraction>();
 
-            // 1. Fotoğraf Çekme Etkileşimi
             var shootInteract = new ItemInteraction(shootAction, shootHint);
             shootInteract.OnPerformed += ctx => TakePhoto();
             interactions.Add(shootInteract);
 
-            // 2. Ayar Değiştirme Etkileşimi
             var settingsInteract = new ItemInteraction(toggleFlashAction, toggleFlashHint);
             settingsInteract.OnPerformed += ctx => ToggleFlash();
             interactions.Add(settingsInteract);
 
-            // 3. Fotoğraf Silme Etkileşimi
             var deleteInteract = new ItemInteraction(uploadPhotosAction, uploadPhotosHint);
             deleteInteract.OnPerformed += ctx => TransferToComputer();
             interactions.Add(deleteInteract);
@@ -170,7 +167,6 @@ namespace SyntaxSultan.CameraSystem
             if (localPhotos.Count == 0) return;
 
             CameraStorage.Instance.Upload(localPhotos);
-            //int count = localPhotos.Count;
             localPhotos.Clear();
         }
 

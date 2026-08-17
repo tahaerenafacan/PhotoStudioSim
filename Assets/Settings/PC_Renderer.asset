@@ -179,10 +179,10 @@ MonoBehaviour:
     BottomColor: {r: 0.44588825, g: 0.49321982, b: 0.5660378, a: 1}
     BlendHeight: 0.014999998
     FogGradientHeight: 0.5
-    SunIntensity: 0.064939745
-    MoonIntensity: -0.008934458
+    SunIntensity: 0.07955855
+    MoonIntensity: -0.007715702
     SunFalloffIntensity: 9.4
-    SunControl: 1.0000697
+    SunControl: 1.0053033
     MoonControl: 0
 --- !u!114 &-499360345563848489
 MonoBehaviour:
@@ -236,9 +236,9 @@ MonoBehaviour:
   - {fileID: -5328334996114347514}
   - {fileID: -6965311893211531521}
   - {fileID: -5819028875659500513}
+  - {fileID: -499360345563848489}
   - {fileID: -7178262570059918360}
   - {fileID: -7102396520422998951}
-  - {fileID: -499360345563848489}
   m_RendererFeatureMap: ad6b866f10d7b46ce893187f39b0619c597c37aafe376f9dd720c05369ea11f9
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}

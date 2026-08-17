@@ -141,7 +141,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -848,7 +848,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1229,12 +1229,12 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
   pressedSFX:
-    stylerID: Click SFX
+    stylerID: PageChange
     audioClip: {fileID: 0}
   selectedSFX:
     stylerID: 
@@ -1274,7 +1274,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -1476,12 +1476,12 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
   pressedSFX:
-    stylerID: Click SFX
+    stylerID: PageChange
     audioClip: {fileID: 0}
   selectedSFX:
     stylerID: 
@@ -1521,7 +1521,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   targetText: {fileID: 3693118068371519365}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1719,8 +1719,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1932,15 +1932,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Order Created!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
+  m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279861502
-  m_fontColor: {r: 0.99607843, g: 0.5019608, b: 0.09803922, a: 1}
+    rgba: 4280728504
+  m_fontColor: {r: 0.72156864, g: 0.73333335, b: 0.14901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2014,12 +2014,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f503d8a54a79b428dfbcb4448abeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  preset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   targetGraphic: {fileID: 0}
   targetText: {fileID: 7599679433677270735}
   objectType: 1
-  colorID: Accent
-  fontID: Rubik - Black
+  colorID: IconDocuments
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Accent (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2278,7 +2278,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2578,15 +2578,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Purchase
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
+  m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293980400
-  m_fontColor: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2660,12 +2660,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f503d8a54a79b428dfbcb4448abeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  preset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   targetGraphic: {fileID: 0}
   targetText: {fileID: 967346052829909465}
   objectType: 1
-  colorID: Primary
-  fontID: Rubik - Black
+  colorID: WindowBackground
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3107,7 +3107,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3333,7 +3333,7 @@ MonoBehaviour:
   targetText: {fileID: 8221536598664661108}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3380,8 +3380,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3543,7 +3543,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3636,8 +3636,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Discover Content
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   targetText: {fileID: 8805036628681652592}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3816,8 +3816,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Discover Content
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3903,7 +3903,7 @@ MonoBehaviour:
   targetText: {fileID: 4915398240442761476}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -4195,7 +4195,7 @@ MonoBehaviour:
   targetText: {fileID: 2168284738433838926}
   objectType: 1
   colorID: Accent
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -4242,8 +4242,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Discover
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4811,7 +4811,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5245,12 +5245,12 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
   pressedSFX:
-    stylerID: Click SFX
+    stylerID: PageChange
     audioClip: {fileID: 0}
   selectedSFX:
     stylerID: 
@@ -5290,7 +5290,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -5446,15 +5446,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Creating Order
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
+  m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293980400
-  m_fontColor: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5528,12 +5528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f503d8a54a79b428dfbcb4448abeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  preset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   targetGraphic: {fileID: 0}
   targetText: {fileID: 3501445045066390881}
   objectType: 1
-  colorID: Primary
-  fontID: Rubik - Black
+  colorID: WindowBackground
+  fontID: Jetbrains Mono
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5713,7 +5713,7 @@ MonoBehaviour:
   targetText: {fileID: 8926118908546632073}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5760,8 +5760,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Friends
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5894,7 +5894,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6273,7 +6273,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
@@ -6610,7 +6610,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6864,8 +6864,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Discover Content
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6951,7 +6951,7 @@ MonoBehaviour:
   targetText: {fileID: 2746508232275181268}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7119,7 +7119,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7228,7 +7228,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7578,7 +7578,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7718,7 +7718,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7831,8 +7831,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Discover Content
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7918,7 +7918,7 @@ MonoBehaviour:
   targetText: {fileID: 6384174744336834531}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8173,7 +8173,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8444,7 +8444,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8747,12 +8747,12 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
   pressedSFX:
-    stylerID: Click SFX
+    stylerID: PageChange
     audioClip: {fileID: 0}
   selectedSFX:
     stylerID: 
@@ -8792,7 +8792,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -8975,7 +8975,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9113,7 +9113,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9278,7 +9278,7 @@ MonoBehaviour:
   targetText: {fileID: 2330207458007579312}
   objectType: 1
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9325,8 +9325,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chat
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9488,7 +9488,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9612,12 +9612,12 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
   pressedSFX:
-    stylerID: Click SFX
+    stylerID: PageChange
     audioClip: {fileID: 0}
   selectedSFX:
     stylerID: 
@@ -9657,7 +9657,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0

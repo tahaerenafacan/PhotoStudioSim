@@ -13,7 +13,7 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable, IPlaceable
     
     [SerializeField] private ItemDefinition itemData;
     [SerializeField] private float throwForceMultiplier = 1f;
-    [SerializeField] private bool allowVerticalPlacement = false;
+    [SerializeField] private IPlaceable.PlacementType allowancePlacement;
     
     private Collider[] colliders;
     private Renderer[] cachedRenderers;
@@ -24,7 +24,7 @@ public abstract class BasePickableItem : MonoBehaviour, IPickable, IPlaceable
     public Transform PlacementTransform => transform;
     public Collider[] PlacementColliders => colliders;
     public Renderer[] PlacementRenderers => cachedRenderers;
-    public bool AllowVerticalPlacement => allowVerticalPlacement;
+    public IPlaceable.PlacementType PlacementAllowance => allowancePlacement;
 
 
     public void SetPlacementCollidersEnabled(bool isEnabled)

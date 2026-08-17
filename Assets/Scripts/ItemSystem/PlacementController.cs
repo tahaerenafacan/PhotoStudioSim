@@ -246,7 +246,7 @@ public class PlacementController : MonoBehaviour
         Vector3 restingPose = ResolveRestingPosition(activePlaceable, pose, surfaceNormal);
         activePlaceable.PlacementTransform.position = restingPose;
 
-        bool isFlatEnough = IsSurfaceAngleValid(surfaceNormal, activePlaceable.AllowVerticalPlacement);
+        bool isFlatEnough = IsSurfaceAngleValid(surfaceNormal, activePlaceable.PlacementAllowance);
         bool wasValid = isCurrentPoseValid;
         isCurrentPoseValid = isFlatEnough && IsPoseValid(activePlaceable);
 
@@ -294,10 +294,17 @@ public class PlacementController : MonoBehaviour
     }
 
     /// <summary>Yüzey normali yeterince "yatay/yere yakın" değilse (duvar vb.) ve item izin vermiyorsa geçersizdir.</summary>
-    private bool IsSurfaceAngleValid(Vector3 surfaceNormal, bool allowVertical)
+    private bool IsSurfaceAngleValid(Vector3 surfaceNormal, IPlaceable.PlacementType placementType)
     {
-        if (allowVertical) return true;
-        return Vector3.Angle(surfaceNormal, Vector3.up) <= maxSurfaceAngleForFlatPlacement;
+        float angleFromUp = Vector3.Angle(surfaceNormal, Vector3.up);
+
+        return placementType switch
+        {
+            IPlaceable.PlacementType.OnlyHorizontal => angleFromUp <= maxSurfaceAngleForFlatPlacement,
+            IPlaceable.PlacementType.OnlyVertical => angleFromUp >= (90f - maxSurfaceAngleForFlatPlacement),
+            IPlaceable.PlacementType.Both => true,
+            _ => true
+        };    
     }
 
     private bool TryCalculatePlacementPose(out Vector3 position, out Quaternion rotation, out Vector3 surfaceNormal)

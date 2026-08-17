@@ -52,6 +52,7 @@ public class CameraStorage : MonoBehaviour
                 photos.Add(loadedImage);
             }
         }
+        if (photos.Count > 0) OnPhotosChanged?.Invoke();
     }
     
     private Texture2D LoadImageFromBytes(byte[] imageBytes)

@@ -94,6 +94,15 @@ public class GameManager : MonoBehaviour
         {
             TutorialManager.Instance.StartSequence();
         }
+
+        if (Keyboard.current.numpadPlusKey.wasPressedThisFrame)
+        {
+            CurrencyManager.Instance.AddCurrency(258);
+        }
+        if (Keyboard.current.numpadMinusKey.wasPressedThisFrame)
+        {
+            CurrencyManager.Instance.AddCurrency(-258);
+        }
     }
 
     private void OnEnable()

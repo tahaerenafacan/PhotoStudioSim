@@ -4,20 +4,10 @@ using UnityEngine.InputSystem;
 
 public class InteractionHUDContainer : MonoBehaviour
 {
-    [System.Serializable]
-    public struct ActionIconMapping
-    {
-        public InputActionReference actionReference;
-        public Sprite icon;
-    }
-
     [Header("UI Spawn Settings")]
     [SerializeField] private GameObject interactionItemPrefab; 
     [SerializeField] private Transform containerParent;
     
-    [Header("Icon Mapping")]
-    [SerializeField] private List<ActionIconMapping> actionIcons = new List<ActionIconMapping>();
-
     private List<GameObject> spawnedUIElements = new List<GameObject>();
 
     private void Awake()
@@ -68,16 +58,29 @@ public class InteractionHUDContainer : MonoBehaviour
             uiItem.Setup(resolvedIcon, interaction.Hint);
         }
     }
-
-    private Sprite ResolveIconForAction(InputActionReference actionRef)
+    
+    /// <summary>
+    /// InputActionReference üzerinden action'ın ilk composite-olmayan binding'inin
+    /// effectivePath'ini bulup InputIconResolver'a geçirir.
+    /// </summary>
+    private Sprite ResolveIconForAction(InputActionReference actionReference)
     {
-        if (actionRef == null) return null;
+        if (actionReference == null || actionReference.action == null) return null;
+        if (InputIconResolver.Instance == null) return null;
 
-        // Liste içinde eşleşen InputActionReference guid'lerini kontrol et
-        var mapping = actionIcons.Find(m => m.actionReference != null && 
-            m.actionReference.action.id == actionRef.action.id);
+        var action = actionReference.action;
+        string effectivePath = string.Empty;
 
-        return mapping.icon;
+        for (int i = 0; i < action.bindings.Count; i++)
+        {
+            if (!action.bindings[i].isComposite && !action.bindings[i].isPartOfComposite)
+            {
+                effectivePath = action.bindings[i].effectivePath;
+                break;
+            }
+        }
+
+        return InputIconResolver.Instance.GetControlIcon(effectivePath);
     }
 
     private void ClearUI()

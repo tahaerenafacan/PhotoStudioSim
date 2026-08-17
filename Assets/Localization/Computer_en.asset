@@ -54,6 +54,14 @@ MonoBehaviour:
     m_Localized: No photo yet!
     m_Metadata:
       m_Items: []
+  - m_Id: 38758588257521664
+    m_Localized: Print
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38758645904035840
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

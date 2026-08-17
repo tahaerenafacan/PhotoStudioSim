@@ -53,6 +53,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,9 +76,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1270838254783789818
 MeshFilter:
@@ -140,7 +144,7 @@ MonoBehaviour:
   enable3DGame: 1
   faceCameraView: 1
   lookAtCamera: 0
-  renderThroughWalls: 1
+  renderThroughWalls: 0
   consistentScreenSize: 1
   distanceScalingSettings:
     baseDistance: 15
@@ -548,11 +552,14 @@ MonoBehaviour:
   pushSettings:
     radius: 3
     pushOffset: 1
+    scaleWithMesh: 0
   updateDelay: 0.0125
   enablePooling: 0
   poolSize: 50
   disableOnSceneLoad: 1
-  editorLastFont: 
+  limitActiveInstances: 0
+  maxActiveInstances: 50
+  editorLastFont: Blood-Thin3D
   position: {x: 0, y: 0, z: 0}
 --- !u!210 &6458874769798569857
 SortingGroup:
@@ -566,6 +573,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 1000
   m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!1 &6121134363098694093
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +631,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -644,9 +654,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7406211313862964010
 MonoBehaviour:
@@ -671,8 +683,7 @@ MonoBehaviour:
   m_text: 123
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d2ad912ef2b822468ba9755e509025b, type: 2}
-  m_sharedMaterial: {fileID: -4316245157388792597, guid: 3d2ad912ef2b822468ba9755e509025b,
-    type: 2}
+  m_sharedMaterial: {fileID: -4316245157388792597, guid: 3d2ad912ef2b822468ba9755e509025b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -707,6 +718,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -796,6 +808,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -817,9 +831,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &6190316840558082080
 MeshFilter:

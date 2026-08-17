@@ -64,7 +64,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
   targetText: {fileID: 8458014736941944703}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -702,8 +702,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -886,7 +886,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -1391,9 +1391,9 @@ MonoBehaviour:
   text: Print
   localizedText:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4b7f5c90c5a4b0742bb4d5a1369a6b2d
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 38758588257521664
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -2197,7 +2197,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Secondary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -2661,7 +2661,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3329,7 +3329,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3447,7 +3447,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3751,7 +3751,7 @@ MonoBehaviour:
   targetText: {fileID: 1302745559837835050}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -3798,8 +3798,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "1\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -4335,7 +4335,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -4453,7 +4453,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   targetText: {fileID: 2416327361038306940}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5119,8 +5119,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5370,7 +5370,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5658,7 +5658,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -5886,7 +5886,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6519,7 +6519,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6637,7 +6637,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -6873,7 +6873,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7329,7 +7329,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7418,7 +7418,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -7925,7 +7925,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8073,7 +8073,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8212,7 +8212,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8680,7 +8680,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -8769,7 +8769,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9096,7 +9096,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9292,7 +9292,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   loop: 1
-  invokeAtStart: 1
+  invokeAtStart: 0
   isHorizontal: 1
   invertAnimationDirection: 0
   slideOffset: 25
@@ -9337,7 +9337,7 @@ MonoBehaviour:
       m_Calls: []
   itemsFoldout: 1
   settingsFoldout: 1
-  referencesFoldout: 0
+  referencesFoldout: 1
   eventsFoldout: 0
   references:
     version: 2
@@ -9435,7 +9435,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9553,7 +9553,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9692,7 +9692,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9810,7 +9810,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -9930,7 +9930,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -10634,7 +10634,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -10752,7 +10752,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11826,7 +11826,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -11950,7 +11950,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
@@ -12678,7 +12678,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12869,7 +12869,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -12987,7 +12987,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -13076,7 +13076,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -13352,7 +13352,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -13659,7 +13659,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14236,7 +14236,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14369,7 +14369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cancel
+  m_text: "\u0130ptal"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
@@ -14659,7 +14659,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14850,7 +14850,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -14989,7 +14989,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15078,7 +15078,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15330,7 +15330,7 @@ MonoBehaviour:
   targetText: {fileID: 2189821697529967629}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15377,8 +15377,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15604,7 +15604,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Secondary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -15693,7 +15693,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16463,7 +16463,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Secondary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16551,7 +16551,7 @@ MonoBehaviour:
   targetText: {fileID: 7731174915820564620}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16598,8 +16598,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Decrease
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16731,7 +16731,7 @@ MonoBehaviour:
   targetText: {fileID: 7706547552941225306}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -16778,8 +16778,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Increase
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16941,7 +16941,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17118,7 +17118,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17293,7 +17293,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17411,7 +17411,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17529,7 +17529,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17696,7 +17696,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -17932,7 +17932,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18050,7 +18050,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18189,7 +18189,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -18949,9 +18949,9 @@ MonoBehaviour:
   text: Cancel
   localizedText:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4b7f5c90c5a4b0742bb4d5a1369a6b2d
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 38758645904035840
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -19081,7 +19081,7 @@ MonoBehaviour:
   targetText: {fileID: 3059538033147563682}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19128,8 +19128,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19633,7 +19633,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -19722,7 +19722,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20041,7 +20041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Print
+  m_text: "Yazd\u0131r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
   m_sharedMaterial: {fileID: 3274091653760066040, guid: 5ff67da4f40b39545bf453587d0ff529, type: 2}
@@ -20085,7 +20085,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -20436,7 +20436,7 @@ MonoBehaviour:
   targetText: {fileID: 5255161789664563007}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -20483,8 +20483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21209,7 +21209,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -21447,7 +21447,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -22035,7 +22035,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -22229,7 +22229,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -22347,7 +22347,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -22852,7 +22852,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     fadeDuration: 0.1
   sfxSource: 2
-  stylerPreset: {fileID: 11400000, guid: 62d3d5000dc484241a42d255128f3aa7, type: 2}
+  stylerPreset: {fileID: 11400000, guid: 2d5d3873ddc7eb54384c1218af3615f1, type: 2}
   highlightedSFX:
     stylerID: Hover SFX
     audioClip: {fileID: 0}
@@ -23491,7 +23491,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24051,7 +24051,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24169,7 +24169,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24336,7 +24336,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24454,7 +24454,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24722,7 +24722,7 @@ MonoBehaviour:
   targetText: {fileID: 8244730504716980326}
   objectType: 1
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -24769,8 +24769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
-  m_sharedMaterial: {fileID: 7926859990908484338, guid: 2f193b05b784b99449d19f0eba952a70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 524dee9815603fe4286fe8b141080588, type: 2}
+  m_sharedMaterial: {fileID: -2327971130880761608, guid: 524dee9815603fe4286fe8b141080588, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25534,7 +25534,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -25889,7 +25889,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -27010,7 +27010,7 @@ MonoBehaviour:
   referencesFoldout: 0
   eventsFoldout: 0
   isOn: 0
-  invokeAtStart: 1
+  invokeAtStart: 0
   handleDuration: 0.2
   handleCurve:
     serializedVersion: 2
@@ -27221,7 +27221,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -27310,7 +27310,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -27478,7 +27478,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -27597,7 +27597,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -27792,7 +27792,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -27910,7 +27910,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Secondary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -28141,7 +28141,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -28259,7 +28259,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -28557,7 +28557,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -28675,7 +28675,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -28908,7 +28908,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -29507,7 +29507,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -29929,7 +29929,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -30286,7 +30286,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -30469,7 +30469,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -30637,7 +30637,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: 
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -30936,7 +30936,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -31075,7 +31075,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -31289,7 +31289,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -31407,7 +31407,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -31576,7 +31576,7 @@ MonoBehaviour:
       m_Calls: []
   itemsFoldout: 1
   settingsFoldout: 1
-  referencesFoldout: 0
+  referencesFoldout: 1
   eventsFoldout: 0
   references:
     version: 2
@@ -31645,7 +31645,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -32207,7 +32207,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -32823,7 +32823,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background (Dim)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 1
@@ -33010,7 +33010,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -33147,8 +33147,8 @@ MonoBehaviour:
   onSubmit:
     m_PersistentCalls:
       m_Calls: []
-  settingsFoldout: 0
-  referencesFoldout: 0
+  settingsFoldout: 1
+  referencesFoldout: 1
   eventsFoldout: 0
 --- !u!114 &1077734637074837579
 MonoBehaviour:
@@ -33321,7 +33321,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Tint)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -33491,7 +33491,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -33737,7 +33737,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   settingsFoldout: 0
-  styleFoldout: 0
+  styleFoldout: 1
   navigationFoldout: 0
   referencesFoldout: 0
   eventsFoldout: 0
@@ -34256,7 +34256,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -34374,7 +34374,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Background
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
@@ -34492,7 +34492,7 @@ MonoBehaviour:
   targetText: {fileID: 0}
   objectType: 0
   colorID: Primary (Soft)
-  fontID: Rubik - Black
+  fontID: Rubik - BlackItalic
   spriteID: 
   useCustomColor: 0
   overrideAlpha: 0
